@@ -82,7 +82,7 @@
   <script id="fluid-configs">
     var Fluid = window.Fluid || {};
     Fluid.ctx = Object.assign({}, Fluid.ctx)
-    var CONFIG = {"hostname":"blog.dwj601.cn","root":"/","version":"1.9.8","typing":{"enable":true,"typeSpeed":70,"cursorChar":"_","loop":false,"scope":[]},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"left","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"code_language":{"enable":true,"default":"TEXT"},"copy_btn":true,"image_caption":{"enable":true},"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"placement":"left","headingSelector":"h1,h2,h3,h4,h5","collapseDepth":3},"lazyload":{"enable":true,"loading_img":"https://dwj-oss.oss-cn-nanjing.aliyuncs.com/web-imgs/img-static/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":true,"follow_dnt":true,"baidu":"d08d23389220ad9b8f711cfb85757f4b","google":{"measurement_id":null},"tencent":{"sid":null,"cid":null},"leancloud":{"app_id":null,"app_key":null,"server_url":null,"path":"window.location.pathname","ignore_local":false},"umami":{"src":null,"website_id":null,"domains":null,"start_time":"2024-01-01T00:00:00.000Z","token":null,"api_server":null},"woyaola":null,"cnzz":null},"search_path":"/local-search.xml","include_content_in_search":true};
+    var CONFIG = {"hostname":"blog.dwj601.cn","root":"/","version":"1.9.8","typing":{"enable":true,"typeSpeed":70,"cursorChar":"_","loop":false,"scope":[]},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"left","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"code_language":{"enable":true,"default":"TEXT"},"copy_btn":true,"image_caption":{"enable":true},"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"placement":"left","headingSelector":"h1,h2,h3,h4,h5","collapseDepth":3},"lazyload":{"enable":false,"loading_img":"https://dwj-oss.oss-cn-nanjing.aliyuncs.com/web-imgs/img-static/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":true,"follow_dnt":true,"baidu":"d08d23389220ad9b8f711cfb85757f4b","google":{"measurement_id":null},"tencent":{"sid":null,"cid":null},"leancloud":{"app_id":null,"app_key":null,"server_url":null,"path":"window.location.pathname","ignore_local":false},"umami":{"src":null,"website_id":null,"domains":null,"start_time":"2024-01-01T00:00:00.000Z","token":null,"api_server":null},"woyaola":null,"cnzz":null},"search_path":"/local-search.xml","include_content_in_search":true};
 
     if (CONFIG.web_analytics.follow_dnt) {
       var dntVal = navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack;
@@ -361,20 +361,20 @@
 <figure class="highlight bash"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs bash">root@dwj2:/home# whereis nginx<br>nginx: /usr/sbin/nginx /usr/lib/nginx /etc/nginx /usr/share/nginx /usr/share/man/man8/nginx.8.gz<br></code></pre></td></tr></tbody></table></figure>
 <p>我们分部分五个部分进行解读：</p>
 <h2 id="usr-sbin-nginx">/usr/sbin/nginx</h2>
-<p><img src="https://dwj-oss.oss-cn-nanjing.aliyuncs.com/images/202404031007306.png" srcset="https://dwj-oss.oss-cn-nanjing.aliyuncs.com/web-imgs/img-static/loading.gif" lazyload alt="/usr/sbin/nginx"></p>
-<p><img src="https://dwj-oss.oss-cn-nanjing.aliyuncs.com/images/202404031011583.png" srcset="https://dwj-oss.oss-cn-nanjing.aliyuncs.com/web-imgs/img-static/loading.gif" lazyload alt="* 含义解释"></p>
+<p><img src="https://dwj-oss.oss-cn-nanjing.aliyuncs.com/images/202404031007306.png" alt="/usr/sbin/nginx"></p>
+<p><img src="https://dwj-oss.oss-cn-nanjing.aliyuncs.com/images/202404031011583.png" alt="* 含义解释"></p>
 <p>当前路径包含了 nginx 服务器的可执行文件。而 Ubuntu 中这个位置是用于存放系统管理的可执行文件的标准目录之一，可以从图二中的 <code>*</code> 看出，在 Mobaxterm 中，文件名后面加 <code>*</code> 表示该文件拥有执行权限。</p>
 <h2 id="usr-lib-nginx">/usr/lib/nginx</h2>
-<div class="group-image-container"><div class="group-image-row"><div class="group-image-wrap"><img src="https://dwj-oss.oss-cn-nanjing.aliyuncs.com/images/202404031019394.png" srcset="https://dwj-oss.oss-cn-nanjing.aliyuncs.com/web-imgs/img-static/loading.gif" lazyload alt="/usr/lib/nginx"></div><div class="group-image-wrap"><img src="https://dwj-oss.oss-cn-nanjing.aliyuncs.com/images/202404031014214.png" srcset="https://dwj-oss.oss-cn-nanjing.aliyuncs.com/web-imgs/img-static/loading.gif" lazyload alt="/usr/lib/nginx/modules"></div></div></div>
+<div class="group-image-container"><div class="group-image-row"><div class="group-image-wrap"><img src="https://dwj-oss.oss-cn-nanjing.aliyuncs.com/images/202404031019394.png" alt="/usr/lib/nginx"></div><div class="group-image-wrap"><img src="https://dwj-oss.oss-cn-nanjing.aliyuncs.com/images/202404031014214.png" alt="/usr/lib/nginx/modules"></div></div></div>
 <p>当前路径包含 nginx 的共享对象模块（so，shared objects）。通常情况下，这些模块文件可能被 nginx 服务器在运行时动态加载。当服务器需要使用特定功能时，它会动态加载相应的模块，以提供所需的功。</p>
 <h2 id="etc-nginx">/etc/nginx</h2>
-<p><img src="https://dwj-oss.oss-cn-nanjing.aliyuncs.com/images/202404031027880.png" srcset="https://dwj-oss.oss-cn-nanjing.aliyuncs.com/web-imgs/img-static/loading.gif" lazyload alt="/etc/nginx"></p>
+<p><img src="https://dwj-oss.oss-cn-nanjing.aliyuncs.com/images/202404031027880.png" alt="/etc/nginx"></p>
 <p>当前路径是 nginx 的主要配置文件目录。我们主要在这里进行 nginx 的配置。</p>
 <h2 id="usr-share-nginx">/usr/share/nginx</h2>
-<p><img src="https://dwj-oss.oss-cn-nanjing.aliyuncs.com/images/202404031027018.png" srcset="https://dwj-oss.oss-cn-nanjing.aliyuncs.com/web-imgs/img-static/loading.gif" lazyload alt="/usr/share/nginx"></p>
+<p><img src="https://dwj-oss.oss-cn-nanjing.aliyuncs.com/images/202404031027018.png" alt="/usr/share/nginx"></p>
 <p>当前路径包含一些 nginx 的静态资源，同时软链接到模块依赖文件。</p>
 <h2 id="usr-share-man-man8-nginx-8-gz">/usr/share/man/man8/nginx.8.gz</h2>
-<p><img src="https://dwj-oss.oss-cn-nanjing.aliyuncs.com/images/202404031303783.png" srcset="https://dwj-oss.oss-cn-nanjing.aliyuncs.com/web-imgs/img-static/loading.gif" lazyload alt="/usr/share/man/man8/nginx.8.gz"></p>
+<p><img src="https://dwj-oss.oss-cn-nanjing.aliyuncs.com/images/202404031303783.png" alt="/usr/share/man/man8/nginx.8.gz"></p>
 <p>当前路径包含 nginx 的手册页文件，以供用户查阅 nginx 命令的使用说明。我们可以使用 <code>gzip -d nginx.8.gz</code> 将其解压后阅读。</p>
 
                 
@@ -495,7 +495,7 @@
             
   
   
-    <article id="comments" lazyload>
+    <article id="comments">
       
   <script type="text/javascript">
     Fluid.utils.loadComments('#comments', function() {
@@ -906,10 +906,6 @@
 
 
 
-
-  
-    <script  src="/js/img-lazyload.js" ></script>
-  
 
 
 

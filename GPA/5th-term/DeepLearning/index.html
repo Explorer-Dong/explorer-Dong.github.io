@@ -85,7 +85,7 @@
   <script id="fluid-configs">
     var Fluid = window.Fluid || {};
     Fluid.ctx = Object.assign({}, Fluid.ctx)
-    var CONFIG = {"hostname":"blog.dwj601.cn","root":"/","version":"1.9.8","typing":{"enable":true,"typeSpeed":70,"cursorChar":"_","loop":false,"scope":[]},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"left","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"code_language":{"enable":true,"default":"TEXT"},"copy_btn":true,"image_caption":{"enable":true},"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"placement":"left","headingSelector":"h1,h2,h3,h4,h5","collapseDepth":3},"lazyload":{"enable":true,"loading_img":"https://dwj-oss.oss-cn-nanjing.aliyuncs.com/web-imgs/img-static/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":true,"follow_dnt":true,"baidu":"d08d23389220ad9b8f711cfb85757f4b","google":{"measurement_id":null},"tencent":{"sid":null,"cid":null},"leancloud":{"app_id":null,"app_key":null,"server_url":null,"path":"window.location.pathname","ignore_local":false},"umami":{"src":null,"website_id":null,"domains":null,"start_time":"2024-01-01T00:00:00.000Z","token":null,"api_server":null},"woyaola":null,"cnzz":null},"search_path":"/local-search.xml","include_content_in_search":true};
+    var CONFIG = {"hostname":"blog.dwj601.cn","root":"/","version":"1.9.8","typing":{"enable":true,"typeSpeed":70,"cursorChar":"_","loop":false,"scope":[]},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"left","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"code_language":{"enable":true,"default":"TEXT"},"copy_btn":true,"image_caption":{"enable":true},"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"placement":"left","headingSelector":"h1,h2,h3,h4,h5","collapseDepth":3},"lazyload":{"enable":false,"loading_img":"https://dwj-oss.oss-cn-nanjing.aliyuncs.com/web-imgs/img-static/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":true,"follow_dnt":true,"baidu":"d08d23389220ad9b8f711cfb85757f4b","google":{"measurement_id":null},"tencent":{"sid":null,"cid":null},"leancloud":{"app_id":null,"app_key":null,"server_url":null,"path":"window.location.pathname","ignore_local":false},"umami":{"src":null,"website_id":null,"domains":null,"start_time":"2024-01-01T00:00:00.000Z","token":null,"api_server":null},"woyaola":null,"cnzz":null},"search_path":"/local-search.xml","include_content_in_search":true};
 
     if (CONFIG.web_analytics.follow_dnt) {
       var dntVal = navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack;
@@ -432,7 +432,7 @@
 <h2 id="概述">概述</h2>
 <p><strong>表示学习是什么</strong>？与传统的特征工程目的一致，为了得到数据中的更好的特征。不同的是，特征工程中的特征选择、特征映射等策略都是可控的方式，而表示学习就是利用深度学习从数据中学习高层的有效特征。</p>
 <p><strong>深度学习是什么</strong>？我们知道机器学习就是在手动处理完特征后，构建对应的模型 <strong>预测输出</strong>。而深度学习就是将机器学习的手动特征工程也用模型进行 <strong>表示学习</strong> 来学习出有效特征，然后继续构建模型 <strong>预测输出</strong>。如下图所示：</p>
-<p><img src="https://dwj-oss.oss-cn-nanjing.aliyuncs.com/images/202409121508150.png" srcset="https://dwj-oss.oss-cn-nanjing.aliyuncs.com/web-imgs/img-static/loading.gif" lazyload alt="深度学习的数据处理流程"></p>
+<p><img src="https://dwj-oss.oss-cn-nanjing.aliyuncs.com/images/202409121508150.png" alt="深度学习的数据处理流程"></p>
 <p><strong>为什么会有深度学习</strong>？最简单的一点就是，很多特征我们根本没法定义一种表示规则来表示特征，比如说对于图像，怎么定义复杂的图像的特征呢？比如说对于音频，又怎么定义复杂的音频的特征呢？没办法，我们直接学特征！</p>
 <p><strong>神经网络是什么</strong>？就是万千模型中的一种，仅此而已。</p>
 <p><strong>为什么用神经网络进行深度学习</strong>？有了上面对深度学习定义的理解，可以发现其中最具有挑战性的特点就是，模型怎么知道什么才是好特征？什么是不好的特征？神经网络可以很好的解决这个问题。通过由浅到深层层神经元的特征提取，深层的神经元就可以学习更高语义的特征，并且通过这种方式也可以实现「<strong>端到端</strong>」的学习方式，而不用像机器学习的方法那样，先选特征再学习。并且神经网络模型也可以很好的解决深度学习中特征的「<strong>贡献度分配</strong>」问题。</p>
@@ -460,7 +460,7 @@
 <p>空洞卷积。</p>
 <h4 id="2-2-卷积网络">2.2 卷积网络</h4>
 <p>卷积神经网络的典型结构如下图所示：</p>
-<p><img src="https://dwj-oss.oss-cn-nanjing.aliyuncs.com/images/202410311351161.png" srcset="https://dwj-oss.oss-cn-nanjing.aliyuncs.com/web-imgs/img-static/loading.gif" lazyload alt="卷积神经网络的典型结构"></p>
+<p><img src="https://dwj-oss.oss-cn-nanjing.aliyuncs.com/images/202410311351161.png" alt="卷积神经网络的典型结构"></p>
 <p>卷积层。对于二维卷积而言，我们假设输入共有 D 个图像，需要学习 P 个特征，并不是只需要学习 P 个卷积核的，对于每一个特征需要单独对每一张图像学习一个卷积核，因此需要学习 <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>D</mi><mo>×</mo><mi>P</mi></mrow><annotation encoding="application/x-tex">D\times P</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.7667em;vertical-align:-0.0833em;"></span><span class="mord mathnormal" style="margin-right:0.02778em;">D</span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mbin">×</span><span class="mspace" style="margin-right:0.2222em;"></span></span><span class="base"><span class="strut" style="height:0.6833em;"></span><span class="mord mathnormal" style="margin-right:0.13889em;">P</span></span></span></span> 个卷积核。</p>
 <p>汇聚层/池化层。从上面的卷积层学习逻辑可以看出其实参数量和全连接层相比还是很大，汇聚层就是通过压缩卷积核大小来降低参数量；与此同时，通过汇聚也可以起到去噪作用。</p>
 <p>其他卷积网络：</p>
@@ -486,7 +486,7 @@
 <h3 id="5-网络优化">5 网络优化</h3>
 <p>为了能够让一个网络模型「训练速度更快」和「泛化性能更好」，我们可以采用各种网络优化策略。针对一个神经网络，可以有如下五个角度的网路优化策略。</p>
 <h4 id="5-1-更好的优化算法">5.1 更好的优化算法</h4>
-<p><img src="https://dwj-oss.oss-cn-nanjing.aliyuncs.com/images/202412201527036.png" srcset="https://dwj-oss.oss-cn-nanjing.aliyuncs.com/web-imgs/img-static/loading.gif" lazyload alt="更好的优化算法"></p>
+<p><img src="https://dwj-oss.oss-cn-nanjing.aliyuncs.com/images/202412201527036.png" alt="更好的优化算法"></p>
 <h4 id="5-2-更好的参数初始化方法">5.2 更好的参数初始化方法</h4>
 <p>基于「范数保持性」的参数初始化方法</p>
 <h4 id="5-3-更好的数据预处理方法">5.3 更好的数据预处理方法</h4>
@@ -514,7 +514,7 @@
 <p><strong>mini-batch 与学习率的关系</strong>。对于网络中的超参数，如何进行选择呢？最朴素的方法就是网格搜索。对于随机梯度下降的参数优化算法，批大小与学习率一般成正比，即一批训练数据量越多，学习率越高。这是因为一批的训练数据越多，泛化能力就越高，对应的学习率就没必要太低。</p>
 <p><strong>学习率的动态调整算法</strong>。一般来说就是两个阶段，在初期的阶段，学习率线性增长，在之后的阶段中，学习率逐渐衰减。详情见 Facebook 的这篇论文 <a target="_blank" rel="noopener" href="https://arxiv.org/pdf/1706.02677">Accurate, Large Minibatch SGD: Training ImageNet in 1 Hour [2018]</a>。</p>
 <p>下图展示了预热学习率调整的学习效果。图源：<a target="_blank" rel="noopener" href="https://arxiv.org/abs/1812.01187v2">Bag of Tricks for Image Classification with Convolutional Neural Networks [2018]</a>。</p>
-<p><img src="https://dwj-oss.oss-cn-nanjing.aliyuncs.com/images/202412201601516.jpg" srcset="https://dwj-oss.oss-cn-nanjing.aliyuncs.com/web-imgs/img-static/loading.gif" lazyload alt="Visualization of learning rate schedules with warm-up.  Top:  cosine and step schedules for batch size 1024. Bottom: Top-1 validation accuracy curve with regard to the two schedules."></p>
+<p><img src="https://dwj-oss.oss-cn-nanjing.aliyuncs.com/images/202412201601516.jpg" alt="Visualization of learning rate schedules with warm-up.  Top:  cosine and step schedules for batch size 1024. Bottom: Top-1 validation accuracy curve with regard to the two schedules."></p>
 <h2 id="进阶模型">进阶模型</h2>
 <h3 id="6-序列生成模型">6 序列生成模型</h3>
 <h3 id="7-深度生成模型">7 深度生成模型</h3>
@@ -660,7 +660,7 @@
             
   
   
-    <article id="comments" lazyload>
+    <article id="comments">
       
   <script type="text/javascript">
     Fluid.utils.loadComments('#comments', function() {
@@ -1235,10 +1235,6 @@
 
 
 
-
-  
-    <script  src="/js/img-lazyload.js" ></script>
-  
 
 
 

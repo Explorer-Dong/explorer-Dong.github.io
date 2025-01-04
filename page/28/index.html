@@ -70,7 +70,7 @@
   <script id="fluid-configs">
     var Fluid = window.Fluid || {};
     Fluid.ctx = Object.assign({}, Fluid.ctx)
-    var CONFIG = {"hostname":"blog.dwj601.cn","root":"/","version":"1.9.8","typing":{"enable":true,"typeSpeed":70,"cursorChar":"_","loop":false,"scope":[]},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"left","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"code_language":{"enable":true,"default":"TEXT"},"copy_btn":true,"image_caption":{"enable":true},"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"placement":"left","headingSelector":"h1,h2,h3,h4,h5","collapseDepth":3},"lazyload":{"enable":true,"loading_img":"https://dwj-oss.oss-cn-nanjing.aliyuncs.com/web-imgs/img-static/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":true,"follow_dnt":true,"baidu":"d08d23389220ad9b8f711cfb85757f4b","google":{"measurement_id":null},"tencent":{"sid":null,"cid":null},"leancloud":{"app_id":null,"app_key":null,"server_url":null,"path":"window.location.pathname","ignore_local":false},"umami":{"src":null,"website_id":null,"domains":null,"start_time":"2024-01-01T00:00:00.000Z","token":null,"api_server":null},"woyaola":null,"cnzz":null},"search_path":"/local-search.xml","include_content_in_search":true};
+    var CONFIG = {"hostname":"blog.dwj601.cn","root":"/","version":"1.9.8","typing":{"enable":true,"typeSpeed":70,"cursorChar":"_","loop":false,"scope":[]},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"left","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"code_language":{"enable":true,"default":"TEXT"},"copy_btn":true,"image_caption":{"enable":true},"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"placement":"left","headingSelector":"h1,h2,h3,h4,h5","collapseDepth":3},"lazyload":{"enable":false,"loading_img":"https://dwj-oss.oss-cn-nanjing.aliyuncs.com/web-imgs/img-static/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":true,"follow_dnt":true,"baidu":"d08d23389220ad9b8f711cfb85757f4b","google":{"measurement_id":null},"tencent":{"sid":null,"cid":null},"leancloud":{"app_id":null,"app_key":null,"server_url":null,"path":"window.location.pathname","ignore_local":false},"umami":{"src":null,"website_id":null,"domains":null,"start_time":"2024-01-01T00:00:00.000Z","token":null,"api_server":null},"woyaola":null,"cnzz":null},"search_path":"/local-search.xml","include_content_in_search":true};
 
     if (CONFIG.web_analytics.follow_dnt) {
       var dntVal = navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack;
@@ -274,15 +274,15 @@
     <article class="col-12 col-md-12 mx-auto index-info">
       <h2 class="index-header">
         
-        <a href="/Algorithm/prefix-and-difference/" target="_blank">
-          prefix-and-difference
+        <a href="/Algorithm/greedy/" target="_blank">
+          greedy
         </a>
       </h2>
 
       
-      <a class="index-excerpt index-excerpt__noimg" href="/Algorithm/prefix-and-difference/" target="_blank">
+      <a class="index-excerpt index-excerpt__noimg" href="/Algorithm/greedy/" target="_blank">
         <div>
-          前缀和与差分 前缀和是正向思维，差分是前缀和的逆向思维。 【差分/排序】充能计划 https://www.lanqiao.cn/problems/8732/learning/?contest_id=147  题意：给定 nnn 个数初始化为 000，现在给定 qqq 个位置，每个位置给定两个参数 p,kp,kp,k，表示从第 kkk 个数开始连续 s[p]s[p]s[p] 个数 +1+1+1，返回
+          贪心 大胆猜测，小心求证（不会证也没事，做下一题吧）。证明方法总结了以下几种  反证法：假设取一种方案比贪心方案更好，得出相反的结论 边界法：从边界开始考虑，因为满足边界条件更加容易枚举，从而进行后续的贪心 直觉法：遵循社会法则（）  1. green_gold_dog, array and permutation https://codeforces.com/contest/1867/probl
         </div>
       </a>
 
@@ -382,15 +382,15 @@
     <article class="col-12 col-md-12 mx-auto index-info">
       <h2 class="index-header">
         
-        <a href="/Algorithm/dfs-and-similar/" target="_blank">
-          dfs-and-similar
+        <a href="/Algorithm/data-structure/" target="_blank">
+          data-structure
         </a>
       </h2>
 
       
-      <a class="index-excerpt index-excerpt__noimg" href="/Algorithm/dfs-and-similar/" target="_blank">
+      <a class="index-excerpt index-excerpt__noimg" href="/Algorithm/data-structure/" target="_blank">
         <div>
-          搜索 无论是深搜还是宽搜，都逃不掉图的思维。我们将搜索图建立起来之后，剩余的编码过程就会跃然纸上。 【dfs】机器人的运动范围 https://www.acwing.com/problem/content/22/ 1234567891011121314151617181920212223242526272829303132333435class Solution {public:    int r
+          数据结构 数据结构由 数据 和 结构 两部分组成。我们主要讨论的是后者，即结构部分。 按照 逻辑结构 可以将其区分为 线性结构 和 非线性结构。  按照 物理结构 可以将其区分为 连续结构 和 分散结构。  【模板】双链表 https://www.acwing.com/problem/content/829/  思路：用两个空结点作为起始状态的边界，避免所有边界讨论。 时间复杂度：插入、删除结点均
         </div>
       </a>
 
@@ -567,10 +567,6 @@
 
 
 
-
-  
-    <script  src="/js/img-lazyload.js" ></script>
-  
 
 
 

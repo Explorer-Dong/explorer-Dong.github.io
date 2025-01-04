@@ -85,7 +85,7 @@
   <script id="fluid-configs">
     var Fluid = window.Fluid || {};
     Fluid.ctx = Object.assign({}, Fluid.ctx)
-    var CONFIG = {"hostname":"blog.dwj601.cn","root":"/","version":"1.9.8","typing":{"enable":true,"typeSpeed":70,"cursorChar":"_","loop":false,"scope":[]},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"left","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"code_language":{"enable":true,"default":"TEXT"},"copy_btn":true,"image_caption":{"enable":true},"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"placement":"left","headingSelector":"h1,h2,h3,h4,h5","collapseDepth":3},"lazyload":{"enable":true,"loading_img":"https://dwj-oss.oss-cn-nanjing.aliyuncs.com/web-imgs/img-static/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":true,"follow_dnt":true,"baidu":"d08d23389220ad9b8f711cfb85757f4b","google":{"measurement_id":null},"tencent":{"sid":null,"cid":null},"leancloud":{"app_id":null,"app_key":null,"server_url":null,"path":"window.location.pathname","ignore_local":false},"umami":{"src":null,"website_id":null,"domains":null,"start_time":"2024-01-01T00:00:00.000Z","token":null,"api_server":null},"woyaola":null,"cnzz":null},"search_path":"/local-search.xml","include_content_in_search":true};
+    var CONFIG = {"hostname":"blog.dwj601.cn","root":"/","version":"1.9.8","typing":{"enable":true,"typeSpeed":70,"cursorChar":"_","loop":false,"scope":[]},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"left","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"code_language":{"enable":true,"default":"TEXT"},"copy_btn":true,"image_caption":{"enable":true},"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"placement":"left","headingSelector":"h1,h2,h3,h4,h5","collapseDepth":3},"lazyload":{"enable":false,"loading_img":"https://dwj-oss.oss-cn-nanjing.aliyuncs.com/web-imgs/img-static/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":true,"follow_dnt":true,"baidu":"d08d23389220ad9b8f711cfb85757f4b","google":{"measurement_id":null},"tencent":{"sid":null,"cid":null},"leancloud":{"app_id":null,"app_key":null,"server_url":null,"path":"window.location.pathname","ignore_local":false},"umami":{"src":null,"website_id":null,"domains":null,"start_time":"2024-01-01T00:00:00.000Z","token":null,"api_server":null},"woyaola":null,"cnzz":null},"search_path":"/local-search.xml","include_content_in_search":true};
 
     if (CONFIG.web_analytics.follow_dnt) {
       var dntVal = navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack;
@@ -361,16 +361,16 @@
 <h3 id="问题复现">问题复现</h3>
 <p>本地 typora 正常渲染，但是服务器渲染异常。发现是服务器的渲染脚本版本过低，无法渲染最新的 mermaid 版本内容。</p>
 <p>本地 typora 支持的 mermaid 版本：</p>
-<p><img src="https://dwj-oss.oss-cn-nanjing.aliyuncs.com/images/202409120854588.png" srcset="https://dwj-oss.oss-cn-nanjing.aliyuncs.com/web-imgs/img-static/loading.gif" lazyload alt="本地 typora 支持的 mermaid 版本"></p>
+<p><img src="https://dwj-oss.oss-cn-nanjing.aliyuncs.com/images/202409120854588.png" alt="本地 typora 支持的 mermaid 版本"></p>
 <p>网站支持的 mermaid 版本</p>
-<p><img src="https://dwj-oss.oss-cn-nanjing.aliyuncs.com/images/202409120858955.png" srcset="https://dwj-oss.oss-cn-nanjing.aliyuncs.com/web-imgs/img-static/loading.gif" lazyload alt="网站支持的 mermaid 版本"></p>
+<p><img src="https://dwj-oss.oss-cn-nanjing.aliyuncs.com/images/202409120858955.png" alt="网站支持的 mermaid 版本"></p>
 <h3 id="尝试解决">尝试解决</h3>
 <p>修改 <code>_config_fluid.yml</code> 中的 mermaid CDN 信息。由于原来的 CDN 不支持更高版本的 mermaid CDN，所以直接用官方的。</p>
-<p><img src="https://dwj-oss.oss-cn-nanjing.aliyuncs.com/images/202409120902191.png" srcset="https://dwj-oss.oss-cn-nanjing.aliyuncs.com/web-imgs/img-static/loading.gif" lazyload alt="修改 hexo-fluid 配置的 mermaid CDN 版本"></p>
+<p><img src="https://dwj-oss.oss-cn-nanjing.aliyuncs.com/images/202409120902191.png" alt="修改 hexo-fluid 配置的 mermaid CDN 版本"></p>
 <p>注：<a target="_blank" rel="noopener" href="https://www.jsdelivr.com/package/npm/mermaid?version=10.9.1">官网</a>给出的链接无法在 hexo 的 fluid 主题中正常渲染，因为多了一个文件名 <code>mermaid.min.js</code>，显然 fluid 的 cdn 配置会在根目录自动寻找 <code>.js</code> 文件进行渲染。</p>
 <h3 id="问题解决">问题解决</h3>
 <p>最后服务器可以正常渲染 mermaid 图标。</p>
-<p><img src="https://dwj-oss.oss-cn-nanjing.aliyuncs.com/images/202409120850752.png" srcset="https://dwj-oss.oss-cn-nanjing.aliyuncs.com/web-imgs/img-static/loading.gif" lazyload alt="正常渲染"></p>
+<p><img src="https://dwj-oss.oss-cn-nanjing.aliyuncs.com/images/202409120850752.png" alt="正常渲染"></p>
 
                 
               </div>
@@ -490,7 +490,7 @@
             
   
   
-    <article id="comments" lazyload>
+    <article id="comments">
       
   <script type="text/javascript">
     Fluid.utils.loadComments('#comments', function() {
@@ -974,10 +974,6 @@
 
 
 
-
-  
-    <script  src="/js/img-lazyload.js" ></script>
-  
 
 
 

@@ -86,7 +86,7 @@
   <script id="fluid-configs">
     var Fluid = window.Fluid || {};
     Fluid.ctx = Object.assign({}, Fluid.ctx)
-    var CONFIG = {"hostname":"blog.dwj601.cn","root":"/","version":"1.9.8","typing":{"enable":true,"typeSpeed":70,"cursorChar":"_","loop":false,"scope":[]},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"left","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"code_language":{"enable":true,"default":"TEXT"},"copy_btn":true,"image_caption":{"enable":true},"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"placement":"left","headingSelector":"h1,h2,h3,h4,h5","collapseDepth":3},"lazyload":{"enable":true,"loading_img":"https://dwj-oss.oss-cn-nanjing.aliyuncs.com/web-imgs/img-static/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":true,"follow_dnt":true,"baidu":"d08d23389220ad9b8f711cfb85757f4b","google":{"measurement_id":null},"tencent":{"sid":null,"cid":null},"leancloud":{"app_id":null,"app_key":null,"server_url":null,"path":"window.location.pathname","ignore_local":false},"umami":{"src":null,"website_id":null,"domains":null,"start_time":"2024-01-01T00:00:00.000Z","token":null,"api_server":null},"woyaola":null,"cnzz":null},"search_path":"/local-search.xml","include_content_in_search":true};
+    var CONFIG = {"hostname":"blog.dwj601.cn","root":"/","version":"1.9.8","typing":{"enable":true,"typeSpeed":70,"cursorChar":"_","loop":false,"scope":[]},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"left","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"code_language":{"enable":true,"default":"TEXT"},"copy_btn":true,"image_caption":{"enable":true},"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"placement":"left","headingSelector":"h1,h2,h3,h4,h5","collapseDepth":3},"lazyload":{"enable":false,"loading_img":"https://dwj-oss.oss-cn-nanjing.aliyuncs.com/web-imgs/img-static/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":true,"follow_dnt":true,"baidu":"d08d23389220ad9b8f711cfb85757f4b","google":{"measurement_id":null},"tencent":{"sid":null,"cid":null},"leancloud":{"app_id":null,"app_key":null,"server_url":null,"path":"window.location.pathname","ignore_local":false},"umami":{"src":null,"website_id":null,"domains":null,"start_time":"2024-01-01T00:00:00.000Z","token":null,"api_server":null},"woyaola":null,"cnzz":null},"search_path":"/local-search.xml","include_content_in_search":true};
 
     if (CONFIG.web_analytics.follow_dnt) {
       var dntVal = navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack;
@@ -362,11 +362,11 @@
 <p>刚想登录阿里云看看云 GPU 怎么租的，结果给我报了个安全问题。平时都是直接忽略，今天有兴致看了一眼，不看不知道一看吓一跳，尼玛被一个从没去过且没有挂 VPN 的 IP 登陆了。虽然不是 root 用户登的并且机子上也没啥机密文件，但是还是有一种被人看光的感觉。他爹的，我也不知道该怎么报复，记录一下修复的过程</p>
 <h3 id="一、确认被入侵">一、确认被入侵</h3>
 <p>本来的公钥文件 <code>authorized_keys</code> 没了：</p>
-<p><img src="https://dwj-oss.oss-cn-nanjing.aliyuncs.com/images/202406152117426.png" srcset="https://dwj-oss.oss-cn-nanjing.aliyuncs.com/web-imgs/img-static/loading.gif" lazyload alt="本来的公钥文件 authorized_keys 没了"></p>
+<p><img src="https://dwj-oss.oss-cn-nanjing.aliyuncs.com/images/202406152117426.png" alt="本来的公钥文件 authorized_keys 没了"></p>
 <p>本地进行 ssh 免密传输就失效了：</p>
-<p><img src="https://dwj-oss.oss-cn-nanjing.aliyuncs.com/images/202406152121682.png" srcset="https://dwj-oss.oss-cn-nanjing.aliyuncs.com/web-imgs/img-static/loading.gif" lazyload alt="需要输入密码说明 ssh 免密传输失效"></p>
+<p><img src="https://dwj-oss.oss-cn-nanjing.aliyuncs.com/images/202406152121682.png" alt="需要输入密码说明 ssh 免密传输失效"></p>
 <p>查看系统日志 <code>/var/log/auth.log</code> 发现被腾讯云的上海 ip 爆破了：</p>
-<p><img src="https://dwj-oss.oss-cn-nanjing.aliyuncs.com/images/202406152121637.png" srcset="https://dwj-oss.oss-cn-nanjing.aliyuncs.com/web-imgs/img-static/loading.gif" lazyload alt="发现真凶！"></p>
+<p><img src="https://dwj-oss.oss-cn-nanjing.aliyuncs.com/images/202406152121637.png" alt="发现真凶！"></p>
 <h3 id="二、调整鉴权信息">二、调整鉴权信息</h3>
 <h4 id="2-1-更改所有用户的密码">2.1 更改所有用户的密码</h4>
 <p>一共就创建了 root 超级用户和 git 普通用户。root 用户就没改了，把 git 用户的改了：</p>
@@ -383,10 +383,10 @@
 <p>（二）重启 ssh 服务。保存上述修改文件后运行：</p>
 <figure class="highlight bash"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash"><span class="hljs-built_in">sudo</span> systemctl restart sshd<br></code></pre></td></tr></tbody></table></figure>
 <p>（三）测试密码连接。禁用后换一台机子尝试进行 ssh 连接，连接失败说明设置成功：</p>
-<p><img src="https://dwj-oss.oss-cn-nanjing.aliyuncs.com/images/202406152152670.png" srcset="https://dwj-oss.oss-cn-nanjing.aliyuncs.com/web-imgs/img-static/loading.gif" lazyload alt="连接失败说明禁用密码登录设置成功"></p>
+<p><img src="https://dwj-oss.oss-cn-nanjing.aliyuncs.com/images/202406152152670.png" alt="连接失败说明禁用密码登录设置成功"></p>
 <h3 id="三、问题溯源">三、问题溯源</h3>
 <p>曾经在新建 git 用户时没有设置登录密码？曾经在创建这个 git 用户时，没有注意到密码是怎么设置的，可能设置的太简单了？或者没有设置密码？当时还记录了，如下：</p>
-<p><img src="https://dwj-oss.oss-cn-nanjing.aliyuncs.com/images/202406152158086.png" srcset="https://dwj-oss.oss-cn-nanjing.aliyuncs.com/web-imgs/img-static/loading.gif" lazyload alt="翻车原罪"></p>
+<p><img src="https://dwj-oss.oss-cn-nanjing.aliyuncs.com/images/202406152158086.png" alt="翻车原罪"></p>
 <h3 id="四、参考">四、参考</h3>
 <p><a target="_blank" rel="noopener" href="https://docs.github.com/en/authentication/troubleshooting-ssh/error-permission-denied-publickey?platform=linux">Error: Permission denied (publickey)</a></p>
 
@@ -508,7 +508,7 @@
             
   
   
-    <article id="comments" lazyload>
+    <article id="comments">
       
   <script type="text/javascript">
     Fluid.utils.loadComments('#comments', function() {
@@ -919,10 +919,6 @@
 
 
 
-
-  
-    <script  src="/js/img-lazyload.js" ></script>
-  
 
 
 

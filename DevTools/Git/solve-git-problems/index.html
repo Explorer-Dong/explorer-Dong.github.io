@@ -105,7 +105,7 @@
   <script id="fluid-configs">
     var Fluid = window.Fluid || {};
     Fluid.ctx = Object.assign({}, Fluid.ctx)
-    var CONFIG = {"hostname":"blog.dwj601.cn","root":"/","version":"1.9.8","typing":{"enable":true,"typeSpeed":70,"cursorChar":"_","loop":false,"scope":[]},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"left","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"code_language":{"enable":true,"default":"TEXT"},"copy_btn":true,"image_caption":{"enable":true},"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"placement":"left","headingSelector":"h1,h2,h3,h4,h5","collapseDepth":3},"lazyload":{"enable":true,"loading_img":"https://dwj-oss.oss-cn-nanjing.aliyuncs.com/web-imgs/img-static/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":true,"follow_dnt":true,"baidu":"d08d23389220ad9b8f711cfb85757f4b","google":{"measurement_id":null},"tencent":{"sid":null,"cid":null},"leancloud":{"app_id":null,"app_key":null,"server_url":null,"path":"window.location.pathname","ignore_local":false},"umami":{"src":null,"website_id":null,"domains":null,"start_time":"2024-01-01T00:00:00.000Z","token":null,"api_server":null},"woyaola":null,"cnzz":null},"search_path":"/local-search.xml","include_content_in_search":true};
+    var CONFIG = {"hostname":"blog.dwj601.cn","root":"/","version":"1.9.8","typing":{"enable":true,"typeSpeed":70,"cursorChar":"_","loop":false,"scope":[]},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"left","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"code_language":{"enable":true,"default":"TEXT"},"copy_btn":true,"image_caption":{"enable":true},"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"placement":"left","headingSelector":"h1,h2,h3,h4,h5","collapseDepth":3},"lazyload":{"enable":false,"loading_img":"https://dwj-oss.oss-cn-nanjing.aliyuncs.com/web-imgs/img-static/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":true,"follow_dnt":true,"baidu":"d08d23389220ad9b8f711cfb85757f4b","google":{"measurement_id":null},"tencent":{"sid":null,"cid":null},"leancloud":{"app_id":null,"app_key":null,"server_url":null,"path":"window.location.pathname","ignore_local":false},"umami":{"src":null,"website_id":null,"domains":null,"start_time":"2024-01-01T00:00:00.000Z","token":null,"api_server":null},"woyaola":null,"cnzz":null},"search_path":"/local-search.xml","include_content_in_search":true};
 
     if (CONFIG.web_analytics.follow_dnt) {
       var dntVal = navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack;
@@ -383,50 +383,50 @@
 <p>一直习惯于 add commit push 的三步走，偶然间看到了一个评论说在 push 之前还有一个 pull，小小的疑问就埋在了我的心里。于是我就先了解了 pull 的工作原理，就是先拉取代码（fetch）再合并分支（merge）的过程，简而言之就是在本地进行项目编写时，他人也在其他地方进行项目编写并且提前进行了 push 操作，使得当前的云端文件比我克隆下来的文件版本更加新，那么进行合并就会因为冲突被拒绝（rejected）。因此才需要先更新项目（pull），再进行我的 push。那么问题来了，如果别人编写的内容与我编写的内容在源文件的同一个地方，那不就出问题了吗？！于是有了这篇文章</p>
 <h3 id="二、项目演示">二、项目演示</h3>
 <p>我们通过 github 上的 Network 进行可视化讲解。假设现在我们有一个本地项目、github 空仓库、本地仓库提交记录，如下</p>
-<p><img src="https://dwj-oss.oss-cn-nanjing.aliyuncs.com/images/202402270029674.png" srcset="https://dwj-oss.oss-cn-nanjing.aliyuncs.com/web-imgs/img-static/loading.gif" lazyload alt="github 空仓库"></p>
-<p><img src="https://dwj-oss.oss-cn-nanjing.aliyuncs.com/images/202402270029675.png" srcset="https://dwj-oss.oss-cn-nanjing.aliyuncs.com/web-imgs/img-static/loading.gif" lazyload alt="本地项目文件夹"></p>
-<p><img src="https://dwj-oss.oss-cn-nanjing.aliyuncs.com/images/202402270029676.png" srcset="https://dwj-oss.oss-cn-nanjing.aliyuncs.com/web-imgs/img-static/loading.gif" lazyload alt="本地仓库提交记录"></p>
+<p><img src="https://dwj-oss.oss-cn-nanjing.aliyuncs.com/images/202402270029674.png" alt="github 空仓库"></p>
+<p><img src="https://dwj-oss.oss-cn-nanjing.aliyuncs.com/images/202402270029675.png" alt="本地项目文件夹"></p>
+<p><img src="https://dwj-oss.oss-cn-nanjing.aliyuncs.com/images/202402270029676.png" alt="本地仓库提交记录"></p>
 <p>第一次 push 后，我们查看 Network 效果如下：</p>
-<p><img src="https://dwj-oss.oss-cn-nanjing.aliyuncs.com/images/202402270029677.png" srcset="https://dwj-oss.oss-cn-nanjing.aliyuncs.com/web-imgs/img-static/loading.gif" lazyload alt="第一次 push 后的 Network"></p>
+<p><img src="https://dwj-oss.oss-cn-nanjing.aliyuncs.com/images/202402270029677.png" alt="第一次 push 后的 Network"></p>
 <p>已知 <a target="_blank" rel="noopener" href="http://test.md">test.md</a> 文件中内容现在是这样的</p>
-<p><img src="https://dwj-oss.oss-cn-nanjing.aliyuncs.com/images/202402270029678.png" srcset="https://dwj-oss.oss-cn-nanjing.aliyuncs.com/web-imgs/img-static/loading.gif" lazyload alt="test.md 文件中内容"></p>
+<p><img src="https://dwj-oss.oss-cn-nanjing.aliyuncs.com/images/202402270029678.png" alt="test.md 文件中内容"></p>
 <h4 id="2-1-没有冲突时">2.1 没有冲突时</h4>
 <p>现在我们在本地对 <a target="_blank" rel="noopener" href="http://test.md">test.md</a> 文件进行编辑，编辑后如下：</p>
-<p><img src="https://dwj-oss.oss-cn-nanjing.aliyuncs.com/images/202402270029680.png" srcset="https://dwj-oss.oss-cn-nanjing.aliyuncs.com/web-imgs/img-static/loading.gif" lazyload alt="编辑后的 test.md 文件"></p>
+<p><img src="https://dwj-oss.oss-cn-nanjing.aliyuncs.com/images/202402270029680.png" alt="编辑后的 test.md 文件"></p>
 <p>然后在 github 上对该文件的 <strong>其他地方</strong> 进行编辑并 push，模拟 <strong>别人更早更新项目代码但是不冲突</strong> 的情况，如下：</p>
-<p><img src="https://dwj-oss.oss-cn-nanjing.aliyuncs.com/images/202402270029681.png" srcset="https://dwj-oss.oss-cn-nanjing.aliyuncs.com/web-imgs/img-static/loading.gif" lazyload alt="模拟别人更早更新项目代码的情况"></p>
+<p><img src="https://dwj-oss.oss-cn-nanjing.aliyuncs.com/images/202402270029681.png" alt="模拟别人更早更新项目代码的情况"></p>
 <p>现在我们在本地进行提交操作，显然会报错，因为远程已经更新：</p>
-<p><img src="https://dwj-oss.oss-cn-nanjing.aliyuncs.com/images/202402270029682.png" srcset="https://dwj-oss.oss-cn-nanjing.aliyuncs.com/web-imgs/img-static/loading.gif" lazyload alt="远程已经更新而被 rejected"></p>
+<p><img src="https://dwj-oss.oss-cn-nanjing.aliyuncs.com/images/202402270029682.png" alt="远程已经更新而被 rejected"></p>
 <p>现在我们需要进行合并，也就是执行 pull，再 push 即可，由于合并后会产生一个新的结点，因此会弹出 vim 界面让你编写 comment：</p>
-<p><img src="https://dwj-oss.oss-cn-nanjing.aliyuncs.com/images/202402270029683.png" srcset="https://dwj-oss.oss-cn-nanjing.aliyuncs.com/web-imgs/img-static/loading.gif" lazyload alt="vim 界面"></p>
+<p><img src="https://dwj-oss.oss-cn-nanjing.aliyuncs.com/images/202402270029683.png" alt="vim 界面"></p>
 <p>然后就成功 pull 了代码，之后再 push 就没问题了：</p>
-<p><img src="https://dwj-oss.oss-cn-nanjing.aliyuncs.com/images/202402270029684.png" srcset="https://dwj-oss.oss-cn-nanjing.aliyuncs.com/web-imgs/img-static/loading.gif" lazyload alt="成功 push 了代码"></p>
-<p><img src="https://dwj-oss.oss-cn-nanjing.aliyuncs.com/images/202402270029685.png" srcset="https://dwj-oss.oss-cn-nanjing.aliyuncs.com/web-imgs/img-static/loading.gif" lazyload alt="成功 push 了代码"></p>
+<p><img src="https://dwj-oss.oss-cn-nanjing.aliyuncs.com/images/202402270029684.png" alt="成功 push 了代码"></p>
+<p><img src="https://dwj-oss.oss-cn-nanjing.aliyuncs.com/images/202402270029685.png" alt="成功 push 了代码"></p>
 <p>我们来看一下现在的 <a target="_blank" rel="noopener" href="http://test.md">test.md</a> 是什么样的：</p>
-<p><img src="https://dwj-oss.oss-cn-nanjing.aliyuncs.com/images/202402270029686.png" srcset="https://dwj-oss.oss-cn-nanjing.aliyuncs.com/web-imgs/img-static/loading.gif" lazyload alt="无冲突合并后的结果"></p>
+<p><img src="https://dwj-oss.oss-cn-nanjing.aliyuncs.com/images/202402270029686.png" alt="无冲突合并后的结果"></p>
 <p>可以发现内容进行了合并，现在的 Network 图如下：</p>
-<p><img src="https://dwj-oss.oss-cn-nanjing.aliyuncs.com/images/202402270029687.png" srcset="https://dwj-oss.oss-cn-nanjing.aliyuncs.com/web-imgs/img-static/loading.gif" lazyload alt="现在的 Network 图"></p>
+<p><img src="https://dwj-oss.oss-cn-nanjing.aliyuncs.com/images/202402270029687.png" alt="现在的 Network 图"></p>
 <h4 id="2-2-有冲突时">2.2 有冲突时</h4>
 <p>为了更加直观的展示，我们在原有的基础上多增加几个正常结点，当前 Network 如下：</p>
-<p><img src="https://dwj-oss.oss-cn-nanjing.aliyuncs.com/images/202402270029688.png" srcset="https://dwj-oss.oss-cn-nanjing.aliyuncs.com/web-imgs/img-static/loading.gif" lazyload alt="当前 Network 图"></p>
+<p><img src="https://dwj-oss.oss-cn-nanjing.aliyuncs.com/images/202402270029688.png" alt="当前 Network 图"></p>
 <p>然后我们在本地对 <a target="_blank" rel="noopener" href="http://test.md">test.md</a> 文件进行编写：</p>
-<p><img src="https://dwj-oss.oss-cn-nanjing.aliyuncs.com/images/202402270029689.png" srcset="https://dwj-oss.oss-cn-nanjing.aliyuncs.com/web-imgs/img-static/loading.gif" lazyload alt="第二次本地修改"></p>
+<p><img src="https://dwj-oss.oss-cn-nanjing.aliyuncs.com/images/202402270029689.png" alt="第二次本地修改"></p>
 <p>然后在 github 上对该文件的 <strong>相同地方</strong> 进行编辑并 push，模拟 <strong>别人更早更新项目代码但是发生冲突</strong> 的情况，如下：</p>
-<p><img src="https://dwj-oss.oss-cn-nanjing.aliyuncs.com/images/202402270029690.png" srcset="https://dwj-oss.oss-cn-nanjing.aliyuncs.com/web-imgs/img-static/loading.gif" lazyload alt="模拟别人更早更新项目代码但是发生冲突的情况"></p>
+<p><img src="https://dwj-oss.oss-cn-nanjing.aliyuncs.com/images/202402270029690.png" alt="模拟别人更早更新项目代码但是发生冲突的情况"></p>
 <p>然后 add、commit，在视图 pull 进行合并时，出现了问题：</p>
-<p><img src="https://dwj-oss.oss-cn-nanjing.aliyuncs.com/images/202402270029691.png" srcset="https://dwj-oss.oss-cn-nanjing.aliyuncs.com/web-imgs/img-static/loading.gif" lazyload alt="提示冲突同时分支名变成了 main|MERGING"></p>
+<p><img src="https://dwj-oss.oss-cn-nanjing.aliyuncs.com/images/202402270029691.png" alt="提示冲突同时分支名变成了 main|MERGING"></p>
 <p>提示我们修复冲突后再进行 commit，同时分支名变成了 <code>main|MERGING</code> 状态，本地试图 push 的代码也出现了变化，如下：</p>
-<p><img src="https://dwj-oss.oss-cn-nanjing.aliyuncs.com/images/202402270029692.png" srcset="https://dwj-oss.oss-cn-nanjing.aliyuncs.com/web-imgs/img-static/loading.gif" lazyload alt="本地试图 push 的代码"></p>
+<p><img src="https://dwj-oss.oss-cn-nanjing.aliyuncs.com/images/202402270029692.png" alt="本地试图 push 的代码"></p>
 <p>我们也可以使用 <code>git diff</code> 或 <code>git status</code> 来查看冲突：</p>
-<p><img src="https://dwj-oss.oss-cn-nanjing.aliyuncs.com/images/202402270029693.png" srcset="https://dwj-oss.oss-cn-nanjing.aliyuncs.com/web-imgs/img-static/loading.gif" lazyload alt="使用 git diff 或 git status 来查看冲突"></p>
+<p><img src="https://dwj-oss.oss-cn-nanjing.aliyuncs.com/images/202402270029693.png" alt="使用 git diff 或 git status 来查看冲突"></p>
 <p>其中，<code>&lt;&lt;&lt;&lt;&lt;&lt;&lt;</code> 和 <code>=======</code> 之间是 HEAD 的代码，<code>========</code> 和 <code>&gt;&gt;&gt;&gt;&gt;&gt;&gt;</code> 之间是 main 的代码，git 对冲突内容主动进行了错位，<strong>我方最新内容在上</strong>（也就是 HEAD 的代码），<strong>分支最新内容在下</strong>，确保不会再冲突。我们根据实际情况解决冲突内容，如下：</p>
-<p><img src="https://dwj-oss.oss-cn-nanjing.aliyuncs.com/images/202402270029694.png" srcset="https://dwj-oss.oss-cn-nanjing.aliyuncs.com/web-imgs/img-static/loading.gif" lazyload alt="根据实际情况解决冲突内容后"></p>
+<p><img src="https://dwj-oss.oss-cn-nanjing.aliyuncs.com/images/202402270029694.png" alt="根据实际情况解决冲突内容后"></p>
 <p>然后我们重新 commit 并加上 -a 参数后，进行 push：</p>
-<p><img src="https://dwj-oss.oss-cn-nanjing.aliyuncs.com/images/202402270029695.png" srcset="https://dwj-oss.oss-cn-nanjing.aliyuncs.com/web-imgs/img-static/loading.gif" lazyload alt="重新 commit 并加上 -a 参数后，进行 push"></p>
+<p><img src="https://dwj-oss.oss-cn-nanjing.aliyuncs.com/images/202402270029695.png" alt="重新 commit 并加上 -a 参数后，进行 push"></p>
 <p>最终 <a target="_blank" rel="noopener" href="http://test.md">test.md</a> 内容如图：</p>
-<p><img src="https://dwj-oss.oss-cn-nanjing.aliyuncs.com/images/202402270029696.png" srcset="https://dwj-oss.oss-cn-nanjing.aliyuncs.com/web-imgs/img-static/loading.gif" lazyload alt="最终 test.md 内容"></p>
+<p><img src="https://dwj-oss.oss-cn-nanjing.aliyuncs.com/images/202402270029696.png" alt="最终 test.md 内容"></p>
 <p>最终 Network 如图：</p>
-<p><img src="https://dwj-oss.oss-cn-nanjing.aliyuncs.com/images/202402270029697.png" srcset="https://dwj-oss.oss-cn-nanjing.aliyuncs.com/web-imgs/img-static/loading.gif" lazyload alt="最终 Network 图"></p>
+<p><img src="https://dwj-oss.oss-cn-nanjing.aliyuncs.com/images/202402270029697.png" alt="最终 Network 图"></p>
 <h3 id="三、总结">三、总结</h3>
 <p>总的来说，就两句话</p>
 <ul>
@@ -441,7 +441,7 @@
 <h2 id="解决-git-bash-自动对中文的转义">解决 git bash 自动对中文的转义</h2>
 <h4 id="问题重述">问题重述</h4>
 <p>在使用 git bash 命令行工具时，会自动对中文进行转义，其他的，命令行工具则不会，如下图：</p>
-<p><img src="https://dwj-oss.oss-cn-nanjing.aliyuncs.com/images/202409010902437.png" srcset="https://dwj-oss.oss-cn-nanjing.aliyuncs.com/web-imgs/img-static/loading.gif" lazyload alt="git bash VS other bash"></p>
+<p><img src="https://dwj-oss.oss-cn-nanjing.aliyuncs.com/images/202409010902437.png" alt="git bash VS other bash"></p>
 <h4 id="解决方案">解决方案</h4>
 <p>在 git bash 终端输入：</p>
 <figure class="highlight bash"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">git config --global core.quotepath <span class="hljs-literal">false</span><br></code></pre></td></tr></tbody></table></figure>
@@ -566,7 +566,7 @@
             
   
   
-    <article id="comments" lazyload>
+    <article id="comments">
       
   <script type="text/javascript">
     Fluid.utils.loadComments('#comments', function() {
@@ -1014,10 +1014,6 @@
 
 
 
-
-  
-    <script  src="/js/img-lazyload.js" ></script>
-  
 
 
 

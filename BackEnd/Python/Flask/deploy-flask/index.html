@@ -87,7 +87,7 @@
   <script id="fluid-configs">
     var Fluid = window.Fluid || {};
     Fluid.ctx = Object.assign({}, Fluid.ctx)
-    var CONFIG = {"hostname":"blog.dwj601.cn","root":"/","version":"1.9.8","typing":{"enable":true,"typeSpeed":70,"cursorChar":"_","loop":false,"scope":[]},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"left","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"code_language":{"enable":true,"default":"TEXT"},"copy_btn":true,"image_caption":{"enable":true},"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"placement":"left","headingSelector":"h1,h2,h3,h4,h5","collapseDepth":3},"lazyload":{"enable":true,"loading_img":"https://dwj-oss.oss-cn-nanjing.aliyuncs.com/web-imgs/img-static/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":true,"follow_dnt":true,"baidu":"d08d23389220ad9b8f711cfb85757f4b","google":{"measurement_id":null},"tencent":{"sid":null,"cid":null},"leancloud":{"app_id":null,"app_key":null,"server_url":null,"path":"window.location.pathname","ignore_local":false},"umami":{"src":null,"website_id":null,"domains":null,"start_time":"2024-01-01T00:00:00.000Z","token":null,"api_server":null},"woyaola":null,"cnzz":null},"search_path":"/local-search.xml","include_content_in_search":true};
+    var CONFIG = {"hostname":"blog.dwj601.cn","root":"/","version":"1.9.8","typing":{"enable":true,"typeSpeed":70,"cursorChar":"_","loop":false,"scope":[]},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"left","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"code_language":{"enable":true,"default":"TEXT"},"copy_btn":true,"image_caption":{"enable":true},"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"placement":"left","headingSelector":"h1,h2,h3,h4,h5","collapseDepth":3},"lazyload":{"enable":false,"loading_img":"https://dwj-oss.oss-cn-nanjing.aliyuncs.com/web-imgs/img-static/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":true,"follow_dnt":true,"baidu":"d08d23389220ad9b8f711cfb85757f4b","google":{"measurement_id":null},"tencent":{"sid":null,"cid":null},"leancloud":{"app_id":null,"app_key":null,"server_url":null,"path":"window.location.pathname","ignore_local":false},"umami":{"src":null,"website_id":null,"domains":null,"start_time":"2024-01-01T00:00:00.000Z","token":null,"api_server":null},"woyaola":null,"cnzz":null},"search_path":"/local-search.xml","include_content_in_search":true};
 
     if (CONFIG.web_analytics.follow_dnt) {
       var dntVal = navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack;
@@ -403,12 +403,12 @@
 <ul>
 <li>
 <p>首先我们需要在本地的 DataGrip 上连接服务器的 MySQL 数据库</p>
-<p><img src="https://dwj-oss.oss-cn-nanjing.aliyuncs.com/images/202401260126613.png" srcset="https://dwj-oss.oss-cn-nanjing.aliyuncs.com/web-imgs/img-static/loading.gif" lazyload alt="选择 MySQL 数据库"></p>
-<p><img src="https://dwj-oss.oss-cn-nanjing.aliyuncs.com/images/202401260126614.png" srcset="https://dwj-oss.oss-cn-nanjing.aliyuncs.com/web-imgs/img-static/loading.gif" lazyload alt="填写服务器信息并测试连接"></p>
+<p><img src="https://dwj-oss.oss-cn-nanjing.aliyuncs.com/images/202401260126613.png" alt="选择 MySQL 数据库"></p>
+<p><img src="https://dwj-oss.oss-cn-nanjing.aliyuncs.com/images/202401260126614.png" alt="填写服务器信息并测试连接"></p>
 </li>
 <li>
 <p>然后我们拷贝本地资源至数据库即可</p>
-<p><img src="https://dwj-oss.oss-cn-nanjing.aliyuncs.com/images/202401260126615.png" srcset="https://dwj-oss.oss-cn-nanjing.aliyuncs.com/web-imgs/img-static/loading.gif" lazyload alt="拷贝本地资源至数据库"></p>
+<p><img src="https://dwj-oss.oss-cn-nanjing.aliyuncs.com/images/202401260126615.png" alt="拷贝本地资源至数据库"></p>
 </li>
 </ul>
 <h2 id="配置-Nginx">配置 Nginx</h2>
@@ -417,7 +417,7 @@
 <p>服务器安全组放通 80 端口</p>
 <h3 id="2-安装-Nginx-并启动">(2) 安装 Nginx 并启动</h3>
 <p>进入 <a target="_blank" rel="noopener" href="http://nginx.org/en/download.html">nginx 官网</a> 并找到以下内容：</p>
-<p><img src="https://dwj-oss.oss-cn-nanjing.aliyuncs.com/images/202401260126616.png" srcset="https://dwj-oss.oss-cn-nanjing.aliyuncs.com/web-imgs/img-static/loading.gif" lazyload alt="下载"></p>
+<p><img src="https://dwj-oss.oss-cn-nanjing.aliyuncs.com/images/202401260126616.png" alt="下载"></p>
 <p>可以通过 wget 命令下载压缩包</p>
 <figure class="highlight bash"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">wget https://nginx.org/download/nginx-1.24.0.tar.gz<br></code></pre></td></tr></tbody></table></figure>
 <p>也可以直接通过 MobaXterm 拖拽上传服务器，解压到当前目录下并进入 nginx 文件夹</p>
@@ -434,7 +434,7 @@
       </div>
       <div class="fold-collapse collapse" id="collapse-aeac7028">
         <div class="fold-content">
-          <blockquote><p>解决：端口被占用的问题</p><p><img src="https://dwj-oss.oss-cn-nanjing.aliyuncs.com/images/202401260126617.png" srcset="https://dwj-oss.oss-cn-nanjing.aliyuncs.com/web-imgs/img-static/loading.gif" lazyload alt="解决启动遇到的端口占用"></p><p>解决方案：<code>killall -9 nginx</code> 杀掉 nginx 的进程，然后重启</p><p>最终结果：然后浏览器通过 http 协议默认的 80 端口访问公网 ip，就可以看到欢呼雀跃的一幕</p><p><img src="https://dwj-oss.oss-cn-nanjing.aliyuncs.com/images/202401260126618.png" srcset="https://dwj-oss.oss-cn-nanjing.aliyuncs.com/web-imgs/img-static/loading.gif" lazyload alt="最终结果"></p></blockquote>
+          <blockquote><p>解决：端口被占用的问题</p><p><img src="https://dwj-oss.oss-cn-nanjing.aliyuncs.com/images/202401260126617.png" alt="解决启动遇到的端口占用"></p><p>解决方案：<code>killall -9 nginx</code> 杀掉 nginx 的进程，然后重启</p><p>最终结果：然后浏览器通过 http 协议默认的 80 端口访问公网 ip，就可以看到欢呼雀跃的一幕</p><p><img src="https://dwj-oss.oss-cn-nanjing.aliyuncs.com/images/202401260126618.png" alt="最终结果"></p></blockquote>
         </div>
       </div>
     </div>
@@ -653,7 +653,7 @@
             
   
   
-    <article id="comments" lazyload>
+    <article id="comments">
       
   <script type="text/javascript">
     Fluid.utils.loadComments('#comments', function() {
@@ -1077,10 +1077,6 @@
 
 
 
-
-  
-    <script  src="/js/img-lazyload.js" ></script>
-  
 
 
 

@@ -118,7 +118,7 @@
   <script id="fluid-configs">
     var Fluid = window.Fluid || {};
     Fluid.ctx = Object.assign({}, Fluid.ctx)
-    var CONFIG = {"hostname":"blog.dwj601.cn","root":"/","version":"1.9.8","typing":{"enable":true,"typeSpeed":70,"cursorChar":"_","loop":false,"scope":[]},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"left","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"code_language":{"enable":true,"default":"TEXT"},"copy_btn":true,"image_caption":{"enable":true},"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"placement":"left","headingSelector":"h1,h2,h3,h4,h5","collapseDepth":3},"lazyload":{"enable":true,"loading_img":"https://dwj-oss.oss-cn-nanjing.aliyuncs.com/web-imgs/img-static/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":true,"follow_dnt":true,"baidu":"d08d23389220ad9b8f711cfb85757f4b","google":{"measurement_id":null},"tencent":{"sid":null,"cid":null},"leancloud":{"app_id":null,"app_key":null,"server_url":null,"path":"window.location.pathname","ignore_local":false},"umami":{"src":null,"website_id":null,"domains":null,"start_time":"2024-01-01T00:00:00.000Z","token":null,"api_server":null},"woyaola":null,"cnzz":null},"search_path":"/local-search.xml","include_content_in_search":true};
+    var CONFIG = {"hostname":"blog.dwj601.cn","root":"/","version":"1.9.8","typing":{"enable":true,"typeSpeed":70,"cursorChar":"_","loop":false,"scope":[]},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"left","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"code_language":{"enable":true,"default":"TEXT"},"copy_btn":true,"image_caption":{"enable":true},"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"placement":"left","headingSelector":"h1,h2,h3,h4,h5","collapseDepth":3},"lazyload":{"enable":false,"loading_img":"https://dwj-oss.oss-cn-nanjing.aliyuncs.com/web-imgs/img-static/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":true,"follow_dnt":true,"baidu":"d08d23389220ad9b8f711cfb85757f4b","google":{"measurement_id":null},"tencent":{"sid":null,"cid":null},"leancloud":{"app_id":null,"app_key":null,"server_url":null,"path":"window.location.pathname","ignore_local":false},"umami":{"src":null,"website_id":null,"domains":null,"start_time":"2024-01-01T00:00:00.000Z","token":null,"api_server":null},"woyaola":null,"cnzz":null},"search_path":"/local-search.xml","include_content_in_search":true};
 
     if (CONFIG.web_analytics.follow_dnt) {
       var dntVal = navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack;
@@ -416,7 +416,7 @@
 <p>约束：值集 + 运算集</p>
 <p>数据类型 <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mtext>(Data&nbsp;Type,&nbsp;简称&nbsp;DT)</mtext></mrow><annotation encoding="application/x-tex">\text{(Data Type, 简称 DT)}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord text"><span class="mord">(Data&nbsp;Type,&nbsp;</span><span class="mord cjk_fallback">简称</span><span class="mord">&nbsp;DT)</span></span></span></span></span>：一般编程语言已经实现好了</p>
 <p>抽象数据类型 <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mtext>Abstract&nbsp;Data&nbsp;Type,&nbsp;简称&nbsp;ADT</mtext></mrow><annotation encoding="application/x-tex">\text{Abstract Data Type, 简称 ADT}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.8889em;vertical-align:-0.1944em;"></span><span class="mord text"><span class="mord">Abstract&nbsp;Data&nbsp;Type,&nbsp;</span><span class="mord cjk_fallback">简称</span><span class="mord">&nbsp;ADT</span></span></span></span></span>：数据结构 + 算法操作</p>
-<p><img src="https://dwj-oss.oss-cn-nanjing.aliyuncs.com/images/202406292218513.png" srcset="https://dwj-oss.oss-cn-nanjing.aliyuncs.com/web-imgs/img-static/loading.gif" lazyload alt="ADT 的不同视图"></p>
+<p><img src="https://dwj-oss.oss-cn-nanjing.aliyuncs.com/images/202406292218513.png" alt="ADT 的不同视图"></p>
 <h3 id="1-3-算法方法">1.3 算法方法</h3>
 <ol>
 <li>
@@ -540,12 +540,12 @@
 <ul>
 <li>
 <p>插入</p>
-<p><img src="https://dwj-oss.oss-cn-nanjing.aliyuncs.com/images/202406292218514.png" srcset="https://dwj-oss.oss-cn-nanjing.aliyuncs.com/web-imgs/img-static/loading.gif" lazyload alt="插入"></p>
+<p><img src="https://dwj-oss.oss-cn-nanjing.aliyuncs.com/images/202406292218514.png" alt="插入"></p>
   <figure class="highlight c++"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs c++"><span class="hljs-comment">// 插入当前结点 s</span><br>s-&gt;prior = p;<br>s-&gt;next = p-&gt;next;<br>p-&gt;next-&gt;prior = s;<br>p-&gt;next = s;<br></code></pre></td></tr></tbody></table></figure>
 </li>
 <li>
 <p>删除</p>
-<p><img src="https://dwj-oss.oss-cn-nanjing.aliyuncs.com/images/202406292218515.png" srcset="https://dwj-oss.oss-cn-nanjing.aliyuncs.com/web-imgs/img-static/loading.gif" lazyload alt="删除"></p>
+<p><img src="https://dwj-oss.oss-cn-nanjing.aliyuncs.com/images/202406292218515.png" alt="删除"></p>
   <figure class="highlight c++"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs c++"><span class="hljs-comment">// 删除当前结点 p</span><br>p-&gt;next-&gt;prior = p-&gt;prior;<br>p-&gt;prior-&gt;next = p-&gt;next;<br></code></pre></td></tr></tbody></table></figure>
 </li>
 </ul>
@@ -554,15 +554,15 @@
 <h2 id="3-栈和队列">3 栈和队列</h2>
 <h3 id="3-1-栈">3.1 栈</h3>
 <h4 id="3-1-1-栈的基本概念">3.1.1 栈的基本概念</h4>
-<p><img src="https://dwj-oss.oss-cn-nanjing.aliyuncs.com/images/202406292218516.png" srcset="https://dwj-oss.oss-cn-nanjing.aliyuncs.com/web-imgs/img-static/loading.gif" lazyload alt="卡特兰数"></p>
+<p><img src="https://dwj-oss.oss-cn-nanjing.aliyuncs.com/images/202406292218516.png" alt="卡特兰数"></p>
 <p>卡特兰数：假设 <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>f</mi><mo stretchy="false">(</mo><mi>k</mi><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">f(k)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathnormal" style="margin-right:0.10764em;">f</span><span class="mopen">(</span><span class="mord mathnormal" style="margin-right:0.03148em;">k</span><span class="mclose">)</span></span></span></span> 表示第 k 个数最后一个出栈的总个数，则 <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>f</mi><mo stretchy="false">(</mo><mi>k</mi><mo stretchy="false">)</mo><mo>=</mo><mi>f</mi><mo stretchy="false">(</mo><mi>k</mi><mo>−</mo><mn>1</mn><mo stretchy="false">)</mo><mi>f</mi><mo stretchy="false">(</mo><mi>n</mi><mo>−</mo><mi>k</mi><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">f(k)=f(k-1)f(n-k)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathnormal" style="margin-right:0.10764em;">f</span><span class="mopen">(</span><span class="mord mathnormal" style="margin-right:0.03148em;">k</span><span class="mclose">)</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathnormal" style="margin-right:0.10764em;">f</span><span class="mopen">(</span><span class="mord mathnormal" style="margin-right:0.03148em;">k</span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mbin">−</span><span class="mspace" style="margin-right:0.2222em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord">1</span><span class="mclose">)</span><span class="mord mathnormal" style="margin-right:0.10764em;">f</span><span class="mopen">(</span><span class="mord mathnormal">n</span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mbin">−</span><span class="mspace" style="margin-right:0.2222em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathnormal" style="margin-right:0.03148em;">k</span><span class="mclose">)</span></span></span></span></p>
 <p class="katex-block "><span class="katex-display"><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block"><semantics><mrow><mi>f</mi><mo stretchy="false">(</mo><mi>n</mi><mo stretchy="false">)</mo><mo>=</mo><munderover><mo>∑</mo><mrow><mi>k</mi><mo>=</mo><mn>1</mn></mrow><mi>n</mi></munderover><mi>f</mi><mo stretchy="false">(</mo><mi>k</mi><mo>−</mo><mn>1</mn><mo stretchy="false">)</mo><mi>f</mi><mo stretchy="false">(</mo><mi>n</mi><mo>−</mo><mi>k</mi><mo stretchy="false">)</mo><mo>=</mo><mfrac><mn>1</mn><mrow><mi>n</mi><mo>+</mo><mn>1</mn></mrow></mfrac><msubsup><mi>C</mi><mrow><mn>2</mn><mi>n</mi></mrow><mi>n</mi></msubsup></mrow><annotation encoding="application/x-tex">f(n) = \sum_{k=1}^{n} f(k-1) f(n-k)=\frac{1}{n+1} C_{2n}^{n}
 </annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathnormal" style="margin-right:0.10764em;">f</span><span class="mopen">(</span><span class="mord mathnormal">n</span><span class="mclose">)</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:2.9535em;vertical-align:-1.3021em;"></span><span class="mop op-limits"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:1.6514em;"><span style="top:-1.8479em;margin-left:0em;"><span class="pstrut" style="height:3.05em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mathnormal mtight" style="margin-right:0.03148em;">k</span><span class="mrel mtight">=</span><span class="mord mtight">1</span></span></span></span><span style="top:-3.05em;"><span class="pstrut" style="height:3.05em;"></span><span><span class="mop op-symbol large-op">∑</span></span></span><span style="top:-4.3em;margin-left:0em;"><span class="pstrut" style="height:3.05em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mathnormal mtight">n</span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:1.3021em;"><span></span></span></span></span></span><span class="mspace" style="margin-right:0.1667em;"></span><span class="mord mathnormal" style="margin-right:0.10764em;">f</span><span class="mopen">(</span><span class="mord mathnormal" style="margin-right:0.03148em;">k</span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mbin">−</span><span class="mspace" style="margin-right:0.2222em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord">1</span><span class="mclose">)</span><span class="mord mathnormal" style="margin-right:0.10764em;">f</span><span class="mopen">(</span><span class="mord mathnormal">n</span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mbin">−</span><span class="mspace" style="margin-right:0.2222em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathnormal" style="margin-right:0.03148em;">k</span><span class="mclose">)</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:2.0908em;vertical-align:-0.7693em;"></span><span class="mord"><span class="mopen nulldelimiter"></span><span class="mfrac"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:1.3214em;"><span style="top:-2.314em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord mathnormal">n</span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mbin">+</span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mord">1</span></span></span><span style="top:-3.23em;"><span class="pstrut" style="height:3em;"></span><span class="frac-line" style="border-bottom-width:0.04em;"></span></span><span style="top:-3.677em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord">1</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.7693em;"><span></span></span></span></span></span><span class="mclose nulldelimiter"></span></span><span class="mord"><span class="mord mathnormal" style="margin-right:0.07153em;">C</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.7144em;"><span style="top:-2.453em;margin-left:-0.0715em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mtight">2</span><span class="mord mathnormal mtight">n</span></span></span></span><span style="top:-3.113em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mathnormal mtight">n</span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.247em;"><span></span></span></span></span></span></span></span></span></span></span></p>
 <h4 id="3-1-2-栈的存储结构">3.1.2 栈的存储结构</h4>
 <p>顺序存储</p>
-<p><img src="https://dwj-oss.oss-cn-nanjing.aliyuncs.com/images/202406292218517.png" srcset="https://dwj-oss.oss-cn-nanjing.aliyuncs.com/web-imgs/img-static/loading.gif" lazyload alt="顺序存储"></p>
+<p><img src="https://dwj-oss.oss-cn-nanjing.aliyuncs.com/images/202406292218517.png" alt="顺序存储"></p>
 <p>链式存储</p>
-<p><img src="https://dwj-oss.oss-cn-nanjing.aliyuncs.com/images/202406292218518.png" srcset="https://dwj-oss.oss-cn-nanjing.aliyuncs.com/web-imgs/img-static/loading.gif" lazyload alt="链式存储"></p>
+<p><img src="https://dwj-oss.oss-cn-nanjing.aliyuncs.com/images/202406292218518.png" alt="链式存储"></p>
 <h4 id="3-1-3-栈的操作算法">3.1.3 栈的操作算法</h4>
 <ol>
 <li>顺序栈的操作</li>
@@ -629,10 +629,10 @@
 <p>先进先出</p>
 <h4 id="3-2-2-队列的存储结构">3.2.2 队列的存储结构</h4>
 <p>顺序存储</p>
-<p><img src="https://dwj-oss.oss-cn-nanjing.aliyuncs.com/images/202406292218519.png" srcset="https://dwj-oss.oss-cn-nanjing.aliyuncs.com/web-imgs/img-static/loading.gif" lazyload alt="顺序存储 - 1"></p>
-<p><img src="https://dwj-oss.oss-cn-nanjing.aliyuncs.com/images/202406292218520.png" srcset="https://dwj-oss.oss-cn-nanjing.aliyuncs.com/web-imgs/img-static/loading.gif" lazyload alt="顺序存储 - 2"></p>
+<p><img src="https://dwj-oss.oss-cn-nanjing.aliyuncs.com/images/202406292218519.png" alt="顺序存储 - 1"></p>
+<p><img src="https://dwj-oss.oss-cn-nanjing.aliyuncs.com/images/202406292218520.png" alt="顺序存储 - 2"></p>
 <p>链式存储</p>
-<p><img src="https://dwj-oss.oss-cn-nanjing.aliyuncs.com/images/202406292218521.png" srcset="https://dwj-oss.oss-cn-nanjing.aliyuncs.com/web-imgs/img-static/loading.gif" lazyload alt="链式存储"></p>
+<p><img src="https://dwj-oss.oss-cn-nanjing.aliyuncs.com/images/202406292218521.png" alt="链式存储"></p>
 <h4 id="3-2-3-队列的操作算法">3.2.3 队列的操作算法</h4>
 <ol>
 <li>
@@ -682,9 +682,9 @@
 <h3 id="4-2-串的存储结构">4.2 串的存储结构</h3>
 <h4 id="4-2-1-串的顺序存储">4.2.1 串的顺序存储</h4>
 <p>使用固定长度的数组来存储，3种存储字符串长度的方法如下：</p>
-<p><img src="https://dwj-oss.oss-cn-nanjing.aliyuncs.com/images/202406292218522.png" srcset="https://dwj-oss.oss-cn-nanjing.aliyuncs.com/web-imgs/img-static/loading.gif" lazyload alt="存储字符串长度的方法 - 1"></p>
-<p><img src="https://dwj-oss.oss-cn-nanjing.aliyuncs.com/images/202406292218523.png" srcset="https://dwj-oss.oss-cn-nanjing.aliyuncs.com/web-imgs/img-static/loading.gif" lazyload alt="存储字符串长度的方法 - 2"></p>
-<p><img src="https://dwj-oss.oss-cn-nanjing.aliyuncs.com/images/202406292218524.png" srcset="https://dwj-oss.oss-cn-nanjing.aliyuncs.com/web-imgs/img-static/loading.gif" lazyload alt="存储字符串长度的方法 - 3"></p>
+<p><img src="https://dwj-oss.oss-cn-nanjing.aliyuncs.com/images/202406292218522.png" alt="存储字符串长度的方法 - 1"></p>
+<p><img src="https://dwj-oss.oss-cn-nanjing.aliyuncs.com/images/202406292218523.png" alt="存储字符串长度的方法 - 2"></p>
+<p><img src="https://dwj-oss.oss-cn-nanjing.aliyuncs.com/images/202406292218524.png" alt="存储字符串长度的方法 - 3"></p>
 <h4 id="4-2-2-串的链式存储">4.2.2 串的链式存储</h4>
 <p class="katex-block "><span class="katex-display"><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block"><semantics><mrow><mtext>存储密度</mtext><mo>=</mo><mfrac><mtext>串值所占的内存</mtext><mtext>一个结点的总内存</mtext></mfrac></mrow><annotation encoding="application/x-tex">\text{存储密度} = \frac {\text{串值所占的内存}}{\text{一个结点的总内存}}
 </annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.6833em;"></span><span class="mord text"><span class="mord cjk_fallback">存储密度</span></span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:2.0463em;vertical-align:-0.686em;"></span><span class="mord"><span class="mopen nulldelimiter"></span><span class="mfrac"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:1.3603em;"><span style="top:-2.314em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord text"><span class="mord cjk_fallback">一个结点的总内存</span></span></span></span><span style="top:-3.23em;"><span class="pstrut" style="height:3em;"></span><span class="frac-line" style="border-bottom-width:0.04em;"></span></span><span style="top:-3.677em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord text"><span class="mord cjk_fallback">串值所占的内存</span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.686em;"><span></span></span></span></span></span><span class="mclose nulldelimiter"></span></span></span></span></span></span></p>
@@ -697,10 +697,10 @@
 <p>串连接、串比较、串拷贝</p>
 <h4 id="4-3-2-串的模式匹配">4.3.2 串的模式匹配</h4>
 <p>BF算法（Brute - Force）</p>
-<p><img src="https://dwj-oss.oss-cn-nanjing.aliyuncs.com/images/202406292218525.png" srcset="https://dwj-oss.oss-cn-nanjing.aliyuncs.com/web-imgs/img-static/loading.gif" lazyload alt="BF算法（Brute - Force）"></p>
+<p><img src="https://dwj-oss.oss-cn-nanjing.aliyuncs.com/images/202406292218525.png" alt="BF算法（Brute - Force）"></p>
 <figure class="highlight c++"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><code class="hljs c++"><span class="hljs-comment">// 返回匹配上的所有位置下标（下标从0开始）</span><br><span class="hljs-function">vector&lt;<span class="hljs-type">int</span>&gt; <span class="hljs-title">BF</span><span class="hljs-params">(string&amp; s, string&amp; t)</span> </span>{<br>	vector&lt;<span class="hljs-type">int</span>&gt; res;<br>	<span class="hljs-type">int</span> i = <span class="hljs-number">0</span>, j = <span class="hljs-number">0</span>, n = s.<span class="hljs-built_in">size</span>(), m = t.<span class="hljs-built_in">size</span>();<br>    <br>	<span class="hljs-keyword">while</span> (i &lt; n &amp;&amp; j &lt; m) {<br>		<span class="hljs-keyword">if</span> (s[i] == t[j]) i++, j++;<br>		<span class="hljs-keyword">else</span> i = i - j + <span class="hljs-number">1</span>, j = <span class="hljs-number">0</span>;<br>            <br>		<span class="hljs-keyword">if</span> (j == m) {<br>			res.<span class="hljs-built_in">emplace_back</span>(i - j);<br>			j = <span class="hljs-number">0</span>;<br>		}<br>	}<br><br>    <span class="hljs-keyword">return</span> res;<br>}<br></code></pre></td></tr></tbody></table></figure>
 <p>KMP算法</p>
-<p><img src="https://dwj-oss.oss-cn-nanjing.aliyuncs.com/images/202406292218526.png" srcset="https://dwj-oss.oss-cn-nanjing.aliyuncs.com/web-imgs/img-static/loading.gif" lazyload alt="KMP算法"></p>
+<p><img src="https://dwj-oss.oss-cn-nanjing.aliyuncs.com/images/202406292218526.png" alt="KMP算法"></p>
 <blockquote>
 <p><strong>优化思想</strong>：</p>
 <p>先看暴力思想，我们需要每次将模式串 t 后移一位重新进行比较，其中浪费了已匹配的串数据，优化就是从这块已匹配的串数据入手。而已匹配的串数据就是模式串本身的串数据，因为我们可以直接从模式串本身入手。</p>
@@ -727,7 +727,7 @@
 <h3 id="5-2-特殊矩阵的压缩存储">5.2 特殊矩阵的压缩存储</h3>
 <p>对于多个相同的非零元素只分配一个存储空间，对零元素不分配空间</p>
 <h4 id="5-2-1-对称矩阵的压缩存储">5.2.1 对称矩阵的压缩存储</h4>
-<p><img src="https://dwj-oss.oss-cn-nanjing.aliyuncs.com/images/202406292218527.png" srcset="https://dwj-oss.oss-cn-nanjing.aliyuncs.com/web-imgs/img-static/loading.gif" lazyload alt="对称矩阵的压缩存储"></p>
+<p><img src="https://dwj-oss.oss-cn-nanjing.aliyuncs.com/images/202406292218527.png" alt="对称矩阵的压缩存储"></p>
 <p>假设现在有一个 n*n 的对称矩阵</p>
 <p>存：行优先存储 <code>data[n * (n + 1) / 2]</code></p>
 <p>取：我们如果要取 <code>data[i][j]</code></p>
@@ -756,11 +756,11 @@
 </li>
 </ul>
 <h4 id="5-2-2-三角矩阵的压缩存储">5.2.2 三角矩阵的压缩存储</h4>
-<p><img src="https://dwj-oss.oss-cn-nanjing.aliyuncs.com/images/202406292218528.png" srcset="https://dwj-oss.oss-cn-nanjing.aliyuncs.com/web-imgs/img-static/loading.gif" lazyload alt="三角矩阵的压缩存储"></p>
+<p><img src="https://dwj-oss.oss-cn-nanjing.aliyuncs.com/images/202406292218528.png" alt="三角矩阵的压缩存储"></p>
 <p>假设现在有一个 n*n 的三角矩阵（上三角或下三角为常数c）</p>
 <p>存：行优先存储，常数 c 存储到最后 <code>data[n * (n + 1) / 2 + 1]</code></p>
 <h4 id="5-2-3-对角矩阵的压缩存储">5.2.3 对角矩阵的压缩存储</h4>
-<p><img src="https://dwj-oss.oss-cn-nanjing.aliyuncs.com/images/202406292218529.png" srcset="https://dwj-oss.oss-cn-nanjing.aliyuncs.com/web-imgs/img-static/loading.gif" lazyload alt="对角矩阵的压缩存储"></p>
+<p><img src="https://dwj-oss.oss-cn-nanjing.aliyuncs.com/images/202406292218529.png" alt="对角矩阵的压缩存储"></p>
 <p>假设现在有一个 n*n 的对角矩阵（围绕主对角线有数据，其余数据均为0）</p>
 <h4 id="5-2-4-稀疏矩阵的压缩存储">5.2.4 稀疏矩阵的压缩存储</h4>
 <p>假设现在有一个 n*m 的稀疏矩阵（很多零的一个矩阵）</p>
@@ -782,9 +782,9 @@
 <h3 id="6-2-广义表的存储结构">6.2 广义表的存储结构</h3>
 <h4 id="6-2-1-广义表中结点的结构">6.2.1 广义表中结点的结构</h4>
 <p>采用联合结构体存储结点类型</p>
-<p><img src="https://dwj-oss.oss-cn-nanjing.aliyuncs.com/images/202406292218530.png" srcset="https://dwj-oss.oss-cn-nanjing.aliyuncs.com/web-imgs/img-static/loading.gif" lazyload alt="采用联合结构体存储结点类型"></p>
+<p><img src="https://dwj-oss.oss-cn-nanjing.aliyuncs.com/images/202406292218530.png" alt="采用联合结构体存储结点类型"></p>
 <h4 id="6-2-2-广义表的存储结构">6.2.2 广义表的存储结构</h4>
-<p><img src="https://dwj-oss.oss-cn-nanjing.aliyuncs.com/images/202406292218531.png" srcset="https://dwj-oss.oss-cn-nanjing.aliyuncs.com/web-imgs/img-static/loading.gif" lazyload alt="广义表的存储结构"></p>
+<p><img src="https://dwj-oss.oss-cn-nanjing.aliyuncs.com/images/202406292218531.png" alt="广义表的存储结构"></p>
 <h3 id="6-3-广义表的操作算法">6.3 广义表的操作算法</h3>
 <ul>
 <li>直接递归法 - 原子直接操作，子表循环成原子进行操作</li>
@@ -834,13 +834,13 @@
 </li>
 <li>
 <p>满二叉树：每一层都是满结点</p>
-<p><img src="https://dwj-oss.oss-cn-nanjing.aliyuncs.com/images/202406292218532.png" srcset="https://dwj-oss.oss-cn-nanjing.aliyuncs.com/web-imgs/img-static/loading.gif" lazyload alt="满二叉树"></p>
+<p><img src="https://dwj-oss.oss-cn-nanjing.aliyuncs.com/images/202406292218532.png" alt="满二叉树"></p>
 </li>
 <li>
 <p>完全二叉树：对于一个 <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>k</mi></mrow><annotation encoding="application/x-tex">k</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.6944em;"></span><span class="mord mathnormal" style="margin-right:0.03148em;">k</span></span></span></span> 层的二叉树，<span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>1</mn><mo>→</mo><mi>k</mi><mo>−</mo><mn>1</mn></mrow><annotation encoding="application/x-tex">1\to k-1</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.6444em;"></span><span class="mord">1</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">→</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:0.7778em;vertical-align:-0.0833em;"></span><span class="mord mathnormal" style="margin-right:0.03148em;">k</span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mbin">−</span><span class="mspace" style="margin-right:0.2222em;"></span></span><span class="base"><span class="strut" style="height:0.6444em;"></span><span class="mord">1</span></span></span></span> 都是满的，第 <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>k</mi></mrow><annotation encoding="application/x-tex">k</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.6944em;"></span><span class="mord mathnormal" style="margin-right:0.03148em;">k</span></span></span></span> 层从左到右连接叶子结点</p>
-<p><img src="https://dwj-oss.oss-cn-nanjing.aliyuncs.com/images/202406292218533.png" srcset="https://dwj-oss.oss-cn-nanjing.aliyuncs.com/web-imgs/img-static/loading.gif" lazyload alt="完全二叉树"></p>
+<p><img src="https://dwj-oss.oss-cn-nanjing.aliyuncs.com/images/202406292218533.png" alt="完全二叉树"></p>
 <p>结点数固定，则完全二叉树的形状唯一</p>
-<p><img src="https://dwj-oss.oss-cn-nanjing.aliyuncs.com/images/202406292218534.png" srcset="https://dwj-oss.oss-cn-nanjing.aliyuncs.com/web-imgs/img-static/loading.gif" lazyload alt="完全二叉树的性质"></p>
+<p><img src="https://dwj-oss.oss-cn-nanjing.aliyuncs.com/images/202406292218534.png" alt="完全二叉树的性质"></p>
 <p>若 <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>i</mi></mrow><annotation encoding="application/x-tex">i</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.6595em;"></span><span class="mord mathnormal">i</span></span></span></span> 为奇数，且 <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>i</mi><mo mathvariant="normal">≠</mo><mn>1</mn></mrow><annotation encoding="application/x-tex">i\neq1</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.8889em;vertical-align:-0.1944em;"></span><span class="mord mathnormal">i</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel"><span class="mrel"><span class="mord vbox"><span class="thinbox"><span class="rlap"><span class="strut" style="height:0.8889em;vertical-align:-0.1944em;"></span><span class="inner"><span class="mord"><span class="mrel"></span></span></span><span class="fix"></span></span></span></span></span><span class="mrel">=</span></span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:0.6444em;"></span><span class="mord">1</span></span></span></span>，则左兄弟就是 <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>i</mi><mo>−</mo><mn>1</mn></mrow><annotation encoding="application/x-tex">i-1</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.7429em;vertical-align:-0.0833em;"></span><span class="mord mathnormal">i</span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mbin">−</span><span class="mspace" style="margin-right:0.2222em;"></span></span><span class="base"><span class="strut" style="height:0.6444em;"></span><span class="mord">1</span></span></span></span></p>
 <p>若 <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>i</mi></mrow><annotation encoding="application/x-tex">i</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.6595em;"></span><span class="mord mathnormal">i</span></span></span></span> 为偶数，则右兄弟就是 <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>i</mi><mo>+</mo><mn>1</mn></mrow><annotation encoding="application/x-tex">i+1</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.7429em;vertical-align:-0.0833em;"></span><span class="mord mathnormal">i</span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mbin">+</span><span class="mspace" style="margin-right:0.2222em;"></span></span><span class="base"><span class="strut" style="height:0.6444em;"></span><span class="mord">1</span></span></span></span></p>
 </li>
@@ -870,8 +870,8 @@
 <p>由含空指针标记的单个遍历序列构造二叉树</p>
 <p>可以从遍历的逻辑进行逆推。在遍历到空指针的时候输出一个编制符号，然后在构造的时候按照遍历序列进行递归构造即可，如图</p>
 <p><strong>先序序列</strong>进行构造：按照遍历的思路来，对于先序序列而言，第一个元素一定是根元素，因此首先根据“当前局面”的第一个元素创建根结点，接着递归创建左子树和右子树即可。注意传递的序列起始下标是引用类型的变量</p>
-<p><img src="https://dwj-oss.oss-cn-nanjing.aliyuncs.com/images/202406292218535.png" srcset="https://dwj-oss.oss-cn-nanjing.aliyuncs.com/web-imgs/img-static/loading.gif" lazyload alt="示例"></p>
-<p><img src="https://dwj-oss.oss-cn-nanjing.aliyuncs.com/images/202406292218536.png" srcset="https://dwj-oss.oss-cn-nanjing.aliyuncs.com/web-imgs/img-static/loading.gif" lazyload alt="示例"></p>
+<p><img src="https://dwj-oss.oss-cn-nanjing.aliyuncs.com/images/202406292218535.png" alt="示例"></p>
+<p><img src="https://dwj-oss.oss-cn-nanjing.aliyuncs.com/images/202406292218536.png" alt="示例"></p>
 <p><strong>中序序列</strong>进行构造：</p>
 <p>不可以，因为不能确定根节点以及左子树和右子树的部分</p>
 <p><strong>后序序列</strong>进行构造：与上述先序序列进行构建的逻辑一致，只不过有一个小 trick，即我们从后序序列的最后一个元素开始创建，那么得到的第一个元素就是根结点的值，然后首先递归创建右子树，再递归创建左子树即可。同样需要注意的是传递参数时，序列起始下标是引用类型的变量</p>
@@ -949,11 +949,11 @@
 <li>
 <p>孩子链表表示法：自顶向下存储边的信息</p>
  <figure class="highlight c++"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><code class="hljs c++"><span class="hljs-keyword">template</span>&lt;<span class="hljs-keyword">class</span> <span class="hljs-title class_">T</span>&gt;<br>   <span class="hljs-keyword">struct</span> <span class="hljs-title class_">CTBox</span> {<br>       T data;<br>       CTNode* firstchild;<br>   };<br>   <span class="hljs-keyword">struct</span> <span class="hljs-title class_">CTNode</span> {<br>       <span class="hljs-type">int</span> child;<br>       CTNode* next;<br>   };<br></code></pre></td></tr></tbody></table></figure>
-<p><img src="https://dwj-oss.oss-cn-nanjing.aliyuncs.com/images/202406292218537.png" srcset="https://dwj-oss.oss-cn-nanjing.aliyuncs.com/web-imgs/img-static/loading.gif" lazyload alt="孩子链表表示法"></p>
+<p><img src="https://dwj-oss.oss-cn-nanjing.aliyuncs.com/images/202406292218537.png" alt="孩子链表表示法"></p>
 </li>
 <li>
 <p>双亲表示法：自下向上存储边的信息</p>
-<p><img src="https://dwj-oss.oss-cn-nanjing.aliyuncs.com/images/202406292218538.png" srcset="https://dwj-oss.oss-cn-nanjing.aliyuncs.com/web-imgs/img-static/loading.gif" lazyload alt="双亲表示法"></p>
+<p><img src="https://dwj-oss.oss-cn-nanjing.aliyuncs.com/images/202406292218538.png" alt="双亲表示法"></p>
 </li>
 <li>
 <p>孩子兄弟表示法：左结点存储孩子，右结点存储兄弟</p>
@@ -1011,17 +1011,17 @@
 <p>无向图的度：第 <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>i</mi></mrow><annotation encoding="application/x-tex">i</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.6595em;"></span><span class="mord mathnormal">i</span></span></span></span> 行（列）的非标记数的个数</p>
 <p>有向图的度：入度为第 <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>i</mi></mrow><annotation encoding="application/x-tex">i</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.6595em;"></span><span class="mord mathnormal">i</span></span></span></span> 行的非标记数的个数；出度为第 <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>i</mi></mrow><annotation encoding="application/x-tex">i</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.6595em;"></span><span class="mord mathnormal">i</span></span></span></span> 列的非标记数的个数</p>
 <p>类定义：</p>
-<p><img src="https://dwj-oss.oss-cn-nanjing.aliyuncs.com/images/202406292218539.png" srcset="https://dwj-oss.oss-cn-nanjing.aliyuncs.com/web-imgs/img-static/loading.gif" lazyload alt="邻接矩阵 - 1"></p>
-<p><img src="https://dwj-oss.oss-cn-nanjing.aliyuncs.com/images/202406292218540.png" srcset="https://dwj-oss.oss-cn-nanjing.aliyuncs.com/web-imgs/img-static/loading.gif" lazyload alt="邻接矩阵 - 2"></p>
+<p><img src="https://dwj-oss.oss-cn-nanjing.aliyuncs.com/images/202406292218539.png" alt="邻接矩阵 - 1"></p>
+<p><img src="https://dwj-oss.oss-cn-nanjing.aliyuncs.com/images/202406292218540.png" alt="邻接矩阵 - 2"></p>
 <h4 id="8-2-2-邻接表">8.2.2 邻接表</h4>
 <p>存储出边表称为邻接表，存储入编表称为逆邻接表</p>
 <p>类定义：</p>
-<p><img src="https://dwj-oss.oss-cn-nanjing.aliyuncs.com/images/202406292218541.png" srcset="https://dwj-oss.oss-cn-nanjing.aliyuncs.com/web-imgs/img-static/loading.gif" lazyload alt="邻接表"></p>
+<p><img src="https://dwj-oss.oss-cn-nanjing.aliyuncs.com/images/202406292218541.png" alt="邻接表"></p>
 <h3 id="8-3-图的遍历">8.3 图的遍历</h3>
 <h4 id="8-3-1-图遍历的概念">8.3.1 图遍历的概念</h4>
 <p>每个结点只能访问一次，故需要开启标记数组用来记录是否访问的情况</p>
 <h4 id="8-3-2-深度优先搜索">8.3.2 深度优先搜索</h4>
-<p><img src="https://dwj-oss.oss-cn-nanjing.aliyuncs.com/images/202406292218542.png" srcset="https://dwj-oss.oss-cn-nanjing.aliyuncs.com/web-imgs/img-static/loading.gif" lazyload alt="深度优先搜索"></p>
+<p><img src="https://dwj-oss.oss-cn-nanjing.aliyuncs.com/images/202406292218542.png" alt="深度优先搜索"></p>
 <p>邻接矩阵：</p>
 <ul>
 <li>
@@ -1029,7 +1029,7 @@
 </li>
 <li>
 <p>针对<strong>邻接矩阵</strong>的一个<strong>无向</strong>连通图的搜索代码示例</p>
-<p><img src="https://dwj-oss.oss-cn-nanjing.aliyuncs.com/images/202406292218543.png" srcset="https://dwj-oss.oss-cn-nanjing.aliyuncs.com/web-imgs/img-static/loading.gif" lazyload alt="邻接矩阵的一个无向连通图的搜索代码示例"></p>
+<p><img src="https://dwj-oss.oss-cn-nanjing.aliyuncs.com/images/202406292218543.png" alt="邻接矩阵的一个无向连通图的搜索代码示例"></p>
 </li>
 </ul>
 <p>邻接表：</p>
@@ -1057,7 +1057,7 @@
 <h4 id="8-4-1-最小生成树的概念及其性质">8.4.1 最小生成树的概念及其性质</h4>
 <p><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>M</mi><mi>i</mi><mi>n</mi><mi>i</mi><mi>m</mi><mi>u</mi><mi>m</mi><mtext>&nbsp;</mtext><mi>S</mi><mi>p</mi><mi>a</mi><mi>n</mi><mi>n</mi><mi>i</mi><mi>n</mi><mi>g</mi><mtext>&nbsp;</mtext><mi>T</mi><mi>r</mi><mi>e</mi><mi>e</mi><mo stretchy="false">(</mo><mi>M</mi><mi>S</mi><mi>T</mi><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">Minimum\ Spanning\ Tree(MST)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathnormal" style="margin-right:0.10903em;">M</span><span class="mord mathnormal">inim</span><span class="mord mathnormal">u</span><span class="mord mathnormal">m</span><span class="mspace">&nbsp;</span><span class="mord mathnormal">Sp</span><span class="mord mathnormal">annin</span><span class="mord mathnormal" style="margin-right:0.03588em;">g</span><span class="mspace">&nbsp;</span><span class="mord mathnormal" style="margin-right:0.13889em;">T</span><span class="mord mathnormal">ree</span><span class="mopen">(</span><span class="mord mathnormal" style="margin-right:0.13889em;">MST</span><span class="mclose">)</span></span></span></span></p>
 <p>证明：</p>
-<p><img src="https://dwj-oss.oss-cn-nanjing.aliyuncs.com/images/202406292218544.png" srcset="https://dwj-oss.oss-cn-nanjing.aliyuncs.com/web-imgs/img-static/loading.gif" lazyload alt="最小生成树性质证明 - 图例"></p>
+<p><img src="https://dwj-oss.oss-cn-nanjing.aliyuncs.com/images/202406292218544.png" alt="最小生成树性质证明 - 图例"></p>
 <p>对于上述的一个割，选择其中权值最小的交叉边。从而对于所有的状态，每次选择最小交叉边即可。</p>
 <h4 id="8-4-2-Prim算法">8.4.2 Prim算法</h4>
 <p>算法标签：<span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>g</mi><mi>r</mi><mi>e</mi><mi>e</mi><mi>d</mi><mi>y</mi></mrow><annotation encoding="application/x-tex">greedy</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.8889em;vertical-align:-0.1944em;"></span><span class="mord mathnormal" style="margin-right:0.03588em;">g</span><span class="mord mathnormal">ree</span><span class="mord mathnormal">d</span><span class="mord mathnormal" style="margin-right:0.03588em;">y</span></span></span></span></p>
@@ -1177,7 +1177,7 @@
 <h4 id="9-1-2-折半查找">9.1.2 折半查找</h4>
 <h4 id="9-1-3-分块查找">9.1.3 分块查找</h4>
 <p>结合顺序查找与分块查找的一种方法</p>
-<p><img src="https://dwj-oss.oss-cn-nanjing.aliyuncs.com/images/202406292218545.png" srcset="https://dwj-oss.oss-cn-nanjing.aliyuncs.com/web-imgs/img-static/loading.gif" lazyload alt="分块查找"></p>
+<p><img src="https://dwj-oss.oss-cn-nanjing.aliyuncs.com/images/202406292218545.png" alt="分块查找"></p>
 <ul>
 <li>索引表可以折半或者顺序查找</li>
 <li>块内部只能顺序查找</li>
@@ -1190,11 +1190,11 @@
 <h4 id="9-2-2-平衡二叉树">9.2.2 平衡二叉树</h4>
 <p>定义：平衡因子为左子树的高度 - 右子树的高度，平衡二叉树的平衡因子绝对值 &lt;= 1</p>
 <p>构建：当插入结点进行构建时出现了有结点平衡因子的绝对值超过了1，则进行“旋转”调整，旋转共分为4种</p>
-<p><img src="https://dwj-oss.oss-cn-nanjing.aliyuncs.com/images/202406292218546.png" srcset="https://dwj-oss.oss-cn-nanjing.aliyuncs.com/web-imgs/img-static/loading.gif" lazyload alt="旋转 - LL、LR"></p>
-<p><img src="https://dwj-oss.oss-cn-nanjing.aliyuncs.com/images/202406292218547.png" srcset="https://dwj-oss.oss-cn-nanjing.aliyuncs.com/web-imgs/img-static/loading.gif" lazyload alt="旋转 - LR"></p>
-<p><img src="https://dwj-oss.oss-cn-nanjing.aliyuncs.com/images/202406292218548.png" srcset="https://dwj-oss.oss-cn-nanjing.aliyuncs.com/web-imgs/img-static/loading.gif" lazyload alt="旋转 - RL"></p>
+<p><img src="https://dwj-oss.oss-cn-nanjing.aliyuncs.com/images/202406292218546.png" alt="旋转 - LL、LR"></p>
+<p><img src="https://dwj-oss.oss-cn-nanjing.aliyuncs.com/images/202406292218547.png" alt="旋转 - LR"></p>
+<p><img src="https://dwj-oss.oss-cn-nanjing.aliyuncs.com/images/202406292218548.png" alt="旋转 - RL"></p>
 <p>尝试模拟一遍下列序列的构造过程就可以理解了</p>
-<p><img src="https://dwj-oss.oss-cn-nanjing.aliyuncs.com/images/202406292218549.png" srcset="https://dwj-oss.oss-cn-nanjing.aliyuncs.com/web-imgs/img-static/loading.gif" lazyload alt="例题"></p>
+<p><img src="https://dwj-oss.oss-cn-nanjing.aliyuncs.com/images/202406292218549.png" alt="例题"></p>
 <h3 id="9-3-Hash-查找">9.3 Hash 查找</h3>
 <p>定义：装填因子 <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>α</mi><mo>=</mo><mfrac><mi>n</mi><mi>m</mi></mfrac></mrow><annotation encoding="application/x-tex">\alpha=\frac{n}{m}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.4306em;"></span><span class="mord mathnormal" style="margin-right:0.0037em;">α</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:1.0404em;vertical-align:-0.345em;"></span><span class="mord"><span class="mopen nulldelimiter"></span><span class="mfrac"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.6954em;"><span style="top:-2.655em;"><span class="pstrut" style="height:3em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mathnormal mtight">m</span></span></span></span><span style="top:-3.23em;"><span class="pstrut" style="height:3em;"></span><span class="frac-line" style="border-bottom-width:0.04em;"></span></span><span style="top:-3.394em;"><span class="pstrut" style="height:3em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mathnormal mtight">n</span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.345em;"><span></span></span></span></span></span><span class="mclose nulldelimiter"></span></span></span></span></span>，其中 <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>n</mi></mrow><annotation encoding="application/x-tex">n</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.4306em;"></span><span class="mord mathnormal">n</span></span></span></span> 表示待填入表中的结点数，<span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>m</mi></mrow><annotation encoding="application/x-tex">m</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.4306em;"></span><span class="mord mathnormal">m</span></span></span></span> 表示哈希表的空间大小</p>
 <p>哈希函数应该满足以下两点：第一、映射出来的地址不会越界；第二、映射出来的地址是唯一的</p>
@@ -1429,9 +1429,9 @@
                   <article class="post-prev col-6">
                     
                     
-                      <a href="/GPA/3rd-term/CollegePhysics_2/" title="CollegePhysics_2">
+                      <a href="/GPA/4th-term/PyAlgo/" title="PyAlgo">
                         <i class="iconfont icon-arrowleft"></i>
-                        <span class="hidden-mobile">CollegePhysics_2</span>
+                        <span class="hidden-mobile">PyAlgo</span>
                         <span class="visible-mobile">上一篇</span>
                       </a>
                     
@@ -1439,8 +1439,8 @@
                   <article class="post-next col-6">
                     
                     
-                      <a href="/GPA/3rd-term/DigitalLogicCircuit/" title="DigitalLogicCircuit">
-                        <span class="hidden-mobile">DigitalLogicCircuit</span>
+                      <a href="/GPA/3rd-term/CollegePhysics_2/" title="CollegePhysics_2">
+                        <span class="hidden-mobile">CollegePhysics_2</span>
                         <span class="visible-mobile">下一篇</span>
                         <i class="iconfont icon-arrowright"></i>
                       </a>
@@ -1453,7 +1453,7 @@
             
   
   
-    <article id="comments" lazyload>
+    <article id="comments">
       
   <script type="text/javascript">
     Fluid.utils.loadComments('#comments', function() {
@@ -2028,10 +2028,6 @@
 
 
 
-
-  
-    <script  src="/js/img-lazyload.js" ></script>
-  
 
 
 

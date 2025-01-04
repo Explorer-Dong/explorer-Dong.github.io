@@ -107,7 +107,7 @@
   <script id="fluid-configs">
     var Fluid = window.Fluid || {};
     Fluid.ctx = Object.assign({}, Fluid.ctx)
-    var CONFIG = {"hostname":"blog.dwj601.cn","root":"/","version":"1.9.8","typing":{"enable":true,"typeSpeed":70,"cursorChar":"_","loop":false,"scope":[]},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"left","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"code_language":{"enable":true,"default":"TEXT"},"copy_btn":true,"image_caption":{"enable":true},"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"placement":"left","headingSelector":"h1,h2,h3,h4,h5","collapseDepth":3},"lazyload":{"enable":true,"loading_img":"https://dwj-oss.oss-cn-nanjing.aliyuncs.com/web-imgs/img-static/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":true,"follow_dnt":true,"baidu":"d08d23389220ad9b8f711cfb85757f4b","google":{"measurement_id":null},"tencent":{"sid":null,"cid":null},"leancloud":{"app_id":null,"app_key":null,"server_url":null,"path":"window.location.pathname","ignore_local":false},"umami":{"src":null,"website_id":null,"domains":null,"start_time":"2024-01-01T00:00:00.000Z","token":null,"api_server":null},"woyaola":null,"cnzz":null},"search_path":"/local-search.xml","include_content_in_search":true};
+    var CONFIG = {"hostname":"blog.dwj601.cn","root":"/","version":"1.9.8","typing":{"enable":true,"typeSpeed":70,"cursorChar":"_","loop":false,"scope":[]},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"left","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"code_language":{"enable":true,"default":"TEXT"},"copy_btn":true,"image_caption":{"enable":true},"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"placement":"left","headingSelector":"h1,h2,h3,h4,h5","collapseDepth":3},"lazyload":{"enable":false,"loading_img":"https://dwj-oss.oss-cn-nanjing.aliyuncs.com/web-imgs/img-static/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":true,"follow_dnt":true,"baidu":"d08d23389220ad9b8f711cfb85757f4b","google":{"measurement_id":null},"tencent":{"sid":null,"cid":null},"leancloud":{"app_id":null,"app_key":null,"server_url":null,"path":"window.location.pathname","ignore_local":false},"umami":{"src":null,"website_id":null,"domains":null,"start_time":"2024-01-01T00:00:00.000Z","token":null,"api_server":null},"woyaola":null,"cnzz":null},"search_path":"/local-search.xml","include_content_in_search":true};
 
     if (CONFIG.web_analytics.follow_dnt) {
       var dntVal = navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack;
@@ -461,7 +461,7 @@
 <li>📑 <a target="_blank" rel="noopener" href="https://jyywiki.cn/OS/2024/">蒋炎岩课程配套讲义</a></li>
 </ul>
 <p>最难崩的一集：</p>
-<p><img src="https://dwj-oss.oss-cn-nanjing.aliyuncs.com/images/202408301623261.png" srcset="https://dwj-oss.oss-cn-nanjing.aliyuncs.com/web-imgs/img-static/loading.gif" lazyload alt="最难崩的一集"></p>
+<p><img src="https://dwj-oss.oss-cn-nanjing.aliyuncs.com/images/202408301623261.png" alt="最难崩的一集"></p>
 <p>为什么要学这门课？</p>
 <blockquote>
 <p>目前无论是考研还是互联网行业求职，操作系统似乎一直深受青睐。在对操作系统有了一点粗浅的认知后，我做出了这样的人机类比，尝试解释为什么操作系统会有如今这般重要的地位。</p>
@@ -591,16 +591,16 @@ graph RL
 <p><strong>进程和程序的区别是什么？动态性</strong>。程序是一个指令序列，当程序载入进程时就转换为了进程。</p>
 <h4 id="1-2-进程的状态">1.2 进程的状态</h4>
 <p>五态模型：</p>
-<p><img src="https://dwj-oss.oss-cn-nanjing.aliyuncs.com/images/202409241450175.png" srcset="https://dwj-oss.oss-cn-nanjing.aliyuncs.com/web-imgs/img-static/loading.gif" lazyload alt="五态模型 - 状态转换"></p>
+<p><img src="https://dwj-oss.oss-cn-nanjing.aliyuncs.com/images/202409241450175.png" alt="五态模型 - 状态转换"></p>
 <p>七态模型：</p>
-<p><img src="https://dwj-oss.oss-cn-nanjing.aliyuncs.com/images/202409242052428.png" srcset="https://dwj-oss.oss-cn-nanjing.aliyuncs.com/web-imgs/img-static/loading.gif" lazyload alt="七态模型 - 状态转换"></p>
+<p><img src="https://dwj-oss.oss-cn-nanjing.aliyuncs.com/images/202409242052428.png" alt="七态模型 - 状态转换"></p>
 <h4 id="1-3-进程的描述">1.3 进程的描述</h4>
 <p><strong>如何准确描述一个进程？通过进程映象</strong>。我们引入进程映象的概念。所谓进程映象就是某一时刻的进程状态，左图相对宏观，右图相对微观：</p>
 <table>
 <thead>
 <tr>
-<th style="text-align:center"><img src="https://dwj-oss.oss-cn-nanjing.aliyuncs.com/images/202411121040792.png" srcset="https://dwj-oss.oss-cn-nanjing.aliyuncs.com/web-imgs/img-static/loading.gif" lazyload alt="进程结构"></th>
-<th style="text-align:center"><img src="https://dwj-oss.oss-cn-nanjing.aliyuncs.com/images/202409270845459.png" srcset="https://dwj-oss.oss-cn-nanjing.aliyuncs.com/web-imgs/img-static/loading.gif" lazyload alt="进程映象"></th>
+<th style="text-align:center"><img src="https://dwj-oss.oss-cn-nanjing.aliyuncs.com/images/202411121040792.png" alt="进程结构"></th>
+<th style="text-align:center"><img src="https://dwj-oss.oss-cn-nanjing.aliyuncs.com/images/202409270845459.png" alt="进程映象"></th>
 </tr>
 </thead>
 </table>
@@ -633,7 +633,7 @@ graph RL
 <p>**并发执行程序时，如何切换状态？如何继续运行原进程呢？**通过「中断/系统调用」切换状态，通过 PCB 保存现场数据。</p>
 <p>以下图两个进程，进程 0 和进程 1 为例。操作系统会在进程切换的中断信号发生时，首先保存进程 0 的诸如「通用寄存器的值、程序计数器、状态寄存器」等寄存器信息到其 PCB 中，然后将待处理进程 1 的 PCB 中保存的各种寄存器信息加载到 CPU 的寄存器中执行。等进程 1 执行完后，再将进程 0 的 PCB 中存储的寄存器信息加载到 CPU 的寄存器中即可恢复进行 0 的执行。</p>
 <p>可以发现这个进程上下文切换的过程其实就是对所有寄存器做一个快照的过程。总结一下就是「触发中断、保存现场、处理中断、恢复现场、结束中断」。如下图所示：</p>
-<p><img src="https://dwj-oss.oss-cn-nanjing.aliyuncs.com/images/202409270937298.png" srcset="https://dwj-oss.oss-cn-nanjing.aliyuncs.com/web-imgs/img-static/loading.gif" lazyload alt="进程上下文切换"></p>
+<p><img src="https://dwj-oss.oss-cn-nanjing.aliyuncs.com/images/202409270937298.png" alt="进程上下文切换"></p>
 <h4 id="1-6-原语">1.6 原语</h4>
 <p><strong>如果在执行中断任务时又中断了呢</strong>？这是不会发生的。进程在执行/切换时，很多操作是不允许被打断的，我们就需要进程的最小执行单元，这被称作「原语」操作。例如更新进程信息（修改 PCB 中的信息）、更新进程状态（修改 PCB 所在的状态队列）、分配/回收资源等等。</p>
 <h4 id="1-7-线程">1.7 线程</h4>
@@ -650,18 +650,18 @@ graph RL
 <li><strong>低级调度（进程调度）</strong> 是决定哪些内存中的进程可以获得合适的 CPU 计算资源，也就是 <strong>分配计算</strong> 资源，即五态模型中「就绪态 <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo>⇌</mo></mrow><annotation encoding="application/x-tex">\rightleftharpoons</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.682em;vertical-align:-0.011em;"></span><span class="mrel">⇌</span></span></span></span> 运行态」之间的转换。</li>
 </ul>
 <h4 id="2-2-评价指标">2.2 评价指标</h4>
-<p><img src="https://dwj-oss.oss-cn-nanjing.aliyuncs.com/images/202410081443847.png" srcset="https://dwj-oss.oss-cn-nanjing.aliyuncs.com/web-imgs/img-static/loading.gif" lazyload alt="处理器调度的评价指标"></p>
+<p><img src="https://dwj-oss.oss-cn-nanjing.aliyuncs.com/images/202410081443847.png" alt="处理器调度的评价指标"></p>
 <p>显然周转时间 <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mtext>  </mtext><mo>⟺</mo><mtext>  </mtext></mrow><annotation encoding="application/x-tex">\iff</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.549em;vertical-align:-0.024em;"></span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">⟺</span><span class="mspace" style="margin-right:0.2778em;"></span></span></span></span> 运行时间+等待时间，因此上述「带权」的含义可以理解为作业处理效率，取值范围为 <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="false">[</mo><mn>1</mn><mo separator="true">,</mo><mi mathvariant="normal">∞</mi><mo stretchy="false">]</mo></mrow><annotation encoding="application/x-tex">[1,\infty]</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mopen">[</span><span class="mord">1</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.1667em;"></span><span class="mord">∞</span><span class="mclose">]</span></span></span></span>。</p>
 <h4 id="2-3-调度算法">2.3 调度算法</h4>
 <h5 id="先来先服务-FCFS">先来先服务 FCFS</h5>
-<p><img src="https://dwj-oss.oss-cn-nanjing.aliyuncs.com/images/202410110832017.png" srcset="https://dwj-oss.oss-cn-nanjing.aliyuncs.com/web-imgs/img-static/loading.gif" lazyload alt="先来先服务"></p>
+<p><img src="https://dwj-oss.oss-cn-nanjing.aliyuncs.com/images/202410110832017.png" alt="先来先服务"></p>
 <ul>
 <li>先来先服务 (First Come First Serverd, FCFS)。</li>
 <li>非抢占式。</li>
 <li>按照进程进入就绪队列的时间顺序分配进程的计算资源。</li>
 </ul>
 <h5 id="短作业优先-SJF">短作业优先 SJF</h5>
-<p><img src="https://dwj-oss.oss-cn-nanjing.aliyuncs.com/images/202410110833532.png" srcset="https://dwj-oss.oss-cn-nanjing.aliyuncs.com/web-imgs/img-static/loading.gif" lazyload alt="短作业优先"></p>
+<p><img src="https://dwj-oss.oss-cn-nanjing.aliyuncs.com/images/202410110833532.png" alt="短作业优先"></p>
 <ul>
 <li>最短作业优先 (Shortest Job First, SJF)。</li>
 <li>非抢占式。</li>
@@ -669,13 +669,13 @@ graph RL
 <li>显然如果一直有很小的运行时间的进程进入就绪队列，就会造成已经存在于就绪队列中但是运行时间较长的进程“饿死”。</li>
 </ul>
 <h5 id="最短剩余时间优先-SRTF">最短剩余时间优先 SRTF</h5>
-<p><img src="https://dwj-oss.oss-cn-nanjing.aliyuncs.com/images/202410110847220.png" srcset="https://dwj-oss.oss-cn-nanjing.aliyuncs.com/web-imgs/img-static/loading.gif" lazyload alt="最短剩余时间优先"></p>
+<p><img src="https://dwj-oss.oss-cn-nanjing.aliyuncs.com/images/202410110847220.png" alt="最短剩余时间优先"></p>
 <ul>
 <li>最短剩余时间优先 (Shortest Remaining Time First, SRTF)。</li>
 <li>短作业优先的抢占式版本。</li>
 </ul>
 <h5 id="最高响应比优先-HRRF">最高响应比优先 HRRF</h5>
-<p><img src="https://dwj-oss.oss-cn-nanjing.aliyuncs.com/images/202410110923854.png" srcset="https://dwj-oss.oss-cn-nanjing.aliyuncs.com/web-imgs/img-static/loading.gif" lazyload alt="最高响应比优先"></p>
+<p><img src="https://dwj-oss.oss-cn-nanjing.aliyuncs.com/images/202410110923854.png" alt="最高响应比优先"></p>
 <ul>
 <li>最高响应比优先 (Highest Response Ratio First, HRRF)。</li>
 <li>非抢占式。</li>
@@ -687,23 +687,23 @@ graph RL
 <li>优先级调度 (Priority Scheduling, Pr)</li>
 <li>分为抢占式和非抢占式。</li>
 </ul>
-<p><img src="https://dwj-oss.oss-cn-nanjing.aliyuncs.com/images/202410110852352.png" srcset="https://dwj-oss.oss-cn-nanjing.aliyuncs.com/web-imgs/img-static/loading.gif" lazyload alt="优先级调度算法 - 非抢占式"></p>
+<p><img src="https://dwj-oss.oss-cn-nanjing.aliyuncs.com/images/202410110852352.png" alt="优先级调度算法 - 非抢占式"></p>
 <ul>
 <li>非抢占式。注意优先数和优先级的对应关系。</li>
 </ul>
-<p><img src="https://dwj-oss.oss-cn-nanjing.aliyuncs.com/images/202410110852510.png" srcset="https://dwj-oss.oss-cn-nanjing.aliyuncs.com/web-imgs/img-static/loading.gif" lazyload alt="优先级调度算法 - 抢占式"></p>
+<p><img src="https://dwj-oss.oss-cn-nanjing.aliyuncs.com/images/202410110852510.png" alt="优先级调度算法 - 抢占式"></p>
 <ul>
 <li>抢占式。</li>
 </ul>
 <h5 id="轮转调度-RR">轮转调度 RR</h5>
-<p><img src="https://dwj-oss.oss-cn-nanjing.aliyuncs.com/images/202410111023261.png" srcset="https://dwj-oss.oss-cn-nanjing.aliyuncs.com/web-imgs/img-static/loading.gif" lazyload alt="轮转调度"></p>
+<p><img src="https://dwj-oss.oss-cn-nanjing.aliyuncs.com/images/202410111023261.png" alt="轮转调度"></p>
 <ul>
 <li>轮转调度 (Round Robin Scheduling, RR)。</li>
 <li>抢占式。一个时间片结束后如果进程没有执行完毕，OS 会产生时钟中断从而切换进程进行服务。</li>
 <li>每次从就绪队列中取出进程后，执行最多时间片长度的时间，如果还没执行结束则重新入队。</li>
 </ul>
 <h5 id="多级反馈队列调度-MLFQ">多级反馈队列调度 MLFQ</h5>
-<p><img src="https://dwj-oss.oss-cn-nanjing.aliyuncs.com/images/202410111037255.png" srcset="https://dwj-oss.oss-cn-nanjing.aliyuncs.com/web-imgs/img-static/loading.gif" lazyload alt="多级反馈队列调度 - 非抢占式"></p>
+<p><img src="https://dwj-oss.oss-cn-nanjing.aliyuncs.com/images/202410111037255.png" alt="多级反馈队列调度 - 非抢占式"></p>
 <ul>
 <li>多级反馈队列调度 (Multi-Level Feedback Queue, MLFQ)。</li>
 <li>非抢占式与抢占式都有。</li>
@@ -810,9 +810,9 @@ graph RL
 <li><strong>V (Verhogen) 操作</strong> 表示 <strong>释放</strong> 资源，现在常用 <strong>semSignal</strong> 表示。</li>
 </ul>
 <p>对于 <strong>互斥</strong> 问题。我们一般设定初始信号量为 <code>ini_value = m</code>，其中 <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>m</mi></mrow><annotation encoding="application/x-tex">m</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.4306em;"></span><span class="mord mathnormal">m</span></span></span></span> 表示临界区允许并发的最大进程量，一般都是 <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>1</mn></mrow><annotation encoding="application/x-tex">1</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.6444em;"></span><span class="mord">1</span></span></span></span>。每一个进程在申请资源时，首先执行 P 操作检查当前资源申请的资源是否可用，然后执行临界区的关键代码，最后执行 V 操作释放资源。即每一个进程中同时含有 P 原语和 V 原语。</p>
-<p><img src="https://dwj-oss.oss-cn-nanjing.aliyuncs.com/images/202410181036336.png" srcset="https://dwj-oss.oss-cn-nanjing.aliyuncs.com/web-imgs/img-static/loading.gif" lazyload alt="信号量与 PV 操作解决互斥问题"></p>
+<p><img src="https://dwj-oss.oss-cn-nanjing.aliyuncs.com/images/202410181036336.png" alt="信号量与 PV 操作解决互斥问题"></p>
 <p>对于 <strong>同步</strong> 问题。我们一般设定初始信号量为 <code>ini_value = 0</code>。对于一个 DAG 式的同步逻辑，起点释放资源后，终点才能申请到资源并执行代码逻辑。</p>
-<p><img src="https://dwj-oss.oss-cn-nanjing.aliyuncs.com/images/202410221600543.png" srcset="https://dwj-oss.oss-cn-nanjing.aliyuncs.com/web-imgs/img-static/loading.gif" lazyload alt="信号量与 PV 操作解决同步问题"></p>
+<p><img src="https://dwj-oss.oss-cn-nanjing.aliyuncs.com/images/202410221600543.png" alt="信号量与 PV 操作解决同步问题"></p>
 
     <div class="fold">
       <div class="fold-title fold-light collapsed" data-toggle="collapse" href="#collapse-0251193a" role="button" aria-expanded="false" aria-controls="collapse-0251193a">
@@ -839,17 +839,17 @@ graph RL
 </ul>
 <p><strong>策略二：允许前三种错误发生并通过设计算法来避免第四种错误发生</strong></p>
 <p>我们以 Dijkstra 在上世纪六十年代设计出来的 <strong>银行家算法</strong> 为例。（没错又是他）</p>
-<p><img src="https://dwj-oss.oss-cn-nanjing.aliyuncs.com/images/202411010855566.png" srcset="https://dwj-oss.oss-cn-nanjing.aliyuncs.com/web-imgs/img-static/loading.gif" lazyload alt="银行家算法 - 数据类型示例"></p>
+<p><img src="https://dwj-oss.oss-cn-nanjing.aliyuncs.com/images/202411010855566.png" alt="银行家算法 - 数据类型示例"></p>
 <p>如上图示例，银行家算法一共有 4 个数据类型：1）资源总数向量 2）可用资源向量 3）资源需求矩阵 4）已分配资源矩阵。</p>
 <p>值得注意的是。该算法只适合用来教学，没有什么实际意义（至少在当下已经完全没有意义了）。从上述对算法的解析不难看出，银行家算法需要提前知道每一个进程所需的资源开销，就光凭这一点就很不切实际了，因为这很难提前预知（就和调度算法中提前知道进程的服务时间一样不切实际）。其次不难发现，银行家算法其实就是 dfs，这种试探性搜索算法会随着资源种类的增加而指数级上升，因此现代往往都采用即将介绍的策略三。</p>
 <p><strong>策略三：允许死锁发生但是通过检测来解除死锁</strong></p>
 <p>我们将「资源」和「进程」抽象成图中的两种结点，「进程请求资源」和「资源分配给进程」抽象成图中的两种边，如下图所示：</p>
-<p><img src="https://dwj-oss.oss-cn-nanjing.aliyuncs.com/images/202411051438972.png" srcset="https://dwj-oss.oss-cn-nanjing.aliyuncs.com/web-imgs/img-static/loading.gif" lazyload alt="资源调度抽象图"></p>
+<p><img src="https://dwj-oss.oss-cn-nanjing.aliyuncs.com/images/202411051438972.png" alt="资源调度抽象图"></p>
 <p>现在我们需要解决两个问题：死锁检测和死锁接触。</p>
 <p><strong>对于死锁检测</strong>。按照图中的请求和分配关系逐个结束未阻塞的进程并重新分配资源，如果图出现了环就表示无法继续分配资源了，即出现了死锁状态。</p>
 <p><strong>对于死锁接触</strong>。1）将陷入死锁状态的进程全部结束 2）逐个结束陷入死锁状态的进程 3）剥夺陷入死锁状态的进程所占用的资源进行重新分配直到死锁状态接触。</p>
 <h4 id="小结-2">小结</h4>
-<p><img src="https://dwj-oss.oss-cn-nanjing.aliyuncs.com/images/202411051519403.png" srcset="https://dwj-oss.oss-cn-nanjing.aliyuncs.com/web-imgs/img-static/loading.gif" lazyload alt="死锁 | 小结"></p>
+<p><img src="https://dwj-oss.oss-cn-nanjing.aliyuncs.com/images/202411051519403.png" alt="死锁 | 小结"></p>
 <h2 id="虚拟化">虚拟化</h2>
 <h3 id="5-虚拟存储">5 虚拟存储</h3>
 <p>本章展开虚拟化技术的学习。主要介绍虚拟存储的 4 种策略，分别为「连续存储」、「分页存储」、「分段存储」和「段页式存储」。后三个策略以及虚拟内存的产生背景、工作逻辑已经在计算机组成原理中详细展开，此处就不多赘述。主要展开连续存储的虚拟化存储策略。</p>
@@ -858,16 +858,16 @@ graph RL
 <h5 id="5-1-1-单用户连续分区">5.1.1 单用户连续分区</h5>
 <p>内存分配策略。一个进程占用整个用户内存空间（内存分为 OS 空间和用户空间）。</p>
 <p>地址转换和存储保护。直接将虚拟地址+基地址即可得到绝对地址；至于存储保护，只需要检查一下绝对地址是否越界即可。如下图所示：</p>
-<p><img src="https://dwj-oss.oss-cn-nanjing.aliyuncs.com/images/202411080910924.png" srcset="https://dwj-oss.oss-cn-nanjing.aliyuncs.com/web-imgs/img-static/loading.gif" lazyload alt="单用户连续分区 | 地址转换和存储保护"></p>
+<p><img src="https://dwj-oss.oss-cn-nanjing.aliyuncs.com/images/202411080910924.png" alt="单用户连续分区 | 地址转换和存储保护"></p>
 <p>这种策略的缺点很明显：1）不能并发执行进程 2）内存浪费严重。</p>
 <h5 id="5-1-2-固定分区">5.1.2 固定分区</h5>
 <p>内存分配策略。将用户内存空间划分为 n 个固定大小的分区，其余逻辑与上述单用户连续分区一致。</p>
 <p>地址转换和存储保护。如下图所示：</p>
-<p><img src="https://dwj-oss.oss-cn-nanjing.aliyuncs.com/images/202411080910546.png" srcset="https://dwj-oss.oss-cn-nanjing.aliyuncs.com/web-imgs/img-static/loading.gif" lazyload alt="固定分区 | 地址转换与存储保护"></p>
+<p><img src="https://dwj-oss.oss-cn-nanjing.aliyuncs.com/images/202411080910546.png" alt="固定分区 | 地址转换与存储保护"></p>
 <p>这种策略的缺点依然很明显：1）虽然解决了只能一个进程执行的问题，但是由于一个进程只能占用一个分区，因此仍然限制了并发的进程数量上限为 n 并且不支持超过最大分区容量的进程执行；2）同样会造成内存浪费；3）不利于进程的内存开销的动态变化。</p>
 <h5 id="5-1-3-可变分区">5.1.3 可变分区</h5>
 <p>内存分配策略。可变分区存储管理可以理解为拼图，通过移动/紧凑技术将进程移动到地址相连的内存空间从而可以不浪费进程之间的小内存区域。设计者设计了两个表，<strong>可分配分区表</strong>和<strong>被占用分区表</strong>。可以每次从可分配分区表的第一个可分配分区开始找，也可以按照上次寻找结束的分区开始找；也可以按照可分配空间大小降序排序开始找；也可以按照可分配空间大小升序排序开始找。各有各的优势和劣势。如下图所示：</p>
-<p><img src="https://dwj-oss.oss-cn-nanjing.aliyuncs.com/images/202411080911787.png" srcset="https://dwj-oss.oss-cn-nanjing.aliyuncs.com/web-imgs/img-static/loading.gif" lazyload alt="可变分区 | 内存分配策略"></p>
+<p><img src="https://dwj-oss.oss-cn-nanjing.aliyuncs.com/images/202411080911787.png" alt="可变分区 | 内存分配策略"></p>
 <p>地址转换和存储保护。同样的用虚拟地址+基地址可以得到绝对地址。同样的绝对地址不要超过对应分区的界限即可。只需要存储每一个分区的起始地址以及分区长度/分区终点地址即可。</p>
 <p>这种策略解决了内存浪费的问题但缺点依然明显：1）同样不支持大作业进程；2）上述的移动/紧凑策略对于时间开销很大，不利于进程的高效执行。</p>
 <h4 id="5-2-分页式存储管理">5.2 分页式存储管理</h4>
@@ -877,7 +877,7 @@ graph RL
 <h3 id="6-设备管理-TODO">6 设备管理 TODO</h3>
 <p>本章开始学习 I/O 设备。I/O 设备顾名思义就是输入输出设备，也被称为外设。具体的可以根据传输方向将 I/O 设备分为三大类，分别为：输入设备（键盘、鼠标、扫描仪）、输出设备（显示器、打印机）和输入输出设备（磁盘、网卡）。重点学习外设中的磁盘模块。</p>
 <p>首先看一下磁盘的结构示意图：</p>
-<p><img src="https://dwj-oss.oss-cn-nanjing.aliyuncs.com/images/202412130825688.png" srcset="https://dwj-oss.oss-cn-nanjing.aliyuncs.com/web-imgs/img-static/loading.gif" lazyload alt="磁盘的结构示意图"></p>
+<p><img src="https://dwj-oss.oss-cn-nanjing.aliyuncs.com/images/202412130825688.png" alt="磁盘的结构示意图"></p>
 <p>如上图所示，一个磁盘设备主要有三部分组成，分别是：柱面、磁头和扇区。</p>
 <h3 id="7-文件系统">7 文件系统</h3>
 <h4 id="7-1-文件的存在形式">7.1 文件的存在形式</h4>
@@ -893,14 +893,14 @@ graph RL
 <h4 id="7-2-文件的目录组织">7.2 文件的目录组织</h4>
 <p>大量的文件需要我们进行合理的管理，以树形文件目录为例。为了 <strong>便于管理</strong>，设计者将每一个 inode 进行唯一性编号（记作 inode_id），这样用户打开一个文件其实是发送一个 inode_id 给操作系统，操作系统会根据 inode_id 查询到对应的 inode 并基于此 inode 将对应的文件加载到内存。</p>
 <p>所以为什么要把目录设置成树形结构？从开发者角度来说，树形目录没有任何作用，他们只需要关心什么 inode_id，别的都不操心。但是从用户角度来说，树形目录的意义就很大了。具体的，对于用户来说，树形目录可以让我们分级分类管理多而杂的文件，并且在不同的树路径下，我们可以取相同名称的文件。与此同时，不同的子树存储的数据可以被划分到不同的硬件存储器中，这就方便了用户从物理意义上将数据进行迁移。下面展示一个可重名的树形文件目录在不同视角下存储的信息：</p>
-<p><img src="https://dwj-oss.oss-cn-nanjing.aliyuncs.com/images/202412201829367.png" srcset="https://dwj-oss.oss-cn-nanjing.aliyuncs.com/web-imgs/img-static/loading.gif" lazyload alt="用户角度的目录结构 VS 系统角度的目录结构"></p>
+<p><img src="https://dwj-oss.oss-cn-nanjing.aliyuncs.com/images/202412201829367.png" alt="用户角度的目录结构 VS 系统角度的目录结构"></p>
 <h4 id="7-3-文件的共享">7.3 文件的共享</h4>
 <p>下面介绍两种文件链接以达到共享目的的方式：</p>
 <ul>
 <li><strong>硬链接</strong>。所谓硬链接，可以理解为拷贝文件的 inode 而非拷贝文件。</li>
 <li><strong>软链接</strong>。所谓软链接，也可以称为符号链接，可以理解为创建一个新的文件，只不过这个文件存储的是被链接文件的路径。</li>
 </ul>
-<p><img src="https://dwj-oss.oss-cn-nanjing.aliyuncs.com/images/202412241603205.png" srcset="https://dwj-oss.oss-cn-nanjing.aliyuncs.com/web-imgs/img-static/loading.gif" lazyload alt="示例"></p>
+<p><img src="https://dwj-oss.oss-cn-nanjing.aliyuncs.com/images/202412241603205.png" alt="示例"></p>
 <p>对于上图的示例：</p>
 <ul>
 <li>创建了一份名为 <code>origin.txt</code> 的原始文件，占用 4502 个字节，其对应的 inode_id 为 1047884；</li>
@@ -1086,7 +1086,7 @@ graph RL
             
   
   
-    <article id="comments" lazyload>
+    <article id="comments">
       
   <script type="text/javascript">
     Fluid.utils.loadComments('#comments', function() {
@@ -1676,10 +1676,6 @@ graph RL
 
 
 
-
-  
-    <script  src="/js/img-lazyload.js" ></script>
-  
 
 
 

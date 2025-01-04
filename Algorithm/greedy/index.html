@@ -83,7 +83,7 @@
   <script id="fluid-configs">
     var Fluid = window.Fluid || {};
     Fluid.ctx = Object.assign({}, Fluid.ctx)
-    var CONFIG = {"hostname":"blog.dwj601.cn","root":"/","version":"1.9.8","typing":{"enable":true,"typeSpeed":70,"cursorChar":"_","loop":false,"scope":[]},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"left","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"code_language":{"enable":true,"default":"TEXT"},"copy_btn":true,"image_caption":{"enable":true},"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"placement":"left","headingSelector":"h1,h2,h3,h4,h5","collapseDepth":3},"lazyload":{"enable":true,"loading_img":"https://dwj-oss.oss-cn-nanjing.aliyuncs.com/web-imgs/img-static/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":true,"follow_dnt":true,"baidu":"d08d23389220ad9b8f711cfb85757f4b","google":{"measurement_id":null},"tencent":{"sid":null,"cid":null},"leancloud":{"app_id":null,"app_key":null,"server_url":null,"path":"window.location.pathname","ignore_local":false},"umami":{"src":null,"website_id":null,"domains":null,"start_time":"2024-01-01T00:00:00.000Z","token":null,"api_server":null},"woyaola":null,"cnzz":null},"search_path":"/local-search.xml","include_content_in_search":true};
+    var CONFIG = {"hostname":"blog.dwj601.cn","root":"/","version":"1.9.8","typing":{"enable":true,"typeSpeed":70,"cursorChar":"_","loop":false,"scope":[]},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"left","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"code_language":{"enable":true,"default":"TEXT"},"copy_btn":true,"image_caption":{"enable":true},"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"placement":"left","headingSelector":"h1,h2,h3,h4,h5","collapseDepth":3},"lazyload":{"enable":false,"loading_img":"https://dwj-oss.oss-cn-nanjing.aliyuncs.com/web-imgs/img-static/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":true,"follow_dnt":true,"baidu":"d08d23389220ad9b8f711cfb85757f4b","google":{"measurement_id":null},"tencent":{"sid":null,"cid":null},"leancloud":{"app_id":null,"app_key":null,"server_url":null,"path":"window.location.pathname","ignore_local":false},"umami":{"src":null,"website_id":null,"domains":null,"start_time":"2024-01-01T00:00:00.000Z","token":null,"api_server":null},"woyaola":null,"cnzz":null},"search_path":"/local-search.xml","include_content_in_search":true};
 
     if (CONFIG.web_analytics.follow_dnt) {
       var dntVal = navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack;
@@ -503,7 +503,7 @@
 </li>
 <li>
 <p>按照上述规则对订单排序后，我们需要安排合理的货车进行运输。我们优先将运输量小的货车安排给合适的订单。因为运输量大的货车既可以满足当前订单，同样也满足后续的订单，那么为了最大化增加利润，就需要在运输量小的货车满足当前订单时，保留运输量大的货车用于后续的订单。我们可以画一个图进一步理解为什么这么安排货车进行运输：</p>
-  <img src="D:/BaiduSyncdisk/_images/typora-user-images/202402012332958.png" srcset="https://dwj-oss.oss-cn-nanjing.aliyuncs.com/web-imgs/img-static/loading.gif" lazyload alt="image-20231223222627134" style="zoom: 50%;">
+  <img src="D:/BaiduSyncdisk/_images/typora-user-images/202402012332958.png" alt="image-20231223222627134" style="zoom: 50%;">
   <div style="text-align: center">图例：我们按照上述红笔的需要进行货车的选择进行运输</div>
 <p>如果红色序号顺序变掉了，则就不能将上述图例中的 6 个订单全部运输了</p>
 </li>
@@ -530,7 +530,7 @@
 </li>
 <li>
 <p>思路：<strong>考虑一般情况</strong>。注意问的是平均等待时间，如果是打完水总花费时间那就是一个定值，即所有人打水的时间总和。现在为了让平均等待时间最短，我们的第一反应应该是，在人多的时候让打水时间短的先打，人少的时候让打水时间长的再打，那么很显然就是按照打水时间的升序进行排队。为了证明这个结论，我们采用数学归纳法，如下，对于一个排队序列来说，我们将其中的两个顺序进行颠倒，计算结果得到让打水时间短的排在前面更优，进而推广到一般情况，于是按照打水时间升序进行打水的策略是最优的。证毕</p>
-  <img src="D:/BaiduSyncdisk/_images/typora-user-images/202402012332959.png" srcset="https://dwj-oss.oss-cn-nanjing.aliyuncs.com/web-imgs/img-static/loading.gif" lazyload alt="demo" style="zoom: 67%;">
+  <img src="D:/BaiduSyncdisk/_images/typora-user-images/202402012332959.png" alt="demo" style="zoom: 67%;">
 </li>
 <li>
 <p>时间复杂度：<span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>O</mi><mo stretchy="false">(</mo><mi>n</mi><mi>log</mi><mo>⁡</mo><mi>n</mi><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">O(n \log n)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathnormal" style="margin-right:0.02778em;">O</span><span class="mopen">(</span><span class="mord mathnormal">n</span><span class="mspace" style="margin-right:0.1667em;"></span><span class="mop">lo<span style="margin-right:0.01389em;">g</span></span><span class="mspace" style="margin-right:0.1667em;"></span><span class="mord mathnormal">n</span><span class="mclose">)</span></span></span></span></p>
@@ -833,9 +833,9 @@
                   <article class="post-prev col-6">
                     
                     
-                      <a href="/Algorithm/geometry/" title="geometry">
+                      <a href="/Algorithm/graphs/" title="graphs">
                         <i class="iconfont icon-arrowleft"></i>
-                        <span class="hidden-mobile">geometry</span>
+                        <span class="hidden-mobile">graphs</span>
                         <span class="visible-mobile">上一篇</span>
                       </a>
                     
@@ -843,8 +843,8 @@
                   <article class="post-next col-6">
                     
                     
-                      <a href="/Algorithm/number-theory/" title="number-theory">
-                        <span class="hidden-mobile">number-theory</span>
+                      <a href="/README/" title="README">
+                        <span class="hidden-mobile">README</span>
                         <span class="visible-mobile">下一篇</span>
                         <i class="iconfont icon-arrowright"></i>
                       </a>
@@ -857,7 +857,7 @@
             
   
   
-    <article id="comments" lazyload>
+    <article id="comments">
       
   <script type="text/javascript">
     Fluid.utils.loadComments('#comments', function() {
@@ -1226,10 +1226,6 @@
 
 
 
-
-  
-    <script  src="/js/img-lazyload.js" ></script>
-  
 
 
 

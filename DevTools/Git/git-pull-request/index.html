@@ -88,7 +88,7 @@
   <script id="fluid-configs">
     var Fluid = window.Fluid || {};
     Fluid.ctx = Object.assign({}, Fluid.ctx)
-    var CONFIG = {"hostname":"blog.dwj601.cn","root":"/","version":"1.9.8","typing":{"enable":true,"typeSpeed":70,"cursorChar":"_","loop":false,"scope":[]},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"left","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"code_language":{"enable":true,"default":"TEXT"},"copy_btn":true,"image_caption":{"enable":true},"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"placement":"left","headingSelector":"h1,h2,h3,h4,h5","collapseDepth":3},"lazyload":{"enable":true,"loading_img":"https://dwj-oss.oss-cn-nanjing.aliyuncs.com/web-imgs/img-static/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":true,"follow_dnt":true,"baidu":"d08d23389220ad9b8f711cfb85757f4b","google":{"measurement_id":null},"tencent":{"sid":null,"cid":null},"leancloud":{"app_id":null,"app_key":null,"server_url":null,"path":"window.location.pathname","ignore_local":false},"umami":{"src":null,"website_id":null,"domains":null,"start_time":"2024-01-01T00:00:00.000Z","token":null,"api_server":null},"woyaola":null,"cnzz":null},"search_path":"/local-search.xml","include_content_in_search":true};
+    var CONFIG = {"hostname":"blog.dwj601.cn","root":"/","version":"1.9.8","typing":{"enable":true,"typeSpeed":70,"cursorChar":"_","loop":false,"scope":[]},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"left","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"code_language":{"enable":true,"default":"TEXT"},"copy_btn":true,"image_caption":{"enable":true},"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"placement":"left","headingSelector":"h1,h2,h3,h4,h5","collapseDepth":3},"lazyload":{"enable":false,"loading_img":"https://dwj-oss.oss-cn-nanjing.aliyuncs.com/web-imgs/img-static/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":true,"follow_dnt":true,"baidu":"d08d23389220ad9b8f711cfb85757f4b","google":{"measurement_id":null},"tencent":{"sid":null,"cid":null},"leancloud":{"app_id":null,"app_key":null,"server_url":null,"path":"window.location.pathname","ignore_local":false},"umami":{"src":null,"website_id":null,"domains":null,"start_time":"2024-01-01T00:00:00.000Z","token":null,"api_server":null},"woyaola":null,"cnzz":null},"search_path":"/local-search.xml","include_content_in_search":true};
 
     if (CONFIG.web_analytics.follow_dnt) {
       var dntVal = navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack;
@@ -362,17 +362,17 @@
                 
                 <h2 id="Git-的-Pull-Request-是什么">Git 的 Pull Request 是什么</h2>
 <h2 id="前言">前言</h2>
-<p>发现了本博客站点的配置文件中一个失效的链接，就想着对原项目进行修改。早闻 git 的 pr 功能，趁着端午放假在家便来实战一波，做个小小的记录 <span class="github-emoji"><span>😎</span><img src="https://github.githubassets.com/images/icons/emoji/unicode/1f60e.png?v8" srcset="https://dwj-oss.oss-cn-nanjing.aliyuncs.com/web-imgs/img-static/loading.gif" lazyload aria-hidden="true" onerror="this.parent.classList.add('github-emoji-fallback')"></span></p>
+<p>发现了本博客站点的配置文件中一个失效的链接，就想着对原项目进行修改。早闻 git 的 pr 功能，趁着端午放假在家便来实战一波，做个小小的记录 <span class="github-emoji"><span>😎</span><img src="https://github.githubassets.com/images/icons/emoji/unicode/1f60e.png?v8" aria-hidden="true" onerror="this.parent.classList.add('github-emoji-fallback')"></span></p>
 <h2 id="原理">原理</h2>
 <p>首先聊聊 pr 名字的由来。pr 即 <code>pull request</code>，顾名思义是「拉取请求」的意思。pr 根本逻辑是将原项目 fork 到自己的仓库后进行修改，然后向原项目作者发起 pull request 请求，直到 merge 到原项目或被拒绝。这样的一个工作流程为什么被叫做「拉取请求」呢？依稀记得之前在某乎上看到过相关文章，程序员届大概有两个流派，主要从这个工作流的执行主体角度来理解。对于原项目作者，需要考虑修改者的请求是否适合合并，就是 pull 的过程；相对的，修改者发送修改合并的请求是一个 push 的过程。因此我们从原项目作者的角度来理解这个名称就有据可寻了。下附一张图解：</p>
-<p><img src="https://dwj-oss.oss-cn-nanjing.aliyuncs.com/images/202406091607490.svg" srcset="https://dwj-oss.oss-cn-nanjing.aliyuncs.com/web-imgs/img-static/loading.gif" lazyload alt="pull-request-workflow"></p>
+<p><img src="https://dwj-oss.oss-cn-nanjing.aliyuncs.com/images/202406091607490.svg" alt="pull-request-workflow"></p>
 <h2 id="实操">实操</h2>
 <h3 id="一、fork-目标仓库">一、fork 目标仓库</h3>
 <p>进入目标仓库，点击右上角的 fork 按钮进行 fork</p>
-<p><img src="https://dwj-oss.oss-cn-nanjing.aliyuncs.com/images/202406091618430.png" srcset="https://dwj-oss.oss-cn-nanjing.aliyuncs.com/web-imgs/img-static/loading.gif" lazyload alt="fork 目标仓库"></p>
+<p><img src="https://dwj-oss.oss-cn-nanjing.aliyuncs.com/images/202406091618430.png" alt="fork 目标仓库"></p>
 <h3 id="二、clone-至本地">二、clone 至本地</h3>
 <p>进入自己的仓库，找到对应的项目并复制克隆链接</p>
-<p><img src="https://dwj-oss.oss-cn-nanjing.aliyuncs.com/images/202406091620622.png" srcset="https://dwj-oss.oss-cn-nanjing.aliyuncs.com/web-imgs/img-static/loading.gif" lazyload alt="clone 至本地"></p>
+<p><img src="https://dwj-oss.oss-cn-nanjing.aliyuncs.com/images/202406091620622.png" alt="clone 至本地"></p>
 <h3 id="三、编辑内容并版本管理">三、编辑内容并版本管理</h3>
 <div class="note note-warning">
             <p>注意：如果在进行 clone 时，只克隆了默认的主分支，我们需要按照原项目规定的 pr 分支创建同名的分支。比如此处：原项目只允许在 develop 分支上进行 pr，因此我们在默认只拉取了 master 分支的前提下，需要自己在本地创建一个 develop 分支，并在此基础之上进行内容的修改与编写。</p>
@@ -382,11 +382,11 @@
 <p>此处将已经版本管理好的内容 push 到自己刚才 fork 出来的仓库即可。上述示例中需要 push 到 develop 分支上。</p>
 <h3 id="五、发起-pr-请求">五、发起 pr 请求</h3>
 <p>在选择合适的分支后，点击 Contribute 按钮即可看到 Open pull request 选项，点击即可发起 pr 请求：</p>
-<p><img src="https://dwj-oss.oss-cn-nanjing.aliyuncs.com/images/202406091634960.png" srcset="https://dwj-oss.oss-cn-nanjing.aliyuncs.com/web-imgs/img-static/loading.gif" lazyload alt="发起 pr 请求"></p>
+<p><img src="https://dwj-oss.oss-cn-nanjing.aliyuncs.com/images/202406091634960.png" alt="发起 pr 请求"></p>
 <h2 id="尾声">尾声</h2>
 <p>在进行实战时，由于原项目的作者进行了分支保护，即编写了 pr 的安全检查流，以至于我前两次分别踩到了：master 分支保护和 develop 分支名称不一致，两个坑。因此不得已提前自己手动关闭掉这两个 pr，也因此获得了人生中首个<s>非正式</s>的 Achievement 哈哈：</p>
-<p><img src="https://dwj-oss.oss-cn-nanjing.aliyuncs.com/images/202406091633666.png" srcset="https://dwj-oss.oss-cn-nanjing.aliyuncs.com/web-imgs/img-static/loading.gif" lazyload alt="Achievement"></p>
-<p><img src="https://dwj-oss.oss-cn-nanjing.aliyuncs.com/images/202406091633736.png" srcset="https://dwj-oss.oss-cn-nanjing.aliyuncs.com/web-imgs/img-static/loading.gif" lazyload alt="Achievement"></p>
+<p><img src="https://dwj-oss.oss-cn-nanjing.aliyuncs.com/images/202406091633666.png" alt="Achievement"></p>
+<p><img src="https://dwj-oss.oss-cn-nanjing.aliyuncs.com/images/202406091633736.png" alt="Achievement"></p>
 <h2 id="参考">参考</h2>
 <p><a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/347918608">吵疯了，Pull Request到底是个啥？</a></p>
 <p><a target="_blank" rel="noopener" href="https://www.bilibili.com/video/BV11d4y1H74N/">百大技术UP带你玩转 Pull Request</a></p>
@@ -509,7 +509,7 @@
             
   
   
-    <article id="comments" lazyload>
+    <article id="comments">
       
   <script type="text/javascript">
     Fluid.utils.loadComments('#comments', function() {
@@ -957,10 +957,6 @@
 
 
 
-
-  
-    <script  src="/js/img-lazyload.js" ></script>
-  
 
 
 

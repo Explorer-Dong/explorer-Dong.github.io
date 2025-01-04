@@ -88,7 +88,7 @@
   <script id="fluid-configs">
     var Fluid = window.Fluid || {};
     Fluid.ctx = Object.assign({}, Fluid.ctx)
-    var CONFIG = {"hostname":"blog.dwj601.cn","root":"/","version":"1.9.8","typing":{"enable":true,"typeSpeed":70,"cursorChar":"_","loop":false,"scope":[]},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"left","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"code_language":{"enable":true,"default":"TEXT"},"copy_btn":true,"image_caption":{"enable":true},"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"placement":"left","headingSelector":"h1,h2,h3,h4,h5","collapseDepth":3},"lazyload":{"enable":true,"loading_img":"https://dwj-oss.oss-cn-nanjing.aliyuncs.com/web-imgs/img-static/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":true,"follow_dnt":true,"baidu":"d08d23389220ad9b8f711cfb85757f4b","google":{"measurement_id":null},"tencent":{"sid":null,"cid":null},"leancloud":{"app_id":null,"app_key":null,"server_url":null,"path":"window.location.pathname","ignore_local":false},"umami":{"src":null,"website_id":null,"domains":null,"start_time":"2024-01-01T00:00:00.000Z","token":null,"api_server":null},"woyaola":null,"cnzz":null},"search_path":"/local-search.xml","include_content_in_search":true};
+    var CONFIG = {"hostname":"blog.dwj601.cn","root":"/","version":"1.9.8","typing":{"enable":true,"typeSpeed":70,"cursorChar":"_","loop":false,"scope":[]},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"left","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"code_language":{"enable":true,"default":"TEXT"},"copy_btn":true,"image_caption":{"enable":true},"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"placement":"left","headingSelector":"h1,h2,h3,h4,h5","collapseDepth":3},"lazyload":{"enable":false,"loading_img":"https://dwj-oss.oss-cn-nanjing.aliyuncs.com/web-imgs/img-static/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":true,"follow_dnt":true,"baidu":"d08d23389220ad9b8f711cfb85757f4b","google":{"measurement_id":null},"tencent":{"sid":null,"cid":null},"leancloud":{"app_id":null,"app_key":null,"server_url":null,"path":"window.location.pathname","ignore_local":false},"umami":{"src":null,"website_id":null,"domains":null,"start_time":"2024-01-01T00:00:00.000Z","token":null,"api_server":null},"woyaola":null,"cnzz":null},"search_path":"/local-search.xml","include_content_in_search":true};
 
     if (CONFIG.web_analytics.follow_dnt) {
       var dntVal = navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack;
@@ -374,7 +374,7 @@
 <h2 id="部署">部署</h2>
 <h3 id="1-服务器厂商端：域名解析">1. 服务器厂商端：域名解析</h3>
 <p>第一步我们需要将自己的域名指向自己的服务器。我采用的是二级域名的方式，实现的是 <code>xxx.example.cn</code> 访问博客的效果，若想要实现 <code>example.cn/userblog/</code> 访问博客的效果，可以修改 hexo 的 <code>_config.yml</code> 文件，指定根路径的前缀 url 即可。</p>
-<p><img src="https://dwj-oss.oss-cn-nanjing.aliyuncs.com/images/202404051247292.png" srcset="https://dwj-oss.oss-cn-nanjing.aliyuncs.com/web-imgs/img-static/loading.gif" lazyload alt="域名解析"></p>
+<p><img src="https://dwj-oss.oss-cn-nanjing.aliyuncs.com/images/202404051247292.png" alt="域名解析"></p>
 <h3 id="2-服务器端：配置服务器-Git-用户与钩子">2. 服务器端：配置服务器 Git 用户与钩子</h3>
 <h4 id="2-1-新建服务器用户">2.1 新建服务器用户</h4>
 <p>由于 root 用户的权限过大不够安全，因此我们创建一个新用户并赋予持续集成权限。</p>
@@ -427,7 +427,7 @@
 <li>
 <p>使用 Git Bash 终端生成一对密钥，连续三次回车即可生成默认配置的密钥对</p>
   <figure class="highlight bash"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">ssh-keygen<br></code></pre></td></tr></tbody></table></figure>
-<p><img src="https://dwj-oss.oss-cn-nanjing.aliyuncs.com/images/202404071758590.png" srcset="https://dwj-oss.oss-cn-nanjing.aliyuncs.com/web-imgs/img-static/loading.gif" lazyload alt="使用 Git Bash 终端生成一对密钥"></p>
+<p><img src="https://dwj-oss.oss-cn-nanjing.aliyuncs.com/images/202404071758590.png" alt="使用 Git Bash 终端生成一对密钥"></p>
 </li>
 <li>
 <p>在 <code>/home/git</code> 目录下右键新建名为 <code>.ssh</code> 的文件夹，并在该文件夹内新建名为 <code>authorized_keys</code> 的文件，将之前生成的公钥文件中的所有内容复制进去，保存</p>
@@ -444,7 +444,7 @@
 <p><strong>本地</strong>测试 ssh 连接，首次连接需要输入一个 <code>yes</code> 用来在本地存储主机信息</p>
   <figure class="highlight bash"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">ssh git@xxx.xxx.xxx.xxx<br></code></pre></td></tr></tbody></table></figure>
 <p>如果不需要输入密码就进入了命令行界面，表示 ssh 通信建立成功！</p>
-<p><img src="https://dwj-oss.oss-cn-nanjing.aliyuncs.com/images/202404071826099.png" srcset="https://dwj-oss.oss-cn-nanjing.aliyuncs.com/web-imgs/img-static/loading.gif" lazyload alt="连接成功"></p>
+<p><img src="https://dwj-oss.oss-cn-nanjing.aliyuncs.com/images/202404071826099.png" alt="连接成功"></p>
 </li>
 </ul>
 <h3 id="4-服务器端：配置-Nginx-反向代理">4. 服务器端：配置 Nginx 反向代理</h3>
@@ -452,11 +452,11 @@
 <figure class="highlight nginx"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><code class="hljs nginx"><span class="hljs-section">server</span> {<br>    <span class="hljs-attribute">listen</span> <span class="hljs-number">443</span> ssl;<br>    <span class="hljs-attribute">server_name</span> blog.dwj601.cn;<br><br>    <span class="hljs-attribute">ssl_certificate</span>      /etc/nginx/ssl/blog.dwj601.cn.pem;<br>    <span class="hljs-attribute">ssl_certificate_key</span>  /etc/nginx/ssl/blog.dwj601.cn.key;<br><br>    <span class="hljs-attribute">ssl_session_cache</span>    shared:SSL:<span class="hljs-number">1m</span>;<br>    <span class="hljs-attribute">ssl_session_timeout</span>  <span class="hljs-number">5m</span>;<br>    <span class="hljs-attribute">ssl_ciphers</span>  HIGH:!aNULL:!MD5;<br>    <span class="hljs-attribute">ssl_prefer_server_ciphers</span>  <span class="hljs-literal">on</span>;<br><br>    <span class="hljs-section">location</span> / {<br>        <span class="hljs-attribute">root</span> /home/www/blog;<br>    }<br>}<br></code></pre></td></tr></tbody></table></figure>
 <h3 id="5-本地端：配置-Hexo-的部署任务">5. 本地端：配置 Hexo 的部署任务</h3>
 <p>我们在本地的 Hexo 项目中，编辑 <code>_config.yml</code> 文件中的 deploy 任务：</p>
-<p><img src="https://dwj-oss.oss-cn-nanjing.aliyuncs.com/images/202404071833798.png" srcset="https://dwj-oss.oss-cn-nanjing.aliyuncs.com/web-imgs/img-static/loading.gif" lazyload alt="编辑 _config.yml 文件中的 deploy 任务"></p>
+<p><img src="https://dwj-oss.oss-cn-nanjing.aliyuncs.com/images/202404071833798.png" alt="编辑 _config.yml 文件中的 deploy 任务"></p>
 <p>最后我们在本地只需要执行 <code>hexo clean &amp;&amp; hexo generate &amp;&amp; hexo deploy</code> 即可实现一步部署到自己的服务器！可以进入上述 <code>--work-tree</code> 目录，即在钩子文件中配置的网站根目录查看文件是否存在：</p>
-<p><img src="https://dwj-oss.oss-cn-nanjing.aliyuncs.com/images/202404071837567.png" srcset="https://dwj-oss.oss-cn-nanjing.aliyuncs.com/web-imgs/img-static/loading.gif" lazyload alt="查看文件是否存在"></p>
+<p><img src="https://dwj-oss.oss-cn-nanjing.aliyuncs.com/images/202404071837567.png" alt="查看文件是否存在"></p>
 <h2 id="原理">原理</h2>
-<p><img src="https://dwj-oss.oss-cn-nanjing.aliyuncs.com/images/202404081614614.jpg" srcset="https://dwj-oss.oss-cn-nanjing.aliyuncs.com/web-imgs/img-static/loading.gif" lazyload alt="hexo 持续集成原理图"></p>
+<p><img src="https://dwj-oss.oss-cn-nanjing.aliyuncs.com/images/202404081614614.jpg" alt="hexo 持续集成原理图"></p>
 <h3 id="Git-Hooks-是什么？工作原理是什么？">Git Hooks 是什么？工作原理是什么？</h3>
 <p>可以将其类比 github workflows，可以在我们做出某些行为的前后自动执行一些我们预设定的任务。此处使用到的就是 post-receive 任务，<a target="_blank" rel="noopener" href="https://git-scm.com/docs/githooks#post-receive">原文</a>是这样解释的：</p>
 <blockquote>
@@ -469,7 +469,7 @@
 <p>SSH（Secure Shell，安全外壳）是一种网络安全协议，通过加密和认证机制实现安全的访问和文件传输等业务。传统远程登录和文件传输方式，例如Telnet、FTP，使用明文传输数据，存在很多的安全隐患。随着人们对网络安全的重视，这些方式已经慢慢不被接受。SSH协议通过对网络数据进行加密和验证，在不安全的网络环境中提供了安全的网络服务。作为Telnet和其他不安全远程shell协议的安全替代方案，目前SSH协议已经被全世界广泛使用，大多数设备都支持SSH功能。</p>
 </blockquote>
 <p>用一张图来更加清晰直观的理解：</p>
-<p><img src="https://dwj-oss.oss-cn-nanjing.aliyuncs.com/images/202404081642038.png" srcset="https://dwj-oss.oss-cn-nanjing.aliyuncs.com/web-imgs/img-static/loading.gif" lazyload alt="SSH常用场景"></p>
+<p><img src="https://dwj-oss.oss-cn-nanjing.aliyuncs.com/images/202404081642038.png" alt="SSH常用场景"></p>
 <h2 id="参考">参考</h2>
 <p><a target="_blank" rel="noopener" href="https://www.glimound.com/build-hexo-blog/">基于Hexo的静态博客网站搭建并部署至云服务器</a></p>
 <p><a target="_blank" rel="noopener" href="https://www.runoob.com/linux/linux-comm-chmod.html">Linux chmod命令</a></p>
@@ -596,7 +596,7 @@
             
   
   
-    <article id="comments" lazyload>
+    <article id="comments">
       
   <script type="text/javascript">
     Fluid.utils.loadComments('#comments', function() {
@@ -1080,10 +1080,6 @@
 
 
 
-
-  
-    <script  src="/js/img-lazyload.js" ></script>
-  
 
 
 

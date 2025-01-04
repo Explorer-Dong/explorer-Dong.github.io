@@ -86,7 +86,7 @@
   <script id="fluid-configs">
     var Fluid = window.Fluid || {};
     Fluid.ctx = Object.assign({}, Fluid.ctx)
-    var CONFIG = {"hostname":"blog.dwj601.cn","root":"/","version":"1.9.8","typing":{"enable":true,"typeSpeed":70,"cursorChar":"_","loop":false,"scope":[]},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"left","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"code_language":{"enable":true,"default":"TEXT"},"copy_btn":true,"image_caption":{"enable":true},"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"placement":"left","headingSelector":"h1,h2,h3,h4,h5","collapseDepth":3},"lazyload":{"enable":true,"loading_img":"https://dwj-oss.oss-cn-nanjing.aliyuncs.com/web-imgs/img-static/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":true,"follow_dnt":true,"baidu":"d08d23389220ad9b8f711cfb85757f4b","google":{"measurement_id":null},"tencent":{"sid":null,"cid":null},"leancloud":{"app_id":null,"app_key":null,"server_url":null,"path":"window.location.pathname","ignore_local":false},"umami":{"src":null,"website_id":null,"domains":null,"start_time":"2024-01-01T00:00:00.000Z","token":null,"api_server":null},"woyaola":null,"cnzz":null},"search_path":"/local-search.xml","include_content_in_search":true};
+    var CONFIG = {"hostname":"blog.dwj601.cn","root":"/","version":"1.9.8","typing":{"enable":true,"typeSpeed":70,"cursorChar":"_","loop":false,"scope":[]},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"left","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"code_language":{"enable":true,"default":"TEXT"},"copy_btn":true,"image_caption":{"enable":true},"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"placement":"left","headingSelector":"h1,h2,h3,h4,h5","collapseDepth":3},"lazyload":{"enable":false,"loading_img":"https://dwj-oss.oss-cn-nanjing.aliyuncs.com/web-imgs/img-static/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":true,"follow_dnt":true,"baidu":"d08d23389220ad9b8f711cfb85757f4b","google":{"measurement_id":null},"tencent":{"sid":null,"cid":null},"leancloud":{"app_id":null,"app_key":null,"server_url":null,"path":"window.location.pathname","ignore_local":false},"umami":{"src":null,"website_id":null,"domains":null,"start_time":"2024-01-01T00:00:00.000Z","token":null,"api_server":null},"woyaola":null,"cnzz":null},"search_path":"/local-search.xml","include_content_in_search":true};
 
     if (CONFIG.web_analytics.follow_dnt) {
       var dntVal = navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack;
@@ -369,24 +369,24 @@
 <h2 id="2-流程">2 流程</h2>
 <h3 id="2-1-创建表">2.1 创建表</h3>
 <p>首先登录 openGauss 并 <a target="_blank" rel="noopener" href="https://docs-opengauss.osinfra.cn/zh/docs/5.0.0-lite/docs/BriefTutorial/%E5%88%9B%E5%BB%BA%E6%95%B0%E6%8D%AE%E5%BA%93.html">创建数据库</a> experiment 用于后续表的设计。</p>
-<p><img src="https://dwj-oss.oss-cn-nanjing.aliyuncs.com/images/202410122259262.png" srcset="https://dwj-oss.oss-cn-nanjing.aliyuncs.com/web-imgs/img-static/loading.gif" lazyload alt="创建数据库 experiment"></p>
+<p><img src="https://dwj-oss.oss-cn-nanjing.aliyuncs.com/images/202410122259262.png" alt="创建数据库 experiment"></p>
 <p>然后进入 experiment 数据库并 <a target="_blank" rel="noopener" href="https://docs-opengauss.osinfra.cn/zh/docs/5.0.0-lite/docs/BriefTutorial/%E5%88%9B%E5%BB%BA%E8%A1%A8.html">创建学生表</a> student。设置学号 <code>sno char(8)</code>、姓名 <code>sname char(10)</code>、性别 <code>ssex char(2)</code>、年龄 <code>sage integer(3)</code> 四个属性。</p>
-<p><img src="https://dwj-oss.oss-cn-nanjing.aliyuncs.com/images/202410122300081.png" srcset="https://dwj-oss.oss-cn-nanjing.aliyuncs.com/web-imgs/img-static/loading.gif" lazyload alt="创建学生表 student"></p>
+<p><img src="https://dwj-oss.oss-cn-nanjing.aliyuncs.com/images/202410122300081.png" alt="创建学生表 student"></p>
 <p>最后以防万一，检查一下当前数据库 experiment 下所有的表以及对应的表结构。使用 <code>\dt</code> 命令查看当前数据库下的所有表，使用 <code>\d &lt;table_name&gt;</code> 命令查看当前数据库下指定的表结构。</p>
-<p><img src="https://dwj-oss.oss-cn-nanjing.aliyuncs.com/images/202410122300379.png" srcset="https://dwj-oss.oss-cn-nanjing.aliyuncs.com/web-imgs/img-static/loading.gif" lazyload alt="检查表结构"></p>
+<p><img src="https://dwj-oss.oss-cn-nanjing.aliyuncs.com/images/202410122300379.png" alt="检查表结构"></p>
 <h3 id="2-2-构造数据">2.2 构造数据</h3>
 <p>接下来进行数据的构造和导入工作。在开始构造数据之前，有必要了解一下对应的 <a target="_blank" rel="noopener" href="https://docs-opengauss.osinfra.cn/zh/docs/5.0.0-lite/docs/DatabaseOMGuide/%E4%BD%BF%E7%94%A8gsql%E5%85%83%E5%91%BD%E4%BB%A4%E5%AF%BC%E5%85%A5%E6%95%B0%E6%8D%AE.html">数据格式规范</a>。可以看到是支持 <code>.csv</code> 文件的，并且默认将第一行识别为数据而不是表头。因此我设计出了这样的 prompt：</p>
 <blockquote>
 <p>“请帮我生成一个数据库的学生表的数据。格式为 csv，用逗号分隔符分隔。属性共有 4 个，分别为学号 sno char(8)、姓名 sname char(10)、性别 ssex char(2)、年龄 sage integer(3)。请不要加上表头信息，首行直接从数据开始。生成共 20 条学生信息数据。请将结果直接打印出来。”</p>
 </blockquote>
 <p>最终给出的结果如下：</p>
-<p><img src="https://dwj-oss.oss-cn-nanjing.aliyuncs.com/images/202410122301562.png" srcset="https://dwj-oss.oss-cn-nanjing.aliyuncs.com/web-imgs/img-static/loading.gif" lazyload alt="GLM4 构造的数据"></p>
+<p><img src="https://dwj-oss.oss-cn-nanjing.aliyuncs.com/images/202410122301562.png" alt="GLM4 构造的数据"></p>
 <p>我们将上述数据复制到 <code>/home/dbuser/stu_data.csv</code> 文件中等待后续的导入工作。</p>
 <h3 id="2-3-导入数据并测试">2.3 导入数据并测试</h3>
 <p>我们执行如下 gsql 元命令将数据从本地文件 <code>std_data.csv</code> 导入到学生表中。</p>
 <figure class="highlight postgresql"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs postgresql">\<span class="hljs-keyword">copy</span> student <span class="hljs-keyword">from</span> ‘/home/dbuser/stu_data.csv’ <span class="hljs-keyword">with</span> (<span class="hljs-keyword">delimiter</span>’,’);<br></code></pre></td></tr></tbody></table></figure>
 <p>出现报错说性别一栏的长度不够。<a target="_blank" rel="noopener" href="https://docs-opengauss.osinfra.cn/zh/docs/5.0.0-lite/docs/BriefTutorial/ALTER-TABLE%E8%AF%AD%E5%8F%A5.html">修改字段</a> <code>ssex</code> 属性为 <code>char(3)</code> 则可以成功导入。</p>
-<p><img src="https://dwj-oss.oss-cn-nanjing.aliyuncs.com/images/202410122301877.png" srcset="https://dwj-oss.oss-cn-nanjing.aliyuncs.com/web-imgs/img-static/loading.gif" lazyload alt="成功导入"></p>
+<p><img src="https://dwj-oss.oss-cn-nanjing.aliyuncs.com/images/202410122301877.png" alt="成功导入"></p>
 <h2 id="题外话">题外话</h2>
 <ul>
 <li>如果要在 gsql 命令行环境中 <a target="_blank" rel="noopener" href="https://www.cndba.cn/dave/article/116534">启动上下文记忆模式</a>，可以在登录时添加 <code>-r</code> 参数。</li>
@@ -511,7 +511,7 @@
             
   
   
-    <article id="comments" lazyload>
+    <article id="comments">
       
   <script type="text/javascript">
     Fluid.utils.loadComments('#comments', function() {
@@ -941,10 +941,6 @@
 
 
 
-
-  
-    <script  src="/js/img-lazyload.js" ></script>
-  
 
 
 

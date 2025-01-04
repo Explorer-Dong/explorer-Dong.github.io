@@ -85,7 +85,7 @@
   <script id="fluid-configs">
     var Fluid = window.Fluid || {};
     Fluid.ctx = Object.assign({}, Fluid.ctx)
-    var CONFIG = {"hostname":"blog.dwj601.cn","root":"/","version":"1.9.8","typing":{"enable":true,"typeSpeed":70,"cursorChar":"_","loop":false,"scope":[]},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"left","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"code_language":{"enable":true,"default":"TEXT"},"copy_btn":true,"image_caption":{"enable":true},"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"placement":"left","headingSelector":"h1,h2,h3,h4,h5","collapseDepth":3},"lazyload":{"enable":true,"loading_img":"https://dwj-oss.oss-cn-nanjing.aliyuncs.com/web-imgs/img-static/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":true,"follow_dnt":true,"baidu":"d08d23389220ad9b8f711cfb85757f4b","google":{"measurement_id":null},"tencent":{"sid":null,"cid":null},"leancloud":{"app_id":null,"app_key":null,"server_url":null,"path":"window.location.pathname","ignore_local":false},"umami":{"src":null,"website_id":null,"domains":null,"start_time":"2024-01-01T00:00:00.000Z","token":null,"api_server":null},"woyaola":null,"cnzz":null},"search_path":"/local-search.xml","include_content_in_search":true};
+    var CONFIG = {"hostname":"blog.dwj601.cn","root":"/","version":"1.9.8","typing":{"enable":true,"typeSpeed":70,"cursorChar":"_","loop":false,"scope":[]},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"left","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"code_language":{"enable":true,"default":"TEXT"},"copy_btn":true,"image_caption":{"enable":true},"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"placement":"left","headingSelector":"h1,h2,h3,h4,h5","collapseDepth":3},"lazyload":{"enable":false,"loading_img":"https://dwj-oss.oss-cn-nanjing.aliyuncs.com/web-imgs/img-static/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":true,"follow_dnt":true,"baidu":"d08d23389220ad9b8f711cfb85757f4b","google":{"measurement_id":null},"tencent":{"sid":null,"cid":null},"leancloud":{"app_id":null,"app_key":null,"server_url":null,"path":"window.location.pathname","ignore_local":false},"umami":{"src":null,"website_id":null,"domains":null,"start_time":"2024-01-01T00:00:00.000Z","token":null,"api_server":null},"woyaola":null,"cnzz":null},"search_path":"/local-search.xml","include_content_in_search":true};
 
     if (CONFIG.web_analytics.follow_dnt) {
       var dntVal = navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack;
@@ -359,8 +359,8 @@
                 
                 <h2 id="数据结构课程设计">数据结构课程设计</h2>
 <h2 id="效果演示">效果演示</h2>
-<p><img src="https://dwj-oss.oss-cn-nanjing.aliyuncs.com/images/202403021802720.gif" srcset="https://dwj-oss.oss-cn-nanjing.aliyuncs.com/web-imgs/img-static/loading.gif" lazyload alt="sort 窗口程序"></p>
-<p><img src="https://dwj-oss.oss-cn-nanjing.aliyuncs.com/images/202403021802061.gif" srcset="https://dwj-oss.oss-cn-nanjing.aliyuncs.com/web-imgs/img-static/loading.gif" lazyload alt="hash 窗口程序"></p>
+<p><img src="https://dwj-oss.oss-cn-nanjing.aliyuncs.com/images/202403021802720.gif" alt="sort 窗口程序"></p>
+<p><img src="https://dwj-oss.oss-cn-nanjing.aliyuncs.com/images/202403021802061.gif" alt="hash 窗口程序"></p>
 <blockquote>
 <p>[!note]</p>
 <p>以下为课设报告内容</p>
@@ -377,7 +377,7 @@
 </ul>
 <h3 id="1-2-程序结构">1.2 程序结构</h3>
 <p>为了更好的了解排序算法内部的机制，我统计了每一种排序算法内部的比较次数,并结合了 Qt 的可视化框架进行编写。将四种排序作为算法内核嵌入 GUI 界面，程序结构如下：</p>
-<p><img src="https://dwj-oss.oss-cn-nanjing.aliyuncs.com/images/202403011712981.png" srcset="https://dwj-oss.oss-cn-nanjing.aliyuncs.com/web-imgs/img-static/loading.gif" lazyload alt="sort 程序结构图"></p>
+<p><img src="https://dwj-oss.oss-cn-nanjing.aliyuncs.com/images/202403011712981.png" alt="sort 程序结构图"></p>
 <h4 id="UI">UI</h4>
 <figure class="highlight cpp"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><code class="hljs cpp"><span class="hljs-comment">// 窗口 继承窗口库组件</span><br>&lt;widget <span class="hljs-keyword">class</span>=<span class="hljs-string">"QWidget"</span> name=<span class="hljs-string">"SortWidget"</span>&gt;<br>    <span class="hljs-comment">// 标题 标签组件</span><br>    &lt;widget <span class="hljs-keyword">class</span>=<span class="hljs-string">"QLabel"</span> name=<span class="hljs-string">"titleLabel"</span>&gt;&lt;/widget&gt;<br>    <span class="hljs-comment">// 输入 网格布局组件</span><br>    &lt;widget <span class="hljs-keyword">class</span>=<span class="hljs-string">"QGridLayout"</span> name=<span class="hljs-string">"inputGridLayout"</span>&gt;&lt;/widget&gt;<br>    <span class="hljs-comment">// 输出 网格布局组件</span><br>    &lt;widget <span class="hljs-keyword">class</span>=<span class="hljs-string">"QGridLayout"</span> name=<span class="hljs-string">"outputGridLayout"</span>&gt;&lt;/widget&gt;  <br>    <span class="hljs-comment">// 交互 水平布局组件</span><br>    &lt;widget <span class="hljs-keyword">class</span>=<span class="hljs-string">"QHBoxLayout"</span> name=<span class="hljs-string">"buttonHLayout"</span>&gt;&lt;/widget&gt;     <br>&lt;/widget&gt;<br></code></pre></td></tr></tbody></table></figure>
 <h4 id="Qt-Application">Qt Application</h4>
@@ -476,7 +476,7 @@
 <li>第二问：将关键字存储于顺序表中，排序后，利用二分查找技术进行搜索统计。查找次数包含成功和失败的比较次数</li>
 </ul>
 <h3 id="2-2-程序结构">2.2 程序结构</h3>
-<p><img src="https://dwj-oss.oss-cn-nanjing.aliyuncs.com/images/202403011712321.png" srcset="https://dwj-oss.oss-cn-nanjing.aliyuncs.com/web-imgs/img-static/loading.gif" lazyload alt="hash 程序结构图"></p>
+<p><img src="https://dwj-oss.oss-cn-nanjing.aliyuncs.com/images/202403011712321.png" alt="hash 程序结构图"></p>
 <h4 id="UI-2">UI</h4>
 <figure class="highlight cpp"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><code class="hljs cpp"><span class="hljs-comment">// 窗口 继承窗口库组件</span><br>&lt;widget <span class="hljs-keyword">class</span>=<span class="hljs-string">"QWidget"</span> name=<span class="hljs-string">"SortWidget"</span>&gt;                         <br>    <span class="hljs-comment">// 标题 标签组件</span><br>    &lt;widget <span class="hljs-keyword">class</span>=<span class="hljs-string">"QLabel"</span> name=<span class="hljs-string">"titleLabel"</span>&gt;&lt;/widget&gt;             <br>    <span class="hljs-comment">// 输入 网格布局组件</span><br>    &lt;widget <span class="hljs-keyword">class</span>=<span class="hljs-string">"QGridLayout"</span> name=<span class="hljs-string">"inputGridLayout"</span>&gt;&lt;/widget&gt;   <br>    <span class="hljs-comment">// 输出 网格布局组件</span><br>    &lt;widget <span class="hljs-keyword">class</span>=<span class="hljs-string">"QGridLayout"</span> name=<span class="hljs-string">"outputGridLayout"</span>&gt;&lt;/widget&gt;<br>    <span class="hljs-comment">// 交互 水平布局组件</span><br>    &lt;widget <span class="hljs-keyword">class</span>=<span class="hljs-string">"QHBoxLayout"</span> name=<span class="hljs-string">"buttonHLayout"</span>&gt;&lt;/widget&gt;     <br>&lt;/widget&gt;<br></code></pre></td></tr></tbody></table></figure>
 <h4 id="Qt-Application-2">Qt Application</h4>
@@ -625,9 +625,9 @@
                   <article class="post-prev col-6">
                     
                     
-                      <a href="/GPA/3rd-term/LinearAlgebra/" title="LinearAlgebra">
+                      <a href="/GPA/3rd-term/DigitalLogicCircuit/" title="DigitalLogicCircuit">
                         <i class="iconfont icon-arrowleft"></i>
-                        <span class="hidden-mobile">LinearAlgebra</span>
+                        <span class="hidden-mobile">DigitalLogicCircuit</span>
                         <span class="visible-mobile">上一篇</span>
                       </a>
                     
@@ -635,8 +635,8 @@
                   <article class="post-next col-6">
                     
                     
-                      <a href="/GPA/2nd-term/ObjectOrientedClassDesign/" title="ObjectOrientedClassDesign">
-                        <span class="hidden-mobile">ObjectOrientedClassDesign</span>
+                      <a href="/GPA/3rd-term/LinearAlgebra/" title="LinearAlgebra">
+                        <span class="hidden-mobile">LinearAlgebra</span>
                         <span class="visible-mobile">下一篇</span>
                         <i class="iconfont icon-arrowright"></i>
                       </a>
@@ -649,7 +649,7 @@
             
   
   
-    <article id="comments" lazyload>
+    <article id="comments">
       
   <script type="text/javascript">
     Fluid.utils.loadComments('#comments', function() {
@@ -1224,10 +1224,6 @@
 
 
 
-
-  
-    <script  src="/js/img-lazyload.js" ></script>
-  
 
 
 

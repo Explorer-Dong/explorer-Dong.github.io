@@ -87,7 +87,7 @@
   <script id="fluid-configs">
     var Fluid = window.Fluid || {};
     Fluid.ctx = Object.assign({}, Fluid.ctx)
-    var CONFIG = {"hostname":"blog.dwj601.cn","root":"/","version":"1.9.8","typing":{"enable":true,"typeSpeed":70,"cursorChar":"_","loop":false,"scope":[]},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"left","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"code_language":{"enable":true,"default":"TEXT"},"copy_btn":true,"image_caption":{"enable":true},"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"placement":"left","headingSelector":"h1,h2,h3,h4,h5","collapseDepth":3},"lazyload":{"enable":true,"loading_img":"https://dwj-oss.oss-cn-nanjing.aliyuncs.com/web-imgs/img-static/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":true,"follow_dnt":true,"baidu":"d08d23389220ad9b8f711cfb85757f4b","google":{"measurement_id":null},"tencent":{"sid":null,"cid":null},"leancloud":{"app_id":null,"app_key":null,"server_url":null,"path":"window.location.pathname","ignore_local":false},"umami":{"src":null,"website_id":null,"domains":null,"start_time":"2024-01-01T00:00:00.000Z","token":null,"api_server":null},"woyaola":null,"cnzz":null},"search_path":"/local-search.xml","include_content_in_search":true};
+    var CONFIG = {"hostname":"blog.dwj601.cn","root":"/","version":"1.9.8","typing":{"enable":true,"typeSpeed":70,"cursorChar":"_","loop":false,"scope":[]},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"left","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"code_language":{"enable":true,"default":"TEXT"},"copy_btn":true,"image_caption":{"enable":true},"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"placement":"left","headingSelector":"h1,h2,h3,h4,h5","collapseDepth":3},"lazyload":{"enable":false,"loading_img":"https://dwj-oss.oss-cn-nanjing.aliyuncs.com/web-imgs/img-static/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":true,"follow_dnt":true,"baidu":"d08d23389220ad9b8f711cfb85757f4b","google":{"measurement_id":null},"tencent":{"sid":null,"cid":null},"leancloud":{"app_id":null,"app_key":null,"server_url":null,"path":"window.location.pathname","ignore_local":false},"umami":{"src":null,"website_id":null,"domains":null,"start_time":"2024-01-01T00:00:00.000Z","token":null,"api_server":null},"woyaola":null,"cnzz":null},"search_path":"/local-search.xml","include_content_in_search":true};
 
     if (CONFIG.web_analytics.follow_dnt) {
       var dntVal = navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack;
@@ -371,21 +371,21 @@
 <h3 id="第一步">第一步</h3>
 <p>将自己购买的域名绑定到 [username].github.io，这一步是为了在别人访问 [username].github.io 重定向到 自己购买的域名。</p>
 <p>进入域名控制台并进入解析界面：</p>
-<p><img src="https://dwj-oss.oss-cn-nanjing.aliyuncs.com/images/202403101115508.png" srcset="https://dwj-oss.oss-cn-nanjing.aliyuncs.com/web-imgs/img-static/loading.gif" lazyload alt="进入域名控制台并进入解析界面"></p>
+<p><img src="https://dwj-oss.oss-cn-nanjing.aliyuncs.com/images/202403101115508.png" alt="进入域名控制台并进入解析界面"></p>
 <p>配置以下两条解析记录：其中 www.[domain].[xxx] 可以实现自动重定向到 [domain].[xxx]，也可以不解析该记录。</p>
-<p><img src="https://dwj-oss.oss-cn-nanjing.aliyuncs.com/images/202403101117553.png" srcset="https://dwj-oss.oss-cn-nanjing.aliyuncs.com/web-imgs/img-static/loading.gif" lazyload alt="配置解析记录"></p>
+<p><img src="https://dwj-oss.oss-cn-nanjing.aliyuncs.com/images/202403101117553.png" alt="配置解析记录"></p>
 <p>注意此处的解析请求来源一定要填 <strong>默认</strong> ！不要选择境外，否则无法解析成功</p>
-<p><img src="https://dwj-oss.oss-cn-nanjing.aliyuncs.com/images/202403101120914.png" srcset="https://dwj-oss.oss-cn-nanjing.aliyuncs.com/web-imgs/img-static/loading.gif" lazyload alt="此处的解析请求来源一定要填默认"></p>
+<p><img src="https://dwj-oss.oss-cn-nanjing.aliyuncs.com/images/202403101120914.png" alt="此处的解析请求来源一定要填默认"></p>
 <h3 id="第二步">第二步</h3>
 <p>在 GitHub Pages 界面绑定刚才购买的域名。</p>
 <p>进入仓库中的 setting &gt; pages 页面，在 Custom domain 中填入 [domain].[xxx] 顶级域名并勾选强制 https 访问服务</p>
-<p><img src="https://dwj-oss.oss-cn-nanjing.aliyuncs.com/images/202403101124296.png" srcset="https://dwj-oss.oss-cn-nanjing.aliyuncs.com/web-imgs/img-static/loading.gif" lazyload alt="在 Custom domain 中填入顶级域名"></p>
+<p><img src="https://dwj-oss.oss-cn-nanjing.aliyuncs.com/images/202403101124296.png" alt="在 Custom domain 中填入顶级域名"></p>
 <p>等待几分钟 DNS 解析即可使用 <code>[domain].[xxx]</code> or <code>www.[domain].[xxx]</code> or <code>[username].github.io</code> 访问自己的静态网站啦！</p>
 <h3 id="第三步">第三步</h3>
 <p>这一步其实是为了解决一个 bug，如果你在操作完上述两步以后，会发现静态页面仓库内多了一个 CNAME 文件。这是因为自定义域名以后，GitHub Pages 服务需要知道将请求路由到哪个域名上，而这需要从 CNAME 文件中获取信息</p>
-<p><img src="https://dwj-oss.oss-cn-nanjing.aliyuncs.com/images/202403101223383.png" srcset="https://dwj-oss.oss-cn-nanjing.aliyuncs.com/web-imgs/img-static/loading.gif" lazyload alt="仓库内多了一个 CNAME 文件"></p>
+<p><img src="https://dwj-oss.oss-cn-nanjing.aliyuncs.com/images/202403101223383.png" alt="仓库内多了一个 CNAME 文件"></p>
 <p>但是如果后期更新站点时，由于 Hexo 强制覆盖分支的特性，会自动覆盖掉这个 CNAME 文件，从而无法正确的路由请求，也就会出现 404 的错误。解决方案就是在 hexo 的 <code>source/</code> 文件夹下添加一个 CNAME 文件。这样该 CNAME 文件就会被 hexo 识别为自己的内容，从而每次都可以部署到相应的分支上了</p>
-<p><img src="https://dwj-oss.oss-cn-nanjing.aliyuncs.com/images/202403101140516.png" srcset="https://dwj-oss.oss-cn-nanjing.aliyuncs.com/web-imgs/img-static/loading.gif" lazyload alt="在 hexo 的 source/ 文件夹下添加一个 CNAME 文件"></p>
+<p><img src="https://dwj-oss.oss-cn-nanjing.aliyuncs.com/images/202403101140516.png" alt="在 hexo 的 source/ 文件夹下添加一个 CNAME 文件"></p>
 <p><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>E</mi><mi>N</mi><mi>D</mi></mrow><annotation encoding="application/x-tex">END</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.6833em;"></span><span class="mord mathnormal" style="margin-right:0.10903em;">EN</span><span class="mord mathnormal" style="margin-right:0.02778em;">D</span></span></span></span></p>
 
                 
@@ -492,8 +492,8 @@
                   <article class="post-next col-6">
                     
                     
-                      <a href="/FrontEnd/Hexo/hexo-learning-record/" title="hexo-learning-record">
-                        <span class="hidden-mobile">hexo-learning-record</span>
+                      <a href="/FrontEnd/Hexo/hexo-migrate/" title="hexo-migrate">
+                        <span class="hidden-mobile">hexo-migrate</span>
                         <span class="visible-mobile">下一篇</span>
                         <i class="iconfont icon-arrowright"></i>
                       </a>
@@ -506,7 +506,7 @@
             
   
   
-    <article id="comments" lazyload>
+    <article id="comments">
       
   <script type="text/javascript">
     Fluid.utils.loadComments('#comments', function() {
@@ -990,10 +990,6 @@
 
 
 
-
-  
-    <script  src="/js/img-lazyload.js" ></script>
-  
 
 
 

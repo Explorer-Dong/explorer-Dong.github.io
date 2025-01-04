@@ -90,7 +90,7 @@
   <script id="fluid-configs">
     var Fluid = window.Fluid || {};
     Fluid.ctx = Object.assign({}, Fluid.ctx)
-    var CONFIG = {"hostname":"blog.dwj601.cn","root":"/","version":"1.9.8","typing":{"enable":true,"typeSpeed":70,"cursorChar":"_","loop":false,"scope":[]},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"left","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"code_language":{"enable":true,"default":"TEXT"},"copy_btn":true,"image_caption":{"enable":true},"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"placement":"left","headingSelector":"h1,h2,h3,h4,h5","collapseDepth":3},"lazyload":{"enable":true,"loading_img":"https://dwj-oss.oss-cn-nanjing.aliyuncs.com/web-imgs/img-static/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":true,"follow_dnt":true,"baidu":"d08d23389220ad9b8f711cfb85757f4b","google":{"measurement_id":null},"tencent":{"sid":null,"cid":null},"leancloud":{"app_id":null,"app_key":null,"server_url":null,"path":"window.location.pathname","ignore_local":false},"umami":{"src":null,"website_id":null,"domains":null,"start_time":"2024-01-01T00:00:00.000Z","token":null,"api_server":null},"woyaola":null,"cnzz":null},"search_path":"/local-search.xml","include_content_in_search":true};
+    var CONFIG = {"hostname":"blog.dwj601.cn","root":"/","version":"1.9.8","typing":{"enable":true,"typeSpeed":70,"cursorChar":"_","loop":false,"scope":[]},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"left","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"code_language":{"enable":true,"default":"TEXT"},"copy_btn":true,"image_caption":{"enable":true},"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"placement":"left","headingSelector":"h1,h2,h3,h4,h5","collapseDepth":3},"lazyload":{"enable":false,"loading_img":"https://dwj-oss.oss-cn-nanjing.aliyuncs.com/web-imgs/img-static/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":true,"follow_dnt":true,"baidu":"d08d23389220ad9b8f711cfb85757f4b","google":{"measurement_id":null},"tencent":{"sid":null,"cid":null},"leancloud":{"app_id":null,"app_key":null,"server_url":null,"path":"window.location.pathname","ignore_local":false},"umami":{"src":null,"website_id":null,"domains":null,"start_time":"2024-01-01T00:00:00.000Z","token":null,"api_server":null},"woyaola":null,"cnzz":null},"search_path":"/local-search.xml","include_content_in_search":true};
 
     if (CONFIG.web_analytics.follow_dnt) {
       var dntVal = navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack;
@@ -375,9 +375,9 @@
 </ul>
 <h3 id="下载安装包">下载安装包</h3>
 <p>由于只需要单节点服务，因此我们选择下载 openGauss 5.0.3 (LTS) 轻量版。</p>
-<p><img src="https://dwj-oss.oss-cn-nanjing.aliyuncs.com/images/202409192052001.png" srcset="https://dwj-oss.oss-cn-nanjing.aliyuncs.com/web-imgs/img-static/loading.gif" lazyload alt="安装包选择"></p>
+<p><img src="https://dwj-oss.oss-cn-nanjing.aliyuncs.com/images/202409192052001.png" alt="安装包选择"></p>
 <p>我们登录后获取轻量版下载链接，进入 shell 连接云服务器，在合适的位置创建并进入目录。我使用的是 <code>/opt/dbLearning</code> 目录，使用 wget 命令下载安装包至云服务器。</p>
-<p><img src="https://dwj-oss.oss-cn-nanjing.aliyuncs.com/images/202409192106221.png" srcset="https://dwj-oss.oss-cn-nanjing.aliyuncs.com/web-imgs/img-static/loading.gif" lazyload alt="使用 wget 命令下载安装包至云服务器"></p>
+<p><img src="https://dwj-oss.oss-cn-nanjing.aliyuncs.com/images/202409192106221.png" alt="使用 wget 命令下载安装包至云服务器"></p>
 <h3 id="配置安装环境">配置安装环境</h3>
 <blockquote>
 <p>可能是出于安全考虑，openGauss 不允许使用 root 用户运行，因此我们有必要创建普通用户并对一些必要的目录基于必要的权限；同时，目前 openGauss 只能在防火墙关闭的状态下安装，因此我们也不得不关闭防火墙。</p>
@@ -397,7 +397,7 @@
   <figure class="highlight bash"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash"><span class="hljs-built_in">sudo</span> passwd dbuser<br></code></pre></td></tr></tbody></table></figure>
 </li>
 </ul>
-<p><img src="https://dwj-oss.oss-cn-nanjing.aliyuncs.com/images/202409192242731.png" srcset="https://dwj-oss.oss-cn-nanjing.aliyuncs.com/web-imgs/img-static/loading.gif" lazyload alt="创建普通用户 dbuser"></p>
+<p><img src="https://dwj-oss.oss-cn-nanjing.aliyuncs.com/images/202409192242731.png" alt="创建普通用户 dbuser"></p>
 <p>创建数据库安装包解压目录、安装目录、数据目录：</p>
 <figure class="highlight bash"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash"><span class="hljs-built_in">sudo</span> <span class="hljs-built_in">mkdir</span> -p /opt/dbLearning/install_package /opt/dbLearning/installation /opt/dbLearning/data<br></code></pre></td></tr></tbody></table></figure>
 <p>赋予目录权限：</p>
@@ -417,16 +417,16 @@
   <figure class="highlight bash"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">systemctl start firewalld.service<br></code></pre></td></tr></tbody></table></figure>
 </li>
 </ul>
-<p><img src="https://dwj-oss.oss-cn-nanjing.aliyuncs.com/images/202409192242146.png" srcset="https://dwj-oss.oss-cn-nanjing.aliyuncs.com/web-imgs/img-static/loading.gif" lazyload alt="关闭防火墙"></p>
+<p><img src="https://dwj-oss.oss-cn-nanjing.aliyuncs.com/images/202409192242146.png" alt="关闭防火墙"></p>
 <h3 id="执行安装">执行安装</h3>
 <p>切换到普通用户 dbuser 的权限：</p>
 <figure class="highlight bash"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">su - dbuser<br></code></pre></td></tr></tbody></table></figure>
 <p>解压压缩包至安装包目录：</p>
 <figure class="highlight bash"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">tar -zxf openGauss-Lite-5.0.3-CentOS-x86_64.tar.gz -C install_package/<br></code></pre></td></tr></tbody></table></figure>
-<p><img src="https://dwj-oss.oss-cn-nanjing.aliyuncs.com/images/202409192242065.png" srcset="https://dwj-oss.oss-cn-nanjing.aliyuncs.com/web-imgs/img-static/loading.gif" lazyload alt="解压压缩包至安装包目录"></p>
+<p><img src="https://dwj-oss.oss-cn-nanjing.aliyuncs.com/images/202409192242065.png" alt="解压压缩包至安装包目录"></p>
 <p>进入 <code>./install_package/</code> 路径并执行 <code>install.sh</code> 进行安装：</p>
 <figure class="highlight bash"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">sh ./install.sh --mode single -D /opt/dbLearning/data -R /opt/dbLearning/installation/<br></code></pre></td></tr></tbody></table></figure>
-<p><img src="https://dwj-oss.oss-cn-nanjing.aliyuncs.com/images/202409192243793.png" srcset="https://dwj-oss.oss-cn-nanjing.aliyuncs.com/web-imgs/img-static/loading.gif" lazyload alt="部分安装成功后的输出信息"></p>
+<p><img src="https://dwj-oss.oss-cn-nanjing.aliyuncs.com/images/202409192243793.png" alt="部分安装成功后的输出信息"></p>
 <p>需要输入密码并二次确认。</p>
 <h3 id="启停数据库">启停数据库</h3>
 <p>在普通用户 dbuser 下，使用刚才安装下来的 <code>gs_ctl</code> 命令行工具启停 openGauss 数据库。</p>
@@ -441,7 +441,7 @@
 <p>注：初次连接时，dbname 使用缺省值 <code>postgres</code>，username 就是安装 openGauss 时的用户名 <code>dbuser</code>（这一点很抽象，直接拿操作系统的用户名作为数据库管理系统的用户名 🤣）。若直接在服务器上连接数据库时，端口和主机可以不填。</p>
 <figure class="highlight bash"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">gsql -d &lt;dbname&gt; -U &lt;username&gt; -p &lt;port&gt; -h &lt;host&gt;<br></code></pre></td></tr></tbody></table></figure>
 <p>进入数据库管理系统后，输入 <code>\l</code> 看到所有的数据库就表明安装配置成功了！</p>
-<p><img src="https://dwj-oss.oss-cn-nanjing.aliyuncs.com/images/202409192243905.png" srcset="https://dwj-oss.oss-cn-nanjing.aliyuncs.com/web-imgs/img-static/loading.gif" lazyload alt="显示所有的数据库"></p>
+<p><img src="https://dwj-oss.oss-cn-nanjing.aliyuncs.com/images/202409192243905.png" alt="显示所有的数据库"></p>
 <h3 id="连接-DataGrip">连接 DataGrip</h3>
 <blockquote>
 <p>仅仅使用自带的命令行工具进行管理有点麻烦，故尝试与本地的 DataGrip 数据库图形化管理软件进行连接。</p>
@@ -473,9 +473,9 @@
 </li>
 </ul>
 <p>最后使用本地的 DataGrip 使用 postgre 内核连接服务器的 openGauss 数据库就可以成功了！</p>
-<p><img src="https://dwj-oss.oss-cn-nanjing.aliyuncs.com/images/202409201140997.png" srcset="https://dwj-oss.oss-cn-nanjing.aliyuncs.com/web-imgs/img-static/loading.gif" lazyload alt="远程连接成功"></p>
+<p><img src="https://dwj-oss.oss-cn-nanjing.aliyuncs.com/images/202409201140997.png" alt="远程连接成功"></p>
 <p>并且从 <a target="_blank" rel="noopener" href="https://docs-opengauss.osinfra.cn/zh/docs/5.0.0-lite/docs/SQLReference/CREATE-USER.html">官方 SQL 的用法</a> 来看，使用 CREATE 会在连接的数据库下创建一个与用户名相同的 schema，很诡异但的确如此：</p>
-<p><img src="https://dwj-oss.oss-cn-nanjing.aliyuncs.com/images/202409201144556.png" srcset="https://dwj-oss.oss-cn-nanjing.aliyuncs.com/web-imgs/img-static/loading.gif" lazyload alt="自动创建一个与用户名相同的 schema"></p>
+<p><img src="https://dwj-oss.oss-cn-nanjing.aliyuncs.com/images/202409201144556.png" alt="自动创建一个与用户名相同的 schema"></p>
 <h3 id="参考">参考</h3>
 <p><a target="_blank" rel="noopener" href="https://docs-opengauss.osinfra.cn/zh/docs/5.0.0-lite/docs/InstallationGuide/%E5%AE%89%E8%A3%85%E6%A6%82%E8%BF%B0.html">文档地图 &gt; 安装指南 &gt; 安装概述</a></p>
 <p><a target="_blank" rel="noopener" href="https://blog.csdn.net/qq_40833874/article/details/120686852">Centos7 添加删除用户和用户操作命令_centos7 删除用户命令</a></p>
@@ -607,7 +607,7 @@
             
   
   
-    <article id="comments" lazyload>
+    <article id="comments">
       
   <script type="text/javascript">
     Fluid.utils.loadComments('#comments', function() {
@@ -1037,10 +1037,6 @@
 
 
 
-
-  
-    <script  src="/js/img-lazyload.js" ></script>
-  
 
 
 

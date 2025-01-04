@@ -85,7 +85,7 @@
   <script id="fluid-configs">
     var Fluid = window.Fluid || {};
     Fluid.ctx = Object.assign({}, Fluid.ctx)
-    var CONFIG = {"hostname":"blog.dwj601.cn","root":"/","version":"1.9.8","typing":{"enable":true,"typeSpeed":70,"cursorChar":"_","loop":false,"scope":[]},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"left","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"code_language":{"enable":true,"default":"TEXT"},"copy_btn":true,"image_caption":{"enable":true},"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"placement":"left","headingSelector":"h1,h2,h3,h4,h5","collapseDepth":3},"lazyload":{"enable":true,"loading_img":"https://dwj-oss.oss-cn-nanjing.aliyuncs.com/web-imgs/img-static/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":true,"follow_dnt":true,"baidu":"d08d23389220ad9b8f711cfb85757f4b","google":{"measurement_id":null},"tencent":{"sid":null,"cid":null},"leancloud":{"app_id":null,"app_key":null,"server_url":null,"path":"window.location.pathname","ignore_local":false},"umami":{"src":null,"website_id":null,"domains":null,"start_time":"2024-01-01T00:00:00.000Z","token":null,"api_server":null},"woyaola":null,"cnzz":null},"search_path":"/local-search.xml","include_content_in_search":true};
+    var CONFIG = {"hostname":"blog.dwj601.cn","root":"/","version":"1.9.8","typing":{"enable":true,"typeSpeed":70,"cursorChar":"_","loop":false,"scope":[]},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"left","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"code_language":{"enable":true,"default":"TEXT"},"copy_btn":true,"image_caption":{"enable":true},"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"placement":"left","headingSelector":"h1,h2,h3,h4,h5","collapseDepth":3},"lazyload":{"enable":false,"loading_img":"https://dwj-oss.oss-cn-nanjing.aliyuncs.com/web-imgs/img-static/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":true,"follow_dnt":true,"baidu":"d08d23389220ad9b8f711cfb85757f4b","google":{"measurement_id":null},"tencent":{"sid":null,"cid":null},"leancloud":{"app_id":null,"app_key":null,"server_url":null,"path":"window.location.pathname","ignore_local":false},"umami":{"src":null,"website_id":null,"domains":null,"start_time":"2024-01-01T00:00:00.000Z","token":null,"api_server":null},"woyaola":null,"cnzz":null},"search_path":"/local-search.xml","include_content_in_search":true};
 
     if (CONFIG.web_analytics.follow_dnt) {
       var dntVal = navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack;
@@ -381,11 +381,11 @@
 <p>那岂不是牵一发而动全身？我改了其中一个，其余的引用岂不是都被改动了？的确是如此。</p>
 <figure class="highlight python"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><code class="hljs python">a = [<span class="hljs-number">1</span>, <span class="hljs-number">2</span>, <span class="hljs-number">3</span>]<br>b = a<br>c = b<br>c[<span class="hljs-number">0</span>] = -<span class="hljs-number">1</span> <span class="hljs-comment"># a[0] = -1 和 b[0] = -1 效果都是一样的</span><br><span class="hljs-built_in">print</span>(<span class="hljs-built_in">id</span>(a))<br><span class="hljs-built_in">print</span>(<span class="hljs-built_in">id</span>(b))<br><span class="hljs-built_in">print</span>(<span class="hljs-built_in">id</span>(c))<br><br><span class="hljs-built_in">print</span>(a)<br><span class="hljs-built_in">print</span>(b)<br><span class="hljs-built_in">print</span>(c)<br><br><span class="hljs-string">""" 程序输出：</span><br><span class="hljs-string">3180113116480</span><br><span class="hljs-string">3180113116480</span><br><span class="hljs-string">3180113116480</span><br><span class="hljs-string">[-1, 2, 3]</span><br><span class="hljs-string">[-1, 2, 3]</span><br><span class="hljs-string">[-1, 2, 3]</span><br><span class="hljs-string">"""</span><br></code></pre></td></tr></tbody></table></figure>
 <p>上述所有的示例都可以用下面一张图来表示：C++ 中的变量相当于盒子，简单的赋值语句就相当于重新拿一个盒子装原来的数据；而 Python 中的变量相当于标签，简单的赋值语句就相当于所有标签都贴到了同一块数据上：</p>
-<p><img src="https://dwj-oss.oss-cn-nanjing.aliyuncs.com/images/202407031133477.png" srcset="https://dwj-oss.oss-cn-nanjing.aliyuncs.com/web-imgs/img-static/loading.gif" lazyload alt="C++盒子模型 vs Python 标签模型"></p>
+<p><img src="https://dwj-oss.oss-cn-nanjing.aliyuncs.com/images/202407031133477.png" alt="C++盒子模型 vs Python 标签模型"></p>
 <p>当然了，不可变数据是无法进行上述的「单点修改」的，只有重新构造一个对象，比如重新赋值、拼接、截取等操作。但此时无论是可变数据类型还是不可变数据类型，重新构造一个对象并进行赋值其实就相当于「重新开辟一块内存并贴上标签」了，和引用的关系不大，如下面的程序段：</p>
 <figure class="highlight python"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><code class="hljs python">my_list = [<span class="hljs-number">1</span>, <span class="hljs-number">2</span>, <span class="hljs-number">3</span>]<br><span class="hljs-built_in">list</span> = my_list<br><span class="hljs-built_in">list</span> = [<span class="hljs-number">6</span>, <span class="hljs-number">6</span>, <span class="hljs-number">6</span>]<br><span class="hljs-built_in">print</span>(<span class="hljs-built_in">id</span>(my_list))<br><span class="hljs-built_in">print</span>(<span class="hljs-built_in">id</span>(<span class="hljs-built_in">list</span>))<br><br><span class="hljs-built_in">print</span>(my_list)<br><span class="hljs-built_in">print</span>(<span class="hljs-built_in">list</span>)<br><br><span class="hljs-string">""" 程序输出</span><br><span class="hljs-string">2454192202816</span><br><span class="hljs-string">2454190413376</span><br><span class="hljs-string">[1, 2, 3]</span><br><span class="hljs-string">[6, 6, 6]</span><br><span class="hljs-string">"""</span><br></code></pre></td></tr></tbody></table></figure>
 <p>此时就相当于这样的图例：</p>
-<p><img src="https://dwj-oss.oss-cn-nanjing.aliyuncs.com/images/202407031146252.png" srcset="https://dwj-oss.oss-cn-nanjing.aliyuncs.com/web-imgs/img-static/loading.gif" lazyload alt="重新开辟一块内存并贴上标签"></p>
+<p><img src="https://dwj-oss.oss-cn-nanjing.aliyuncs.com/images/202407031146252.png" alt="重新开辟一块内存并贴上标签"></p>
 <p>有了上述的知识储备后，理解接下来的知识简直就是易如反掌。</p>
 <h4 id="二、浅拷贝与深拷贝">二、浅拷贝与深拷贝</h4>
 <p>一句话概括：浅拷贝只会拷贝原始对象的第一层数据，其中的不可变数据就会拷贝出一个全新的对象，而其中的可变数据仍然是引用；深拷贝会递归的拷贝原始对象的每一层数据从而构造出一个全新的对象。</p>
@@ -419,13 +419,13 @@
 <h3 id="方法1：使用模块内置方法">方法1：使用模块内置方法</h3>
 <p>如果模块内置了 <code>__file__</code> 方法，则可以直接打印出来：</p>
 <figure class="highlight python"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs python"><span class="hljs-keyword">import</span> numpy <span class="hljs-keyword">as</span> np<br><br><span class="hljs-built_in">print</span>(np.__file__)<br></code></pre></td></tr></tbody></table></figure>
-<p><img src="https://dwj-oss.oss-cn-nanjing.aliyuncs.com/images/202406052305698.png" srcset="https://dwj-oss.oss-cn-nanjing.aliyuncs.com/web-imgs/img-static/loading.gif" lazyload alt="直接打印"></p>
+<p><img src="https://dwj-oss.oss-cn-nanjing.aliyuncs.com/images/202406052305698.png" alt="直接打印"></p>
 <h3 id="方法二：基于-pip-方法">方法二：基于 pip 方法</h3>
 <p>有些库没有内置上述 <code>__file__</code> 方法，可以使用 pip 指令进行打印：</p>
 <figure class="highlight bash"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">pip show &lt;PackgeName or ModelName&gt;<br></code></pre></td></tr></tbody></table></figure>
 <p>例如想要打印 <code>sortedcontainers</code> 包的安装路径：</p>
 <figure class="highlight bash"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">pip show sortedcontainers<br></code></pre></td></tr></tbody></table></figure>
-<p><img src="https://dwj-oss.oss-cn-nanjing.aliyuncs.com/images/202406052310960.png" srcset="https://dwj-oss.oss-cn-nanjing.aliyuncs.com/web-imgs/img-static/loading.gif" lazyload alt="使用 pip 指令进行打印"></p>
+<p><img src="https://dwj-oss.oss-cn-nanjing.aliyuncs.com/images/202406052310960.png" alt="使用 pip 指令进行打印"></p>
 <h3 id="参考-2">参考</h3>
 <p><a target="_blank" rel="noopener" href="https://blog.csdn.net/C_chuxin/article/details/82960824">如何查看安装的 python 库的位置</a></p>
 
@@ -547,7 +547,7 @@
             
   
   
-    <article id="comments" lazyload>
+    <article id="comments">
       
   <script type="text/javascript">
     Fluid.utils.loadComments('#comments', function() {
@@ -956,10 +956,6 @@
 
 
 
-
-  
-    <script  src="/js/img-lazyload.js" ></script>
-  
 
 
 

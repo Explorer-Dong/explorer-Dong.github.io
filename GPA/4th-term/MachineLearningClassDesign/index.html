@@ -84,7 +84,7 @@
   <script id="fluid-configs">
     var Fluid = window.Fluid || {};
     Fluid.ctx = Object.assign({}, Fluid.ctx)
-    var CONFIG = {"hostname":"blog.dwj601.cn","root":"/","version":"1.9.8","typing":{"enable":true,"typeSpeed":70,"cursorChar":"_","loop":false,"scope":[]},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"left","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"code_language":{"enable":true,"default":"TEXT"},"copy_btn":true,"image_caption":{"enable":true},"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"placement":"left","headingSelector":"h1,h2,h3,h4,h5","collapseDepth":3},"lazyload":{"enable":true,"loading_img":"https://dwj-oss.oss-cn-nanjing.aliyuncs.com/web-imgs/img-static/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":true,"follow_dnt":true,"baidu":"d08d23389220ad9b8f711cfb85757f4b","google":{"measurement_id":null},"tencent":{"sid":null,"cid":null},"leancloud":{"app_id":null,"app_key":null,"server_url":null,"path":"window.location.pathname","ignore_local":false},"umami":{"src":null,"website_id":null,"domains":null,"start_time":"2024-01-01T00:00:00.000Z","token":null,"api_server":null},"woyaola":null,"cnzz":null},"search_path":"/local-search.xml","include_content_in_search":true};
+    var CONFIG = {"hostname":"blog.dwj601.cn","root":"/","version":"1.9.8","typing":{"enable":true,"typeSpeed":70,"cursorChar":"_","loop":false,"scope":[]},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"left","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"code_language":{"enable":true,"default":"TEXT"},"copy_btn":true,"image_caption":{"enable":true},"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"placement":"left","headingSelector":"h1,h2,h3,h4,h5","collapseDepth":3},"lazyload":{"enable":false,"loading_img":"https://dwj-oss.oss-cn-nanjing.aliyuncs.com/web-imgs/img-static/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":true,"follow_dnt":true,"baidu":"d08d23389220ad9b8f711cfb85757f4b","google":{"measurement_id":null},"tencent":{"sid":null,"cid":null},"leancloud":{"app_id":null,"app_key":null,"server_url":null,"path":"window.location.pathname","ignore_local":false},"umami":{"src":null,"website_id":null,"domains":null,"start_time":"2024-01-01T00:00:00.000Z","token":null,"api_server":null},"woyaola":null,"cnzz":null},"search_path":"/local-search.xml","include_content_in_search":true};
 
     if (CONFIG.web_analytics.follow_dnt) {
       var dntVal = navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack;
@@ -426,7 +426,7 @@
 <h3 id="2-1-特征删除">2.1 特征删除</h3>
 <p>在进行特征提取前, 我们有必要对数据进行第一轮降维. 为此我们引入 <strong>快速傅里叶变换 (FFT)</strong> 和 <strong>预训练模型 (xgboost)</strong>.</p>
 <p><strong>对于 FFT 策略</strong>. 我们尝试将所有特征关于血糖值一一进行频谱分析比对, 如果两者频谱图在相同量纲下趋势相同则认为该特征与血糖变化趋势强相关, 反之则认为弱相关, 需要排除该特征. 最终发现 bvp 和 ibi 两个特征与血糖呈现弱相关 (如下图所示), 我们将这两个特征维度直接删除.</p>
-<p><img src="https://dwj-oss.oss-cn-nanjing.aliyuncs.com/images/202409050937875.png" srcset="https://dwj-oss.oss-cn-nanjing.aliyuncs.com/web-imgs/img-static/loading.gif" lazyload alt="left: bvp VS suger, right: ibi VS suger"></p>
+<p><img src="https://dwj-oss.oss-cn-nanjing.aliyuncs.com/images/202409050937875.png" alt="left: bvp VS suger, right: ibi VS suger"></p>
 <p><strong>对于预训练策略</strong>. 我们引入 xgboost 模型, 得到 16 人的预训练数据 (如下表所示). 其中 <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mtext>cnt</mtext></mrow><annotation encoding="application/x-tex">\text{cnt}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.6151em;"></span><span class="mord text"><span class="mord">cnt</span></span></span></span></span> 表示从所有特征中选择预训练特征的数量, 其余特征数值表示特征与血糖的逆关系, 数值越大表明该特征与血糖越无关. 可以发现无论从所有特征中选择多少个用于预训练的特征, bvp 和 ibi 始终都和血糖的关系最弱, 因此需要删除 bvp 和 ibi 这两个特征. 此时结论与使用 FFT 策略的结论互相佐证.</p>
 <table>
 <thead>
@@ -547,9 +547,9 @@ c-10,0,-16.667,5,-20,15z M188 15 H145 v585 v1800 v585 h43z"></path></svg></span>
 <p>最终可以得到 16 个用户共 16 个 <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>1436</mn><mo>×</mo><mo stretchy="false">(</mo><mi>p</mi><mo>+</mo><mn>1</mn><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">1436 \times (p+1)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.7278em;vertical-align:-0.0833em;"></span><span class="mord">1436</span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mbin">×</span><span class="mspace" style="margin-right:0.2222em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mopen">(</span><span class="mord mathnormal">p</span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mbin">+</span><span class="mspace" style="margin-right:0.2222em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord">1</span><span class="mclose">)</span></span></span></span> 的特征提取结果矩阵. 其中 <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>p</mi></mrow><annotation encoding="application/x-tex">p</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.625em;vertical-align:-0.1944em;"></span><span class="mord mathnormal">p</span></span></span></span> 为提取后的特征数量, 共 35 个.</p>
 <h3 id="2-3-特征相关性分析">2.3 特征相关性分析</h3>
 <p>对于上述 2.2 提取的结果, 我们有必要分析这全新的 <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>p</mi></mrow><annotation encoding="application/x-tex">p</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.625em;vertical-align:-0.1944em;"></span><span class="mord mathnormal">p</span></span></span></span> 个特征是否需要全部保留. 具体的, 如果两个特征之间的相关性超过了临界值, 则认为两个特征可以被其中一个近似代替, 删除其中一个特征即可. 原始的相关性矩阵如下 (以第 9 个用户为示例):</p>
-<p><img src="https://dwj-oss.oss-cn-nanjing.aliyuncs.com/images/202409050938138.png" srcset="https://dwj-oss.oss-cn-nanjing.aliyuncs.com/web-imgs/img-static/loading.gif" lazyload alt="correlation matrix"></p>
+<p><img src="https://dwj-oss.oss-cn-nanjing.aliyuncs.com/images/202409050938138.png" alt="correlation matrix"></p>
 <p>对于相关性超过阈值的两个特征, 我们只保留其中一个. 得到最终的特征相关性矩阵如下 (共 21 个有效特征):</p>
-<p><img src="https://dwj-oss.oss-cn-nanjing.aliyuncs.com/images/202409050938971.png" srcset="https://dwj-oss.oss-cn-nanjing.aliyuncs.com/web-imgs/img-static/loading.gif" lazyload alt="reduced correlation matrix"></p>
+<p><img src="https://dwj-oss.oss-cn-nanjing.aliyuncs.com/images/202409050938971.png" alt="reduced correlation matrix"></p>
 <h3 id="2-4-特征添加">2.4 特征添加</h3>
 <p>为了更好的利用数据, 我们添加 <code>Demographics.csv</code> 数据文件中的性别 (Gender) 和糖化血红蛋白指数 (HbA1c) 两个特征. 其中性别编码为 0 和 1, 糖化血红蛋白指数按 <strong>均值方差</strong> 归一化处理. 同时添加了一开始处理出来的时序特征, 即时间戳转化数据 (datetime). 最终有 24 维的特征数据.</p>
 <h2 id="三-模型构建与评估">三. 模型构建与评估</h2>
@@ -757,7 +757,7 @@ c-10,0,-16.667,5,-20,15z M188 15 H145 v585 v1800 v585 h43z"></path></svg></span>
             
   
   
-    <article id="comments" lazyload>
+    <article id="comments">
       
   <script type="text/javascript">
     Fluid.utils.loadComments('#comments', function() {
@@ -1332,10 +1332,6 @@ c-10,0,-16.667,5,-20,15z M188 15 H145 v585 v1800 v585 h43z"></path></svg></span>
 
 
 
-
-  
-    <script  src="/js/img-lazyload.js" ></script>
-  
 
 
 
