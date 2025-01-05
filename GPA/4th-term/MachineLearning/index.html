@@ -74,6 +74,7 @@
 <meta property="og:image" content="https://dwj-oss.oss-cn-nanjing.aliyuncs.com/images/202405070818069.png">
 <meta property="og:image" content="https://dwj-oss.oss-cn-nanjing.aliyuncs.com/images/202405071016457.png">
 <meta property="og:image" content="https://dwj-oss.oss-cn-nanjing.aliyuncs.com/images/202501051622124.png">
+<meta property="og:image" content="https://dwj-oss.oss-cn-nanjing.aliyuncs.com/images/202501052101394.png">
 <meta property="og:image" content="https://dwj-oss.oss-cn-nanjing.aliyuncs.com/images/202406040911195.png">
 <meta property="og:image" content="https://dwj-oss.oss-cn-nanjing.aliyuncs.com/images/202406040925713.png">
 <meta property="og:image" content="https://dwj-oss.oss-cn-nanjing.aliyuncs.com/images/202406110812596.png">
@@ -82,7 +83,7 @@
 <meta property="og:image" content="https://dwj-oss.oss-cn-nanjing.aliyuncs.com/images/202406110848096.png">
 <meta property="og:image" content="https://dwj-oss.oss-cn-nanjing.aliyuncs.com/images/202406110915333.png">
 <meta property="article:published_time" content="2024-03-21T05:55:02.211Z">
-<meta property="article:modified_time" content="2025-01-05T09:08:12.596Z">
+<meta property="article:modified_time" content="2025-01-05T13:01:59.407Z">
 <meta property="article:author" content="Mr_Dwj">
 <meta property="article:tag" content="人工智能 机器学习 深度学习 算法 数据结构 计算机科学 编程">
 <meta name="twitter:card" content="summary_large_image">
@@ -325,7 +326,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          23k 字
+          24k 字
         
       </span>
     
@@ -336,7 +337,7 @@
         
         
         
-          147 分钟
+          148 分钟
         
       </span>
     
@@ -400,7 +401,7 @@
               <p id="updated-time" class="note note-info" style="">
                 
                   
-                    本文最后更新于 2025年1月5日 下午
+                    本文最后更新于 2025年1月5日 晚上
                   
                 
               </p>
@@ -1489,16 +1490,22 @@ d_{\mathrm{cen}}(C_i,C_j)&amp;=\mathrm{dist}(\boldsymbol{\mu}_i,\boldsymbol{\mu}
 <h4 id="4-基于密度的聚类算法">4 基于密度的聚类算法</h4>
 <h5 id="DBSCAN">DBSCAN</h5>
 <p>基于密度的带噪声空间聚类（Density-Based Spatial Clustering of Application with Noise, DBSCAN）</p>
-<p>可以类比多源有向 bfs 的过程。算法定义为：</p>
+<p>其实，就是一个朴素 dfs。算法定义为：</p>
 <ul>
-<li>每次随机选择一个没有访问过的对象开始 bfs；</li>
-<li>如果发现无法成为核心对象，则标记为 visited 并重新选点；</li>
-<li>如果可以成为核心对象，则新定义一个簇 C 并将当前对象 O 领域内没有归属到簇中的数据对象纳为簇 C，并以新拓展的数据对象为起点继续拓展直到无法拓展新的数据对象。</li>
+<li>每次随机选择一个没有访问过的对象开始 dfs；</li>
+<li>如果发现无法成为核心对象，即邻域 <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>ϵ</mi></mrow><annotation encoding="application/x-tex">\epsilon</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.4306em;"></span><span class="mord mathnormal">ϵ</span></span></span></span> 内的数据对象数量小于 <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mtext>Minpts</mtext></mrow><annotation encoding="application/x-tex">\text{Minpts}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.8778em;vertical-align:-0.1944em;"></span><span class="mord text"><span class="mord">Minpts</span></span></span></span></span>，则标记为 visited 并重新选点；</li>
+<li>如果可以成为核心对象，则形成一个簇 C 并将当前邻域内没有归属的数据对象全都纳为 C 的数据对象，并以这些新纳入的数据对象为起点递归的拓展，直到无法拓展新的数据对象。</li>
 </ul>
-<p>基于密度的 DBDSAN 聚类算法可以适应更加复杂的数据分布场景，但是缺点在于对超参数很敏感。并且由于超参数是二维联合的，因此如何调参(<span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>ϵ</mi><mo separator="true">,</mo><mtext>Minpts</mtext></mrow><annotation encoding="application/x-tex">\epsilon,\text{Minpts}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.8778em;vertical-align:-0.1944em;"></span><span class="mord mathnormal">ϵ</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.1667em;"></span><span class="mord text"><span class="mord">Minpts</span></span></span></span></span>) 是一个很困难的事。在此基础之上就提出了优化算法 OPTICS。</p>
+<p>基于密度的 DBDSAN 聚类算法可以适应更加复杂的数据分布场景，但是缺点在于对超参数 (<span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>ϵ</mi><mo separator="true">,</mo><mtext>Minpts</mtext></mrow><annotation encoding="application/x-tex">\epsilon,\text{Minpts}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.8778em;vertical-align:-0.1944em;"></span><span class="mord mathnormal">ϵ</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.1667em;"></span><span class="mord text"><span class="mord">Minpts</span></span></span></span></span>) 很敏感。并且由于超参数是二维联合的，因此如何调参 (<span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>ϵ</mi><mo separator="true">,</mo><mtext>Minpts</mtext></mrow><annotation encoding="application/x-tex">\epsilon,\text{Minpts}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.8778em;vertical-align:-0.1944em;"></span><span class="mord mathnormal">ϵ</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.1667em;"></span><span class="mord text"><span class="mord">Minpts</span></span></span></span></span>) 是一个很困难的事。在此基础之上，提出 DBSCAN 算法的团队又提出了其改良版本：OPTICS 算法。</p>
 <h5 id="OPTICS">OPTICS</h5>
 <p>用于确定聚类结构的排序点聚类（Ordering Points To Identify the Clustering Structure, OPTICS）</p>
-<p>基于密度的 OPTICS 算法延续了 DBSCAN 的策略，只不过参数 <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>ϵ</mi></mrow><annotation encoding="application/x-tex">\epsilon</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.4306em;"></span><span class="mord mathnormal">ϵ</span></span></span></span> 不需要提前设置，而是根据可达图可以自行定义参数 <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>ϵ</mi></mrow><annotation encoding="application/x-tex">\epsilon</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.4306em;"></span><span class="mord mathnormal">ϵ</span></span></span></span> 进行划分。</p>
+<p>基于密度的 OPTICS 算法延续了 DBSCAN 的策略，只需要提前设定邻域内最少数据对象数量 <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mtext>Minpts</mtext></mrow><annotation encoding="application/x-tex">\text{Minpts}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.8778em;vertical-align:-0.1944em;"></span><span class="mord text"><span class="mord">Minpts</span></span></span></span></span> 而不需要提前设置邻域大小 <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>ϵ</mi></mrow><annotation encoding="application/x-tex">\epsilon</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.4306em;"></span><span class="mord mathnormal">ϵ</span></span></span></span>。有两个关键的概念：</p>
+<ul>
+<li>核心距离：数据对象成为核心对象的最小半径阈值；</li>
+<li>可达距离：对于两个数据对象 p 和 q，其中 q 是核心对象，可达距离定义为 <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>max</mi><mo>⁡</mo><mrow><mo stretchy="false">(</mo><mi>q</mi><mtext>&nbsp;的核心距离</mtext><mo separator="true">,</mo><mi>p</mi><mtext>&nbsp;与&nbsp;</mtext><mi>q</mi><mtext>&nbsp;的距离</mtext><mo stretchy="false">)</mo></mrow></mrow><annotation encoding="application/x-tex">\max{(q \text{ 的核心距离}, p \text{ 与 } q \text{ 的距离})}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mop">max</span><span class="mspace" style="margin-right:0.1667em;"></span><span class="mord"><span class="mopen">(</span><span class="mord mathnormal" style="margin-right:0.03588em;">q</span><span class="mord text"><span class="mord">&nbsp;</span><span class="mord cjk_fallback">的核心距离</span></span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.1667em;"></span><span class="mord mathnormal">p</span><span class="mord text"><span class="mord">&nbsp;</span><span class="mord cjk_fallback">与</span><span class="mord">&nbsp;</span></span><span class="mord mathnormal" style="margin-right:0.03588em;">q</span><span class="mord text"><span class="mord">&nbsp;</span><span class="mord cjk_fallback">的距离</span></span><span class="mclose">)</span></span></span></span></span>。</li>
+</ul>
+<p>最终可以得到一个按照某种规则排序的以及其可达距离。此时可以自行划分邻域的值进而按照预期进行聚类而不会像 DBSCAN 一样不受控制。OPTICS 的演示效果如下所示：</p>
+<p><img src="https://dwj-oss.oss-cn-nanjing.aliyuncs.com/images/202501052101394.png" alt="OPTICS 算法演示"></p>
 <h2 id="特征">特征</h2>
 <p>特征工程在机器学习任务中起着举足轻重的作用，大多数机器学习的应用场景下，大部分的时间其实都花在了特征工程上。而之所以需要花费大量的精力去做特征工程，主要有两个方面，一来可以通过减低特征维度来减少计算开销，二来可以通过减少特征维度来去除冗余特征，提升模型泛化性能的同时也能降低计算开销。</p>
 <p>下面将会从不改变特征值的 “特征选择” 以及会改变特征值的 “特征映射” 两种方法展开特征工程的学习。</p>
@@ -1720,9 +1727,9 @@ d_{\mathrm{cen}}(C_i,C_j)&amp;=\mathrm{dist}(\boldsymbol{\mu}_i,\boldsymbol{\mu}
                   <article class="post-prev col-6">
                     
                     
-                      <a href="/GPA/4th-term/PyApply/" title="PyApply">
+                      <a href="/GPA/4th-term/ProbAndStat/" title="ProbAndStat">
                         <i class="iconfont icon-arrowleft"></i>
-                        <span class="hidden-mobile">PyApply</span>
+                        <span class="hidden-mobile">ProbAndStat</span>
                         <span class="visible-mobile">上一篇</span>
                       </a>
                     
@@ -1730,8 +1737,8 @@ d_{\mathrm{cen}}(C_i,C_j)&amp;=\mathrm{dist}(\boldsymbol{\mu}_i,\boldsymbol{\mu}
                   <article class="post-next col-6">
                     
                     
-                      <a href="/GPA/4th-term/PyAlgo/" title="PyAlgo">
-                        <span class="hidden-mobile">PyAlgo</span>
+                      <a href="/GPA/4th-term/OptMethod/" title="OptMethod">
+                        <span class="hidden-mobile">OptMethod</span>
                         <span class="visible-mobile">下一篇</span>
                         <i class="iconfont icon-arrowright"></i>
                       </a>
