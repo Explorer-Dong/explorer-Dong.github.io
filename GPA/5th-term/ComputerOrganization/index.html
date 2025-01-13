@@ -49,13 +49,9 @@
 <meta property="og:image" content="https://dwj-oss.oss-cn-nanjing.aliyuncs.com/images/202410231131574.png">
 <meta property="og:image" content="https://dwj-oss.oss-cn-nanjing.aliyuncs.com/images/202410112007235.png">
 <meta property="og:image" content="https://dwj-oss.oss-cn-nanjing.aliyuncs.com/images/202410112041997.png">
-<meta property="og:image" content="https://dwj-oss.oss-cn-nanjing.aliyuncs.com/images/202410301119466.png">
-<meta property="og:image" content="https://dwj-oss.oss-cn-nanjing.aliyuncs.com/images/202411121121875.png">
-<meta property="og:image" content="https://dwj-oss.oss-cn-nanjing.aliyuncs.com/images/202411121136128.png">
-<meta property="og:image" content="https://dwj-oss.oss-cn-nanjing.aliyuncs.com/images/202411121533623.png">
 <meta property="og:image" content="https://dwj-oss.oss-cn-nanjing.aliyuncs.com/images/202409180822743.png">
 <meta property="article:published_time" content="2024-08-27T12:14:48.819Z">
-<meta property="article:modified_time" content="2024-12-26T00:55:42.249Z">
+<meta property="article:modified_time" content="2025-01-13T12:50:12.885Z">
 <meta property="article:author" content="Mr_Dwj">
 <meta property="article:tag" content="人工智能 机器学习 深度学习 算法 数据结构 计算机科学 编程">
 <meta name="twitter:card" content="summary_large_image">
@@ -298,7 +294,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          16k 字
+          13k 字
         
       </span>
     
@@ -309,7 +305,7 @@
         
         
         
-          97 分钟
+          85 分钟
         
       </span>
     
@@ -373,7 +369,7 @@
               <p id="updated-time" class="note note-info" style="">
                 
                   
-                    本文最后更新于 2024年12月26日 早上
+                    本文最后更新于 2025年1月13日 晚上
                   
                 
               </p>
@@ -992,42 +988,7 @@
 <p>芯片扩展分为「字扩展、位扩展和字位同时扩展」三种。已经在数电中学习过了，具体见 <a href="https://blog.dwj601.cn/GPA/3rd-term/DigitalLogicCircuit/#4-4-2-%E8%AF%91%E7%A0%81%E5%99%A8-%E6%95%B0%E6%8D%AE%E5%88%86%E9%85%8D%E5%99%A8">https://blog.dwj601.cn/GPA/3rd-term/DigitalLogicCircuit/#4-4-2-译码器-数据分配器</a>，不再赘述。</p>
 <h4 id="7-3-外存">7.3 外存</h4>
 <p>见 chapter8 中的外存设备。</p>
-<h4 id="7-4-虚存">7.4 虚存</h4>
-<h5 id="为什么会有虚存">为什么会有虚存</h5>
-<p>在「内存的空间大小不一且远小于现代程序的空间需求」以及「现代 OS 都支持并发程序」的背景下，虚拟存储空间技术应运而生。需要注意的是，虚拟存储空间并不对应计算机中的实际物理器件，而是一种 <strong>设计理念</strong>。通过虚拟化技术，不仅仅提升了程序的可使用空间大小，也可以让开发者不受限于不同主机内存大小不一的问题，而只需要关心每一个程序对应的运行逻辑，更进一步的，虚拟化技术也可以保护进程的数据安全，确保程序并发执行时不会出现访问异常地址等错误。</p>
-<h5 id="虚存的工作逻辑">虚存的工作逻辑</h5>
-<p>既然叫做虚存，那么每一个进程中的每一条指令对应的地址就都是虚拟地址，然而 CPU 访问数据时需要能够直接对应到实际存储单元的物理地址，因此虚拟化技术一个重要的部分就是如何将逻辑地址（虚拟地址）转化为物理地址（实际地址）。如下图所示，展示了使用虚拟化技术 CPU 的访存逻辑：</p>
-<p><img src="https://dwj-oss.oss-cn-nanjing.aliyuncs.com/images/202410301119466.png" alt="使用虚拟化技术的 CPU 的访存逻辑 | 简化版"></p>
-<p>如上图所示。CPU 在拿到内存中某个进程的某条指令中的虚拟地址 VA 后，首先需要通过存储器管理单元 (Memory Management Unit, MMU) 将其转化为物理地址 PA，再根据物理地址进行诸如 cache <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo>→</mo></mrow><annotation encoding="application/x-tex">\to</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.3669em;"></span><span class="mrel">→</span></span></span></span> 内存 <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo>→</mo></mrow><annotation encoding="application/x-tex">\to</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.3669em;"></span><span class="mrel">→</span></span></span></span> 外存的数据访存逻辑。</p>
-<div class="note note-warning">
-            <p>注意：虚拟化技术并不是万能的。对于程序空间要求高，但是计算速度要求不是很严格的应用场景（例如服务器、台式机、笔记本），虚拟化技术可谓是神来之笔，大大提升了程序存储开销的上限。但通过上面介绍的虚存工作逻辑也不难发现，为了实现虚拟化技术，我们不得不设计一个 MMU 来满足需求，这就会导致一定的时间开销以及设计架构的复杂化；并且在后续的虚存实现中也会介绍到虚拟化技术需要内存和外存进行数据对换，这也会增加时间开销同时复杂化 CPU 的架构。</p><p>没有一种技术可以一以贯之，虚拟化技术也是如此。对于程序空间要求不大，但是运算速度和延迟要求很严格的场景（例如嵌入式），虚拟化技术就不能使用了，此时 CPU 访问的指令就直接对应了 cache 或内存中的物理地址。</p>
-          </div>
-<h5 id="分页式虚存实现">分页式虚存实现</h5>
-<p>有了上述的虚存工作概念，我们尝试实现虚拟化技术。由于进程的虚拟空间 <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo>≫</mo></mrow><annotation encoding="application/x-tex">\gg</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.5782em;vertical-align:-0.0391em;"></span><span class="mrel">≫</span></span></span></span> 机器的内存空间，我们不可能把一个完整的进程一次性全部加载进内存，因此虚存最重要的一个设计理念就是将部分进程加载到内存，其余部分仍然保持在外存中。</p>
-<p>这种设计理念似乎似曾相识？是的，缓存和内存不也是这样设计的吗！既然如此，理解起来似乎又容易了一些。同样的我们需要解决诸如分块、映射、替换、读写一致性等问题。围绕这些问题，目前的虚存实现主要分为「分页式」、「分段式」和「段页式」三种。下面主要讲解 <strong>分页式</strong> 虚拟化技术。我将会从 <strong>分块</strong>、<strong>映射</strong>、<strong>替换与读写一致性</strong>、<strong>快表</strong> 和 <strong>页目录</strong> 五个角度展开。</p>
-<p>1）分块方式</p>
-<p>对于分页式虚存，设计者将内存和进程分别划分为等空间大小的子模块。其中内存中的子模块一般叫做实页（OS 中叫「页框」），进程中的子模块一般叫做虚页（OS 中叫「页」）。</p>
-<p>2）映射策略</p>
-<p>对于分页式虚存，进程和内存之间是通过全相联映射实现的，即进程中任意一个虚页可以对换到内存中任意一个实页中。</p>
-<p>值得注意的是，这里的对换与内存和 cache 的对换并不是一个意思。在内存和 cache 中，存储的都是实际的物理地址，因此内存和 cache 的对换就是把所有的信息全部对换并通过一个标记位来表示是否有效。但是在外存虚页和内存实页的对换中，由于进程的虚页地址和内存的实页地址完全不同，因此我们不能像内存和 cache 一样把所有信息进行对换，于是 <strong>页表</strong> 应运而生。</p>
-<p><img src="https://dwj-oss.oss-cn-nanjing.aliyuncs.com/images/202411121121875.png" alt=""></p>
-<p>页表结构解读。如上图所示，给出了页表的示意结构。通过页表，我们建立起了「进程的虚页」与「内存的实页」之间的对应关系。在页表中每一行数据被称为页表项，对应一个虚页的映射信息。例如上图所示一共有 8 个虚页，那么页表就一共有 8 个页表项。为了节省空间，每一个进程只会在其 PCB 中存储对应页表的首地址。</p>
-<p>地址转换逻辑。我们知道，CPU 在访问某一个虚拟地址时，需要利用 MMU 将该虚拟地址转换为物理地址才能访问到对应的信息。具体的，首先根据虚拟地址中的高位字段得到虚页号，然后根据虚页号定位到页表中的一个页表项：</p>
-<ul>
-<li>如果装入位为 0，说明发生了缺页异常，此时将会发生缺失中断，操作系统会采用对应的页面替换算法将缺失的页面装入内存同时维护页表信息，然后重新开始最初的指令执行过程；</li>
-<li>如果当前页表项中的「装入位」字段为 1，则表明对应的虚页已经被加载到内存中了，实页号就存放在当前页表项的「存放位置」字段中。由于虚页和实页的大小是一样的，因此地址在虚页的偏移量和在实页的偏移量也是一样的，故直接将此时「实页号」和「虚页对应的偏移量」进行拼接即可得到实际地址，如下图所示：</li>
-</ul>
-<p><img src="https://dwj-oss.oss-cn-nanjing.aliyuncs.com/images/202411121136128.png" alt="分页式虚存的地址转换"></p>
-<p>3）替换策略与读写一致性</p>
-<p>关于页面替换算法。和缓存的替换算法完全一致，这里不再赘述。</p>
-<p>关于读写的一致性。页表中有一项叫做修改位。如果在读写或被替换时发现修改位为 1，则表明对应的页数据被修改了，此时一般采用 write back 策略来保持一致性。</p>
-<p>4）快表策略</p>
-<p>由于每一个进程的页表都会被加载到内存中，这就意味着每次做地址转换访问页表时都需要访问内存，那为什么不能访问 cache 呢？设计者将经常访问到的页表项拿出来放到 cache 中组成了新的页表叫做后备转换缓冲器 (Translation Lookaside Buffer, TLB)，通常称其为快表。这样一来在地址转换时就会首先查询 TLB，如果没找到就再去访问主存中的页表（在快表的概念下主存的页表就被称为慢表）。</p>
-<p>5）页目录</p>
-<p>在现代程序的需求下，虚拟空间越来越大，对应的页表项也会越来越多。在上述的解释中我们知道，页表（慢表）是连续存储在内存中的，由于内存以页为单位被划分开了，如果一个页表的空间超过了一个页的空间怎么办呢？我们引入 <strong>多级目录</strong> 这个概念。其实就是再用一个页来存储所有的页表信息，这里的页就被称为页目录。</p>
-<p>至此，分页式虚存就全部介绍完毕。下图展示了在一个具有 cache 机制和虚拟化技术的系统中 CPU 访存一次的完整逻辑：</p>
-<p><img src="https://dwj-oss.oss-cn-nanjing.aliyuncs.com/images/202411121533623.png" alt="CPU 访存一次"></p>
-<h4 id="7-5-数据校验">7.5 数据校验</h4>
+<h4 id="7-4-数据校验">7.4 数据校验</h4>
 <p>数据在信道传送的过程中，可能会因为各种噪声或者硬件原因出现错误，我们有必要进行数据的检错与纠错。通俗来说就是我们想知道数据在传输的过程中有没有发生变化以及如果发生了变化我们应该如何纠正这个错误变化。本目我们只学习数据传输过程中的错误检测，具体的叫做「奇偶校验法」策略。</p>
 <p>在开始学习具体的错误检测方法之前，先看一下数据校验的流程图来对其有一个全局的把握：</p>
 <p><img src="https://dwj-oss.oss-cn-nanjing.aliyuncs.com/images/202409180822743.png" alt="数据校验流程图"></p>
@@ -1118,7 +1079,7 @@
       
         <div class="license-meta-item license-meta-date">
           <div>更新于</div>
-          <div>2024年12月26日</div>
+          <div>2025年1月13日</div>
         </div>
       
       

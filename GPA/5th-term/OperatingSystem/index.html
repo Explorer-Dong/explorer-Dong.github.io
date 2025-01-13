@@ -37,14 +37,15 @@
 <meta property="og:image" content="https://dwj-oss.oss-cn-nanjing.aliyuncs.com/images/202410221600543.png">
 <meta property="og:image" content="https://dwj-oss.oss-cn-nanjing.aliyuncs.com/images/202411010855566.png">
 <meta property="og:image" content="https://dwj-oss.oss-cn-nanjing.aliyuncs.com/images/202411051438972.png">
-<meta property="og:image" content="https://dwj-oss.oss-cn-nanjing.aliyuncs.com/images/202411080910924.png">
-<meta property="og:image" content="https://dwj-oss.oss-cn-nanjing.aliyuncs.com/images/202411080910546.png">
-<meta property="og:image" content="https://dwj-oss.oss-cn-nanjing.aliyuncs.com/images/202411080911787.png">
+<meta property="og:image" content="https://dwj-oss.oss-cn-nanjing.aliyuncs.com/images/202411121121875.png">
+<meta property="og:image" content="https://dwj-oss.oss-cn-nanjing.aliyuncs.com/images/202411121136128.png">
+<meta property="og:image" content="https://dwj-oss.oss-cn-nanjing.aliyuncs.com/images/202501140014711.png">
+<meta property="og:image" content="https://dwj-oss.oss-cn-nanjing.aliyuncs.com/images/202501140014516.png">
 <meta property="og:image" content="https://dwj-oss.oss-cn-nanjing.aliyuncs.com/images/202412130825688.png">
 <meta property="og:image" content="https://dwj-oss.oss-cn-nanjing.aliyuncs.com/images/202412201829367.png">
 <meta property="og:image" content="https://dwj-oss.oss-cn-nanjing.aliyuncs.com/images/202412241603205.png">
 <meta property="article:published_time" content="2024-08-27T12:02:23.289Z">
-<meta property="article:modified_time" content="2025-01-13T03:04:44.541Z">
+<meta property="article:modified_time" content="2025-01-13T16:22:22.548Z">
 <meta property="article:author" content="Mr_Dwj">
 <meta property="article:tag" content="人工智能 机器学习 深度学习 算法 数据结构 计算机科学 编程">
 <meta name="twitter:card" content="summary_large_image">
@@ -287,7 +288,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          11k 字
+          12k 字
         
       </span>
     
@@ -298,7 +299,7 @@
         
         
         
-          68 分钟
+          75 分钟
         
       </span>
     
@@ -362,7 +363,7 @@
               <p id="updated-time" class="note note-info" style="">
                 
                   
-                    本文最后更新于 2025年1月13日 上午
+                    本文最后更新于 2025年1月14日 凌晨
                   
                 
               </p>
@@ -655,18 +656,21 @@ graph RL
 <h3 id="2-进程调度">2 进程调度</h3>
 <p>上一章在讲解进程切换时，埋下了一个伏笔：当 OS 接收到进程发起的中断请求后，就一定让 CPU 去处理发起中断请求的进程吗？其实不一定，OS 还有可能让 CPU 去处理别的处于等待态的进程。本章我们就来介绍 OS 是如何调度所有的进程，使得这些进程可以获得合理的 CPU 计算资源的。</p>
 <div class="note note-warning">
-            <p>注：各种名词说法没有统一，我的笔记统一按照我的习惯来。个人认为我的表述更加的符合人类逻辑。包括但不限于：</p><ul><li>“作业” <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo>→</mo></mrow><annotation encoding="application/x-tex">\to</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.3669em;"></span><span class="mrel">→</span></span></span></span> “刚启动的程序”</li><li>“服务时间” <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo>→</mo></mrow><annotation encoding="application/x-tex">\to</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.3669em;"></span><span class="mrel">→</span></span></span></span> “预计运行时间”</li><li>“阻塞队列” <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo>→</mo></mrow><annotation encoding="application/x-tex">\to</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.3669em;"></span><span class="mrel">→</span></span></span></span> “等待队列”</li></ul>
+            <p>注：各种名词说法没有统一，下列说法都是等价的：</p><ul><li>“作业” <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mtext>  </mtext><mo>⟺</mo><mtext>  </mtext></mrow><annotation encoding="application/x-tex">\iff</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.549em;vertical-align:-0.024em;"></span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">⟺</span><span class="mspace" style="margin-right:0.2778em;"></span></span></span></span> “刚启动的程序”</li><li>“服务时间” <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mtext>  </mtext><mo>⟺</mo><mtext>  </mtext></mrow><annotation encoding="application/x-tex">\iff</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.549em;vertical-align:-0.024em;"></span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">⟺</span><span class="mspace" style="margin-right:0.2778em;"></span></span></span></span> “预计运行时间”</li><li>“阻塞队列” <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mtext>  </mtext><mo>⟺</mo><mtext>  </mtext></mrow><annotation encoding="application/x-tex">\iff</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.549em;vertical-align:-0.024em;"></span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">⟺</span><span class="mspace" style="margin-right:0.2778em;"></span></span></span></span> “等待队列”</li></ul>
           </div>
-<p><strong>三级调度模式</strong>。如下列表：</p>
+<h4 id="2-1-三级调度模式">2.1 三级调度模式</h4>
+<p>如下列表：</p>
 <ul>
 <li>高级调度。即七态模型中「无 <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo>→</mo></mrow><annotation encoding="application/x-tex">\to</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.3669em;"></span><span class="mrel">→</span></span></span></span> 创建态 <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo>→</mo></mrow><annotation encoding="application/x-tex">\to</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.3669em;"></span><span class="mrel">→</span></span></span></span> 就绪态」的转换。决定哪些作业从外存进入内存；</li>
 <li>中级调度。即七态模型中「就绪态 <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo>⇌</mo></mrow><annotation encoding="application/x-tex">\rightleftharpoons</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.682em;vertical-align:-0.011em;"></span><span class="mrel">⇌</span></span></span></span> 挂起就绪态、阻塞态 <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo>⇌</mo></mrow><annotation encoding="application/x-tex">\rightleftharpoons</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.682em;vertical-align:-0.011em;"></span><span class="mrel">⇌</span></span></span></span> 挂起阻塞态」的转换。决定哪些内存中的进程挂起到外存，或者哪些外存中挂起的进程对换到内存；</li>
 <li>低级调度。即七态模型中「就绪态 <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo>→</mo></mrow><annotation encoding="application/x-tex">\to</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.3669em;"></span><span class="mrel">→</span></span></span></span> 运行态」的转换。决定哪些内存中的进程可以获得 CPU 计算资源；</li>
 </ul>
-<p><strong>调度度量指标</strong>。如下图：</p>
+<h4 id="2-2-调度度量指标">2.2 调度度量指标</h4>
+<p>如下图：</p>
 <p><img src="https://dwj-oss.oss-cn-nanjing.aliyuncs.com/images/202410081443847.png" alt="进程调度的评价指标"></p>
 <p>重点关注周转时间相关的度量指标。大部分题目中，作业周转的开始都会表述成 “作业到达时间”。由于「周转时间 <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo>=</mo></mrow><annotation encoding="application/x-tex">=</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.3669em;"></span><span class="mrel">=</span></span></span></span> 运行时间 <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo>+</mo></mrow><annotation encoding="application/x-tex">+</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.6667em;vertical-align:-0.0833em;"></span><span class="mord">+</span></span></span></span> 等待时间」，因此上述「带权」的含义可以理解为作业处理的效率，取值范围为 <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="false">[</mo><mn>1</mn><mo separator="true">,</mo><mi mathvariant="normal">∞</mi><mo stretchy="false">]</mo></mrow><annotation encoding="application/x-tex">[1,\infty]</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mopen">[</span><span class="mord">1</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.1667em;"></span><span class="mord">∞</span><span class="mclose">]</span></span></span></span>。</p>
-<p><strong><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>7</mn></mrow><annotation encoding="application/x-tex">7</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.6444em;"></span><span class="mord">7</span></span></span></span> 种调度算法</strong>。如下列表：</p>
+<h4 id="2-3-7-种调度算法">2.3 <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>7</mn></mrow><annotation encoding="application/x-tex">7</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.6444em;"></span><span class="mord">7</span></span></span></span> 种调度算法</h4>
+<p>如下列表：</p>
 <ol>
 <li>先来先服务 (First Come First Serverd, FCFS)。非抢占式。按照进程进入就绪队列的时间顺序分配进程的计算资源；</li>
 <li>短作业优先 (Shortest Job First, SJF)。非抢占式。经典排队打水贪心算法的应用。根据就绪队列中所有进程的预估运行时间进行排序，每次给最小运行时间的进程分配计算资源。显然的，如果一直有很小的运行时间的进程进入就绪队列，就会造成已经存在于就绪队列中但是运行时间较长的进程 “饿死”；</li>
@@ -747,7 +751,8 @@ graph RL
 </tr>
 </tbody>
 </table>
-<p><strong>代码实现</strong>。为了更好的理解上述 <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>7</mn></mrow><annotation encoding="application/x-tex">7</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.6444em;"></span><span class="mord">7</span></span></span></span> 种进程调度算法，尝试从「逻辑上」进行模拟。具体代码见：<a target="_blank" rel="noopener" href="https://github.com/Explorer-Dong/OS_Simulate/tree/main/Experiment5">https://github.com/Explorer-Dong/OS_Simulate/tree/main/Experiment5</a>。不难发现所有的调度逻辑都只有 3 步，括号内容表示代码没有模拟的部分，如下：</p>
+<h4 id="2-4-代码实现">2.4 代码实现</h4>
+<p>为了更好的理解上述 <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>7</mn></mrow><annotation encoding="application/x-tex">7</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.6444em;"></span><span class="mord">7</span></span></span></span> 种进程调度算法，尝试从「逻辑上」进行模拟。具体代码见：<a target="_blank" rel="noopener" href="https://github.com/Explorer-Dong/OS_Simulate/tree/main/Experiment5">https://github.com/Explorer-Dong/OS_Simulate/tree/main/Experiment5</a>。不难发现所有的调度逻辑都只有 3 步，括号内容表示代码没有模拟的部分，如下：</p>
 <ol>
 <li>取出就绪队列的队头进程（进入运行态并获得 CPU 的计算资源执行相关指令）；</li>
 <li>维护时钟信息和当前进程信息；</li>
@@ -811,36 +816,61 @@ graph RL
 </li>
 </ol>
 <h2 id="虚拟化">虚拟化</h2>
-<h3 id="5-虚拟存储">5 虚拟存储</h3>
-<p>本章展开虚拟化技术的学习。主要介绍虚拟存储的 4 种策略，分别为「连续存储」、「分页存储」、「分段存储」和「段页式存储」。后三个策略以及虚拟内存的产生背景、工作逻辑已经在计算机组成原理中详细展开，此处就不多赘述。主要展开连续存储的虚拟化存储策略。</p>
-<h4 id="5-1-连续存储管理">5.1 连续存储管理</h4>
-<p>虽然这种技术早就已经过时了，但是学习老技术有助于理解现代虚拟化技术的产生背景以及设计理念。下面将介绍 3 种逐渐迭代优化的连续存储管理策略。分别为「单用户连续」、「固定分区」和「可变分区」。</p>
-<h5 id="5-1-1-单用户连续分区">5.1.1 单用户连续分区</h5>
-<p>内存分配策略。一个进程占用整个用户内存空间（内存分为 OS 空间和用户空间）。</p>
-<p>地址转换和存储保护。直接将虚拟地址+基地址即可得到绝对地址；至于存储保护，只需要检查一下绝对地址是否越界即可。如下图所示：</p>
-<p><img src="https://dwj-oss.oss-cn-nanjing.aliyuncs.com/images/202411080910924.png" alt="单用户连续分区 | 地址转换和存储保护"></p>
-<p>这种策略的缺点很明显：1）不能并发执行进程 2）内存浪费严重。</p>
-<h5 id="5-1-2-固定分区">5.1.2 固定分区</h5>
-<p>内存分配策略。将用户内存空间划分为 n 个固定大小的分区，其余逻辑与上述单用户连续分区一致。</p>
-<p>地址转换和存储保护。如下图所示：</p>
-<p><img src="https://dwj-oss.oss-cn-nanjing.aliyuncs.com/images/202411080910546.png" alt="固定分区 | 地址转换与存储保护"></p>
-<p>这种策略的缺点依然很明显：1）虽然解决了只能一个进程执行的问题，但是由于一个进程只能占用一个分区，因此仍然限制了并发的进程数量上限为 n 并且不支持超过最大分区容量的进程执行；2）同样会造成内存浪费；3）不利于进程的内存开销的动态变化。</p>
-<h5 id="5-1-3-可变分区">5.1.3 可变分区</h5>
-<p>内存分配策略。可变分区存储管理可以理解为拼图，通过移动/紧凑技术将进程移动到地址相连的内存空间从而可以不浪费进程之间的小内存区域。设计者设计了两个表，<strong>可分配分区表</strong> 和 <strong>被占用分区表</strong>。可以每次从可分配分区表的第一个可分配分区开始找，也可以按照上次寻找结束的分区开始找；也可以按照可分配空间大小降序排序开始找；也可以按照可分配空间大小升序排序开始找。各有各的优势和劣势。如下图所示：</p>
-<p><img src="https://dwj-oss.oss-cn-nanjing.aliyuncs.com/images/202411080911787.png" alt="可变分区 | 内存分配策略"></p>
-<p>地址转换和存储保护。同样的用虚拟地址+基地址可以得到绝对地址。同样的绝对地址不要超过对应分区的界限即可。只需要存储每一个分区的起始地址以及分区长度/分区终点地址即可。</p>
-<p>这种策略解决了内存浪费的问题但缺点依然明显：1）同样不支持大作业进程；2）上述的移动/紧凑策略对于时间开销很大，不利于进程的高效执行。</p>
-<h4 id="5-2-分页式存储管理">5.2 分页式存储管理</h4>
-<p>详情参见：<a href="https://blog.dwj601.cn/GPA/5th-term/ComputerOrganization/#7-4-%E8%99%9A%E5%AD%98">https://blog.dwj601.cn/GPA/5th-term/ComputerOrganization/#7-4-虚存</a></p>
-<p>代码实现：<a target="_blank" rel="noopener" href="https://github.com/Explorer-Dong/OS_Simulate/tree/main/Experiment_final">https://github.com/Explorer-Dong/OS_Simulate/tree/main/Experiment_final</a></p>
+<p>本章展开虚拟化的学习。所谓虚拟化，与并发一样，是一种技术手段，通过将一个进程划分为不同的部分并按需调入内存，实现每个进程独占内存的假象。</p>
+<h3 id="1-产生背景">1 产生背景</h3>
+<p><strong>连续存储</strong>。我们首先学习古老的连续存储技术，以便更好的过渡到后面的页式存储。连续存储顾名思义，就是对于每一个进程，都需要完整的将其装入或移出内存，有以下三种连续存储策略：</p>
+<ol>
+<li>连续分区。一个进程占用整个用户内存空间（内存分为 OS 空间和用户空间）。这种策略显然不支持并发，同时也让内存浪费严重；</li>
+<li>固定分区。将用户内存空间划分为 <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>n</mi></mrow><annotation encoding="application/x-tex">n</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.4306em;"></span><span class="mord mathnormal">n</span></span></span></span> 个固定大小的分区，其余逻辑与上述连续分区一致。这种策略的缺点依然很明显：1）虽然解决了只能一个进程执行的问题，但是由于一个进程只能占用一个分区，因此仍然限制了并发的进程数量上限为 <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>n</mi></mrow><annotation encoding="application/x-tex">n</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.4306em;"></span><span class="mord mathnormal">n</span></span></span></span> 并且不支持超过最大分区容量的进程执行；2）同样会造成内存浪费；3）不利于进程的内存开销的动态变化；</li>
+<li>可变分区。可以理解为拼图，通过移动/紧凑技术将进程移动到地址相连的内存空间从而可以不浪费进程之间的小内存区域。设计者设计了「可分配分区表」和「被占用分区表」。OS 可以每次从可分配分区表的第一个可分配分区开始找，也可以按照上次寻找结束的分区开始找；也可以按照可分配空间大小降序排序开始找；也可以按照可分配空间大小升序排序开始找。这种策略解决了内存浪费的问题但缺点依然明显：1）同样不支持大作业进程；2）上述的移动/紧凑策略对于时间开销很大，不利于进程的高效执行。</li>
+</ol>
+<p><strong>页式存储</strong>。本章我们会以页式存储为例，展开虚拟化技术的学习（段式、段页式等虚拟化技术此处不予讨论）。但是在开始学习之前不妨问个问题：为什么会有虚拟化技术？从上面介绍的连续存储方法可以看出，如果将一个进程完整的调入调出内存，将会很大程度上约束程序员的编程空间，因为内存造价相对较高，并且现在程序的空间需求越来越大，完整的调入调出进程就变得不合适，再加上程序具有局部性这一天然的优势，我们完全可以将一个进程分割成小部分，然后按需调入内存即可。这不仅提升了编程空间，也可以让程序员不受限于不同主机内存大小不一的问题，而只需要关心每一个程序具体的运行逻辑。</p>
+<p><strong>虚拟化技术的局限性</strong>。虚拟化技术并不是万能的。对于程序空间要求高，但是计算速度要求不是很严格的应用场景（例如服务器、台式机、笔记本），虚拟化技术可谓是神来之笔，大大提升了程序空间开销的上限。但是虚拟化技术实现的代价就是需要一定的时间开销来完成虚拟地址到物理地址的转换，这对于计算实时性要求高并且计算资源有限的场景式无法容忍的，比如嵌入式，此时 CPU 访问的指令就直接对应了 cache 或内存中的物理地址。</p>
+<h3 id="2-页式存储">2 页式存储</h3>
+<p><a target="_blank" rel="noopener" href="https://github.com/Explorer-Dong/OS_Simulate/tree/main/Experiment_final">https://github.com/Explorer-Dong/OS_Simulate/tree/main/Experiment_final</a></p>
+<p>下面详细展开页式存储的实现细节。</p>
+<h4 id="2-1-组织结构">2.1 组织结构</h4>
+<p><strong>分块方式</strong>。对于分页式虚存，设计者将内存和进程分别划分为等空间大小的子模块。其中内存中的子模块叫做 frame/实页/页框，进程中的子模块叫做 page/虚页/页面。</p>
+<p><strong>映射关系</strong>。也就是所谓的地址转换/重定位。对于分页式虚存，实页和虚页之间是全相联映射的关系，即进程中任意一个虚页可以对换到内存中任意一个实页中。值得注意的是，这里的对换与内存和 cache 的对换并不是一个意思。在内存和 cache 中，存储的都是实际的物理地址，因此内存和 cache 的对换就是把所有的信息全部对换并通过一个标记位来表示是否有效。但是在外存虚页和内存实页的对换中，由于进程的虚页地址和内存的实页地址并不是基于同一个空间，因此我们不能像内存和 cache 一样把所有信息进行对换，于是 <strong>页表</strong> 应运而生。</p>
+<p><img src="https://dwj-oss.oss-cn-nanjing.aliyuncs.com/images/202411121121875.png" alt="页表示意图"></p>
+<p>如上图所示，我们通过页表建立起了「进程的虚页」与「内存的实页」之间的对应关系。在页表中每一行数据被称为页表项，对应一个虚页的映射信息。例如上图所示一共有 8 个虚页，那么页表就一共有 8 个页表项。每一个进程都有自己的一个页表用来记录其每一个虚页在实页中的映射关系。为了节省空间，每一个进程只会在其 PCB 中存储对应页表的首地址与偏移量。</p>
+<h4 id="2-2-基本功能">2.2 基本功能</h4>
+<p><strong>地址转换</strong>。我们知道，CPU 在访问某一个虚拟地址时，需要利用 MMU 将该虚拟地址转换为物理地址才能访问到对应的信息。具体的，首先根据虚拟地址中的高位字段得到虚页号，然后根据虚页号定位到页表中的一个页表项：</p>
+<ul>
+<li>如果装入位为 0，说明发生了缺页异常，此时将会发生缺失中断，操作系统会采用对应的页面替换算法将缺失的页面装入内存同时维护页表信息，然后重新开始最初的指令执行过程；</li>
+<li>如果当前页表项中的「装入位」字段为 1，则表明对应的虚页已经被加载到内存中了，实页号就存放在当前页表项的「存放位置」字段中。由于虚页和实页的大小是一样的，因此地址在虚页的偏移量和在实页的偏移量也是一样的，故直接将此时「实页号」和「虚页对应的偏移量」进行拼接即可得到实际地址，如下图所示：</li>
+</ul>
+<p><img src="https://dwj-oss.oss-cn-nanjing.aliyuncs.com/images/202411121136128.png" alt="分页式虚存的地址转换"></p>
+<p><strong>页面替换</strong>。关于页面替换算法。和缓存的替换算法完全一致，这里不再赘述。</p>
+<p><strong>写回机制</strong>。关于读写的一致性。页表中有一项叫做修改位。如果在读写或被替换时发现修改位为 1，则表明对应的页数据被修改了，此时一般采用 write back 策略来保持一致性。</p>
+<h4 id="2-3-优化改进">2.3 优化改进</h4>
+<p><strong>快表机制</strong>。由于每一个进程的页表都会被加载到内存中，这就意味着每次做地址转换访问页表时都需要访问内存，那为什么不能访问 cache 呢？设计者将经常访问到的页表项拿出来放到 cache 中组成了新的页表叫做后备转换缓冲器 (Translation Lookaside Buffer, TLB)，通常称其为快表。这样一来在地址转换时就会首先查询 TLB，如果没找到就再去访问主存中的页表（在快表的概念下主存的页表就被称为慢表）。</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:center"><img src="https://dwj-oss.oss-cn-nanjing.aliyuncs.com/images/202501140014711.png" alt="快表机制下的一次访存（逻辑图）"></th>
+<th style="text-align:center"><img src="https://dwj-oss.oss-cn-nanjing.aliyuncs.com/images/202501140014516.png" alt="快表机制下的一次访存（结构图）"></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">快表机制下的一次访存（逻辑图）</td>
+<td style="text-align:center">快表机制下的一次访存（结构图）</td>
+</tr>
+</tbody>
+</table>
+<p><strong>多级页表</strong>。在现代程序的需求下，虚拟空间越来越大，对应的页表项也会越来越多。在上述的解释中我们知道，页表（慢表）是连续存储在内存中的，由于内存以页为单位被划分开了，如果一个页表的空间超过了一个页的空间怎么办呢？我们引入 <strong>多级目录</strong> 这个概念。其实就是再用一个页来存储所有的页表信息，这里的页就被称为页目录。</p>
+<p>图</p>
+<p><strong>反置页表</strong>。TODO。</p>
+<p>图</p>
 <h2 id="持久化">持久化</h2>
-<h3 id="6-设备管理-TODO">6 设备管理 TODO</h3>
+<h3 id="1-设备管理-TODO">1 设备管理 TODO</h3>
 <p>本章开始学习 I/O 设备。I/O 设备顾名思义就是输入输出设备，也被称为外设。具体的可以根据传输方向将 I/O 设备分为三大类，分别为：输入设备（键盘、鼠标、扫描仪）、输出设备（显示器、打印机）和输入输出设备（磁盘、网卡）。重点学习外设中的磁盘模块。</p>
 <p>首先看一下磁盘的结构示意图：</p>
 <p><img src="https://dwj-oss.oss-cn-nanjing.aliyuncs.com/images/202412130825688.png" alt="磁盘的结构示意图"></p>
 <p>如上图所示，一个磁盘设备主要有三部分组成，分别是：柱面、磁头和扇区。</p>
-<h3 id="7-文件系统">7 文件系统</h3>
-<h4 id="7-1-文件的存在形式">7.1 文件的存在形式</h4>
+<h3 id="2-文件系统">2 文件系统</h3>
+<h4 id="2-1-文件的存在形式">2.1 文件的存在形式</h4>
 <p>一个文件在系统中是以什么样形式存在的呢？</p>
 <p>在类 Unix 操作系统中，文件由「<strong>索引结点</strong>」和「<strong>文件数据</strong>」两部分组成。具体的，索引结点 inode 用来存储「文件的元数据」和「文件的数据所在物理存储块指针」，而文件数据就是文件的原始信息。可以简单的理解为如下的结构体：</p>
 <figure class="highlight cpp"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><code class="hljs cpp"><span class="hljs-comment">// 直接索引块数目</span><br><span class="hljs-meta">#<span class="hljs-keyword">define</span> CNT 12</span><br><br><span class="hljs-comment">// 定义文件系统的块</span><br><span class="hljs-keyword">typedef</span> <span class="hljs-type">char</span> <span class="hljs-type">block_t</span>[<span class="hljs-number">4096</span>];<br><br><span class="hljs-comment">// 定义文件元数据的结构</span><br><span class="hljs-keyword">typedef</span> <span class="hljs-keyword">struct</span> {<br>    <span class="hljs-type">uint32_t</span> mode;   <span class="hljs-comment">// 文件权限</span><br>    <span class="hljs-type">uint32_t</span> size;   <span class="hljs-comment">// 文件大小</span><br>    <span class="hljs-type">uint32_t</span> uid;    <span class="hljs-comment">// 文件拥有者</span><br>    <span class="hljs-type">uint32_t</span> atime;  <span class="hljs-comment">// 最后访问时间</span><br>    <span class="hljs-type">uint32_t</span> mtime;  <span class="hljs-comment">// 最后修改时间</span><br>} <span class="hljs-type">finfo_t</span>;<br><br><span class="hljs-comment">// 定义索引结点的结构</span><br><span class="hljs-keyword">struct</span> <span class="hljs-title class_">inode</span> {<br>    <span class="hljs-type">finfo_t</span> file_info;         <span class="hljs-comment">// 文件元数据</span><br>    <span class="hljs-type">block_t</span>* direct[CNT];      <span class="hljs-comment">// 直接索引（最多 CNT 个）</span><br>    <span class="hljs-type">block_t</span>* single_indirect;  <span class="hljs-comment">// 一次间接索引</span><br>    <span class="hljs-type">block_t</span>* double_indirect;  <span class="hljs-comment">// 二次间接索引</span><br>    <span class="hljs-type">block_t</span>* triple_indirect;  <span class="hljs-comment">// 三次间接索引</span><br>};<br></code></pre></td></tr></tbody></table></figure>
@@ -850,11 +880,11 @@ graph RL
 <li>对于间接索引。其指向的物理存储块存储的都是指针，只不过其中存储的不是文件信息，而是 <strong>索引指针</strong>，而由于一个物理块的存储空间对应存储的指针个数远大于一个结点中存储的直接指针个数，因此可以通过间接索引的方式极大的提升文件的存储空间。</li>
 </ul>
 <p>因此文件系统管理文件的方式，就可以通过管理每一个文件的 inode 来实现。更一般的来说，inode 就是文件控制块 (File Control Block, FCB) 的具体实现。可以发现操作系统中的文件管理系统对于文件的管理并非针对一整个文件，而是将每一个文件抽象为一个 FCB，并基于此进行管理。读到这里其实就和前面的进程管理串上了，操作系统中的进程管理也是将进程抽象为 PCB，并基于此进行管理。两者的区别就在于，文件是在外存中，而进程是在内存中，但是管理的方式都是类似的，均采用相关的软件算法来实现。</p>
-<h4 id="7-2-文件的目录组织">7.2 文件的目录组织</h4>
+<h4 id="2-2-文件的目录组织">2.2 文件的目录组织</h4>
 <p>大量的文件需要我们进行合理的管理，以树形文件目录为例。为了 <strong>便于管理</strong>，设计者将每一个 inode 进行唯一性编号（记作 inode_id），这样用户打开一个文件其实是发送一个 inode_id 给操作系统，操作系统会根据 inode_id 查询到对应的 inode 并基于此 inode 将对应的文件加载到内存。</p>
 <p>所以为什么要把目录设置成树形结构？从开发者角度来说，树形目录没有任何作用，他们只需要关心什么 inode_id，别的都不操心。但是从用户角度来说，树形目录的意义就很大了。具体的，对于用户来说，树形目录可以让我们分级分类管理多而杂的文件，并且在不同的树路径下，我们可以取相同名称的文件。与此同时，不同的子树存储的数据可以被划分到不同的硬件存储器中，这就方便了用户从物理意义上将数据进行迁移。下面展示一个可重名的树形文件目录在不同视角下存储的信息：</p>
 <p><img src="https://dwj-oss.oss-cn-nanjing.aliyuncs.com/images/202412201829367.png" alt="用户角度的目录结构 VS 系统角度的目录结构"></p>
-<h4 id="7-3-文件的共享">7.3 文件的共享</h4>
+<h4 id="2-3-文件的共享">2.3 文件的共享</h4>
 <p>下面介绍两种文件链接以达到共享目的的方式：</p>
 <ul>
 <li><strong>硬链接</strong>。所谓硬链接，可以理解为拷贝文件的 inode 而非拷贝文件。</li>
@@ -867,7 +897,7 @@ graph RL
 <li>使用两次硬链接分别创建了 <code>file_hard.txt</code> 和 <code>file_hard2.txt</code>，可以看到 inode_id 均为 1047884 并且 inode 的计数变成了 3；</li>
 <li>使用符号链接创建了 <code>file_symbol.txt</code> 文件，其 inode_id 发生了变化（递增为 3 可以表明当前系统可能是增量使用 inode_id 的并且此时没有产生额外的文件）。与此同时，其文件内容变成了一个路径指向。</li>
 </ul>
-<h4 id="7-4-文件的使用-TODO">7.4 文件的使用 TODO</h4>
+<h4 id="2-4-文件的使用-TODO">2.4 文件的使用 TODO</h4>
 <p>下面详细介绍在类 Unix 系统中，关于文件使用的流程逻辑。</p>
 <p>1）打开文件</p>
 <ol>
@@ -877,23 +907,10 @@ graph RL
 <li>获取 inode 编号。匹配成功后就可以拿到当前目录文件中对应文件的 inode 编号信息；</li>
 <li>打开文件。操作系统根据第 4 步的 inode 编号加载对应的文件数据到内存中供后续操作。至此一个文件就被成功打开并加载到内存中了。</li>
 </ol>
-<h4 id="7-5-文件系统的实现-TODO">7.5 文件系统的实现 TODO</h4>
+<h4 id="2-5-文件系统的实现-TODO">2.5 文件系统的实现 TODO</h4>
 <p>本小节我们重点关注外存空间的分配与释放算法。</p>
 <h2 id="全文总结">全文总结</h2>
 <p>按照上文编号进行，实线表示期末考试相对重点，但并不表示其他内容就不是重点。<s>个人认为真正重点的反而是期末不考的，灰色幽默了属于是</s>。</p>
-<p>关于虚拟化：</p>
-<pre><code class=" mermaid">graph LR
-    虚拟化 --&gt; 连续存储("连续存储")
-    连续存储 -.-&gt; 4种连续内存分配算法["`掌握4种连续内存分配算法即可`"]
-    
-    虚拟化 --&gt; 分页式虚拟存储("5 分页式虚拟存储")
-    分页式虚拟存储 -.-&gt; 为什么会有虚拟存储["`为什么会有虚拟存储。还是那句话，程序的局部性`"]
-    分页式虚拟存储 --&gt; 地址转换["`地址转换。虚拟地址到物理地址的转换引发了一系列的技术问题
-    1）快表机制下的地址转换
-    2）多级页表下的地址转换
-    3）反置页表下的地址转换
-    4）缺页中断的5种页面替换算法`"]
-</code></pre>
 <p>关于持久化：</p>
 <pre><code class=" mermaid">graph LR
   持久化 --&gt; 设备管理("6 设备管理")
@@ -971,7 +988,7 @@ graph RL
       
         <div class="license-meta-item license-meta-date">
           <div>更新于</div>
-          <div>2025年1月13日</div>
+          <div>2025年1月14日</div>
         </div>
       
       
