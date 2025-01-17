@@ -271,18 +271,24 @@
   <div class="row mx-auto index-card">
     
     
-    <article class="col-12 col-md-12 mx-auto index-info">
+      <div class="col-12 col-md-4 m-auto index-img">
+        <a href="/Operation/Nginx/solve-nginx-reload-error/" target="_blank">
+          <img src="https://dwj-oss.oss-cn-nanjing.aliyuncs.com/web-imgs/img-artical/nginx.png" alt="solve-nginx-reload-error">
+        </a>
+      </div>
+    
+    <article class="col-12 col-md-8 mx-auto index-info">
       <h2 class="index-header">
         
-        <a href="/FrontEnd/Hexo/hexo-config-mermaid/" target="_blank">
-          hexo-config-mermaid
+        <a href="/Operation/Nginx/solve-nginx-reload-error/" target="_blank">
+          solve-nginx-reload-error
         </a>
       </h2>
 
       
-      <a class="index-excerpt index-excerpt__noimg" href="/FrontEnd/Hexo/hexo-config-mermaid/" target="_blank">
+      <a class="index-excerpt " href="/Operation/Nginx/solve-nginx-reload-error/" target="_blank">
         <div>
-          Hexo 配置 mermaid 问题复现 本地 typora 正常渲染，但是服务器渲染异常。发现是服务器的渲染脚本版本过低，无法渲染最新的 mermaid 版本内容。 本地 typora 支持的 mermaid 版本：  网站支持的 mermaid 版本  尝试解决 修改 _config_fluid.yml 中的 mermaid CDN 信息。由于原来的 CDN 不支持更高版本的 mermaid
+          解决 Nginx 重启报错 前言 SSL 证书过期后尝试更新证书。 复现 重新上传 key 和 pem 文件后使用 nginx -s reload 命令尝试软重启 nginx，报错： 1nginx: [error] invalid PID number "" in "/run/nginx.pid" 猜测应该是更新 nginx 后配置文件的路径被重置了，使用 nginx -c "etc/nginx/
         </div>
       </a>
 
@@ -290,8 +296,8 @@
         
           <div class="post-meta mr-3">
             <i class="iconfont icon-date"></i>
-            <time datetime="2024-09-12 08:41" pubdate>
-              2024-09-12
+            <time datetime="2024-07-05 14:11" pubdate>
+              2024-07-05
             </time>
           </div>
         
@@ -306,12 +312,12 @@
     
       <span class="category-chain">
         
-  <a href="/categories/FrontEnd/" class="category-chain-item">FrontEnd</a>
+  <a href="/categories/Operation/" class="category-chain-item">Operation</a>
   
   
     <span>></span>
     
-  <a href="/categories/FrontEnd/Hexo/" class="category-chain-item">Hexo</a>
+  <a href="/categories/Operation/Nginx/" class="category-chain-item">Nginx</a>
   
   
 
@@ -335,15 +341,15 @@
     <article class="col-12 col-md-12 mx-auto index-info">
       <h2 class="index-header">
         
-        <a href="/DevTools/Git/solve-git-problems/" target="_blank">
-          solve-git-problems
+        <a href="/DataScience/numpy-tutorial/" target="_blank">
+          numpy-tutorial
         </a>
       </h2>
 
       
-      <a class="index-excerpt index-excerpt__noimg" href="/DevTools/Git/solve-git-problems/" target="_blank">
+      <a class="index-excerpt index-excerpt__noimg" href="/DataScience/numpy-tutorial/" target="_blank">
         <div>
-          解决 Git 相关问题 解决 git 分支冲突 一、前言 一直习惯于 add commit push 的三步走，偶然间看到了一个评论说在 push 之前还有一个 pull，小小的疑问就埋在了我的心里。于是我就先了解了 pull 的工作原理，就是先拉取代码（fetch）再合并分支（merge）的过程，简而言之就是在本地进行项目编写时，他人也在其他地方进行项目编写并且提前进行了 push 操作，使得当
+          numpy 入门指南 本文记录学习 numpy 的笔记。 np.array 用法 使用 np.array() 方法可以使用列表或元组用来初始化一个 numpy 数组，数据类型为 np.ndarray，当然可以通过 dtype 指定元素类型。对于数据类型为 ndarray 的对象 arr，常用的方法包括但不限于以下几种： 创建和初始化  np.array(object, dtype=None)：从列
         </div>
       </a>
 
@@ -351,8 +357,123 @@
         
           <div class="post-meta mr-3">
             <i class="iconfont icon-date"></i>
-            <time datetime="2024-08-31 23:13" pubdate>
-              2024-08-31
+            <time datetime="2024-06-16 10:05" pubdate>
+              2024-06-16
+            </time>
+          </div>
+        
+        
+          <div class="post-meta mr-3 d-flex align-items-center">
+            <i class="iconfont icon-category"></i>
+            
+
+<span class="category-chains">
+  
+  
+    
+      <span class="category-chain">
+        
+  <a href="/categories/DataScience/" class="category-chain-item">DataScience</a>
+  
+  
+
+      </span>
+    
+  
+</span>
+
+          </div>
+        
+        
+      </div>
+    </article>
+  </div>
+
+  <div class="row mx-auto index-card">
+    
+    
+    <article class="col-12 col-md-12 mx-auto index-info">
+      <h2 class="index-header">
+        
+        <a href="/Operation/Safe/solve-server-invade/" target="_blank">
+          solve-server-invade
+        </a>
+      </h2>
+
+      
+      <a class="index-excerpt index-excerpt__noimg" href="/Operation/Safe/solve-server-invade/" target="_blank">
+        <div>
+          解决服务器入侵攻击 刚想登录阿里云看看云 GPU 怎么租的，结果给我报了个安全问题。平时都是直接忽略，今天有兴致看了一眼，不看不知道一看吓一跳，尼玛被一个从没去过且没有挂 VPN 的 IP 登陆了。虽然不是 root 用户登的并且机子上也没啥机密文件，但是还是有一种被人看光的感觉。他爹的，我也不知道该怎么报复，记录一下修复的过程 一、确认被入侵 本来的公钥文件 authorized_keys 没了
+        </div>
+      </a>
+
+      <div class="index-btm post-metas">
+        
+          <div class="post-meta mr-3">
+            <i class="iconfont icon-date"></i>
+            <time datetime="2024-06-15 20:40" pubdate>
+              2024-06-15
+            </time>
+          </div>
+        
+        
+          <div class="post-meta mr-3 d-flex align-items-center">
+            <i class="iconfont icon-category"></i>
+            
+
+<span class="category-chains">
+  
+  
+    
+      <span class="category-chain">
+        
+  <a href="/categories/Operation/" class="category-chain-item">Operation</a>
+  
+  
+    <span>></span>
+    
+  <a href="/categories/Operation/Safe/" class="category-chain-item">Safe</a>
+  
+  
+
+  
+
+      </span>
+    
+  
+</span>
+
+          </div>
+        
+        
+      </div>
+    </article>
+  </div>
+
+  <div class="row mx-auto index-card">
+    
+    
+    <article class="col-12 col-md-12 mx-auto index-info">
+      <h2 class="index-header">
+        
+        <a href="/DevTools/Git/git-pull-request/" target="_blank">
+          git-pull-request
+        </a>
+      </h2>
+
+      
+      <a class="index-excerpt index-excerpt__noimg" href="/DevTools/Git/git-pull-request/" target="_blank">
+        <div>
+          Git 的 Pull Request 是什么 前言 发现了本博客站点的配置文件中一个失效的链接，就想着对原项目进行修改。早闻 git 的 pr 功能，趁着端午放假在家便来实战一波，做个小小的记录 😎 原理 首先聊聊 pr 名字的由来。pr 即 pull request，顾名思义是「拉取请求」的意思。pr 根本逻辑是将原项目 fork 到自己的仓库后进行修改，然后向原项目作者发起 pull req
+        </div>
+      </a>
+
+      <div class="index-btm post-metas">
+        
+          <div class="post-meta mr-3">
+            <i class="iconfont icon-date"></i>
+            <time datetime="2024-06-09 15:24" pubdate>
+              2024-06-09
             </time>
           </div>
         
@@ -396,15 +517,15 @@
     <article class="col-12 col-md-12 mx-auto index-info">
       <h2 class="index-header">
         
-        <a href="/BackEnd/CPlusPlus/Crow/crow-basic/" target="_blank">
-          crow-basic
+        <a href="/DevTools/IDLE/idle-self-config/" target="_blank">
+          idle-self-config
         </a>
       </h2>
 
       
-      <a class="index-excerpt index-excerpt__noimg" href="/BackEnd/CPlusPlus/Crow/crow-basic/" target="_blank">
+      <a class="index-excerpt index-excerpt__noimg" href="/DevTools/IDLE/idle-self-config/" target="_blank">
         <div>
-          Crow 基础 Crow开源地址 【Crow】一款开源C++Web框架的安装与构建
+          IDLE 偏好配置 由于连续两届篮球杯都是 CA 省二，迫于加分压力不得不转 PA 组（其实是摸鱼不刷题导致的）。阅读篮球杯 py 组手册后发现只能使用 3.8.6 版本且编辑器只能用自带的 IDLE，故特此记录一下相关配置，顺便说点题外话 编写文件 在双击快捷方式后会弹出一个 shell 窗口，支持简单的交互式编码：  我们点击左上角的 File 即可进行新建或打开 .py 文件的操作：  修改
         </div>
       </a>
 
@@ -412,8 +533,8 @@
         
           <div class="post-meta mr-3">
             <i class="iconfont icon-date"></i>
-            <time datetime="2024-08-31 19:30" pubdate>
-              2024-08-31
+            <time datetime="2024-06-05 22:56" pubdate>
+              2024-06-05
             </time>
           </div>
         
@@ -428,20 +549,323 @@
     
       <span class="category-chain">
         
-  <a href="/categories/BackEnd/" class="category-chain-item">BackEnd</a>
+  <a href="/categories/DevTools/" class="category-chain-item">DevTools</a>
   
   
     <span>></span>
     
-  <a href="/categories/BackEnd/CPlusPlus/" class="category-chain-item">CPlusPlus</a>
-  
-  
-    <span>></span>
-    
-  <a href="/categories/BackEnd/CPlusPlus/Crow/" class="category-chain-item">Crow</a>
+  <a href="/categories/DevTools/IDLE/" class="category-chain-item">IDLE</a>
   
   
 
+  
+
+      </span>
+    
+  
+</span>
+
+          </div>
+        
+        
+      </div>
+    </article>
+  </div>
+
+  <div class="row mx-auto index-card">
+    
+    
+    <article class="col-12 col-md-12 mx-auto index-info">
+      <h2 class="index-header">
+        
+        <a href="/FrontEnd/Hexo/why-hexo/" target="_blank">
+          why-hexo
+        </a>
+      </h2>
+
+      
+      <a class="index-excerpt index-excerpt__noimg" href="/FrontEnd/Hexo/why-hexo/" target="_blank">
+        <div>
+          为什么选择 Hexo 搭建个人博客 🤔 市面上主流的一些博客网站广告繁杂，一些交互逻辑不太合理，自定义程度不高。根本动机：搭建独属于自己的知识库。 如何实现？现在市面上主要有两个模式：  有后端：WordPress（类似于学生管理系统，在后端写文章，在前端渲染） 无后端：纯静态页面渲染（纯 html 渲染）：Hexo、VuePress、Gatsby  无后端的逻辑：在本地编写 markdown
+        </div>
+      </a>
+
+      <div class="index-btm post-metas">
+        
+          <div class="post-meta mr-3">
+            <i class="iconfont icon-date"></i>
+            <time datetime="2024-05-30 23:03" pubdate>
+              2024-05-30
+            </time>
+          </div>
+        
+        
+          <div class="post-meta mr-3 d-flex align-items-center">
+            <i class="iconfont icon-category"></i>
+            
+
+<span class="category-chains">
+  
+  
+    
+      <span class="category-chain">
+        
+  <a href="/categories/FrontEnd/" class="category-chain-item">FrontEnd</a>
+  
+  
+    <span>></span>
+    
+  <a href="/categories/FrontEnd/Hexo/" class="category-chain-item">Hexo</a>
+  
+  
+
+  
+
+      </span>
+    
+  
+</span>
+
+          </div>
+        
+        
+      </div>
+    </article>
+  </div>
+
+  <div class="row mx-auto index-card">
+    
+    
+    <article class="col-12 col-md-12 mx-auto index-info">
+      <h2 class="index-header">
+        
+        <a href="/DevTools/jetbrains-license/" target="_blank">
+          jetbrains-license
+        </a>
+      </h2>
+
+      
+      <a class="index-excerpt index-excerpt__noimg" href="/DevTools/jetbrains-license/" target="_blank">
+        <div>
+          更新 Jetbrains 学生许可证的流程 马上证书要过期了，记录一下更新许可证的流程。继续白嫖！ 一、学信网 进入学信档案，下载教育部学籍在线验证报告：https://my.chsi.com.cn/archive/bab/index.action  二、JB 官网 进入 Jetbrains 官网，选择更新许可证：  三、填写官方文件 点击上述链接后，进入如下页面。我选择的是填写官方文件，因为初次
+        </div>
+      </a>
+
+      <div class="index-btm post-metas">
+        
+          <div class="post-meta mr-3">
+            <i class="iconfont icon-date"></i>
+            <time datetime="2024-05-08 13:18" pubdate>
+              2024-05-08
+            </time>
+          </div>
+        
+        
+          <div class="post-meta mr-3 d-flex align-items-center">
+            <i class="iconfont icon-category"></i>
+            
+
+<span class="category-chains">
+  
+  
+    
+      <span class="category-chain">
+        
+  <a href="/categories/DevTools/" class="category-chain-item">DevTools</a>
+  
+  
+
+      </span>
+    
+  
+</span>
+
+          </div>
+        
+        
+      </div>
+    </article>
+  </div>
+
+  <div class="row mx-auto index-card">
+    
+    
+    <article class="col-12 col-md-12 mx-auto index-info">
+      <h2 class="index-header">
+        
+        <a href="/FrontEnd/Hexo/hexo-auto-deploy-to-server/" target="_blank">
+          hexo-auto-deploy-to-server
+        </a>
+      </h2>
+
+      
+      <a class="index-excerpt index-excerpt__noimg" href="/FrontEnd/Hexo/hexo-auto-deploy-to-server/" target="_blank">
+        <div>
+          将 Hexo 项目部署到自己的云服务器并持续集成 前言 由于使用 Github Pages 服务访问速度过慢（因为托管的服务器在国外），使用 Gitee Pages 又不能自定义域名。故综合考虑还是部署到自己的国内服务器上。加上网上相关内容不是时间长远，就是环境不一，而且感觉都是一个人写完以后大家照着抄的，几乎都长一样。所以决定自己也整理一下（也抄一篇），并且补充相关原理。本篇博客将以阿里云 Ub
+        </div>
+      </a>
+
+      <div class="index-btm post-metas">
+        
+          <div class="post-meta mr-3">
+            <i class="iconfont icon-date"></i>
+            <time datetime="2024-04-05 12:30" pubdate>
+              2024-04-05
+            </time>
+          </div>
+        
+        
+          <div class="post-meta mr-3 d-flex align-items-center">
+            <i class="iconfont icon-category"></i>
+            
+
+<span class="category-chains">
+  
+  
+    
+      <span class="category-chain">
+        
+  <a href="/categories/FrontEnd/" class="category-chain-item">FrontEnd</a>
+  
+  
+    <span>></span>
+    
+  <a href="/categories/FrontEnd/Hexo/" class="category-chain-item">Hexo</a>
+  
+  
+
+  
+
+      </span>
+    
+  
+</span>
+
+          </div>
+        
+        
+      </div>
+    </article>
+  </div>
+
+  <div class="row mx-auto index-card">
+    
+    
+      <div class="col-12 col-md-4 m-auto index-img">
+        <a href="/Operation/Nginx/whereis-nginx/" target="_blank">
+          <img src="https://dwj-oss.oss-cn-nanjing.aliyuncs.com/web-imgs/img-artical/nginx.png" alt="whereis-nginx">
+        </a>
+      </div>
+    
+    <article class="col-12 col-md-8 mx-auto index-info">
+      <h2 class="index-header">
+        
+        <a href="/Operation/Nginx/whereis-nginx/" target="_blank">
+          whereis-nginx
+        </a>
+      </h2>
+
+      
+      <a class="index-excerpt " href="/Operation/Nginx/whereis-nginx/" target="_blank">
+        <div>
+          使用 apt 安装 Nginx 后的软件包是如何布局的 在 Ubuntu22.04 操作系统上，我们使用以下命令安装 Nginx 以后： 1root@dwj2:~# sudo apt update &amp;&amp; sudo apt install nginx 使用命令 whereis nginx 查看安装路径： 12root@dwj2:/home# whereis nginxnginx: /
+        </div>
+      </a>
+
+      <div class="index-btm post-metas">
+        
+          <div class="post-meta mr-3">
+            <i class="iconfont icon-date"></i>
+            <time datetime="2024-04-02 23:48" pubdate>
+              2024-04-02
+            </time>
+          </div>
+        
+        
+          <div class="post-meta mr-3 d-flex align-items-center">
+            <i class="iconfont icon-category"></i>
+            
+
+<span class="category-chains">
+  
+  
+    
+      <span class="category-chain">
+        
+  <a href="/categories/Operation/" class="category-chain-item">Operation</a>
+  
+  
+    <span>></span>
+    
+  <a href="/categories/Operation/Nginx/" class="category-chain-item">Nginx</a>
+  
+  
+
+  
+
+      </span>
+    
+  
+</span>
+
+          </div>
+        
+        
+      </div>
+    </article>
+  </div>
+
+  <div class="row mx-auto index-card">
+    
+    
+      <div class="col-12 col-md-4 m-auto index-img">
+        <a href="/Operation/Nginx/nginx-command/" target="_blank">
+          <img src="https://dwj-oss.oss-cn-nanjing.aliyuncs.com/web-imgs/img-artical/nginx.png" alt="nginx-command">
+        </a>
+      </div>
+    
+    <article class="col-12 col-md-8 mx-auto index-info">
+      <h2 class="index-header">
+        
+        <a href="/Operation/Nginx/nginx-command/" target="_blank">
+          nginx-command
+        </a>
+      </h2>
+
+      
+      <a class="index-excerpt " href="/Operation/Nginx/nginx-command/" target="_blank">
+        <div>
+          Nginx 常用命令合集 在 Ubuntu22.04 操作系统上，我们使用 nginx 需要不断使用其相关命令，下面介绍一下常用的几个命令 nginx -?,-h 我们用 nginx -h 或 nginx -? 来查看当前 nginx 的版本和全部的指令简介： 123456789101112131415root@dwj2:~# nginx -hnginx version: nginx/1.18.0
+        </div>
+      </a>
+
+      <div class="index-btm post-metas">
+        
+          <div class="post-meta mr-3">
+            <i class="iconfont icon-date"></i>
+            <time datetime="2024-04-02 23:19" pubdate>
+              2024-04-02
+            </time>
+          </div>
+        
+        
+          <div class="post-meta mr-3 d-flex align-items-center">
+            <i class="iconfont icon-category"></i>
+            
+
+<span class="category-chains">
+  
+  
+    
+      <span class="category-chain">
+        
+  <a href="/categories/Operation/" class="category-chain-item">Operation</a>
+  
+  
+    <span>></span>
+    
+  <a href="/categories/Operation/Nginx/" class="category-chain-item">Nginx</a>
+  
   
 
   
@@ -462,7 +886,7 @@
 
   <nav aria-label="navigation">
     <span class="pagination" id="pagination">
-      <a class="extend prev" rel="prev" href="/page/4/#board"><i class="iconfont icon-arrowleft"></i></a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/3/#board">3</a><a class="page-number" href="/page/4/#board">4</a><span class="page-number current">5</span><a class="page-number" href="/page/6/#board">6</a><a class="page-number" href="/page/7/#board">7</a><span class="space">&hellip;</span><a class="page-number" href="/page/30/#board">30</a><a class="extend next" rel="next" href="/page/6/#board"><i class="iconfont icon-arrowright"></i></a>
+      <a class="extend prev" rel="prev" href="/page/4/#board"><i class="iconfont icon-arrowleft"></i></a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/3/#board">3</a><a class="page-number" href="/page/4/#board">4</a><span class="page-number current">5</span><a class="page-number" href="/page/6/#board">6</a><a class="page-number" href="/page/7/#board">7</a><span class="space">&hellip;</span><a class="page-number" href="/page/9/#board">9</a><a class="extend next" rel="next" href="/page/6/#board"><i class="iconfont icon-arrowright"></i></a>
     </span>
   </nav>
 

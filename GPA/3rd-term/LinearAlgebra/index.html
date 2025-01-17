@@ -19,12 +19,12 @@
   <meta name="author" content="Mr_Dwj">
   <meta name="keywords" content="人工智能 机器学习 深度学习 算法 数据结构 计算机科学 编程">
   
-    <meta name="description" content="线性代数 前言 本篇博客初稿完成于 2024.01.06，即大二上学期期末。参考《工程数学 线性代数》同济第七版。 由于初稿写作时博主的水平有限并且偏向于应试，写作水平多有不足并且内容有所缺失。现在在学习 ML 和 DL 甚至数字图像处理时，几乎满屏都是矩阵。汗颜的是，由于初学时几乎都是死记硬背以及应试，我一度怀疑自己没学过线代🤡，因此这篇博客会持续更新。 后续的更新会对内容进行整合与补充，包括">
+    <meta name="description" content="前言 本篇博客初稿完成于 2024.01.06，即大二上学期期末。参考《工程数学 线性代数》同济第七版。 由于初稿写作时博主的水平有限并且偏向于应试，写作水平多有不足并且内容有所缺失。现在在学习 ML 和 DL 甚至数字图像处理时，几乎满屏都是矩阵。汗颜的是，由于初学时几乎都是死记硬背以及应试，我一度怀疑自己没学过线代🤡，因此这篇博客会持续更新。 后续的更新会对内容进行整合与补充，包括二次型、线">
 <meta property="og:type" content="article">
-<meta property="og:title" content="LinearAlgebra">
+<meta property="og:title" content="线性代数">
 <meta property="og:url" content="https://blog.dwj601.cn/GPA/3rd-term/LinearAlgebra/index.html">
 <meta property="og:site_name" content="Dwj の Blog">
-<meta property="og:description" content="线性代数 前言 本篇博客初稿完成于 2024.01.06，即大二上学期期末。参考《工程数学 线性代数》同济第七版。 由于初稿写作时博主的水平有限并且偏向于应试，写作水平多有不足并且内容有所缺失。现在在学习 ML 和 DL 甚至数字图像处理时，几乎满屏都是矩阵。汗颜的是，由于初学时几乎都是死记硬背以及应试，我一度怀疑自己没学过线代🤡，因此这篇博客会持续更新。 后续的更新会对内容进行整合与补充，包括">
+<meta property="og:description" content="前言 本篇博客初稿完成于 2024.01.06，即大二上学期期末。参考《工程数学 线性代数》同济第七版。 由于初稿写作时博主的水平有限并且偏向于应试，写作水平多有不足并且内容有所缺失。现在在学习 ML 和 DL 甚至数字图像处理时，几乎满屏都是矩阵。汗颜的是，由于初学时几乎都是死记硬背以及应试，我一度怀疑自己没学过线代🤡，因此这篇博客会持续更新。 后续的更新会对内容进行整合与补充，包括二次型、线">
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="https://dwj-oss.oss-cn-nanjing.aliyuncs.com/images/202406140938343.png">
 <meta property="og:image" content="https://dwj-oss.oss-cn-nanjing.aliyuncs.com/images/202406140938721.png">
@@ -83,7 +83,7 @@
 <meta property="og:image" content="https://dwj-oss.oss-cn-nanjing.aliyuncs.com/images/202406140946479.png">
 <meta property="og:image" content="https://dwj-oss.oss-cn-nanjing.aliyuncs.com/images/202406140946480.png">
 <meta property="article:published_time" content="2024-03-21T05:55:02.195Z">
-<meta property="article:modified_time" content="2024-10-22T08:09:48.173Z">
+<meta property="article:modified_time" content="2025-01-17T16:21:26.911Z">
 <meta property="article:author" content="Mr_Dwj">
 <meta property="article:tag" content="人工智能 机器学习 深度学习 算法 数据结构 计算机科学 编程">
 <meta name="twitter:card" content="summary_large_image">
@@ -93,7 +93,7 @@
     <meta name="referrer" content="no-referrer-when-downgrade">
   
   
-  <title>LinearAlgebra | Dwj の Blog</title>
+  <title>线性代数 | Dwj の Blog</title>
 
   <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
 
@@ -303,7 +303,7 @@
       <div class="banner-text text-center fade-in-up">
         <div class="h2">
           
-            <span id="subtitle" data-typed-text="LinearAlgebra"></span>
+            <span id="subtitle" data-typed-text="线性代数"></span>
           
         </div>
 
@@ -396,12 +396,12 @@
       <div class="container nopadding-x-md" id="board-ctn">
         <div id="board">
           <article class="post-content mx-auto">
-            <h1 id="seo-header">LinearAlgebra</h1>
+            <h1 id="seo-header">线性代数</h1>
             
               <p id="updated-time" class="note note-info" style="">
                 
                   
-                    本文最后更新于 2024年10月22日 下午
+                    本文最后更新于 2025年1月18日 凌晨
                   
                 
               </p>
@@ -409,8 +409,7 @@
             
               <div class="markdown-body">
                 
-                <h2 id="线性代数">线性代数</h2>
-<h2 id="前言">前言</h2>
+                <h2 id="前言">前言</h2>
 <p>本篇博客初稿完成于 2024.01.06，即大二上学期期末。参考《工程数学 线性代数》同济第七版。</p>
 <p>由于初稿写作时博主的水平有限并且偏向于应试，写作水平多有不足并且内容有所缺失。现在在学习 ML 和 DL 甚至数字图像处理时，几乎满屏都是矩阵。汗颜的是，由于初学时几乎都是死记硬背以及应试，我一度怀疑自己没学过线代🤡，因此这篇博客会持续更新。</p>
 <p>后续的更新会对内容进行整合与补充，包括二次型、线性空间和线性变换。同时偏向实际的应用，包括 AI 相关的矩阵计算和矩阵微积分、数字图像处理相关的变换策略。打星 <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="false">(</mo><mo>∗</mo><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">(*)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mopen">(</span><span class="mord">∗</span><span class="mclose">)</span></span></span></span> 的内容表示个人认为比较重要的部分。</p>
@@ -1147,7 +1146,7 @@ M834 80h400000v40h-400000z"></path></svg></span></span></span><span class="vlist
 
   <div class="license-box my-3">
     <div class="license-title">
-      <div>LinearAlgebra</div>
+      <div>线性代数</div>
       <div>https://blog.dwj601.cn/GPA/3rd-term/LinearAlgebra/</div>
     </div>
     <div class="license-meta">
@@ -1166,7 +1165,7 @@ M834 80h400000v40h-400000z"></path></svg></span></span></span><span class="vlist
       
         <div class="license-meta-item license-meta-date">
           <div>更新于</div>
-          <div>2024年10月22日</div>
+          <div>2025年1月18日</div>
         </div>
       
       
@@ -1197,9 +1196,9 @@ M834 80h400000v40h-400000z"></path></svg></span></span></span><span class="vlist
                   <article class="post-prev col-6">
                     
                     
-                      <a href="/GPA/3rd-term/DigitalLogicCircuit/" title="DigitalLogicCircuit">
+                      <a href="/GPA/3rd-term/DataStructureClassDesign/" title="数据结构课程设计">
                         <i class="iconfont icon-arrowleft"></i>
-                        <span class="hidden-mobile">DigitalLogicCircuit</span>
+                        <span class="hidden-mobile">数据结构课程设计</span>
                         <span class="visible-mobile">上一篇</span>
                       </a>
                     
@@ -1207,8 +1206,8 @@ M834 80h400000v40h-400000z"></path></svg></span></span></span><span class="vlist
                   <article class="post-next col-6">
                     
                     
-                      <a href="/GPA/2nd-term/ObjectOrientedClassDesign/" title="ObjectOrientedClassDesign">
-                        <span class="hidden-mobile">ObjectOrientedClassDesign</span>
+                      <a href="/GPA/3rd-term/DigitalLogicCircuit/" title="数字逻辑电路">
+                        <span class="hidden-mobile">数字逻辑电路</span>
                         <span class="visible-mobile">下一篇</span>
                         <i class="iconfont icon-arrowright"></i>
                       </a>
@@ -1281,7 +1280,7 @@ M834 80h400000v40h-400000z"></path></svg></span></span></span><span class="vlist
         aria-expanded="true"
       >
         GPA
-        <span class="list-group-count">(21)</span>
+        <span class="list-group-count">(22)</span>
         <i class="iconfont icon-arrowright"></i>
       </a>
       
@@ -1322,10 +1321,10 @@ M834 80h400000v40h-400000z"></path></svg></span></span></span><span class="vlist
     
       
       
-        <a href="/GPA/1st-term/AdvancedMath/" title="AdvancedMath"
+        <a href="/GPA/1st-term/AdvancedMath/" title="高等数学 - 竞赛向"
            class="list-group-item list-group-item-action
            ">
-          <span class="category-post">AdvancedMath</span>
+          <span class="category-post">高等数学 - 竞赛向</span>
         </a>
       
     
@@ -1359,19 +1358,19 @@ M834 80h400000v40h-400000z"></path></svg></span></span></span><span class="vlist
     
       
       
-        <a href="/GPA/2nd-term/ObjectOrientedClassDesign/" title="ObjectOrientedClassDesign"
+        <a href="/GPA/2nd-term/ObjectOrientedProgramming/" title="面向对象程序设计"
            class="list-group-item list-group-item-action
            ">
-          <span class="category-post">ObjectOrientedClassDesign</span>
+          <span class="category-post">面向对象程序设计</span>
         </a>
       
     
       
       
-        <a href="/GPA/2nd-term/ObjectOrientedProgramming/" title="ObjectOrientedProgramming"
+        <a href="/GPA/2nd-term/ObjectOrientedClassDesign/" title="面向对象课程设计"
            class="list-group-item list-group-item-action
            ">
-          <span class="category-post">ObjectOrientedProgramming</span>
+          <span class="category-post">面向对象课程设计</span>
         </a>
       
     
@@ -1405,46 +1404,46 @@ M834 80h400000v40h-400000z"></path></svg></span></span></span><span class="vlist
     
       
       
-        <a href="/GPA/3rd-term/CollegePhysics_2/" title="CollegePhysics_2"
+        <a href="/GPA/3rd-term/CollegePhysics_2/" title="大学物理下"
            class="list-group-item list-group-item-action
            ">
-          <span class="category-post">CollegePhysics_2</span>
+          <span class="category-post">大学物理下</span>
         </a>
       
     
       
       
-        <a href="/GPA/3rd-term/DataStructure/" title="DataStructure"
+        <a href="/GPA/3rd-term/DigitalLogicCircuit/" title="数字逻辑电路"
            class="list-group-item list-group-item-action
            ">
-          <span class="category-post">DataStructure</span>
+          <span class="category-post">数字逻辑电路</span>
         </a>
       
     
       
       
-        <a href="/GPA/3rd-term/DataStructureClassDesign/" title="DataStructureClassDesign"
+        <a href="/GPA/3rd-term/DataStructure/" title="数据结构与算法"
            class="list-group-item list-group-item-action
            ">
-          <span class="category-post">DataStructureClassDesign</span>
+          <span class="category-post">数据结构与算法</span>
         </a>
       
     
       
       
-        <a href="/GPA/3rd-term/DigitalLogicCircuit/" title="DigitalLogicCircuit"
+        <a href="/GPA/3rd-term/DataStructureClassDesign/" title="数据结构课程设计"
            class="list-group-item list-group-item-action
            ">
-          <span class="category-post">DigitalLogicCircuit</span>
+          <span class="category-post">数据结构课程设计</span>
         </a>
       
     
       
       
-        <a href="/GPA/3rd-term/LinearAlgebra/" title="LinearAlgebra"
+        <a href="/GPA/3rd-term/LinearAlgebra/" title="线性代数"
            class="list-group-item list-group-item-action
            active">
-          <span class="category-post">LinearAlgebra</span>
+          <span class="category-post">线性代数</span>
         </a>
       
     
@@ -1478,64 +1477,64 @@ M834 80h400000v40h-400000z"></path></svg></span></span></span><span class="vlist
     
       
       
-        <a href="/GPA/4th-term/MachineLearning/" title="MachineLearning"
+        <a href="/GPA/4th-term/PyApply/" title="Python 高级应用"
            class="list-group-item list-group-item-action
            ">
-          <span class="category-post">MachineLearning</span>
+          <span class="category-post">Python 高级应用</span>
         </a>
       
     
       
       
-        <a href="/GPA/4th-term/MachineLearningClassDesign/" title="MachineLearningClassDesign"
+        <a href="/GPA/4th-term/OptMethod/" title="最优化方法"
            class="list-group-item list-group-item-action
            ">
-          <span class="category-post">MachineLearningClassDesign</span>
+          <span class="category-post">最优化方法</span>
         </a>
       
     
       
       
-        <a href="/GPA/4th-term/OptMethod/" title="OptMethod"
+        <a href="/GPA/4th-term/MachineLearning/" title="机器学习"
            class="list-group-item list-group-item-action
            ">
-          <span class="category-post">OptMethod</span>
+          <span class="category-post">机器学习</span>
         </a>
       
     
       
       
-        <a href="/GPA/4th-term/ProbAndStat/" title="ProbAndStat"
+        <a href="/GPA/4th-term/MachineLearningClassDesign/" title="机器学习课程设计"
            class="list-group-item list-group-item-action
            ">
-          <span class="category-post">ProbAndStat</span>
+          <span class="category-post">机器学习课程设计</span>
         </a>
       
     
       
       
-        <a href="/GPA/4th-term/PyAlgo/" title="PyAlgo"
+        <a href="/GPA/4th-term/ProbAndStat/" title="概率论与数理统计"
            class="list-group-item list-group-item-action
            ">
-          <span class="category-post">PyAlgo</span>
+          <span class="category-post">概率论与数理统计</span>
         </a>
       
     
       
       
-        <a href="/GPA/4th-term/PyApply/" title="PyApply"
+        <a href="/GPA/4th-term/PyAlgo/" title="算法设计与分析"
            class="list-group-item list-group-item-action
            ">
-          <span class="category-post">PyApply</span>
+          <span class="category-post">算法设计与分析</span>
         </a>
       
     
       
       
-        <a href="/GPA/4th-term/SysBasic/" title="SysBasic"
+        <a href="/GPA/4th-term/SysBasic/" title="计算机系统基础"
            class="list-group-item list-group-item-action
            ">
-          <span class="category-post">SysBasic</span>
+          <span class="category-post">计算机系统基础</span>
         </a>
       
     
@@ -1569,55 +1568,92 @@ M834 80h400000v40h-400000z"></path></svg></span></span></span><span class="vlist
     
       
       
-        <a href="/GPA/5th-term/ComputerOrganization/" title="ComputerOrganization"
+        <a href="/GPA/5th-term/OperatingSystem/" title="操作系统"
            class="list-group-item list-group-item-action
            ">
-          <span class="category-post">ComputerOrganization</span>
+          <span class="category-post">操作系统</span>
         </a>
       
     
       
       
-        <a href="/GPA/5th-term/DataBase/" title="DataBase"
+        <a href="/GPA/5th-term/DigitalImageProcessing/" title="数字图像处理"
            class="list-group-item list-group-item-action
            ">
-          <span class="category-post">DataBase</span>
+          <span class="category-post">数字图像处理</span>
         </a>
       
     
       
       
-        <a href="/GPA/5th-term/DataMining/" title="DataMining"
+        <a href="/GPA/5th-term/DataBase/" title="数据库"
            class="list-group-item list-group-item-action
            ">
-          <span class="category-post">DataMining</span>
+          <span class="category-post">数据库</span>
         </a>
       
     
       
       
-        <a href="/GPA/5th-term/DeepLearning/" title="DeepLearning"
+        <a href="/GPA/5th-term/DataMining/" title="数据挖掘"
            class="list-group-item list-group-item-action
            ">
-          <span class="category-post">DeepLearning</span>
+          <span class="category-post">数据挖掘</span>
         </a>
       
     
       
       
-        <a href="/GPA/5th-term/DigitalImageProcessing/" title="DigitalImageProcessing"
+        <a href="/GPA/5th-term/DeepLearning/" title="深度学习"
            class="list-group-item list-group-item-action
            ">
-          <span class="category-post">DigitalImageProcessing</span>
+          <span class="category-post">深度学习</span>
         </a>
       
     
       
       
-        <a href="/GPA/5th-term/OperatingSystem/" title="OperatingSystem"
+        <a href="/GPA/5th-term/ComputerOrganization/" title="计算机组成原理"
            class="list-group-item list-group-item-action
            ">
-          <span class="category-post">OperatingSystem</span>
+          <span class="category-post">计算机组成原理</span>
+        </a>
+      
+    
+  </div>
+
+        
+      </div>
+    </div>
+  
+    
+    
+    
+    <div class="category-sub row nomargin-x">
+      <a class="category-subitem collapsed
+          list-group-item category-item-action col-10 col-md-11 col-xm-11" title="6th-term"
+        id="heading-ec5d46390bb92c147c81b1972063e642" role="tab" data-toggle="collapse" href="#collapse-ec5d46390bb92c147c81b1972063e642"
+        aria-expanded="false"
+      >
+        6th-term
+        <span class="list-group-count">(1)</span>
+        <i class="iconfont icon-arrowright"></i>
+      </a>
+      
+      <div class="category-collapse collapse " id="collapse-ec5d46390bb92c147c81b1972063e642"
+           role="tabpanel" aria-labelledby="heading-ec5d46390bb92c147c81b1972063e642">
+        
+        
+          
+  <div class="category-post-list">
+    
+    
+      
+      
+        <a href="/GPA/6th-term/ComputerNetwork/" title="计算机网络"
+           class="list-group-item list-group-item-action
+           ">
+          <span class="category-post">计算机网络</span>
         </a>
       
     

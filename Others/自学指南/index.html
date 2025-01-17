@@ -19,30 +19,24 @@
   <meta name="author" content="Mr_Dwj">
   <meta name="keywords" content="人工智能 机器学习 深度学习 算法 数据结构 计算机科学 编程">
   
-    <meta name="description" content="openGauss 导入数据 本文简单介绍一下如何利用 gsql 将数据批量导入 openGauss。 1 环境  操作系统：CentOS 7.6 64bit 数据库管理软件（含版本号）：openGauss 5.0.3 (LTS) 轻量版 其他工具：Mobaxterm Personal Edition v24.0 Build 5204、DataGrip v2024.1.3  2 流程 2.1 创建">
+    <meta name="description" content="自学指南 本文收录一些 AI&#x2F;CS 的学习资源。我会将自己学习过的内容进行一定的简介，剩余内容有待探索。 CSDIY 这是一位 18 级 PKU 信科生制作的自学指南，后随着开源与知名度的增加，学科方向逐渐完善。指南偏向于介绍优质的开源课程与学习心得。 https:&#x2F;&#x2F;csdiy.wiki&#x2F; 开发指南 这是一位英国开发者制作的开发指南。指南偏向于通过一个个小 task 来任务驱动式带领新人入门不同">
 <meta property="og:type" content="article">
-<meta property="og:title" content="opengauss-import-data">
-<meta property="og:url" content="https://blog.dwj601.cn/DataBase/openGauss/opengauss-import-data/index.html">
+<meta property="og:title" content="自学指南">
+<meta property="og:url" content="https://blog.dwj601.cn/Others/%E8%87%AA%E5%AD%A6%E6%8C%87%E5%8D%97/index.html">
 <meta property="og:site_name" content="Dwj の Blog">
-<meta property="og:description" content="openGauss 导入数据 本文简单介绍一下如何利用 gsql 将数据批量导入 openGauss。 1 环境  操作系统：CentOS 7.6 64bit 数据库管理软件（含版本号）：openGauss 5.0.3 (LTS) 轻量版 其他工具：Mobaxterm Personal Edition v24.0 Build 5204、DataGrip v2024.1.3  2 流程 2.1 创建">
+<meta property="og:description" content="自学指南 本文收录一些 AI&#x2F;CS 的学习资源。我会将自己学习过的内容进行一定的简介，剩余内容有待探索。 CSDIY 这是一位 18 级 PKU 信科生制作的自学指南，后随着开源与知名度的增加，学科方向逐渐完善。指南偏向于介绍优质的开源课程与学习心得。 https:&#x2F;&#x2F;csdiy.wiki&#x2F; 开发指南 这是一位英国开发者制作的开发指南。指南偏向于通过一个个小 task 来任务驱动式带领新人入门不同">
 <meta property="og:locale" content="zh_CN">
-<meta property="og:image" content="https://dwj-oss.oss-cn-nanjing.aliyuncs.com/images/202410122259262.png">
-<meta property="og:image" content="https://dwj-oss.oss-cn-nanjing.aliyuncs.com/images/202410122300081.png">
-<meta property="og:image" content="https://dwj-oss.oss-cn-nanjing.aliyuncs.com/images/202410122300379.png">
-<meta property="og:image" content="https://dwj-oss.oss-cn-nanjing.aliyuncs.com/images/202410122301562.png">
-<meta property="og:image" content="https://dwj-oss.oss-cn-nanjing.aliyuncs.com/images/202410122301877.png">
-<meta property="article:published_time" content="2024-10-12T14:55:10.951Z">
-<meta property="article:modified_time" content="2024-10-12T15:12:12.399Z">
+<meta property="article:published_time" content="2024-10-26T08:23:10.142Z">
+<meta property="article:modified_time" content="2025-01-17T16:20:19.172Z">
 <meta property="article:author" content="Mr_Dwj">
 <meta property="article:tag" content="人工智能 机器学习 深度学习 算法 数据结构 计算机科学 编程">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:image" content="https://dwj-oss.oss-cn-nanjing.aliyuncs.com/images/202410122259262.png">
   
   
     <meta name="referrer" content="no-referrer-when-downgrade">
   
   
-  <title>opengauss-import-data | Dwj の Blog</title>
+  <title>自学指南 | Dwj の Blog</title>
 
   <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
 
@@ -252,7 +246,7 @@
       <div class="banner-text text-center fade-in-up">
         <div class="h2">
           
-            <span id="subtitle" data-typed-text="opengauss-import-data"></span>
+            <span id="subtitle" data-typed-text="自学指南"></span>
           
         </div>
 
@@ -263,8 +257,8 @@
     
       <span class="post-meta">
         <i class="iconfont icon-date-fill" aria-hidden="true"></i>
-        <time datetime="2024-10-12 22:55" pubdate>
-          2024年10月12日 晚上
+        <time datetime="2024-10-26 16:23" pubdate>
+          2024年10月26日 下午
         </time>
       </span>
     
@@ -275,7 +269,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          542 字
+          270 字
         
       </span>
     
@@ -286,7 +280,7 @@
         
         
         
-          4 分钟
+          2 分钟
         
       </span>
     
@@ -345,12 +339,12 @@
       <div class="container nopadding-x-md" id="board-ctn">
         <div id="board">
           <article class="post-content mx-auto">
-            <h1 id="seo-header">opengauss-import-data</h1>
+            <h1 id="seo-header">自学指南</h1>
             
               <p id="updated-time" class="note note-info" style="">
                 
                   
-                    本文最后更新于 2024年10月12日 晚上
+                    本文最后更新于 2025年1月18日 凌晨
                   
                 
               </p>
@@ -358,40 +352,20 @@
             
               <div class="markdown-body">
                 
-                <h2 id="openGauss-导入数据">openGauss 导入数据</h2>
-<p>本文简单介绍一下如何利用 gsql 将数据批量导入 openGauss。</p>
-<h2 id="1-环境">1 环境</h2>
-<ul>
-<li>操作系统：CentOS 7.6 64bit</li>
-<li>数据库管理软件（含版本号）：openGauss 5.0.3 (LTS) 轻量版</li>
-<li>其他工具：Mobaxterm Personal Edition v24.0 Build 5204、DataGrip v2024.1.3</li>
-</ul>
-<h2 id="2-流程">2 流程</h2>
-<h3 id="2-1-创建表">2.1 创建表</h3>
-<p>首先登录 openGauss 并 <a target="_blank" rel="noopener" href="https://docs-opengauss.osinfra.cn/zh/docs/5.0.0-lite/docs/BriefTutorial/%E5%88%9B%E5%BB%BA%E6%95%B0%E6%8D%AE%E5%BA%93.html">创建数据库</a> experiment 用于后续表的设计。</p>
-<p><img src="https://dwj-oss.oss-cn-nanjing.aliyuncs.com/images/202410122259262.png" alt="创建数据库 experiment"></p>
-<p>然后进入 experiment 数据库并 <a target="_blank" rel="noopener" href="https://docs-opengauss.osinfra.cn/zh/docs/5.0.0-lite/docs/BriefTutorial/%E5%88%9B%E5%BB%BA%E8%A1%A8.html">创建学生表</a> student。设置学号 <code>sno char(8)</code>、姓名 <code>sname char(10)</code>、性别 <code>ssex char(2)</code>、年龄 <code>sage integer(3)</code> 四个属性。</p>
-<p><img src="https://dwj-oss.oss-cn-nanjing.aliyuncs.com/images/202410122300081.png" alt="创建学生表 student"></p>
-<p>最后以防万一，检查一下当前数据库 experiment 下所有的表以及对应的表结构。使用 <code>\dt</code> 命令查看当前数据库下的所有表，使用 <code>\d &lt;table_name&gt;</code> 命令查看当前数据库下指定的表结构。</p>
-<p><img src="https://dwj-oss.oss-cn-nanjing.aliyuncs.com/images/202410122300379.png" alt="检查表结构"></p>
-<h3 id="2-2-构造数据">2.2 构造数据</h3>
-<p>接下来进行数据的构造和导入工作。在开始构造数据之前，有必要了解一下对应的 <a target="_blank" rel="noopener" href="https://docs-opengauss.osinfra.cn/zh/docs/5.0.0-lite/docs/DatabaseOMGuide/%E4%BD%BF%E7%94%A8gsql%E5%85%83%E5%91%BD%E4%BB%A4%E5%AF%BC%E5%85%A5%E6%95%B0%E6%8D%AE.html">数据格式规范</a>。可以看到是支持 <code>.csv</code> 文件的，并且默认将第一行识别为数据而不是表头。因此我设计出了这样的 prompt：</p>
-<blockquote>
-<p>“请帮我生成一个数据库的学生表的数据。格式为 csv，用逗号分隔符分隔。属性共有 4 个，分别为学号 sno char(8)、姓名 sname char(10)、性别 ssex char(2)、年龄 sage integer(3)。请不要加上表头信息，首行直接从数据开始。生成共 20 条学生信息数据。请将结果直接打印出来。”</p>
-</blockquote>
-<p>最终给出的结果如下：</p>
-<p><img src="https://dwj-oss.oss-cn-nanjing.aliyuncs.com/images/202410122301562.png" alt="GLM4 构造的数据"></p>
-<p>我们将上述数据复制到 <code>/home/dbuser/stu_data.csv</code> 文件中等待后续的导入工作。</p>
-<h3 id="2-3-导入数据并测试">2.3 导入数据并测试</h3>
-<p>我们执行如下 gsql 元命令将数据从本地文件 <code>std_data.csv</code> 导入到学生表中。</p>
-<figure class="highlight postgresql"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs postgresql">\<span class="hljs-keyword">copy</span> student <span class="hljs-keyword">from</span> ‘/home/dbuser/stu_data.csv’ <span class="hljs-keyword">with</span> (<span class="hljs-keyword">delimiter</span>’,’);<br></code></pre></td></tr></tbody></table></figure>
-<p>出现报错说性别一栏的长度不够。<a target="_blank" rel="noopener" href="https://docs-opengauss.osinfra.cn/zh/docs/5.0.0-lite/docs/BriefTutorial/ALTER-TABLE%E8%AF%AD%E5%8F%A5.html">修改字段</a> <code>ssex</code> 属性为 <code>char(3)</code> 则可以成功导入。</p>
-<p><img src="https://dwj-oss.oss-cn-nanjing.aliyuncs.com/images/202410122301877.png" alt="成功导入"></p>
-<h2 id="题外话">题外话</h2>
-<ul>
-<li>如果要在 gsql 命令行环境中 <a target="_blank" rel="noopener" href="https://www.cndba.cn/dave/article/116534">启动上下文记忆模式</a>，可以在登录时添加 <code>-r</code> 参数。</li>
-<li>中文字符的字节数默认为 3，因此上述导入数据时第一次会失败，因为设置为了 2。</li>
-</ul>
+                <h2 id="自学指南">自学指南</h2>
+<p>本文收录一些 AI/CS 的学习资源。我会将自己学习过的内容进行一定的简介，剩余内容有待探索。</p>
+<h2 id="CSDIY">CSDIY</h2>
+<p>这是一位 18 级 PKU 信科生制作的自学指南，后随着开源与知名度的增加，学科方向逐渐完善。指南偏向于介绍优质的开源课程与学习心得。</p>
+<p><a target="_blank" rel="noopener" href="https://csdiy.wiki/">https://csdiy.wiki/</a></p>
+<h2 id="开发指南">开发指南</h2>
+<p>这是一位英国开发者制作的开发指南。指南偏向于通过一个个小 task 来任务驱动式带领新人入门不同的开发方向。</p>
+<p><a target="_blank" rel="noopener" href="https://roadmap.sh/">https://roadmap.sh/</a></p>
+<h2 id="鱼皮编程导航">鱼皮编程导航</h2>
+<p>这是一位内地创业新人制作的编程学习指南。指南内容良莠不齐，但可以作为相对容易的中文入门教程。</p>
+<p><a target="_blank" rel="noopener" href="https://www.codefather.cn/post/1797520541019598849">https://www.codefather.cn/post/1797520541019598849</a></p>
+<h2 id="可视化学习平台">可视化学习平台</h2>
+<p>这是一位加拿大学者维护的知识点可视化平台，对于一些相对晦涩的知识进行了可视化介绍与讲解。个人认为非常的好！</p>
+<p><a target="_blank" rel="noopener" href="https://serrano.academy/">https://serrano.academy/</a></p>
 
                 
               </div>
@@ -410,15 +384,8 @@
     
       <span class="category-chain">
         
-  <a href="/categories/DataBase/" class="category-chain-item">DataBase</a>
+  <a href="/categories/%E5%85%B6%E4%BB%96/" class="category-chain-item">其他</a>
   
-  
-    <span>></span>
-    
-  <a href="/categories/DataBase/openGauss/" class="category-chain-item">openGauss</a>
-  
-  
-
   
 
       </span>
@@ -437,8 +404,8 @@
 
   <div class="license-box my-3">
     <div class="license-title">
-      <div>opengauss-import-data</div>
-      <div>https://blog.dwj601.cn/DataBase/openGauss/opengauss-import-data/</div>
+      <div>自学指南</div>
+      <div>https://blog.dwj601.cn/Others/自学指南/</div>
     </div>
     <div class="license-meta">
       
@@ -450,13 +417,13 @@
       
         <div class="license-meta-item license-meta-date">
           <div>发布于</div>
-          <div>2024年10月12日</div>
+          <div>2024年10月26日</div>
         </div>
       
       
         <div class="license-meta-item license-meta-date">
           <div>更新于</div>
-          <div>2024年10月12日</div>
+          <div>2025年1月18日</div>
         </div>
       
       
@@ -487,9 +454,9 @@
                   <article class="post-prev col-6">
                     
                     
-                      <a href="/Others/%E8%87%AA%E5%AD%A6%E6%8C%87%E5%8D%97/" title="自学指南">
+                      <a href="/DataBase/openGauss/opengauss-remote-connect/" title="opengauss-remote-connect">
                         <i class="iconfont icon-arrowleft"></i>
-                        <span class="hidden-mobile">自学指南</span>
+                        <span class="hidden-mobile">opengauss-remote-connect</span>
                         <span class="visible-mobile">上一篇</span>
                       </a>
                     
@@ -497,8 +464,8 @@
                   <article class="post-next col-6">
                     
                     
-                      <a href="/DataBase/openGauss/opengauss-basic/" title="opengauss-basic">
-                        <span class="hidden-mobile">opengauss-basic</span>
+                      <a href="/DataBase/openGauss/opengauss-import-data/" title="opengauss-import-data">
+                        <span class="hidden-mobile">opengauss-import-data</span>
                         <span class="visible-mobile">下一篇</span>
                         <i class="iconfont icon-arrowright"></i>
                       </a>
@@ -566,53 +533,17 @@
     
     <div class="category row nomargin-x">
       <a class="category-item 
-          list-group-item category-item-action col-10 col-md-11 col-xm-11" title="DataBase"
-        id="heading-c55bea99578042029ae12d5900ac477f" role="tab" data-toggle="collapse" href="#collapse-c55bea99578042029ae12d5900ac477f"
+          list-group-item category-item-action col-10 col-md-11 col-xm-11" title="其他"
+        id="heading-0d98c74797e49d00bcc4c17c9d557a2b" role="tab" data-toggle="collapse" href="#collapse-0d98c74797e49d00bcc4c17c9d557a2b"
         aria-expanded="true"
       >
-        DataBase
-        <span class="list-group-count">(8)</span>
-        <i class="iconfont icon-arrowright"></i>
-      </a>
-      
-      <div class="category-collapse collapse show" id="collapse-c55bea99578042029ae12d5900ac477f"
-           role="tabpanel" aria-labelledby="heading-c55bea99578042029ae12d5900ac477f">
-        
-        
-          
-          
-  <div class="category-post-list">
-    
-    
-      
-      
-        <a href="/DataBase/data-base-guide/" title="data-base-guide"
-           class="list-group-item list-group-item-action
-           ">
-          <span class="category-post">data-base-guide</span>
-        </a>
-      
-    
-  </div>
-
-          
-  
-    
-    
-    
-    <div class="category-sub row nomargin-x">
-      <a class="category-subitem collapsed
-          list-group-item category-item-action col-10 col-md-11 col-xm-11" title="ElasticSearch"
-        id="heading-a3d300a50f26c6d66a95a6ab4bc1450f" role="tab" data-toggle="collapse" href="#collapse-a3d300a50f26c6d66a95a6ab4bc1450f"
-        aria-expanded="false"
-      >
-        ElasticSearch
+        其他
         <span class="list-group-count">(1)</span>
         <i class="iconfont icon-arrowright"></i>
       </a>
       
-      <div class="category-collapse collapse " id="collapse-a3d300a50f26c6d66a95a6ab4bc1450f"
-           role="tabpanel" aria-labelledby="heading-a3d300a50f26c6d66a95a6ab4bc1450f">
+      <div class="category-collapse collapse show" id="collapse-0d98c74797e49d00bcc4c17c9d557a2b"
+           role="tabpanel" aria-labelledby="heading-0d98c74797e49d00bcc4c17c9d557a2b">
         
         
           
@@ -621,157 +552,15 @@
     
       
       
-        <a href="/DataBase/ElasticSearch/elastic-search-basic/" title="elastic-search-basic"
-           class="list-group-item list-group-item-action
-           ">
-          <span class="category-post">elastic-search-basic</span>
-        </a>
-      
-    
-  </div>
-
-        
-      </div>
-    </div>
-  
-    
-    
-    
-    <div class="category-sub row nomargin-x">
-      <a class="category-subitem collapsed
-          list-group-item category-item-action col-10 col-md-11 col-xm-11" title="MySQL"
-        id="heading-62a004b95946bb97541afa471dcca73a" role="tab" data-toggle="collapse" href="#collapse-62a004b95946bb97541afa471dcca73a"
-        aria-expanded="false"
-      >
-        MySQL
-        <span class="list-group-count">(2)</span>
-        <i class="iconfont icon-arrowright"></i>
-      </a>
-      
-      <div class="category-collapse collapse " id="collapse-62a004b95946bb97541afa471dcca73a"
-           role="tabpanel" aria-labelledby="heading-62a004b95946bb97541afa471dcca73a">
-        
-        
-          
-  <div class="category-post-list">
-    
-    
-      
-      
-        <a href="/DataBase/MySQL/mysql-basic/" title="mysql-basic"
-           class="list-group-item list-group-item-action
-           ">
-          <span class="category-post">mysql-basic</span>
-        </a>
-      
-    
-      
-      
-        <a href="/DataBase/MySQL/solve-mysql-problems/" title="solve-mysql-problems"
-           class="list-group-item list-group-item-action
-           ">
-          <span class="category-post">solve-mysql-problems</span>
-        </a>
-      
-    
-  </div>
-
-        
-      </div>
-    </div>
-  
-    
-    
-    
-    <div class="category-sub row nomargin-x">
-      <a class="category-subitem collapsed
-          list-group-item category-item-action col-10 col-md-11 col-xm-11" title="Redis"
-        id="heading-e111446745a1825b862f8727ae63bce4" role="tab" data-toggle="collapse" href="#collapse-e111446745a1825b862f8727ae63bce4"
-        aria-expanded="false"
-      >
-        Redis
-        <span class="list-group-count">(1)</span>
-        <i class="iconfont icon-arrowright"></i>
-      </a>
-      
-      <div class="category-collapse collapse " id="collapse-e111446745a1825b862f8727ae63bce4"
-           role="tabpanel" aria-labelledby="heading-e111446745a1825b862f8727ae63bce4">
-        
-        
-          
-  <div class="category-post-list">
-    
-    
-      
-      
-        <a href="/DataBase/Redis/redis-basic/" title="redis-basic"
-           class="list-group-item list-group-item-action
-           ">
-          <span class="category-post">redis-basic</span>
-        </a>
-      
-    
-  </div>
-
-        
-      </div>
-    </div>
-  
-    
-    
-    
-    <div class="category-sub row nomargin-x">
-      <a class="category-subitem 
-          list-group-item category-item-action col-10 col-md-11 col-xm-11" title="openGauss"
-        id="heading-adae1421ac706e67de390c49937b51c6" role="tab" data-toggle="collapse" href="#collapse-adae1421ac706e67de390c49937b51c6"
-        aria-expanded="true"
-      >
-        openGauss
-        <span class="list-group-count">(3)</span>
-        <i class="iconfont icon-arrowright"></i>
-      </a>
-      
-      <div class="category-collapse collapse show" id="collapse-adae1421ac706e67de390c49937b51c6"
-           role="tabpanel" aria-labelledby="heading-adae1421ac706e67de390c49937b51c6">
-        
-        
-          
-  <div class="category-post-list">
-    
-    
-      
-      
-        <a href="/DataBase/openGauss/opengauss-basic/" title="opengauss-basic"
-           class="list-group-item list-group-item-action
-           ">
-          <span class="category-post">opengauss-basic</span>
-        </a>
-      
-    
-      
-      
-        <a href="/DataBase/openGauss/opengauss-import-data/" title="opengauss-import-data"
+        <a href="/Others/%E8%87%AA%E5%AD%A6%E6%8C%87%E5%8D%97/" title="自学指南"
            class="list-group-item list-group-item-action
            active">
-          <span class="category-post">opengauss-import-data</span>
-        </a>
-      
-    
-      
-      
-        <a href="/DataBase/openGauss/opengauss-remote-connect/" title="opengauss-remote-connect"
-           class="list-group-item list-group-item-action
-           ">
-          <span class="category-post">opengauss-remote-connect</span>
+          <span class="category-post">自学指南</span>
         </a>
       
     
   </div>
 
-        
-      </div>
-    </div>
-  
         
       </div>
     </div>
