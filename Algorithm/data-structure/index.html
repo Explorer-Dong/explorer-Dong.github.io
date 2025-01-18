@@ -19,24 +19,22 @@
   <meta name="author" content="Mr_Dwj">
   <meta name="keywords" content="人工智能 机器学习 深度学习 算法 数据结构 计算机科学 编程">
   
-    <meta name="description" content="数据结构 数据结构由 数据 和 结构 两部分组成。我们主要讨论的是后者，即结构部分。 按照 逻辑结构 可以将其区分为 线性结构 和 非线性结构。  按照 物理结构 可以将其区分为 连续结构 和 分散结构。  【模板】双链表 https:&#x2F;&#x2F;www.acwing.com&#x2F;problem&#x2F;content&#x2F;829&#x2F;  思路：用两个空结点作为起始状态的边界，避免所有边界讨论。 时间复杂度：插入、删除结点均">
+    <meta name="description" content="数据结构 【模板】双链表 https:&#x2F;&#x2F;www.acwing.com&#x2F;problem&#x2F;content&#x2F;829&#x2F;  思路：用两个空结点作为起始状态的边界，避免所有边界讨论。 时间复杂度：插入、删除结点均为 O(1)O(1)O(1)，遍历为 O(n)O(n)O(n)  123456789101112131415161718192021222324252627282930313233343536373">
 <meta property="og:type" content="article">
 <meta property="og:title" content="data-structure">
 <meta property="og:url" content="https://blog.dwj601.cn/Algorithm/data-structure/index.html">
 <meta property="og:site_name" content="Dwj の Blog">
-<meta property="og:description" content="数据结构 数据结构由 数据 和 结构 两部分组成。我们主要讨论的是后者，即结构部分。 按照 逻辑结构 可以将其区分为 线性结构 和 非线性结构。  按照 物理结构 可以将其区分为 连续结构 和 分散结构。  【模板】双链表 https:&#x2F;&#x2F;www.acwing.com&#x2F;problem&#x2F;content&#x2F;829&#x2F;  思路：用两个空结点作为起始状态的边界，避免所有边界讨论。 时间复杂度：插入、删除结点均">
+<meta property="og:description" content="数据结构 【模板】双链表 https:&#x2F;&#x2F;www.acwing.com&#x2F;problem&#x2F;content&#x2F;829&#x2F;  思路：用两个空结点作为起始状态的边界，避免所有边界讨论。 时间复杂度：插入、删除结点均为 O(1)O(1)O(1)，遍历为 O(n)O(n)O(n)  123456789101112131415161718192021222324252627282930313233343536373">
 <meta property="og:locale" content="zh_CN">
-<meta property="og:image" content="https://dwj-oss.oss-cn-nanjing.aliyuncs.com/images/202408301527018.png">
-<meta property="og:image" content="https://dwj-oss.oss-cn-nanjing.aliyuncs.com/images/202408301528541.png">
 <meta property="og:image" content="https://dwj-oss.oss-cn-nanjing.aliyuncs.com/images/202406061327025.png">
 <meta property="og:image" content="https://github.githubassets.com/images/icons/emoji/unicode/1f525.png?v8">
 <meta property="og:image" content="https://github.githubassets.com/images/icons/emoji/unicode/1f525.png?v8">
 <meta property="article:published_time" content="2024-03-21T05:55:02.037Z">
-<meta property="article:modified_time" content="2024-11-11T01:41:55.528Z">
+<meta property="article:modified_time" content="2025-01-18T16:27:27.589Z">
 <meta property="article:author" content="Mr_Dwj">
 <meta property="article:tag" content="人工智能 机器学习 深度学习 算法 数据结构 计算机科学 编程">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:image" content="https://dwj-oss.oss-cn-nanjing.aliyuncs.com/images/202408301527018.png">
+<meta name="twitter:image" content="https://dwj-oss.oss-cn-nanjing.aliyuncs.com/images/202406061327025.png">
   
   
     <meta name="referrer" content="no-referrer-when-downgrade">
@@ -275,7 +273,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          12k 字
+          11k 字
         
       </span>
     
@@ -286,7 +284,7 @@
         
         
         
-          77 分钟
+          69 分钟
         
       </span>
     
@@ -350,7 +348,7 @@
               <p id="updated-time" class="note note-info" style="">
                 
                   
-                    本文最后更新于 2024年11月11日 上午
+                    本文最后更新于 2025年1月19日 凌晨
                   
                 
               </p>
@@ -359,11 +357,6 @@
               <div class="markdown-body">
                 
                 <h2 id="数据结构">数据结构</h2>
-<p>数据结构由 <strong>数据</strong> 和 <strong>结构</strong> 两部分组成。我们主要讨论的是后者，即结构部分。</p>
-<p>按照 <strong>逻辑结构</strong> 可以将其区分为 <strong>线性结构</strong> 和 <strong>非线性结构</strong>。</p>
-<p><img src="https://dwj-oss.oss-cn-nanjing.aliyuncs.com/images/202408301527018.png" alt="线性数据结构 与 非线性数据结构"></p>
-<p>按照 <strong>物理结构</strong> 可以将其区分为 <strong>连续结构</strong> 和 <strong>分散结构</strong>。</p>
-<p><img src="https://dwj-oss.oss-cn-nanjing.aliyuncs.com/images/202408301528541.png" alt="连续空间存储 与 分散空间存储"></p>
 <h2 id="【模板】双链表">【模板】双链表</h2>
 <p><a target="_blank" rel="noopener" href="https://www.acwing.com/problem/content/829/">https://www.acwing.com/problem/content/829/</a></p>
 <blockquote>
@@ -448,82 +441,6 @@
 </ul>
 </blockquote>
 <figure class="highlight cpp"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br></pre></td><td class="code"><pre><code class="hljs cpp"><span class="hljs-comment">// #include &lt;bits/stdc++.h&gt;</span><br><span class="hljs-comment">// #define int long long</span><br><span class="hljs-meta">#<span class="hljs-keyword">include</span> <span class="hljs-string">&lt;iostream&gt;</span></span><br><span class="hljs-meta">#<span class="hljs-keyword">include</span> <span class="hljs-string">&lt;unordered_map&gt;</span></span><br><span class="hljs-meta">#<span class="hljs-keyword">include</span> <span class="hljs-string">&lt;stack&gt;</span></span><br><span class="hljs-meta">#<span class="hljs-keyword">include</span> <span class="hljs-string">&lt;queue&gt;</span></span><br><span class="hljs-keyword">using</span> <span class="hljs-keyword">namespace</span> std;<br><br><span class="hljs-function"><span class="hljs-type">void</span> <span class="hljs-title">solve</span><span class="hljs-params">()</span> </span>{<br>    <span class="hljs-type">int</span> n;<br>    cin &gt;&gt; n;<br>    <br>    <span class="hljs-function">vector&lt;<span class="hljs-type">int</span>&gt; <span class="hljs-title">a</span><span class="hljs-params">(n)</span>, <span class="hljs-title">b</span><span class="hljs-params">(n)</span></span>;<br>    <span class="hljs-keyword">for</span> (<span class="hljs-type">int</span> i = <span class="hljs-number">0</span>; i &lt; n; i++) cin &gt;&gt; a[i];<br>    <span class="hljs-keyword">for</span> (<span class="hljs-type">int</span> i = <span class="hljs-number">0</span>; i &lt; n; i++) cin &gt;&gt; b[i];<br>    <br>    stack&lt;<span class="hljs-type">int</span>&gt; stk;<br>    <span class="hljs-type">int</span> i = <span class="hljs-number">0</span>, j = <span class="hljs-number">0</span>;<br>    <span class="hljs-keyword">while</span> (i &lt; n) {<br>        <span class="hljs-keyword">if</span> (a[i] != b[j]) stk.<span class="hljs-built_in">push</span>(a[i++]);<br>        <span class="hljs-keyword">else</span> {<br>            i++, j++;<br>            <span class="hljs-keyword">while</span> (!stk.<span class="hljs-built_in">empty</span>() &amp;&amp; b[j] == stk.<span class="hljs-built_in">top</span>()) {<br>                stk.<span class="hljs-built_in">pop</span>();<br>                j++;<br>            }<br>        }<br>    }<br>    <br>    cout &lt;&lt; (stk.<span class="hljs-built_in">empty</span>() ? <span class="hljs-string">"Yes"</span> : <span class="hljs-string">"No"</span>) &lt;&lt; <span class="hljs-string">"\n"</span>;<br>}<br><br><span class="hljs-function"><span class="hljs-type">signed</span> <span class="hljs-title">main</span><span class="hljs-params">()</span> </span>{<br>    ios::<span class="hljs-built_in">sync_with_stdio</span>(<span class="hljs-literal">false</span>);<br>    cin.<span class="hljs-built_in">tie</span>(<span class="hljs-literal">nullptr</span>), cout.<span class="hljs-built_in">tie</span>(<span class="hljs-literal">nullptr</span>);<br>    <span class="hljs-type">int</span> T = <span class="hljs-number">1</span>;<br>    cin &gt;&gt; T;<br>    <span class="hljs-keyword">while</span> (T--) <span class="hljs-built_in">solve</span>();<br>    <span class="hljs-keyword">return</span> <span class="hljs-number">0</span>;<br>}<br></code></pre></td></tr></tbody></table></figure>
-<h2 id="二叉搜索树-平衡树">二叉搜索树 &amp; 平衡树</h2>
-<p>如果我们想要在 <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>O</mi><mo stretchy="false">(</mo><mi>log</mi><mo>⁡</mo><mi>n</mi><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">O(\log n)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathnormal" style="margin-right:0.02778em;">O</span><span class="mopen">(</span><span class="mop">lo<span style="margin-right:0.01389em;">g</span></span><span class="mspace" style="margin-right:0.1667em;"></span><span class="mord mathnormal">n</span><span class="mclose">)</span></span></span></span> 时间复杂度内对数据进行增删查改的操作，就可以引入 <strong>二叉搜索树 (Binary Search Tree)</strong> 这一数据结构。然而，在某些极端的情况下，例如当插入的数据是单调不减或不增时，这棵树就会退化为一条链从而导致所有的增删查改操作退化到 <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>O</mi><mo stretchy="false">(</mo><mi>n</mi><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">O(n)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathnormal" style="margin-right:0.02778em;">O</span><span class="mopen">(</span><span class="mord mathnormal">n</span><span class="mclose">)</span></span></span></span>，这是我们不愿意看到的。因此我们引入 <strong>平衡二叉搜索树 (Balanced Binary Search Tree)</strong> 这一数据结构。</p>
-<p>关于平衡二叉搜索树，有非常多的变种与实现，不同的应用场景会选择不同的平衡树类型。<strong>Treap</strong> 更灵活，通过随机化优先级实现预期的平衡，但在最坏情况下可能退化。<strong>AVL 树</strong> 严格保持平衡，保证了 <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>O</mi><mo stretchy="false">(</mo><mi>log</mi><mo>⁡</mo><mi>n</mi><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">O(\log n)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathnormal" style="margin-right:0.02778em;">O</span><span class="mopen">(</span><span class="mop">lo<span style="margin-right:0.01389em;">g</span></span><span class="mspace" style="margin-right:0.1667em;"></span><span class="mord mathnormal">n</span><span class="mclose">)</span></span></span></span> 的性能，但在频繁插入和删除的场景下可能有较大的旋转开销。<strong>红黑树</strong> 通过较宽松的平衡条件实现了较好的插入和删除性能，通常被广泛用于需要高效插入删除操作的系统（如 STL 中的 <code>map</code> 和 <code>set</code>）。一般来说，红黑树是一个较为通用的选择，而在需要严格平衡性时，AVL 树可能是更好的选择。</p>
-<h3 id="Treap">Treap</h3>
-<blockquote>
-<p>Treap 是二叉搜索树和堆的结合体。它通过维护两种性质来保持平衡：</p>
-<ul>
-<li><strong>二叉搜索树性质</strong>：每个节点的左子树的所有节点值小于该节点的值，右子树的所有节点值大于该节点的值。</li>
-<li><strong>堆性质</strong>：每个节点的优先级（通常随机生成）要大于或等于其子节点的优先级。</li>
-</ul>
-<p><strong>平衡机制</strong>：</p>
-<ul>
-<li>Treap 使用随机化优先级使得树的形状接近于理想的平衡树（期望树高为 <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>O</mi><mo stretchy="false">(</mo><mi>log</mi><mo>⁡</mo><mi>n</mi><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">O(\log n)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathnormal" style="margin-right:0.02778em;">O</span><span class="mopen">(</span><span class="mop">lo<span style="margin-right:0.01389em;">g</span></span><span class="mspace" style="margin-right:0.1667em;"></span><span class="mord mathnormal">n</span><span class="mclose">)</span></span></span></span>）。</li>
-<li>通过旋转操作（左旋和右旋）在插入和删除时保持堆的性质。</li>
-</ul>
-<p><strong>优点</strong>：</p>
-<ul>
-<li>实现相对简单。</li>
-<li>由于随机化的优先级，在期望情况下，树的高度是 <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>O</mi><mo stretchy="false">(</mo><mi>log</mi><mo>⁡</mo><mi>n</mi><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">O(\log n)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathnormal" style="margin-right:0.02778em;">O</span><span class="mopen">(</span><span class="mop">lo<span style="margin-right:0.01389em;">g</span></span><span class="mspace" style="margin-right:0.1667em;"></span><span class="mord mathnormal">n</span><span class="mclose">)</span></span></span></span>。</li>
-<li>灵活性高，可以根据需要调整优先级函数。</li>
-</ul>
-<p><strong>缺点</strong>：</p>
-<ul>
-<li>最坏情况下，树的高度可能退化为 <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>O</mi><mo stretchy="false">(</mo><mi>n</mi><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">O(n)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathnormal" style="margin-right:0.02778em;">O</span><span class="mopen">(</span><span class="mord mathnormal">n</span><span class="mclose">)</span></span></span></span>（例如所有优先级相同或顺序生成的优先级），尽管发生概率很低。</li>
-</ul>
-</blockquote>
-<h3 id="AVL-树">AVL 树</h3>
-<blockquote>
-<p>AVL 树是最早发明的自平衡二叉搜索树之一，1962 年由 Adelson-Velsky 和 Landis 发明。</p>
-<ul>
-<li><strong>平衡因子</strong>：每个节点的左右子树高度差不能超过 <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>1</mn></mrow><annotation encoding="application/x-tex">1</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.6444em;"></span><span class="mord">1</span></span></span></span>，且需要记录每个节点的高度。</li>
-</ul>
-<p><strong>平衡机制</strong>：</p>
-<ul>
-<li>插入或删除节点后，如果某个节点的平衡因子不再为 <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo>−</mo><mn>1</mn></mrow><annotation encoding="application/x-tex">-1</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.7278em;vertical-align:-0.0833em;"></span><span class="mord">−</span><span class="mord">1</span></span></span></span>、<span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>0</mn></mrow><annotation encoding="application/x-tex">0</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.6444em;"></span><span class="mord">0</span></span></span></span> 或 <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>1</mn></mrow><annotation encoding="application/x-tex">1</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.6444em;"></span><span class="mord">1</span></span></span></span>，就需要通过旋转（单旋转或双旋转）来恢复平衡。</li>
-<li>旋转操作包括：左旋转、右旋转、左右双旋转和右左双旋转。</li>
-</ul>
-<p><strong>优点</strong>：</p>
-<ul>
-<li>严格的平衡条件保证了树的高度始终为 <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>O</mi><mo stretchy="false">(</mo><mi>log</mi><mo>⁡</mo><mi>n</mi><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">O(\log n)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathnormal" style="margin-right:0.02778em;">O</span><span class="mopen">(</span><span class="mop">lo<span style="margin-right:0.01389em;">g</span></span><span class="mspace" style="margin-right:0.1667em;"></span><span class="mord mathnormal">n</span><span class="mclose">)</span></span></span></span>，因此搜索、插入和删除操作的时间复杂度为 <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>O</mi><mo stretchy="false">(</mo><mi>log</mi><mo>⁡</mo><mi>n</mi><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">O(\log n)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathnormal" style="margin-right:0.02778em;">O</span><span class="mopen">(</span><span class="mop">lo<span style="margin-right:0.01389em;">g</span></span><span class="mspace" style="margin-right:0.1667em;"></span><span class="mord mathnormal">n</span><span class="mclose">)</span></span></span></span>。</li>
-</ul>
-<p><strong>缺点</strong>：</p>
-<ul>
-<li>由于平衡条件严格，每次插入和删除后可能需要较多的旋转操作，从而导致实现较复杂，插入和删除操作的常数时间开销较大。</li>
-</ul>
-</blockquote>
-<h3 id="红黑树">红黑树</h3>
-<blockquote>
-<p>红黑树是一种较为宽松的自平衡二叉搜索树，由 Rudolf Bayer 于 1972 年发明。</p>
-<ul>
-<li><strong>颜色属性</strong>：每个节点都有红色或黑色两种颜色，通过这些颜色约束树的平衡性。</li>
-</ul>
-<p><strong>平衡机制</strong>：</p>
-<ul>
-<li>通过遵循红黑树的五个性质来保持平衡：
-<ol>
-<li>每个节点要么是红色，要么是黑色。</li>
-<li>根节点是黑色。</li>
-<li>叶子节点（NIL 节点）是黑色。</li>
-<li>如果一个节点是红色的，那么它的子节点必须是黑色（红节点不能连续出现）。</li>
-<li>从任一节点到其每个叶子节点的所有路径都包含相同数量的黑色节点。</li>
-</ol>
-</li>
-<li>插入和删除操作可能破坏红黑树的性质，需要通过重新着色和旋转来恢复平衡。</li>
-</ul>
-<p><strong>优点</strong>：</p>
-<ul>
-<li>红黑树的高度最多是 <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi mathvariant="normal">Θ</mi><mo stretchy="false">(</mo><mn>2</mn><mi>log</mi><mo>⁡</mo><mi>n</mi><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">\Theta (2  \log n)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord">Θ</span><span class="mopen">(</span><span class="mord">2</span><span class="mspace" style="margin-right:0.1667em;"></span><span class="mop">lo<span style="margin-right:0.01389em;">g</span></span><span class="mspace" style="margin-right:0.1667em;"></span><span class="mord mathnormal">n</span><span class="mclose">)</span></span></span></span>，因此搜索、插入和删除操作的时间复杂度仍为 <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>O</mi><mo stretchy="false">(</mo><mi>log</mi><mo>⁡</mo><mi>n</mi><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">O(\log n)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathnormal" style="margin-right:0.02778em;">O</span><span class="mopen">(</span><span class="mop">lo<span style="margin-right:0.01389em;">g</span></span><span class="mspace" style="margin-right:0.1667em;"></span><span class="mord mathnormal">n</span><span class="mclose">)</span></span></span></span>。</li>
-<li>由于平衡条件较为宽松，插入和删除操作需要的旋转操作通常比 AVL 树少，效率更高。</li>
-</ul>
-<p><strong>缺点</strong>：</p>
-<ul>
-<li>实现较复杂，特别是插入和删除的平衡修复过程。</li>
-<li>虽然红黑树的搜索效率与 AVL 树相似，但由于平衡条件较宽松，实际应用中的树高度通常略高于 AVL 树，因此搜索操作的效率稍低。</li>
-</ul>
-</blockquote>
 <h2 id="【二叉树】美国血统">【二叉树】美国血统</h2>
 <p><a target="_blank" rel="noopener" href="https://www.luogu.com.cn/problem/P1827">https://www.luogu.com.cn/problem/P1827</a></p>
 <blockquote>
@@ -793,7 +710,7 @@
       
         <div class="license-meta-item license-meta-date">
           <div>更新于</div>
-          <div>2024年11月11日</div>
+          <div>2025年1月19日</div>
         </div>
       
       
@@ -824,9 +741,9 @@
                   <article class="post-prev col-6">
                     
                     
-                      <a href="/Algorithm/binary-search/" title="binary-search">
+                      <a href="/Algorithm/dfs-and-similar/" title="dfs-and-similar">
                         <i class="iconfont icon-arrowleft"></i>
-                        <span class="hidden-mobile">binary-search</span>
+                        <span class="hidden-mobile">dfs-and-similar</span>
                         <span class="visible-mobile">上一篇</span>
                       </a>
                     
@@ -834,8 +751,8 @@
                   <article class="post-next col-6">
                     
                     
-                      <a href="/Algorithm/a_template/" title="a_template">
-                        <span class="hidden-mobile">a_template</span>
+                      <a href="/Algorithm/dp/" title="dp">
+                        <span class="hidden-mobile">dp</span>
                         <span class="visible-mobile">下一篇</span>
                         <i class="iconfont icon-arrowright"></i>
                       </a>
