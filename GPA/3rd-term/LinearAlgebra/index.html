@@ -26,68 +26,13 @@
 <meta property="og:site_name" content="Dwj の Blog">
 <meta property="og:description" content="前言 本篇博客初稿完成于 2024.01.06，即大二上学期期末。参考《工程数学 线性代数》同济第七版。 由于初稿写作时博主的水平有限并且偏向于应试，写作水平多有不足并且内容有所缺失。现在在学习 ML 和 DL 甚至数字图像处理时，几乎满屏都是矩阵。汗颜的是，由于初学时几乎都是死记硬背以及应试，我一度怀疑自己没学过线代🤡，因此这篇博客会持续更新。 后续的更新会对内容进行整合与补充，包括二次型、线">
 <meta property="og:locale" content="zh_CN">
-<meta property="og:image" content="https://dwj-oss.oss-cn-nanjing.aliyuncs.com/images/202406140938343.png">
-<meta property="og:image" content="https://dwj-oss.oss-cn-nanjing.aliyuncs.com/images/202406140938721.png">
-<meta property="og:image" content="https://dwj-oss.oss-cn-nanjing.aliyuncs.com/images/202406140939983.png">
-<meta property="og:image" content="https://dwj-oss.oss-cn-nanjing.aliyuncs.com/images/202406140939979.png">
-<meta property="og:image" content="https://dwj-oss.oss-cn-nanjing.aliyuncs.com/images/202406140939006.png">
-<meta property="og:image" content="https://dwj-oss.oss-cn-nanjing.aliyuncs.com/images/202406140940894.png">
-<meta property="og:image" content="https://dwj-oss.oss-cn-nanjing.aliyuncs.com/images/202406140940661.png">
-<meta property="og:image" content="https://dwj-oss.oss-cn-nanjing.aliyuncs.com/images/202406140940619.png">
-<meta property="og:image" content="https://dwj-oss.oss-cn-nanjing.aliyuncs.com/images/202406140940481.png">
-<meta property="og:image" content="https://dwj-oss.oss-cn-nanjing.aliyuncs.com/images/202406140937686.png">
-<meta property="og:image" content="https://dwj-oss.oss-cn-nanjing.aliyuncs.com/images/202406140937651.png">
-<meta property="og:image" content="https://dwj-oss.oss-cn-nanjing.aliyuncs.com/images/202406140937081.png">
-<meta property="og:image" content="https://dwj-oss.oss-cn-nanjing.aliyuncs.com/images/202406140937003.png">
-<meta property="og:image" content="https://dwj-oss.oss-cn-nanjing.aliyuncs.com/images/202406140937364.png">
-<meta property="og:image" content="https://dwj-oss.oss-cn-nanjing.aliyuncs.com/images/202406140937245.png">
-<meta property="og:image" content="https://dwj-oss.oss-cn-nanjing.aliyuncs.com/images/202406140937432.png">
-<meta property="og:image" content="https://dwj-oss.oss-cn-nanjing.aliyuncs.com/images/202406140946427.png">
-<meta property="og:image" content="https://dwj-oss.oss-cn-nanjing.aliyuncs.com/images/202406140946428.png">
-<meta property="og:image" content="https://dwj-oss.oss-cn-nanjing.aliyuncs.com/images/202406140946429.png">
-<meta property="og:image" content="https://dwj-oss.oss-cn-nanjing.aliyuncs.com/images/202406140946430.png">
-<meta property="og:image" content="https://dwj-oss.oss-cn-nanjing.aliyuncs.com/images/202406140946431.png">
-<meta property="og:image" content="https://dwj-oss.oss-cn-nanjing.aliyuncs.com/images/202406140946432.png">
-<meta property="og:image" content="https://dwj-oss.oss-cn-nanjing.aliyuncs.com/images/202406140946433.png">
-<meta property="og:image" content="https://dwj-oss.oss-cn-nanjing.aliyuncs.com/images/202406140946434.png">
-<meta property="og:image" content="https://dwj-oss.oss-cn-nanjing.aliyuncs.com/images/202406140946435.png">
-<meta property="og:image" content="https://dwj-oss.oss-cn-nanjing.aliyuncs.com/images/202406140946436.png">
-<meta property="og:image" content="https://dwj-oss.oss-cn-nanjing.aliyuncs.com/images/202406140946437.png">
-<meta property="og:image" content="https://dwj-oss.oss-cn-nanjing.aliyuncs.com/images/202406140946438.png">
-<meta property="og:image" content="https://dwj-oss.oss-cn-nanjing.aliyuncs.com/images/202406140946439.png">
-<meta property="og:image" content="https://dwj-oss.oss-cn-nanjing.aliyuncs.com/images/202406140946440.png">
-<meta property="og:image" content="https://dwj-oss.oss-cn-nanjing.aliyuncs.com/images/202406140946441.png">
-<meta property="og:image" content="https://dwj-oss.oss-cn-nanjing.aliyuncs.com/images/202406140946453.png">
-<meta property="og:image" content="https://dwj-oss.oss-cn-nanjing.aliyuncs.com/images/202406140946454.png">
-<meta property="og:image" content="https://dwj-oss.oss-cn-nanjing.aliyuncs.com/images/202406140946455.png">
-<meta property="og:image" content="https://dwj-oss.oss-cn-nanjing.aliyuncs.com/images/202406140946456.png">
-<meta property="og:image" content="https://dwj-oss.oss-cn-nanjing.aliyuncs.com/images/202406140946457.png">
-<meta property="og:image" content="https://dwj-oss.oss-cn-nanjing.aliyuncs.com/images/202406140946458.png">
-<meta property="og:image" content="https://dwj-oss.oss-cn-nanjing.aliyuncs.com/images/202406140946459.png">
-<meta property="og:image" content="https://dwj-oss.oss-cn-nanjing.aliyuncs.com/images/202406140946460.png">
-<meta property="og:image" content="https://dwj-oss.oss-cn-nanjing.aliyuncs.com/images/202406140946461.png">
-<meta property="og:image" content="https://dwj-oss.oss-cn-nanjing.aliyuncs.com/images/202406140946462.png">
-<meta property="og:image" content="https://dwj-oss.oss-cn-nanjing.aliyuncs.com/images/202406140946463.png">
-<meta property="og:image" content="https://dwj-oss.oss-cn-nanjing.aliyuncs.com/images/202406140946464.png">
-<meta property="og:image" content="https://dwj-oss.oss-cn-nanjing.aliyuncs.com/images/202406140946465.png">
-<meta property="og:image" content="https://dwj-oss.oss-cn-nanjing.aliyuncs.com/images/202406140946466.png">
-<meta property="og:image" content="https://dwj-oss.oss-cn-nanjing.aliyuncs.com/images/202406140946467.png">
-<meta property="og:image" content="https://dwj-oss.oss-cn-nanjing.aliyuncs.com/images/202406140946468.png">
-<meta property="og:image" content="https://dwj-oss.oss-cn-nanjing.aliyuncs.com/images/202406140946469.png">
-<meta property="og:image" content="https://dwj-oss.oss-cn-nanjing.aliyuncs.com/images/202406140946470.png">
-<meta property="og:image" content="https://dwj-oss.oss-cn-nanjing.aliyuncs.com/images/202406140946471.png">
-<meta property="og:image" content="https://dwj-oss.oss-cn-nanjing.aliyuncs.com/images/202406140946472.png">
-<meta property="og:image" content="https://dwj-oss.oss-cn-nanjing.aliyuncs.com/images/202406140946473.png">
-<meta property="og:image" content="https://dwj-oss.oss-cn-nanjing.aliyuncs.com/images/202406140946474.png">
-<meta property="og:image" content="https://dwj-oss.oss-cn-nanjing.aliyuncs.com/images/202406140946478.png">
-<meta property="og:image" content="https://dwj-oss.oss-cn-nanjing.aliyuncs.com/images/202406140946479.png">
-<meta property="og:image" content="https://dwj-oss.oss-cn-nanjing.aliyuncs.com/images/202406140946480.png">
+<meta property="og:image" content="https://dwj-oss.oss-cn-nanjing.aliyuncs.com/web-imgs/img-static/linear%20algebra.png">
 <meta property="article:published_time" content="2024-03-21T05:55:02.195Z">
-<meta property="article:modified_time" content="2025-01-17T16:21:26.911Z">
+<meta property="article:modified_time" content="2025-01-19T04:05:28.293Z">
 <meta property="article:author" content="Mr_Dwj">
 <meta property="article:tag" content="人工智能 机器学习 深度学习 算法 数据结构 计算机科学 编程">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:image" content="https://dwj-oss.oss-cn-nanjing.aliyuncs.com/images/202406140938343.png">
+<meta name="twitter:image" content="https://dwj-oss.oss-cn-nanjing.aliyuncs.com/web-imgs/img-static/linear%20algebra.png">
   
   
     <meta name="referrer" content="no-referrer-when-downgrade">
@@ -297,7 +242,7 @@
   
 
 <div id="banner" class="banner" parallax=true
-     style="background: url('https://dwj-oss.oss-cn-nanjing.aliyuncs.com/web-imgs/img-static/default.png') no-repeat center center; background-size: cover;">
+     style="background: url('https://dwj-oss.oss-cn-nanjing.aliyuncs.com/web-imgs/img-static/日出.jpg') no-repeat center center; background-size: cover;">
   <div class="full-bg-img">
     <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
       <div class="banner-text text-center fade-in-up">
@@ -401,7 +346,7 @@
               <p id="updated-time" class="note note-info" style="">
                 
                   
-                    本文最后更新于 2025年1月18日 凌晨
+                    本文最后更新于 2025年1月19日 中午
                   
                 
               </p>
@@ -1165,7 +1110,7 @@ M834 80h400000v40h-400000z"></path></svg></span></span></span><span class="vlist
       
         <div class="license-meta-item license-meta-date">
           <div>更新于</div>
-          <div>2025年1月18日</div>
+          <div>2025年1月19日</div>
         </div>
       
       
@@ -1206,8 +1151,8 @@ M834 80h400000v40h-400000z"></path></svg></span></span></span><span class="vlist
                   <article class="post-next col-6">
                     
                     
-                      <a href="/GPA/2nd-term/ObjectOrientedClassDesign/" title="面向对象课程设计">
-                        <span class="hidden-mobile">面向对象课程设计</span>
+                      <a href="/FrontEnd/Hexo/hexo-githubpages-domain/" title="hexo-githubpages-domain">
+                        <span class="hidden-mobile">hexo-githubpages-domain</span>
                         <span class="visible-mobile">下一篇</span>
                         <i class="iconfont icon-arrowright"></i>
                       </a>
@@ -1280,7 +1225,7 @@ M834 80h400000v40h-400000z"></path></svg></span></span></span><span class="vlist
         aria-expanded="true"
       >
         GPA
-        <span class="list-group-count">(22)</span>
+        <span class="list-group-count">(23)</span>
         <i class="iconfont icon-arrowright"></i>
       </a>
       
@@ -1344,7 +1289,7 @@ M834 80h400000v40h-400000z"></path></svg></span></span></span><span class="vlist
         aria-expanded="false"
       >
         2nd-term
-        <span class="list-group-count">(2)</span>
+        <span class="list-group-count">(1)</span>
         <i class="iconfont icon-arrowright"></i>
       </a>
       
@@ -1365,15 +1310,6 @@ M834 80h400000v40h-400000z"></path></svg></span></span></span><span class="vlist
         </a>
       
     
-      
-      
-        <a href="/GPA/2nd-term/ObjectOrientedClassDesign/" title="面向对象课程设计"
-           class="list-group-item list-group-item-action
-           ">
-          <span class="category-post">面向对象课程设计</span>
-        </a>
-      
-    
   </div>
 
         
@@ -1390,7 +1326,7 @@ M834 80h400000v40h-400000z"></path></svg></span></span></span><span class="vlist
         aria-expanded="true"
       >
         3rd-term
-        <span class="list-group-count">(5)</span>
+        <span class="list-group-count">(4)</span>
         <i class="iconfont icon-arrowright"></i>
       </a>
       
@@ -1431,15 +1367,6 @@ M834 80h400000v40h-400000z"></path></svg></span></span></span><span class="vlist
     
       
       
-        <a href="/GPA/3rd-term/DataStructureClassDesign/" title="数据结构课程设计"
-           class="list-group-item list-group-item-action
-           ">
-          <span class="category-post">数据结构课程设计</span>
-        </a>
-      
-    
-      
-      
         <a href="/GPA/3rd-term/LinearAlgebra/" title="线性代数"
            class="list-group-item list-group-item-action
            active">
@@ -1463,7 +1390,7 @@ M834 80h400000v40h-400000z"></path></svg></span></span></span><span class="vlist
         aria-expanded="false"
       >
         4th-term
-        <span class="list-group-count">(7)</span>
+        <span class="list-group-count">(6)</span>
         <i class="iconfont icon-arrowright"></i>
       </a>
       
@@ -1477,10 +1404,10 @@ M834 80h400000v40h-400000z"></path></svg></span></span></span><span class="vlist
     
       
       
-        <a href="/GPA/4th-term/PyApply/" title="Python 高级应用"
+        <a href="/GPA/4th-term/PyApply/" title="Python高级应用"
            class="list-group-item list-group-item-action
            ">
-          <span class="category-post">Python 高级应用</span>
+          <span class="category-post">Python高级应用</span>
         </a>
       
     
@@ -1499,15 +1426,6 @@ M834 80h400000v40h-400000z"></path></svg></span></span></span><span class="vlist
            class="list-group-item list-group-item-action
            ">
           <span class="category-post">机器学习</span>
-        </a>
-      
-    
-      
-      
-        <a href="/GPA/4th-term/MachineLearningClassDesign/" title="机器学习课程设计"
-           class="list-group-item list-group-item-action
-           ">
-          <span class="category-post">机器学习课程设计</span>
         </a>
       
     
@@ -1636,7 +1554,7 @@ M834 80h400000v40h-400000z"></path></svg></span></span></span><span class="vlist
         aria-expanded="false"
       >
         6th-term
-        <span class="list-group-count">(1)</span>
+        <span class="list-group-count">(5)</span>
         <i class="iconfont icon-arrowright"></i>
       </a>
       
@@ -1650,10 +1568,46 @@ M834 80h400000v40h-400000z"></path></svg></span></span></span><span class="vlist
     
       
       
+        <a href="/GPA/6th-term/SmartEducation/" title="智慧教育"
+           class="list-group-item list-group-item-action
+           ">
+          <span class="category-post">智慧教育</span>
+        </a>
+      
+    
+      
+      
+        <a href="/GPA/6th-term/NaturalLanguageProcessing/" title="自然语言处理"
+           class="list-group-item list-group-item-action
+           ">
+          <span class="category-post">自然语言处理</span>
+        </a>
+      
+    
+      
+      
         <a href="/GPA/6th-term/ComputerNetwork/" title="计算机网络"
            class="list-group-item list-group-item-action
            ">
           <span class="category-post">计算机网络</span>
+        </a>
+      
+    
+      
+      
+        <a href="/GPA/6th-term/ComputerVision/" title="计算机视觉"
+           class="list-group-item list-group-item-action
+           ">
+          <span class="category-post">计算机视觉</span>
+        </a>
+      
+    
+      
+      
+        <a href="/GPA/6th-term/SpeechRecognition/" title="语音识别"
+           class="list-group-item list-group-item-action
+           ">
+          <span class="category-post">语音识别</span>
         </a>
       
     
