@@ -70,7 +70,7 @@
   <script id="fluid-configs">
     var Fluid = window.Fluid || {};
     Fluid.ctx = Object.assign({}, Fluid.ctx)
-    var CONFIG = {"hostname":"blog.dwj601.cn","root":"/","version":"1.9.8","typing":{"enable":true,"typeSpeed":70,"cursorChar":"_","loop":false,"scope":[]},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"left","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"code_language":{"enable":true,"default":"TEXT"},"copy_btn":true,"image_caption":{"enable":true},"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"placement":"left","headingSelector":"h1,h2,h3,h4,h5","collapseDepth":3},"lazyload":{"enable":false,"loading_img":"https://dwj-oss.oss-cn-nanjing.aliyuncs.com/web-imgs/img-static/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":true,"follow_dnt":true,"baidu":"d08d23389220ad9b8f711cfb85757f4b","google":{"measurement_id":null},"tencent":{"sid":null,"cid":null},"leancloud":{"app_id":null,"app_key":null,"server_url":null,"path":"window.location.pathname","ignore_local":false},"umami":{"src":null,"website_id":null,"domains":null,"start_time":"2024-01-01T00:00:00.000Z","token":null,"api_server":null},"woyaola":null,"cnzz":null},"search_path":"/local-search.xml","include_content_in_search":true};
+    var CONFIG = {"hostname":"blog.dwj601.cn","root":"/","version":"1.9.8","typing":{"enable":true,"typeSpeed":70,"cursorChar":"_","loop":false,"scope":[]},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"left","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"code_language":{"enable":true,"default":"TEXT"},"copy_btn":true,"image_caption":{"enable":true},"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"placement":"left","headingSelector":"h1,h2,h3,h4,h5","collapseDepth":3},"lazyload":{"enable":false,"loading_img":"https://dwj-oss.oss-cn-nanjing.aliyuncs.com/web-imgs/img-static/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":true,"follow_dnt":true,"baidu":"d08d23389220ad9b8f711cfb85757f4b","google":{"measurement_id":null},"tencent":{"sid":null,"cid":null},"leancloud":{"app_id":null,"app_key":null,"server_url":null,"path":"window.location.pathname","ignore_local":false},"umami":{"src":null,"website_id":null,"domains":null,"start_time":"2024-01-01T00:00:00.000Z","token":null,"api_server":null},"woyaola":null,"cnzz":null},"search_path":"https://dwj-oss.oss-cn-nanjing.aliyuncs.com/search-files/local-search.xml","include_content_in_search":true};
 
     if (CONFIG.web_analytics.follow_dnt) {
       var dntVal = navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack;
@@ -274,15 +274,15 @@
     <article class="col-12 col-md-12 mx-auto index-info">
       <h2 class="index-header">
         
-        <a href="/Algorithm/number-theory/" target="_blank">
-          number-theory
+        <a href="/Algorithm/hashing/" target="_blank">
+          hashing
         </a>
       </h2>
 
       
-      <a class="index-excerpt index-excerpt__noimg" href="/Algorithm/number-theory/" target="_blank">
+      <a class="index-excerpt index-excerpt__noimg" href="/Algorithm/hashing/" target="_blank">
         <div>
-          数论 整数问题。 【质数】Divide and Equalize  题意：给定 nnn 个数，问能否找到一个数 numnumnum，使得 numn=∏i=1nainum^n = \prod_{i=1}^{n}a_inumn=∏i=1n​ai​ 原始思路：起初我的思路是二分，我们需要寻找一个数使得n个数相乘为原数组所有元素之积，那么我们预计算出所有数之积，并且在数组最大值和最小值之间进行二分，每次二
+          哈希 【哈希】分组 https://www.acwing.com/problem/content/5182/  存储不想同组和想同组的人员信息：存入数组，数据类型为一对字符串 存储所有的组队信息：存入哈希表，数据类型为“键:字符串”“值:一对字符串” 想要知道最终的分组情况，只需要查询数组中的队员情况与想同组 or 不想同组的成员名字是否一致即可 时间复杂度 O(n)O(n)O(n)，空间复杂度
         </div>
       </a>
 
@@ -328,15 +328,15 @@
     <article class="col-12 col-md-12 mx-auto index-info">
       <h2 class="index-header">
         
-        <a href="/Algorithm/graphs/" target="_blank">
-          graphs
+        <a href="/Algorithm/number-theory/" target="_blank">
+          number-theory
         </a>
       </h2>
 
       
-      <a class="index-excerpt index-excerpt__noimg" href="/Algorithm/graphs/" target="_blank">
+      <a class="index-excerpt index-excerpt__noimg" href="/Algorithm/number-theory/" target="_blank">
         <div>
-          图论 【拓扑】有向图的拓扑序列 https://www.acwing.com/problem/content/850/  题意：输出一个图的拓扑序，不存在则输出-1 思路：  首先我们要知道拓扑图的概念，感官上就是一张图可以从一个方向拓展到全图，用数学语言就是：若一个由图中所有点构成的序列 A 满足：对于图中的每条边 (x,y)，x 在 A 中都出现在 y 之前，则称 A 是该图的一个拓扑序列 接
+          数论 整数问题。 【质数】Divide and Equalize  题意：给定 nnn 个数，问能否找到一个数 numnumnum，使得 numn=∏i=1nainum^n = \prod_{i=1}^{n}a_inumn=∏i=1n​ai​ 原始思路：起初我的思路是二分，我们需要寻找一个数使得n个数相乘为原数组所有元素之积，那么我们预计算出所有数之积，并且在数组最大值和最小值之间进行二分，每次二
         </div>
       </a>
 
@@ -544,60 +544,6 @@
     <article class="col-12 col-md-12 mx-auto index-info">
       <h2 class="index-header">
         
-        <a href="/Algorithm/data-structure/" target="_blank">
-          data-structure
-        </a>
-      </h2>
-
-      
-      <a class="index-excerpt index-excerpt__noimg" href="/Algorithm/data-structure/" target="_blank">
-        <div>
-          数据结构 【模板】双链表 https://www.acwing.com/problem/content/829/  思路：用两个空结点作为起始状态的边界，避免所有边界讨论。 时间复杂度：插入、删除结点均为 O(1)O(1)O(1)，遍历为 O(n)O(n)O(n)  123456789101112131415161718192021222324252627282930313233343536373
-        </div>
-      </a>
-
-      <div class="index-btm post-metas">
-        
-          <div class="post-meta mr-3">
-            <i class="iconfont icon-date"></i>
-            <time datetime="2024-03-21 13:55" pubdate>
-              2024-03-21
-            </time>
-          </div>
-        
-        
-          <div class="post-meta mr-3 d-flex align-items-center">
-            <i class="iconfont icon-category"></i>
-            
-
-<span class="category-chains">
-  
-  
-    
-      <span class="category-chain">
-        
-  <a href="/categories/Algorithm/" class="category-chain-item">Algorithm</a>
-  
-  
-
-      </span>
-    
-  
-</span>
-
-          </div>
-        
-        
-      </div>
-    </article>
-  </div>
-
-  <div class="row mx-auto index-card">
-    
-    
-    <article class="col-12 col-md-12 mx-auto index-info">
-      <h2 class="index-header">
-        
         <a href="/Algorithm/binary-search/" target="_blank">
           binary-search
         </a>
@@ -661,6 +607,60 @@
       <a class="index-excerpt index-excerpt__noimg" href="/Algorithm/divide-and-conquer/" target="_blank">
         <div>
           分治 将大问题转化为等价小问题进行求解。 【分治】随机排列 https://www.acwing.com/problem/content/5469/  题意：给定一个 n 个数的全排列序列，并将其进行一定的对换，问是对换了 3n 次还是 7n+1 次 思路：可以发现对于两种情况，就对应对换次数的奇偶性。当 n 为奇数：3n 为奇数，7n+1 为偶数；当 n 为偶数：3n 为偶数，7n+1 为奇数。
+        </div>
+      </a>
+
+      <div class="index-btm post-metas">
+        
+          <div class="post-meta mr-3">
+            <i class="iconfont icon-date"></i>
+            <time datetime="2024-03-21 13:55" pubdate>
+              2024-03-21
+            </time>
+          </div>
+        
+        
+          <div class="post-meta mr-3 d-flex align-items-center">
+            <i class="iconfont icon-category"></i>
+            
+
+<span class="category-chains">
+  
+  
+    
+      <span class="category-chain">
+        
+  <a href="/categories/Algorithm/" class="category-chain-item">Algorithm</a>
+  
+  
+
+      </span>
+    
+  
+</span>
+
+          </div>
+        
+        
+      </div>
+    </article>
+  </div>
+
+  <div class="row mx-auto index-card">
+    
+    
+    <article class="col-12 col-md-12 mx-auto index-info">
+      <h2 class="index-header">
+        
+        <a href="/Algorithm/data-structure/" target="_blank">
+          data-structure
+        </a>
+      </h2>
+
+      
+      <a class="index-excerpt index-excerpt__noimg" href="/Algorithm/data-structure/" target="_blank">
+        <div>
+          数据结构 【模板】双链表 https://www.acwing.com/problem/content/829/  思路：用两个空结点作为起始状态的边界，避免所有边界讨论。 时间复杂度：插入、删除结点均为 O(1)O(1)O(1)，遍历为 O(n)O(n)O(n)  123456789101112131415161718192021222324252627282930313233343536373
         </div>
       </a>
 
