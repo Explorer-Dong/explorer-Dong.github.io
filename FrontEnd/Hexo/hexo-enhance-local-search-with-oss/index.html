@@ -19,24 +19,27 @@
   <meta name="author" content="Mr_Dwj">
   <meta name="keywords" content="人工智能 机器学习 深度学习 算法 数据结构 计算机科学 编程">
   
-    <meta name="description" content="解决跨域问题 服务器带宽配置 影响文件下载速度 修改local-search.xml的加载源（从小带宽的主机转换到OSS，发现OSS的带宽极大。。。，分别使用OSS的图像化工具与命令行工具，准备提出一个优化issue，即在测试oss命令行工具ossutil时，不能按照文件的时间降序排序，只能，默认升序排序） 发现fluid的bug，即search.path写成了search_path 无法正常加载">
+    <meta name="description" content="前言 考虑到某著名云服务商提供的云服务器在两年的 99 计划后续费价格高达四位数，遂研究一下降配续费。结果在将带宽从 3Mbps 降低到 1Mbps 并退给我三十几元后，发现不能撤回这一步操作，重新恢复至 3Mbps 需要我掏五百多元，绝。 考虑到目前只用那台机器托管了一个 Hexo 静态网站，最大的带宽开销是搜索时加载的约 8.5MB 的 local-search.xml 文件，在 3Mbps">
 <meta property="og:type" content="article">
-<meta property="og:title" content="hexo-optimize-local-search">
-<meta property="og:url" content="https://blog.dwj601.cn/FrontEnd/Hexo/hexo-optimize-local-search/index.html">
+<meta property="og:title" content="用OSS增强Hexo的搜索功能">
+<meta property="og:url" content="https://blog.dwj601.cn/FrontEnd/Hexo/hexo-enhance-local-search-with-oss/index.html">
 <meta property="og:site_name" content="Dwj の Blog">
-<meta property="og:description" content="解决跨域问题 服务器带宽配置 影响文件下载速度 修改local-search.xml的加载源（从小带宽的主机转换到OSS，发现OSS的带宽极大。。。，分别使用OSS的图像化工具与命令行工具，准备提出一个优化issue，即在测试oss命令行工具ossutil时，不能按照文件的时间降序排序，只能，默认升序排序） 发现fluid的bug，即search.path写成了search_path 无法正常加载">
+<meta property="og:description" content="前言 考虑到某著名云服务商提供的云服务器在两年的 99 计划后续费价格高达四位数，遂研究一下降配续费。结果在将带宽从 3Mbps 降低到 1Mbps 并退给我三十几元后，发现不能撤回这一步操作，重新恢复至 3Mbps 需要我掏五百多元，绝。 考虑到目前只用那台机器托管了一个 Hexo 静态网站，最大的带宽开销是搜索时加载的约 8.5MB 的 local-search.xml 文件，在 3Mbps">
 <meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://dwj-oss.oss-cn-nanjing.aliyuncs.com/images/202501192317447.png">
+<meta property="og:image" content="https://dwj-oss.oss-cn-nanjing.aliyuncs.com/images/202501192333282.png">
 <meta property="article:published_time" content="2025-01-19T08:45:53.100Z">
-<meta property="article:modified_time" content="2025-01-19T08:52:51.389Z">
+<meta property="article:modified_time" content="2025-01-19T15:54:57.487Z">
 <meta property="article:author" content="Mr_Dwj">
 <meta property="article:tag" content="人工智能 机器学习 深度学习 算法 数据结构 计算机科学 编程">
 <meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://dwj-oss.oss-cn-nanjing.aliyuncs.com/images/202501192317447.png">
   
   
     <meta name="referrer" content="no-referrer-when-downgrade">
   
   
-  <title>hexo-optimize-local-search | Dwj の Blog</title>
+  <title>用OSS增强Hexo的搜索功能 | Dwj の Blog</title>
 
   <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
 
@@ -246,7 +249,7 @@
       <div class="banner-text text-center fade-in-up">
         <div class="h2">
           
-            <span id="subtitle" data-typed-text="hexo-optimize-local-search"></span>
+            <span id="subtitle" data-typed-text="用OSS增强Hexo的搜索功能"></span>
           
         </div>
 
@@ -269,7 +272,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          379 字
+          1.3k 字
         
       </span>
     
@@ -280,7 +283,7 @@
         
         
         
-          3 分钟
+          9 分钟
         
       </span>
     
@@ -339,12 +342,12 @@
       <div class="container nopadding-x-md" id="board-ctn">
         <div id="board">
           <article class="post-content mx-auto">
-            <h1 id="seo-header">hexo-optimize-local-search</h1>
+            <h1 id="seo-header">用OSS增强Hexo的搜索功能</h1>
             
               <p id="updated-time" class="note note-info" style="">
                 
                   
-                    本文最后更新于 2025年1月19日 下午
+                    本文最后更新于 2025年1月19日 晚上
                   
                 
               </p>
@@ -352,14 +355,22 @@
             
               <div class="markdown-body">
                 
-                <h2 id="解决跨域问题">解决跨域问题</h2>
-<p>服务器带宽配置</p>
-<p>影响文件下载速度</p>
-<p>修改local-search.xml的加载源（从小带宽的主机转换到OSS，发现OSS的带宽极大。。。，分别使用OSS的图像化工具与命令行工具，准备提出一个优化issue，即在测试oss命令行工具ossutil时，不能按照文件的时间降序排序，只能，默认升序排序）</p>
-<p>发现fluid的bug，即search.path写成了search_path</p>
-<p>无法正常加载OSS中的文件（可以正常的get到，即状态码为200，但是就是无法加载）发现是fluid发起的ajax（local-search.js）请求出现了跨域问题</p>
-<p>尝试解决跨域问题，进入OSS官方文档配置bucket：<a target="_blank" rel="noopener" href="https://help.aliyun.com/zh/oss/user-guide/cors-12/">https://help.aliyun.com/zh/oss/user-guide/cors-12/</a></p>
-<p>问题解决，瞬间加载完8MB的local-search.xml</p>
+                <h2 id="前言">前言</h2>
+<p>考虑到某著名云服务商提供的云服务器在两年的 99 计划后续费价格高达四位数，遂研究一下降配续费。结果在将带宽从 3Mbps 降低到 1Mbps 并退给我三十几元后，发现不能撤回这一步操作，重新恢复至 3Mbps 需要我掏五百多元，绝。</p>
+<p>考虑到目前只用那台机器托管了一个 Hexo 静态网站，最大的带宽开销是搜索时加载的约 8.5MB 的 local-search.xml 文件，在 3Mbps 带宽的情况下，需要加载约 <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mfrac><mrow><mn>8.5</mn><mo>×</mo><mn>8</mn></mrow><mn>3</mn></mfrac><mo>≈</mo><mn>23</mn></mrow><annotation encoding="application/x-tex">\frac{8.5\times 8}{3}\approx 23</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1.1901em;vertical-align:-0.345em;"></span><span class="mord"><span class="mopen nulldelimiter"></span><span class="mfrac"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.8451em;"><span style="top:-2.655em;"><span class="pstrut" style="height:3em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mtight">3</span></span></span></span><span style="top:-3.23em;"><span class="pstrut" style="height:3em;"></span><span class="frac-line" style="border-bottom-width:0.04em;"></span></span><span style="top:-3.394em;"><span class="pstrut" style="height:3em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mtight">8.5</span><span class="mbin mtight">×</span><span class="mord mtight">8</span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.345em;"><span></span></span></span></span></span><span class="mclose nulldelimiter"></span></span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">≈</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:0.6444em;"></span><span class="mord">23</span></span></span></span> 秒，我已经难以忍受，现在直接给干到一分钟了。不得以，开始研究将该索引文件丢到这家云服务商的 OSS 上，悲。</p>
+<h2 id="配置-config-fluid-yml">配置 <code>_config.fluid.yml</code></h2>
+<p>从 Fluid 的配置文件 _config.fluid.yml 中很容易找到 search.path 字段，其明确说明可以将索引文件的路径配置为外链地址，那么直接将 generate 出来的 local-search.xml 文件丢到 OSS 中，然后链接到对应的「公共读」文件即可。</p>
+<p>当然这么干的前提是 OSS 的流出带宽要比 3Mbps 大。一搜 <a target="_blank" rel="noopener" href="https://help.aliyun.com/zh/oss/product-overview/limits">OSS 的流出带宽</a>，没绷住：</p>
+<p><img src="https://dwj-oss.oss-cn-nanjing.aliyuncs.com/images/202501192317447.png" alt="南京本地地域的流出带宽大概是我原来小破 3Mbps 的一千倍，艹！"></p>
+<p>行吧，看来这个方案是可行的。</p>
+<h2 id="云端实时更新-local-search-xml">云端实时更新 <code>local-search.xml</code></h2>
+<p>由于我会频繁更新博客内容，为了让搜索到的结果可以完美的匹配我的博客，就需要确保索引文件也是同步更新的。那我每次都要打开阿里云 OSS 控制台然后上传 local-search.xml 文件吗？必然不可能。阿里云 OSS 提供了诸多的第三方工具，例如 GUI 工具 oss browser、CLI 工具 ossutil、各语言的 SDK 等，这里用到 CLI 即可。自定义 git bash 中的命令后就得到了下面的语句：</p>
+<figure class="highlight bash"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><code class="hljs bash"><span class="hljs-built_in">alias</span> gpho=<span class="hljs-string">'git push &amp;&amp; hexo clean &amp;&amp; hexo generate &amp;&amp; hexo deploy &amp;&amp; ossutil cp &lt;/path/to/local-search.xml&gt; oss://dwj-oss/search-files/'</span><br><br><span class="hljs-comment"># 上述部署逻辑其实就是：</span><br><span class="hljs-comment"># 1. git push</span><br><span class="hljs-comment"># 2. hexo clean &amp;&amp; hexo generate &amp;&amp; hexo deploy</span><br><span class="hljs-comment"># 3. ossutil cp &lt;/path/to/local-search.xml&gt; oss://&lt;bucket_name&gt;/path/to/oss_folder/</span><br></code></pre></td></tr></tbody></table></figure>
+<p>这样在更新完博客以后，在 git bash 终端输入 <code>gpho</code> 即可同步更新博客站点和索引文件啦！</p>
+<h2 id="解决-OSS-Bucket-的跨域问题">解决 <code>OSS.Bucket</code> 的跨域问题</h2>
+<p>但是还没完。由于 Hexo-Fuild 的搜索逻辑代码中使用到了 Ajax 请求，对于云服务器，其需要向 OSS 对应的主机发起请求，这就会引发浏览器的跨域问题从而导致 local-search.xml 文件无法正常被加载到用户的浏览器中。去阿里云 OSS 的控制台配置对应 Bucket 的 <a target="_blank" rel="noopener" href="https://help.aliyun.com/zh/oss/user-guide/cors-12/">跨域规则</a> 即可。例如我的配置：</p>
+<p><img src="https://dwj-oss.oss-cn-nanjing.aliyuncs.com/images/202501192333282.png" alt="配置对应 Bucket 的跨域规则即可"></p>
+<p>现在 8.5MB 的 local-search.xml 只需要几百毫秒即可加载完成，美汁汁！</p>
 
                 
               </div>
@@ -405,8 +416,8 @@
 
   <div class="license-box my-3">
     <div class="license-title">
-      <div>hexo-optimize-local-search</div>
-      <div>https://blog.dwj601.cn/FrontEnd/Hexo/hexo-optimize-local-search/</div>
+      <div>用OSS增强Hexo的搜索功能</div>
+      <div>https://blog.dwj601.cn/FrontEnd/Hexo/hexo-enhance-local-search-with-oss/</div>
     </div>
     <div class="license-meta">
       
@@ -711,19 +722,19 @@
     
       
       
-        <a href="/FrontEnd/Hexo/hexo-optimize-local-search/" title="hexo-optimize-local-search"
+        <a href="/FrontEnd/Hexo/why-hexo/" title="why-hexo"
            class="list-group-item list-group-item-action
-           active">
-          <span class="category-post">hexo-optimize-local-search</span>
+           ">
+          <span class="category-post">why-hexo</span>
         </a>
       
     
       
       
-        <a href="/FrontEnd/Hexo/why-hexo/" title="why-hexo"
+        <a href="/FrontEnd/Hexo/hexo-enhance-local-search-with-oss/" title="用OSS增强Hexo的搜索功能"
            class="list-group-item list-group-item-action
-           ">
-          <span class="category-post">why-hexo</span>
+           active">
+          <span class="category-post">用OSS增强Hexo的搜索功能</span>
         </a>
       
     
