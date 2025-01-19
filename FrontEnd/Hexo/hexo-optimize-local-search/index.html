@@ -19,26 +19,24 @@
   <meta name="author" content="Mr_Dwj">
   <meta name="keywords" content="人工智能 机器学习 深度学习 算法 数据结构 计算机科学 编程">
   
-    <meta name="description" content="解决 Nginx 重启报错 前言 SSL 证书过期后尝试更新证书。 复现 重新上传 key 和 pem 文件后使用 nginx -s reload 命令尝试软重启 nginx，报错： 1nginx: [error] invalid PID number &quot;&quot; in &quot;&#x2F;run&#x2F;nginx.pid&quot; 猜测应该是更新 nginx 后配置文件的路径被重置了，使用 nginx -c &quot;etc&#x2F;nginx&#x2F;">
+    <meta name="description" content="解决跨域问题 服务器带宽配置 影响文件下载速度 修改local-search.xml的加载源（从小带宽的主机转换到OSS，发现OSS的带宽极大。。。，分别使用OSS的图像化工具与命令行工具，准备提出一个优化issue，即在测试oss命令行工具ossutil时，不能按照文件的时间降序排序，只能，默认升序排序） 发现fluid的bug，即search.path写成了search_path 无法正常加载">
 <meta property="og:type" content="article">
-<meta property="og:title" content="solve-nginx-reload-error">
-<meta property="og:url" content="https://blog.dwj601.cn/Operation/Nginx/solve-nginx-reload-error/index.html">
+<meta property="og:title" content="hexo-optimize-local-search">
+<meta property="og:url" content="https://blog.dwj601.cn/FrontEnd/Hexo/hexo-optimize-local-search/index.html">
 <meta property="og:site_name" content="Dwj の Blog">
-<meta property="og:description" content="解决 Nginx 重启报错 前言 SSL 证书过期后尝试更新证书。 复现 重新上传 key 和 pem 文件后使用 nginx -s reload 命令尝试软重启 nginx，报错： 1nginx: [error] invalid PID number &quot;&quot; in &quot;&#x2F;run&#x2F;nginx.pid&quot; 猜测应该是更新 nginx 后配置文件的路径被重置了，使用 nginx -c &quot;etc&#x2F;nginx&#x2F;">
+<meta property="og:description" content="解决跨域问题 服务器带宽配置 影响文件下载速度 修改local-search.xml的加载源（从小带宽的主机转换到OSS，发现OSS的带宽极大。。。，分别使用OSS的图像化工具与命令行工具，准备提出一个优化issue，即在测试oss命令行工具ossutil时，不能按照文件的时间降序排序，只能，默认升序排序） 发现fluid的bug，即search.path写成了search_path 无法正常加载">
 <meta property="og:locale" content="zh_CN">
-<meta property="og:image" content="https://dwj-oss.oss-cn-nanjing.aliyuncs.com/web-imgs/img-artical/nginx.png">
-<meta property="article:published_time" content="2024-07-05T06:11:07.224Z">
-<meta property="article:modified_time" content="2024-07-05T06:25:37.834Z">
+<meta property="article:published_time" content="2025-01-19T08:45:53.100Z">
+<meta property="article:modified_time" content="2025-01-19T08:52:51.389Z">
 <meta property="article:author" content="Mr_Dwj">
 <meta property="article:tag" content="人工智能 机器学习 深度学习 算法 数据结构 计算机科学 编程">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:image" content="https://dwj-oss.oss-cn-nanjing.aliyuncs.com/web-imgs/img-artical/nginx.png">
   
   
     <meta name="referrer" content="no-referrer-when-downgrade">
   
   
-  <title>solve-nginx-reload-error | Dwj の Blog</title>
+  <title>hexo-optimize-local-search | Dwj の Blog</title>
 
   <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
 
@@ -248,7 +246,7 @@
       <div class="banner-text text-center fade-in-up">
         <div class="h2">
           
-            <span id="subtitle" data-typed-text="solve-nginx-reload-error"></span>
+            <span id="subtitle" data-typed-text="hexo-optimize-local-search"></span>
           
         </div>
 
@@ -259,8 +257,8 @@
     
       <span class="post-meta">
         <i class="iconfont icon-date-fill" aria-hidden="true"></i>
-        <time datetime="2024-07-05 14:11" pubdate>
-          2024年7月5日 下午
+        <time datetime="2025-01-19 16:45" pubdate>
+          2025年1月19日 下午
         </time>
       </span>
     
@@ -271,7 +269,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          549 字
+          379 字
         
       </span>
     
@@ -282,7 +280,7 @@
         
         
         
-          4 分钟
+          3 分钟
         
       </span>
     
@@ -341,12 +339,12 @@
       <div class="container nopadding-x-md" id="board-ctn">
         <div id="board">
           <article class="post-content mx-auto">
-            <h1 id="seo-header">solve-nginx-reload-error</h1>
+            <h1 id="seo-header">hexo-optimize-local-search</h1>
             
               <p id="updated-time" class="note note-info" style="">
                 
                   
-                    本文最后更新于 2024年7月5日 下午
+                    本文最后更新于 2025年1月19日 下午
                   
                 
               </p>
@@ -354,25 +352,14 @@
             
               <div class="markdown-body">
                 
-                <h1>解决 Nginx 重启报错</h1>
-<h2 id="前言">前言</h2>
-<p>SSL 证书过期后尝试更新证书。</p>
-<h2 id="复现">复现</h2>
-<p>重新上传 key 和 pem 文件后使用 <code>nginx -s reload</code> 命令尝试软重启 nginx，报错：</p>
-<figure class="highlight bash"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">nginx: [error] invalid PID number <span class="hljs-string">""</span> <span class="hljs-keyword">in</span> <span class="hljs-string">"/run/nginx.pid"</span><br></code></pre></td></tr></tbody></table></figure>
-<p>猜测应该是更新 nginx 后配置文件的路径被重置了，使用 <code>nginx -c "etc/nginx/nginx.conf"</code> 命令尝试更新配置文件路径，报错：</p>
-<figure class="highlight bash"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">nginx: [emerg] <span class="hljs-built_in">bind</span>() to 0.0.0.0:443 failed（98：Unknow Error）<br></code></pre></td></tr></tbody></table></figure>
-<p>猜测应该是 443 端口被占用</p>
-<h2 id="解决">解决</h2>
-<ul>
-<li>使用 <code>netstat -anon | grep 443</code> 命令检查 443 端口占用情况</li>
-<li>使用 <code>fuser -k 443/tcp</code> 命令杀死占用 443 端口的进程</li>
-<li>重新运行 <code>nginx -c "etc/nginx/nginx.conf"</code> 命令没有报错</li>
-<li>重新运行 <code>nginx -s reload</code> 命令没有报错，nginx 重启成功，网站可以使用 https 加密访问</li>
-</ul>
-<h2 id="参考">参考</h2>
-<p><a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/514997796">Nginx报错：nginx: [error] invalid PID number “” in “/run/nginx.pid” 解决方法</a></p>
-<p><a target="_blank" rel="noopener" href="https://blog.51cto.com/u_15127641/4114557">nginx: [emerg] bind() to 0.0.0.0:443 failed（98：Address already in use）解决方法</a></p>
+                <h2 id="解决跨域问题">解决跨域问题</h2>
+<p>服务器带宽配置</p>
+<p>影响文件下载速度</p>
+<p>修改local-search.xml的加载源（从小带宽的主机转换到OSS，发现OSS的带宽极大。。。，分别使用OSS的图像化工具与命令行工具，准备提出一个优化issue，即在测试oss命令行工具ossutil时，不能按照文件的时间降序排序，只能，默认升序排序）</p>
+<p>发现fluid的bug，即search.path写成了search_path</p>
+<p>无法正常加载OSS中的文件（可以正常的get到，即状态码为200，但是就是无法加载）发现是fluid发起的ajax（local-search.js）请求出现了跨域问题</p>
+<p>尝试解决跨域问题，进入OSS官方文档配置bucket：<a target="_blank" rel="noopener" href="https://help.aliyun.com/zh/oss/user-guide/cors-12/">https://help.aliyun.com/zh/oss/user-guide/cors-12/</a></p>
+<p>问题解决，瞬间加载完8MB的local-search.xml</p>
 
                 
               </div>
@@ -391,12 +378,12 @@
     
       <span class="category-chain">
         
-  <a href="/categories/Operation/" class="category-chain-item">Operation</a>
+  <a href="/categories/FrontEnd/" class="category-chain-item">FrontEnd</a>
   
   
     <span>></span>
     
-  <a href="/categories/Operation/Nginx/" class="category-chain-item">Nginx</a>
+  <a href="/categories/FrontEnd/Hexo/" class="category-chain-item">Hexo</a>
   
   
 
@@ -418,8 +405,8 @@
 
   <div class="license-box my-3">
     <div class="license-title">
-      <div>solve-nginx-reload-error</div>
-      <div>https://blog.dwj601.cn/Operation/Nginx/solve-nginx-reload-error/</div>
+      <div>hexo-optimize-local-search</div>
+      <div>https://blog.dwj601.cn/FrontEnd/Hexo/hexo-optimize-local-search/</div>
     </div>
     <div class="license-meta">
       
@@ -431,13 +418,13 @@
       
         <div class="license-meta-item license-meta-date">
           <div>发布于</div>
-          <div>2024年7月5日</div>
+          <div>2025年1月19日</div>
         </div>
       
       
         <div class="license-meta-item license-meta-date">
           <div>更新于</div>
-          <div>2024年7月5日</div>
+          <div>2025年1月19日</div>
         </div>
       
       
@@ -468,18 +455,12 @@
                   <article class="post-prev col-6">
                     
                     
-                      <a href="/GPA/1st-term/AdvancedMath/" title="高等数学（竞赛向）">
-                        <i class="iconfont icon-arrowleft"></i>
-                        <span class="hidden-mobile">高等数学（竞赛向）</span>
-                        <span class="visible-mobile">上一篇</span>
-                      </a>
-                    
                   </article>
                   <article class="post-next col-6">
                     
                     
-                      <a href="/DataScience/numpy-tutorial/" title="numpy-tutorial">
-                        <span class="hidden-mobile">numpy-tutorial</span>
+                      <a href="/GPA/6th-term/SmartEducation/" title="智慧教育">
+                        <span class="hidden-mobile">智慧教育</span>
                         <span class="visible-mobile">下一篇</span>
                         <i class="iconfont icon-arrowright"></i>
                       </a>
@@ -547,17 +528,17 @@
     
     <div class="category row nomargin-x">
       <a class="category-item 
-          list-group-item category-item-action col-10 col-md-11 col-xm-11" title="Operation"
-        id="heading-2a78ed76450c3cb42320882b3e055b31" role="tab" data-toggle="collapse" href="#collapse-2a78ed76450c3cb42320882b3e055b31"
+          list-group-item category-item-action col-10 col-md-11 col-xm-11" title="FrontEnd"
+        id="heading-d9340b0bafdac107e90b55ab622d6207" role="tab" data-toggle="collapse" href="#collapse-d9340b0bafdac107e90b55ab622d6207"
         aria-expanded="true"
       >
-        Operation
-        <span class="list-group-count">(9)</span>
+        FrontEnd
+        <span class="list-group-count">(15)</span>
         <i class="iconfont icon-arrowright"></i>
       </a>
       
-      <div class="category-collapse collapse show" id="collapse-2a78ed76450c3cb42320882b3e055b31"
-           role="tabpanel" aria-labelledby="heading-2a78ed76450c3cb42320882b3e055b31">
+      <div class="category-collapse collapse show" id="collapse-d9340b0bafdac107e90b55ab622d6207"
+           role="tabpanel" aria-labelledby="heading-d9340b0bafdac107e90b55ab622d6207">
         
         
           
@@ -567,33 +548,207 @@
     
       
       
-        <a href="/Operation/operation-guide/" title="operation-guide"
+        <a href="/FrontEnd/front-end-guide/" title="front-end-guide"
            class="list-group-item list-group-item-action
            ">
-          <span class="category-post">operation-guide</span>
+          <span class="category-post">front-end-guide</span>
         </a>
       
     
   </div>
 
           
+  
+    
+    
+    
+    <div class="category-sub row nomargin-x">
+      <a class="category-subitem collapsed
+          list-group-item category-item-action col-10 col-md-11 col-xm-11" title="CSS"
+        id="heading-2c56c360580420d293172f42d85dfbed" role="tab" data-toggle="collapse" href="#collapse-2c56c360580420d293172f42d85dfbed"
+        aria-expanded="false"
+      >
+        CSS
+        <span class="list-group-count">(2)</span>
+        <i class="iconfont icon-arrowright"></i>
+      </a>
+      
+      <div class="category-collapse collapse " id="collapse-2c56c360580420d293172f42d85dfbed"
+           role="tabpanel" aria-labelledby="heading-2c56c360580420d293172f42d85dfbed">
+        
+        
+          
+  <div class="category-post-list">
+    
+    
+      
+      
+        <a href="/FrontEnd/CSS/bootstrap/" title="bootstrap"
+           class="list-group-item list-group-item-action
+           ">
+          <span class="category-post">bootstrap</span>
+        </a>
+      
+    
+      
+      
+        <a href="/FrontEnd/CSS/css-basic/" title="css-basic"
+           class="list-group-item list-group-item-action
+           ">
+          <span class="category-post">css-basic</span>
+        </a>
+      
+    
+  </div>
+
+        
+      </div>
+    </div>
+  
+    
+    
+    
+    <div class="category-sub row nomargin-x">
+      <a class="category-subitem collapsed
+          list-group-item category-item-action col-10 col-md-11 col-xm-11" title="HTML"
+        id="heading-4c4ad5fca2e7a3f74dbb1ced00381aa4" role="tab" data-toggle="collapse" href="#collapse-4c4ad5fca2e7a3f74dbb1ced00381aa4"
+        aria-expanded="false"
+      >
+        HTML
+        <span class="list-group-count">(1)</span>
+        <i class="iconfont icon-arrowright"></i>
+      </a>
+      
+      <div class="category-collapse collapse " id="collapse-4c4ad5fca2e7a3f74dbb1ced00381aa4"
+           role="tabpanel" aria-labelledby="heading-4c4ad5fca2e7a3f74dbb1ced00381aa4">
+        
+        
+          
+  <div class="category-post-list">
+    
+    
+      
+      
+        <a href="/FrontEnd/HTML/html-basic/" title="html-basic"
+           class="list-group-item list-group-item-action
+           ">
+          <span class="category-post">html-basic</span>
+        </a>
+      
+    
+  </div>
+
+        
+      </div>
+    </div>
   
     
     
     
     <div class="category-sub row nomargin-x">
       <a class="category-subitem 
-          list-group-item category-item-action col-10 col-md-11 col-xm-11" title="Nginx"
-        id="heading-62e0b5b350c9e3d2c19aa801d9442ba9" role="tab" data-toggle="collapse" href="#collapse-62e0b5b350c9e3d2c19aa801d9442ba9"
+          list-group-item category-item-action col-10 col-md-11 col-xm-11" title="Hexo"
+        id="heading-c00d1eb68b529768ba98c975c76a9b66" role="tab" data-toggle="collapse" href="#collapse-c00d1eb68b529768ba98c975c76a9b66"
         aria-expanded="true"
       >
-        Nginx
+        Hexo
+        <span class="list-group-count">(7)</span>
+        <i class="iconfont icon-arrowright"></i>
+      </a>
+      
+      <div class="category-collapse collapse show" id="collapse-c00d1eb68b529768ba98c975c76a9b66"
+           role="tabpanel" aria-labelledby="heading-c00d1eb68b529768ba98c975c76a9b66">
+        
+        
+          
+  <div class="category-post-list">
+    
+    
+      
+      
+        <a href="/FrontEnd/Hexo/hexo-auto-deploy-to-server/" title="hexo-auto-deploy-to-server"
+           class="list-group-item list-group-item-action
+           ">
+          <span class="category-post">hexo-auto-deploy-to-server</span>
+        </a>
+      
+    
+      
+      
+        <a href="/FrontEnd/Hexo/hexo-config-mermaid/" title="hexo-config-mermaid"
+           class="list-group-item list-group-item-action
+           ">
+          <span class="category-post">hexo-config-mermaid</span>
+        </a>
+      
+    
+      
+      
+        <a href="/FrontEnd/Hexo/hexo-githubpages-domain/" title="hexo-githubpages-domain"
+           class="list-group-item list-group-item-action
+           ">
+          <span class="category-post">hexo-githubpages-domain</span>
+        </a>
+      
+    
+      
+      
+        <a href="/FrontEnd/Hexo/hexo-learning-record/" title="hexo-learning-record"
+           class="list-group-item list-group-item-action
+           ">
+          <span class="category-post">hexo-learning-record</span>
+        </a>
+      
+    
+      
+      
+        <a href="/FrontEnd/Hexo/hexo-migrate/" title="hexo-migrate"
+           class="list-group-item list-group-item-action
+           ">
+          <span class="category-post">hexo-migrate</span>
+        </a>
+      
+    
+      
+      
+        <a href="/FrontEnd/Hexo/hexo-optimize-local-search/" title="hexo-optimize-local-search"
+           class="list-group-item list-group-item-action
+           active">
+          <span class="category-post">hexo-optimize-local-search</span>
+        </a>
+      
+    
+      
+      
+        <a href="/FrontEnd/Hexo/why-hexo/" title="why-hexo"
+           class="list-group-item list-group-item-action
+           ">
+          <span class="category-post">why-hexo</span>
+        </a>
+      
+    
+  </div>
+
+        
+      </div>
+    </div>
+  
+    
+    
+    
+    <div class="category-sub row nomargin-x">
+      <a class="category-subitem collapsed
+          list-group-item category-item-action col-10 col-md-11 col-xm-11" title="JavaScript"
+        id="heading-686155af75a60a0f6e9d80c1f7edd3e9" role="tab" data-toggle="collapse" href="#collapse-686155af75a60a0f6e9d80c1f7edd3e9"
+        aria-expanded="false"
+      >
+        JavaScript
         <span class="list-group-count">(4)</span>
         <i class="iconfont icon-arrowright"></i>
       </a>
       
-      <div class="category-collapse collapse show" id="collapse-62e0b5b350c9e3d2c19aa801d9442ba9"
-           role="tabpanel" aria-labelledby="heading-62e0b5b350c9e3d2c19aa801d9442ba9">
+      <div class="category-collapse collapse " id="collapse-686155af75a60a0f6e9d80c1f7edd3e9"
+           role="tabpanel" aria-labelledby="heading-686155af75a60a0f6e9d80c1f7edd3e9">
         
         
           
@@ -602,129 +757,37 @@
     
       
       
-        <a href="/Operation/Nginx/nginx-basic/" title="nginx-basic"
+        <a href="/FrontEnd/JavaScript/javascript-basic/" title="javascript-basic"
            class="list-group-item list-group-item-action
            ">
-          <span class="category-post">nginx-basic</span>
+          <span class="category-post">javascript-basic</span>
         </a>
       
     
       
       
-        <a href="/Operation/Nginx/nginx-command/" title="nginx-command"
+        <a href="/FrontEnd/JavaScript/jquery/" title="jquery"
            class="list-group-item list-group-item-action
            ">
-          <span class="category-post">nginx-command</span>
+          <span class="category-post">jquery</span>
         </a>
       
     
       
       
-        <a href="/Operation/Nginx/solve-nginx-reload-error/" title="solve-nginx-reload-error"
+        <a href="/FrontEnd/JavaScript/react/" title="react"
            class="list-group-item list-group-item-action
-           active">
-          <span class="category-post">solve-nginx-reload-error</span>
+           ">
+          <span class="category-post">react</span>
         </a>
       
     
       
       
-        <a href="/Operation/Nginx/whereis-nginx/" title="whereis-nginx"
+        <a href="/FrontEnd/JavaScript/vue/" title="vue"
            class="list-group-item list-group-item-action
            ">
-          <span class="category-post">whereis-nginx</span>
-        </a>
-      
-    
-  </div>
-
-        
-      </div>
-    </div>
-  
-    
-    
-    
-    <div class="category-sub row nomargin-x">
-      <a class="category-subitem collapsed
-          list-group-item category-item-action col-10 col-md-11 col-xm-11" title="Safe"
-        id="heading-c6eea0560cd6f377e78dff2c85cc9122" role="tab" data-toggle="collapse" href="#collapse-c6eea0560cd6f377e78dff2c85cc9122"
-        aria-expanded="false"
-      >
-        Safe
-        <span class="list-group-count">(1)</span>
-        <i class="iconfont icon-arrowright"></i>
-      </a>
-      
-      <div class="category-collapse collapse " id="collapse-c6eea0560cd6f377e78dff2c85cc9122"
-           role="tabpanel" aria-labelledby="heading-c6eea0560cd6f377e78dff2c85cc9122">
-        
-        
-          
-  <div class="category-post-list">
-    
-    
-      
-      
-        <a href="/Operation/Safe/solve-server-invade/" title="solve-server-invade"
-           class="list-group-item list-group-item-action
-           ">
-          <span class="category-post">solve-server-invade</span>
-        </a>
-      
-    
-  </div>
-
-        
-      </div>
-    </div>
-  
-    
-    
-    
-    <div class="category-sub row nomargin-x">
-      <a class="category-subitem collapsed
-          list-group-item category-item-action col-10 col-md-11 col-xm-11" title="Shell"
-        id="heading-ea89b68c34ce4a63c0f77e17413c6e30" role="tab" data-toggle="collapse" href="#collapse-ea89b68c34ce4a63c0f77e17413c6e30"
-        aria-expanded="false"
-      >
-        Shell
-        <span class="list-group-count">(3)</span>
-        <i class="iconfont icon-arrowright"></i>
-      </a>
-      
-      <div class="category-collapse collapse " id="collapse-ea89b68c34ce4a63c0f77e17413c6e30"
-           role="tabpanel" aria-labelledby="heading-ea89b68c34ce4a63c0f77e17413c6e30">
-        
-        
-          
-  <div class="category-post-list">
-    
-    
-      
-      
-        <a href="/Operation/Shell/shell-basic/" title="shell-basic"
-           class="list-group-item list-group-item-action
-           ">
-          <span class="category-post">shell-basic</span>
-        </a>
-      
-    
-      
-      
-        <a href="/Operation/Shell/solve-shell-problems/" title="solve-shell-problems"
-           class="list-group-item list-group-item-action
-           ">
-          <span class="category-post">solve-shell-problems</span>
-        </a>
-      
-    
-      
-      
-        <a href="/Operation/Shell/ubuntu-guide/" title="ubuntu-guide"
-           class="list-group-item list-group-item-action
-           ">
-          <span class="category-post">ubuntu-guide</span>
+          <span class="category-post">vue</span>
         </a>
       
     
