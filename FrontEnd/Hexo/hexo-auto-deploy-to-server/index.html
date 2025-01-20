@@ -19,12 +19,12 @@
   <meta name="author" content="Mr_Dwj">
   <meta name="keywords" content="人工智能 机器学习 深度学习 算法 数据结构 计算机科学 编程">
   
-    <meta name="description" content="将 Hexo 项目部署到自己的云服务器并持续集成 前言 由于使用 Github Pages 服务访问速度过慢（因为托管的服务器在国外），使用 Gitee Pages 又不能自定义域名。故综合考虑还是部署到自己的国内服务器上。加上网上相关内容不是时间长远，就是环境不一，而且感觉都是一个人写完以后大家照着抄的，几乎都长一样。所以决定自己也整理一下（也抄一篇），并且补充相关原理。本篇博客将以阿里云 Ub">
+    <meta name="description" content="前言 由于使用 Github Pages 服务访问速度过慢（因为托管的服务器在国外），使用 Gitee Pages 又不能自定义域名。故综合考虑还是部署到自己的国内服务器上。加上网上相关内容不是时间长远，就是环境不一，而且感觉都是一个人写完以后大家照着抄的，几乎都长一样。所以决定自己也整理一下（也抄一篇），并且补充相关原理。本篇博客将以阿里云 Ubuntu22.04 为例，介绍如何将自己的 hex">
 <meta property="og:type" content="article">
-<meta property="og:title" content="hexo-auto-deploy-to-server">
+<meta property="og:title" content="将 Hexo 项目部署到自己的云服务器并持续集成">
 <meta property="og:url" content="https://blog.dwj601.cn/FrontEnd/Hexo/hexo-auto-deploy-to-server/index.html">
 <meta property="og:site_name" content="Dwj の Blog">
-<meta property="og:description" content="将 Hexo 项目部署到自己的云服务器并持续集成 前言 由于使用 Github Pages 服务访问速度过慢（因为托管的服务器在国外），使用 Gitee Pages 又不能自定义域名。故综合考虑还是部署到自己的国内服务器上。加上网上相关内容不是时间长远，就是环境不一，而且感觉都是一个人写完以后大家照着抄的，几乎都长一样。所以决定自己也整理一下（也抄一篇），并且补充相关原理。本篇博客将以阿里云 Ub">
+<meta property="og:description" content="前言 由于使用 Github Pages 服务访问速度过慢（因为托管的服务器在国外），使用 Gitee Pages 又不能自定义域名。故综合考虑还是部署到自己的国内服务器上。加上网上相关内容不是时间长远，就是环境不一，而且感觉都是一个人写完以后大家照着抄的，几乎都长一样。所以决定自己也整理一下（也抄一篇），并且补充相关原理。本篇博客将以阿里云 Ubuntu22.04 为例，介绍如何将自己的 hex">
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="https://dwj-oss.oss-cn-nanjing.aliyuncs.com/images/202404051247292.png">
 <meta property="og:image" content="https://dwj-oss.oss-cn-nanjing.aliyuncs.com/images/202404071758590.png">
@@ -34,7 +34,7 @@
 <meta property="og:image" content="https://dwj-oss.oss-cn-nanjing.aliyuncs.com/images/202404081614614.jpg">
 <meta property="og:image" content="https://dwj-oss.oss-cn-nanjing.aliyuncs.com/images/202404081642038.png">
 <meta property="article:published_time" content="2024-04-05T04:30:46.306Z">
-<meta property="article:modified_time" content="2024-06-15T13:28:37.657Z">
+<meta property="article:modified_time" content="2025-01-20T07:32:14.280Z">
 <meta property="article:author" content="Mr_Dwj">
 <meta property="article:tag" content="人工智能 机器学习 深度学习 算法 数据结构 计算机科学 编程">
 <meta name="twitter:card" content="summary_large_image">
@@ -44,7 +44,7 @@
     <meta name="referrer" content="no-referrer-when-downgrade">
   
   
-  <title>hexo-auto-deploy-to-server | Dwj の Blog</title>
+  <title>将 Hexo 项目部署到自己的云服务器并持续集成 | Dwj の Blog</title>
 
   <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
 
@@ -254,7 +254,7 @@
       <div class="banner-text text-center fade-in-up">
         <div class="h2">
           
-            <span id="subtitle" data-typed-text="hexo-auto-deploy-to-server"></span>
+            <span id="subtitle" data-typed-text="将 Hexo 项目部署到自己的云服务器并持续集成"></span>
           
         </div>
 
@@ -347,12 +347,12 @@
       <div class="container nopadding-x-md" id="board-ctn">
         <div id="board">
           <article class="post-content mx-auto">
-            <h1 id="seo-header">hexo-auto-deploy-to-server</h1>
+            <h1 id="seo-header">将 Hexo 项目部署到自己的云服务器并持续集成</h1>
             
               <p id="updated-time" class="note note-info" style="">
                 
                   
-                    本文最后更新于 2024年6月15日 晚上
+                    本文最后更新于 2025年1月20日 下午
                   
                 
               </p>
@@ -360,8 +360,7 @@
             
               <div class="markdown-body">
                 
-                <h1>将 Hexo 项目部署到自己的云服务器并持续集成</h1>
-<h2 id="前言">前言</h2>
+                <h2 id="前言">前言</h2>
 <p>由于使用 Github Pages 服务访问速度过慢（因为托管的服务器在国外），使用 Gitee Pages 又不能自定义域名。故综合考虑还是部署到自己的国内服务器上。加上网上相关内容不是时间长远，就是环境不一，而且感觉都是一个人写完以后大家照着抄的，几乎都长一样。所以决定自己也整理一下（也抄一篇），并且补充相关原理。本篇博客将以阿里云 Ubuntu22.04 为例，介绍如何将自己的 hexo 静态博客项目部署到属于自己的服务器上并持续集成。</p>
 <p>在开始之前，你应已具备以下条件：</p>
 <ul>
@@ -495,12 +494,12 @@
     
       <span class="category-chain">
         
-  <a href="/categories/FrontEnd/" class="category-chain-item">FrontEnd</a>
+  <a href="/categories/%E5%89%8D%E7%AB%AF/" class="category-chain-item">前端</a>
   
   
     <span>></span>
     
-  <a href="/categories/FrontEnd/Hexo/" class="category-chain-item">Hexo</a>
+  <a href="/categories/%E5%89%8D%E7%AB%AF/Hexo/" class="category-chain-item">Hexo</a>
   
   
 
@@ -522,7 +521,7 @@
 
   <div class="license-box my-3">
     <div class="license-title">
-      <div>hexo-auto-deploy-to-server</div>
+      <div>将 Hexo 项目部署到自己的云服务器并持续集成</div>
       <div>https://blog.dwj601.cn/FrontEnd/Hexo/hexo-auto-deploy-to-server/</div>
     </div>
     <div class="license-meta">
@@ -541,7 +540,7 @@
       
         <div class="license-meta-item license-meta-date">
           <div>更新于</div>
-          <div>2024年6月15日</div>
+          <div>2025年1月20日</div>
         </div>
       
       
@@ -572,9 +571,9 @@
                   <article class="post-prev col-6">
                     
                     
-                      <a href="/DevTools/jetbrains-license/" title="jetbrains-license">
+                      <a href="/FrontEnd/Hexo/why-hexo/" title="为什么选择 Hexo">
                         <i class="iconfont icon-arrowleft"></i>
-                        <span class="hidden-mobile">jetbrains-license</span>
+                        <span class="hidden-mobile">为什么选择 Hexo</span>
                         <span class="visible-mobile">上一篇</span>
                       </a>
                     
@@ -582,8 +581,8 @@
                   <article class="post-next col-6">
                     
                     
-                      <a href="/Operation/Nginx/whereis-nginx/" title="whereis-nginx">
-                        <span class="hidden-mobile">whereis-nginx</span>
+                      <a href="/Operation/Nginx/whereis-nginx/" title="使用 apt 安装 Nginx 后的软件包是如何布局的">
+                        <span class="hidden-mobile">使用 apt 安装 Nginx 后的软件包是如何布局的</span>
                         <span class="visible-mobile">下一篇</span>
                         <i class="iconfont icon-arrowright"></i>
                       </a>
@@ -651,17 +650,17 @@
     
     <div class="category row nomargin-x">
       <a class="category-item 
-          list-group-item category-item-action col-10 col-md-11 col-xm-11" title="FrontEnd"
-        id="heading-d9340b0bafdac107e90b55ab622d6207" role="tab" data-toggle="collapse" href="#collapse-d9340b0bafdac107e90b55ab622d6207"
+          list-group-item category-item-action col-10 col-md-11 col-xm-11" title="前端"
+        id="heading-9abfe4a03928eb88a75a5cd95822dfef" role="tab" data-toggle="collapse" href="#collapse-9abfe4a03928eb88a75a5cd95822dfef"
         aria-expanded="true"
       >
-        FrontEnd
-        <span class="list-group-count">(15)</span>
+        前端
+        <span class="list-group-count">(11)</span>
         <i class="iconfont icon-arrowright"></i>
       </a>
       
-      <div class="category-collapse collapse show" id="collapse-d9340b0bafdac107e90b55ab622d6207"
-           role="tabpanel" aria-labelledby="heading-d9340b0bafdac107e90b55ab622d6207">
+      <div class="category-collapse collapse show" id="collapse-9abfe4a03928eb88a75a5cd95822dfef"
+           role="tabpanel" aria-labelledby="heading-9abfe4a03928eb88a75a5cd95822dfef">
         
         
           
@@ -671,10 +670,10 @@
     
       
       
-        <a href="/FrontEnd/front-end-guide/" title="front-end-guide"
+        <a href="/FrontEnd/front-end-guide/" title="前端开发指南"
            class="list-group-item list-group-item-action
            ">
-          <span class="category-post">front-end-guide</span>
+          <span class="category-post">前端开发指南</span>
         </a>
       
     
@@ -692,7 +691,7 @@
         aria-expanded="false"
       >
         CSS
-        <span class="list-group-count">(2)</span>
+        <span class="list-group-count">(1)</span>
         <i class="iconfont icon-arrowright"></i>
       </a>
       
@@ -706,19 +705,10 @@
     
       
       
-        <a href="/FrontEnd/CSS/bootstrap/" title="bootstrap"
+        <a href="/FrontEnd/CSS/css-basic/" title="CSS 基础"
            class="list-group-item list-group-item-action
            ">
-          <span class="category-post">bootstrap</span>
-        </a>
-      
-    
-      
-      
-        <a href="/FrontEnd/CSS/css-basic/" title="css-basic"
-           class="list-group-item list-group-item-action
-           ">
-          <span class="category-post">css-basic</span>
+          <span class="category-post">CSS 基础</span>
         </a>
       
     
@@ -752,10 +742,10 @@
     
       
       
-        <a href="/FrontEnd/HTML/html-basic/" title="html-basic"
+        <a href="/FrontEnd/HTML/html-basic/" title="HTML 基础"
            class="list-group-item list-group-item-action
            ">
-          <span class="category-post">html-basic</span>
+          <span class="category-post">HTML 基础</span>
         </a>
       
     
@@ -789,64 +779,64 @@
     
       
       
-        <a href="/FrontEnd/Hexo/hexo-auto-deploy-to-server/" title="hexo-auto-deploy-to-server"
+        <a href="/FrontEnd/Hexo/hexo-enhance-local-search-with-oss/" title="用 OSS 增强 Hexo 的搜索功能"
+           class="list-group-item list-group-item-action
+           ">
+          <span class="category-post">用 OSS 增强 Hexo 的搜索功能</span>
+        </a>
+      
+    
+      
+      
+        <a href="/FrontEnd/Hexo/why-hexo/" title="为什么选择 Hexo"
+           class="list-group-item list-group-item-action
+           ">
+          <span class="category-post">为什么选择 Hexo</span>
+        </a>
+      
+    
+      
+      
+        <a href="/FrontEnd/Hexo/hexo-migrate/" title="Hexo 迁移指南"
+           class="list-group-item list-group-item-action
+           ">
+          <span class="category-post">Hexo 迁移指南</span>
+        </a>
+      
+    
+      
+      
+        <a href="/FrontEnd/Hexo/hexo-learning-record/" title="使用 Hexo 搭建属于自己的博客网站"
+           class="list-group-item list-group-item-action
+           ">
+          <span class="category-post">使用 Hexo 搭建属于自己的博客网站</span>
+        </a>
+      
+    
+      
+      
+        <a href="/FrontEnd/Hexo/hexo-githubpages-domain/" title="在 GitHub Pages 中使用自己的域名"
+           class="list-group-item list-group-item-action
+           ">
+          <span class="category-post">在 GitHub Pages 中使用自己的域名</span>
+        </a>
+      
+    
+      
+      
+        <a href="/FrontEnd/Hexo/hexo-config-mermaid/" title="Hexo 配置 mermaid"
+           class="list-group-item list-group-item-action
+           ">
+          <span class="category-post">Hexo 配置 mermaid</span>
+        </a>
+      
+    
+      
+      
+        <a href="/FrontEnd/Hexo/hexo-auto-deploy-to-server/" title="将 Hexo 项目部署到自己的云服务器并持续集成"
            class="list-group-item list-group-item-action
            active">
-          <span class="category-post">hexo-auto-deploy-to-server</span>
-        </a>
-      
-    
-      
-      
-        <a href="/FrontEnd/Hexo/hexo-config-mermaid/" title="hexo-config-mermaid"
-           class="list-group-item list-group-item-action
-           ">
-          <span class="category-post">hexo-config-mermaid</span>
-        </a>
-      
-    
-      
-      
-        <a href="/FrontEnd/Hexo/hexo-githubpages-domain/" title="hexo-githubpages-domain"
-           class="list-group-item list-group-item-action
-           ">
-          <span class="category-post">hexo-githubpages-domain</span>
-        </a>
-      
-    
-      
-      
-        <a href="/FrontEnd/Hexo/hexo-learning-record/" title="hexo-learning-record"
-           class="list-group-item list-group-item-action
-           ">
-          <span class="category-post">hexo-learning-record</span>
-        </a>
-      
-    
-      
-      
-        <a href="/FrontEnd/Hexo/hexo-migrate/" title="hexo-migrate"
-           class="list-group-item list-group-item-action
-           ">
-          <span class="category-post">hexo-migrate</span>
-        </a>
-      
-    
-      
-      
-        <a href="/FrontEnd/Hexo/why-hexo/" title="why-hexo"
-           class="list-group-item list-group-item-action
-           ">
-          <span class="category-post">why-hexo</span>
-        </a>
-      
-    
-      
-      
-        <a href="/FrontEnd/Hexo/hexo-enhance-local-search-with-oss/" title="用OSS增强Hexo的搜索功能"
-           class="list-group-item list-group-item-action
-           ">
-          <span class="category-post">用OSS增强Hexo的搜索功能</span>
+          <span class="category-post">将 Hexo 项目部署到自己的云服务器并持续集成</span>
         </a>
       
     
@@ -866,7 +856,7 @@
         aria-expanded="false"
       >
         JavaScript
-        <span class="list-group-count">(4)</span>
+        <span class="list-group-count">(1)</span>
         <i class="iconfont icon-arrowright"></i>
       </a>
       
@@ -880,37 +870,10 @@
     
       
       
-        <a href="/FrontEnd/JavaScript/javascript-basic/" title="javascript-basic"
+        <a href="/FrontEnd/JavaScript/javascript-basic/" title="JavaScrip 基础"
            class="list-group-item list-group-item-action
            ">
-          <span class="category-post">javascript-basic</span>
-        </a>
-      
-    
-      
-      
-        <a href="/FrontEnd/JavaScript/jquery/" title="jquery"
-           class="list-group-item list-group-item-action
-           ">
-          <span class="category-post">jquery</span>
-        </a>
-      
-    
-      
-      
-        <a href="/FrontEnd/JavaScript/react/" title="react"
-           class="list-group-item list-group-item-action
-           ">
-          <span class="category-post">react</span>
-        </a>
-      
-    
-      
-      
-        <a href="/FrontEnd/JavaScript/vue/" title="vue"
-           class="list-group-item list-group-item-action
-           ">
-          <span class="category-post">vue</span>
+          <span class="category-post">JavaScrip 基础</span>
         </a>
       
     

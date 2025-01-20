@@ -19,12 +19,12 @@
   <meta name="author" content="Mr_Dwj">
   <meta name="keywords" content="人工智能 机器学习 深度学习 算法 数据结构 计算机科学 编程">
   
-    <meta name="description" content="部署 Flask Flask 是使用 Python 作为后端语言的 Web 微框，旨在帮助开发者快速开发出一个小型网站。个人示例项目就采用了 Flask 框架，前端直接使用 Flask 自带的 Jinja2 进行渲染，数据库采用 MySQL。项目地址 YunJinWeb，下面为以此项目为 demo 进行云服务器部署的过程 远程连接服务器 服务器信息 1234567891011[root@DwjDe">
+    <meta name="description" content="前言 Flask 是使用 Python 作为后端语言的 Web 微框，旨在帮助开发者快速开发出一个小型网站。个人示例项目就采用了 Flask 框架，前端直接使用 Flask 自带的 Jinja2 进行渲染，数据库采用 MySQL。项目地址 YunJinWeb，下面为以此项目为 demo 进行云服务器部署的过程 远程连接服务器 服务器信息 1234567891011[root@DwjDemo1 ~]">
 <meta property="og:type" content="article">
-<meta property="og:title" content="deploy-flask">
+<meta property="og:title" content="部署 Flask 应用">
 <meta property="og:url" content="https://blog.dwj601.cn/BackEnd/Python/Flask/deploy-flask/index.html">
 <meta property="og:site_name" content="Dwj の Blog">
-<meta property="og:description" content="部署 Flask Flask 是使用 Python 作为后端语言的 Web 微框，旨在帮助开发者快速开发出一个小型网站。个人示例项目就采用了 Flask 框架，前端直接使用 Flask 自带的 Jinja2 进行渲染，数据库采用 MySQL。项目地址 YunJinWeb，下面为以此项目为 demo 进行云服务器部署的过程 远程连接服务器 服务器信息 1234567891011[root@DwjDe">
+<meta property="og:description" content="前言 Flask 是使用 Python 作为后端语言的 Web 微框，旨在帮助开发者快速开发出一个小型网站。个人示例项目就采用了 Flask 框架，前端直接使用 Flask 自带的 Jinja2 进行渲染，数据库采用 MySQL。项目地址 YunJinWeb，下面为以此项目为 demo 进行云服务器部署的过程 远程连接服务器 服务器信息 1234567891011[root@DwjDemo1 ~]">
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="https://dwj-oss.oss-cn-nanjing.aliyuncs.com/images/202401260126613.png">
 <meta property="og:image" content="https://dwj-oss.oss-cn-nanjing.aliyuncs.com/images/202401260126614.png">
@@ -33,7 +33,7 @@
 <meta property="og:image" content="https://dwj-oss.oss-cn-nanjing.aliyuncs.com/images/202401260126617.png">
 <meta property="og:image" content="https://dwj-oss.oss-cn-nanjing.aliyuncs.com/images/202401260126618.png">
 <meta property="article:published_time" content="2024-03-26T05:48:15.465Z">
-<meta property="article:modified_time" content="2024-09-21T11:27:42.439Z">
+<meta property="article:modified_time" content="2025-01-20T07:31:00.979Z">
 <meta property="article:author" content="Mr_Dwj">
 <meta property="article:tag" content="人工智能 机器学习 深度学习 算法 数据结构 计算机科学 编程">
 <meta name="twitter:card" content="summary_large_image">
@@ -43,7 +43,7 @@
     <meta name="referrer" content="no-referrer-when-downgrade">
   
   
-  <title>deploy-flask | Dwj の Blog</title>
+  <title>部署 Flask 应用 | Dwj の Blog</title>
 
   <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
 
@@ -253,7 +253,7 @@
       <div class="banner-text text-center fade-in-up">
         <div class="h2">
           
-            <span id="subtitle" data-typed-text="deploy-flask"></span>
+            <span id="subtitle" data-typed-text="部署 Flask 应用"></span>
           
         </div>
 
@@ -346,12 +346,12 @@
       <div class="container nopadding-x-md" id="board-ctn">
         <div id="board">
           <article class="post-content mx-auto">
-            <h1 id="seo-header">deploy-flask</h1>
+            <h1 id="seo-header">部署 Flask 应用</h1>
             
               <p id="updated-time" class="note note-info" style="">
                 
                   
-                    本文最后更新于 2024年9月21日 晚上
+                    本文最后更新于 2025年1月20日 下午
                   
                 
               </p>
@@ -359,7 +359,7 @@
             
               <div class="markdown-body">
                 
-                <h2 id="部署-Flask">部署 Flask</h2>
+                <h2 id="前言">前言</h2>
 <p>Flask 是使用 Python 作为后端语言的 Web 微框，旨在帮助开发者快速开发出一个小型网站。个人示例项目就采用了 Flask 框架，前端直接使用 Flask 自带的 Jinja2 进行渲染，数据库采用 MySQL。项目地址 <a target="_blank" rel="noopener" href="https://github.com/Explorer-Dong/YunJinWeb">YunJinWeb</a>，下面为以此项目为 demo 进行云服务器部署的过程</p>
 <h2 id="远程连接服务器">远程连接服务器</h2>
 <p>服务器信息</p>
@@ -545,17 +545,17 @@
     
       <span class="category-chain">
         
-  <a href="/categories/BackEnd/" class="category-chain-item">BackEnd</a>
+  <a href="/categories/%E5%90%8E%E7%AB%AF/" class="category-chain-item">后端</a>
   
   
     <span>></span>
     
-  <a href="/categories/BackEnd/Python/" class="category-chain-item">Python</a>
+  <a href="/categories/%E5%90%8E%E7%AB%AF/Python/" class="category-chain-item">Python</a>
   
   
     <span>></span>
     
-  <a href="/categories/BackEnd/Python/Flask/" class="category-chain-item">Flask</a>
+  <a href="/categories/%E5%90%8E%E7%AB%AF/Python/Flask/" class="category-chain-item">Flask</a>
   
   
 
@@ -579,7 +579,7 @@
 
   <div class="license-box my-3">
     <div class="license-title">
-      <div>deploy-flask</div>
+      <div>部署 Flask 应用</div>
       <div>https://blog.dwj601.cn/BackEnd/Python/Flask/deploy-flask/</div>
     </div>
     <div class="license-meta">
@@ -598,7 +598,7 @@
       
         <div class="license-meta-item license-meta-date">
           <div>更新于</div>
-          <div>2024年9月21日</div>
+          <div>2025年1月20日</div>
         </div>
       
       
@@ -629,9 +629,9 @@
                   <article class="post-prev col-6">
                     
                     
-                      <a href="/DataBase/MySQL/solve-mysql-problems/" title="solve-mysql-problems">
+                      <a href="/DataBase/MySQL/solve-mysql-problems/" title="解决 MySQL 相关问题">
                         <i class="iconfont icon-arrowleft"></i>
-                        <span class="hidden-mobile">solve-mysql-problems</span>
+                        <span class="hidden-mobile">解决 MySQL 相关问题</span>
                         <span class="visible-mobile">上一篇</span>
                       </a>
                     
@@ -639,8 +639,8 @@
                   <article class="post-next col-6">
                     
                     
-                      <a href="/Operation/operation-guide/" title="operation-guide">
-                        <span class="hidden-mobile">operation-guide</span>
+                      <a href="/Operation/operation-guide/" title="运维指南">
+                        <span class="hidden-mobile">运维指南</span>
                         <span class="visible-mobile">下一篇</span>
                         <i class="iconfont icon-arrowright"></i>
                       </a>
@@ -708,17 +708,17 @@
     
     <div class="category row nomargin-x">
       <a class="category-item 
-          list-group-item category-item-action col-10 col-md-11 col-xm-11" title="BackEnd"
-        id="heading-2ef1323c08ddc2382d250091a0d76917" role="tab" data-toggle="collapse" href="#collapse-2ef1323c08ddc2382d250091a0d76917"
+          list-group-item category-item-action col-10 col-md-11 col-xm-11" title="后端"
+        id="heading-e778d61ae403fbb16e643ebfd764d320" role="tab" data-toggle="collapse" href="#collapse-e778d61ae403fbb16e643ebfd764d320"
         aria-expanded="true"
       >
-        BackEnd
-        <span class="list-group-count">(5)</span>
+        后端
+        <span class="list-group-count">(4)</span>
         <i class="iconfont icon-arrowright"></i>
       </a>
       
-      <div class="category-collapse collapse show" id="collapse-2ef1323c08ddc2382d250091a0d76917"
-           role="tabpanel" aria-labelledby="heading-2ef1323c08ddc2382d250091a0d76917">
+      <div class="category-collapse collapse show" id="collapse-e778d61ae403fbb16e643ebfd764d320"
+           role="tabpanel" aria-labelledby="heading-e778d61ae403fbb16e643ebfd764d320">
         
         
           
@@ -728,10 +728,10 @@
     
       
       
-        <a href="/BackEnd/back-end-guide/" title="back-end-guide"
+        <a href="/BackEnd/back-end-guide/" title="后端开发指南"
            class="list-group-item list-group-item-action
            ">
-          <span class="category-post">back-end-guide</span>
+          <span class="category-post">后端开发指南</span>
         </a>
       
     
@@ -749,7 +749,7 @@
         aria-expanded="false"
       >
         CPlusPlus
-        <span class="list-group-count">(2)</span>
+        <span class="list-group-count">(1)</span>
         <i class="iconfont icon-arrowright"></i>
       </a>
       
@@ -758,60 +758,20 @@
         
         
           
-          
   <div class="category-post-list">
     
     
       
       
-        <a href="/BackEnd/CPlusPlus/cpp-basic/" title="cpp-basic"
+        <a href="/BackEnd/CPlusPlus/cpp-basic/" title="C++ 基础"
            class="list-group-item list-group-item-action
            ">
-          <span class="category-post">cpp-basic</span>
+          <span class="category-post">C++ 基础</span>
         </a>
       
     
   </div>
 
-          
-  
-    
-    
-    
-    <div class="category-sub row nomargin-x">
-      <a class="category-subitem collapsed
-          list-group-item category-item-action col-10 col-md-11 col-xm-11" title="Crow"
-        id="heading-514d599e28bd70c2373fcd66bcbc9227" role="tab" data-toggle="collapse" href="#collapse-514d599e28bd70c2373fcd66bcbc9227"
-        aria-expanded="false"
-      >
-        Crow
-        <span class="list-group-count">(1)</span>
-        <i class="iconfont icon-arrowright"></i>
-      </a>
-      
-      <div class="category-collapse collapse " id="collapse-514d599e28bd70c2373fcd66bcbc9227"
-           role="tabpanel" aria-labelledby="heading-514d599e28bd70c2373fcd66bcbc9227">
-        
-        
-          
-  <div class="category-post-list">
-    
-    
-      
-      
-        <a href="/BackEnd/CPlusPlus/Crow/crow-basic/" title="crow-basic"
-           class="list-group-item list-group-item-action
-           ">
-          <span class="category-post">crow-basic</span>
-        </a>
-      
-    
-  </div>
-
-        
-      </div>
-    </div>
-  
         
       </div>
     </div>
@@ -841,10 +801,10 @@
     
       
       
-        <a href="/BackEnd/Python/python-basic/" title="python-basic"
+        <a href="/BackEnd/Python/python-basic/" title="Python 基础"
            class="list-group-item list-group-item-action
            ">
-          <span class="category-post">python-basic</span>
+          <span class="category-post">Python 基础</span>
         </a>
       
     
@@ -876,10 +836,10 @@
     
       
       
-        <a href="/BackEnd/Python/Flask/deploy-flask/" title="deploy-flask"
+        <a href="/BackEnd/Python/Flask/deploy-flask/" title="部署 Flask 应用"
            class="list-group-item list-group-item-action
            active">
-          <span class="category-post">deploy-flask</span>
+          <span class="category-post">部署 Flask 应用</span>
         </a>
       
     

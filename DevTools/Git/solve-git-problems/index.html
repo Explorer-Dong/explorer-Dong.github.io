@@ -19,12 +19,12 @@
   <meta name="author" content="Mr_Dwj">
   <meta name="keywords" content="人工智能 机器学习 深度学习 算法 数据结构 计算机科学 编程">
   
-    <meta name="description" content="解决 Git 相关问题 解决 git 分支冲突 一、前言 一直习惯于 add commit push 的三步走，偶然间看到了一个评论说在 push 之前还有一个 pull，小小的疑问就埋在了我的心里。于是我就先了解了 pull 的工作原理，就是先拉取代码（fetch）再合并分支（merge）的过程，简而言之就是在本地进行项目编写时，他人也在其他地方进行项目编写并且提前进行了 push 操作，使得当">
+    <meta name="description" content="前言 本文记录使用 git 的过程中遇到的一些问题以及对应的解决方法。 解决 git 分支冲突 一、前言 一直习惯于 add commit push 的三步走，偶然间看到了一个评论说在 push 之前还有一个 pull，小小的疑问就埋在了我的心里。于是我就先了解了 pull 的工作原理，就是先拉取代码（fetch）再合并分支（merge）的过程，简而言之就是在本地进行项目编写时，他人也在其他地方进">
 <meta property="og:type" content="article">
-<meta property="og:title" content="solve-git-problems">
+<meta property="og:title" content="解决 Git 相关问题">
 <meta property="og:url" content="https://blog.dwj601.cn/DevTools/Git/solve-git-problems/index.html">
 <meta property="og:site_name" content="Dwj の Blog">
-<meta property="og:description" content="解决 Git 相关问题 解决 git 分支冲突 一、前言 一直习惯于 add commit push 的三步走，偶然间看到了一个评论说在 push 之前还有一个 pull，小小的疑问就埋在了我的心里。于是我就先了解了 pull 的工作原理，就是先拉取代码（fetch）再合并分支（merge）的过程，简而言之就是在本地进行项目编写时，他人也在其他地方进行项目编写并且提前进行了 push 操作，使得当">
+<meta property="og:description" content="前言 本文记录使用 git 的过程中遇到的一些问题以及对应的解决方法。 解决 git 分支冲突 一、前言 一直习惯于 add commit push 的三步走，偶然间看到了一个评论说在 push 之前还有一个 pull，小小的疑问就埋在了我的心里。于是我就先了解了 pull 的工作原理，就是先拉取代码（fetch）再合并分支（merge）的过程，简而言之就是在本地进行项目编写时，他人也在其他地方进">
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="https://dwj-oss.oss-cn-nanjing.aliyuncs.com/images/202402270029674.png">
 <meta property="og:image" content="https://dwj-oss.oss-cn-nanjing.aliyuncs.com/images/202402270029675.png">
@@ -51,7 +51,7 @@
 <meta property="og:image" content="https://dwj-oss.oss-cn-nanjing.aliyuncs.com/images/202402270029697.png">
 <meta property="og:image" content="https://dwj-oss.oss-cn-nanjing.aliyuncs.com/images/202409010902437.png">
 <meta property="article:published_time" content="2024-08-31T15:13:06.454Z">
-<meta property="article:modified_time" content="2024-09-01T01:03:02.768Z">
+<meta property="article:modified_time" content="2025-01-20T07:29:43.437Z">
 <meta property="article:author" content="Mr_Dwj">
 <meta property="article:tag" content="人工智能 机器学习 深度学习 算法 数据结构 计算机科学 编程">
 <meta name="twitter:card" content="summary_large_image">
@@ -61,7 +61,7 @@
     <meta name="referrer" content="no-referrer-when-downgrade">
   
   
-  <title>solve-git-problems | Dwj の Blog</title>
+  <title>解决 Git 相关问题 | Dwj の Blog</title>
 
   <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
 
@@ -271,7 +271,7 @@
       <div class="banner-text text-center fade-in-up">
         <div class="h2">
           
-            <span id="subtitle" data-typed-text="solve-git-problems"></span>
+            <span id="subtitle" data-typed-text="解决 Git 相关问题"></span>
           
         </div>
 
@@ -364,12 +364,12 @@
       <div class="container nopadding-x-md" id="board-ctn">
         <div id="board">
           <article class="post-content mx-auto">
-            <h1 id="seo-header">solve-git-problems</h1>
+            <h1 id="seo-header">解决 Git 相关问题</h1>
             
               <p id="updated-time" class="note note-info" style="">
                 
                   
-                    本文最后更新于 2024年9月1日 上午
+                    本文最后更新于 2025年1月20日 下午
                   
                 
               </p>
@@ -377,7 +377,8 @@
             
               <div class="markdown-body">
                 
-                <h2 id="解决-Git-相关问题">解决 Git 相关问题</h2>
+                <h2 id="前言">前言</h2>
+<p>本文记录使用 git 的过程中遇到的一些问题以及对应的解决方法。</p>
 <h2 id="解决-git-分支冲突">解决 git 分支冲突</h2>
 <h3 id="一、前言">一、前言</h3>
 <p>一直习惯于 add commit push 的三步走，偶然间看到了一个评论说在 push 之前还有一个 pull，小小的疑问就埋在了我的心里。于是我就先了解了 pull 的工作原理，就是先拉取代码（fetch）再合并分支（merge）的过程，简而言之就是在本地进行项目编写时，他人也在其他地方进行项目编写并且提前进行了 push 操作，使得当前的云端文件比我克隆下来的文件版本更加新，那么进行合并就会因为冲突被拒绝（rejected）。因此才需要先更新项目（pull），再进行我的 push。那么问题来了，如果别人编写的内容与我编写的内容在源文件的同一个地方，那不就出问题了吗？！于是有了这篇文章</p>
@@ -465,12 +466,12 @@
     
       <span class="category-chain">
         
-  <a href="/categories/DevTools/" class="category-chain-item">DevTools</a>
+  <a href="/categories/%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/" class="category-chain-item">开发工具</a>
   
   
     <span>></span>
     
-  <a href="/categories/DevTools/Git/" class="category-chain-item">Git</a>
+  <a href="/categories/%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/Git/" class="category-chain-item">Git</a>
   
   
 
@@ -492,7 +493,7 @@
 
   <div class="license-box my-3">
     <div class="license-title">
-      <div>solve-git-problems</div>
+      <div>解决 Git 相关问题</div>
       <div>https://blog.dwj601.cn/DevTools/Git/solve-git-problems/</div>
     </div>
     <div class="license-meta">
@@ -511,7 +512,7 @@
       
         <div class="license-meta-item license-meta-date">
           <div>更新于</div>
-          <div>2024年9月1日</div>
+          <div>2025年1月20日</div>
         </div>
       
       
@@ -542,9 +543,9 @@
                   <article class="post-prev col-6">
                     
                     
-                      <a href="/FrontEnd/Hexo/hexo-config-mermaid/" title="hexo-config-mermaid">
+                      <a href="/FrontEnd/Hexo/hexo-config-mermaid/" title="Hexo 配置 mermaid">
                         <i class="iconfont icon-arrowleft"></i>
-                        <span class="hidden-mobile">hexo-config-mermaid</span>
+                        <span class="hidden-mobile">Hexo 配置 mermaid</span>
                         <span class="visible-mobile">上一篇</span>
                       </a>
                     
@@ -552,8 +553,8 @@
                   <article class="post-next col-6">
                     
                     
-                      <a href="/BackEnd/CPlusPlus/Crow/crow-basic/" title="crow-basic">
-                        <span class="hidden-mobile">crow-basic</span>
+                      <a href="/DataBase/Redis/redis-basic/" title="Redis 基础">
+                        <span class="hidden-mobile">Redis 基础</span>
                         <span class="visible-mobile">下一篇</span>
                         <i class="iconfont icon-arrowright"></i>
                       </a>
@@ -621,32 +622,23 @@
     
     <div class="category row nomargin-x">
       <a class="category-item 
-          list-group-item category-item-action col-10 col-md-11 col-xm-11" title="DevTools"
-        id="heading-482a4dca0bbd8fcdda5acc6f95f3c279" role="tab" data-toggle="collapse" href="#collapse-482a4dca0bbd8fcdda5acc6f95f3c279"
+          list-group-item category-item-action col-10 col-md-11 col-xm-11" title="开发工具"
+        id="heading-2c509530bf439a36168a86e21c160c06" role="tab" data-toggle="collapse" href="#collapse-2c509530bf439a36168a86e21c160c06"
         aria-expanded="true"
       >
-        DevTools
-        <span class="list-group-count">(10)</span>
+        开发工具
+        <span class="list-group-count">(8)</span>
         <i class="iconfont icon-arrowright"></i>
       </a>
       
-      <div class="category-collapse collapse show" id="collapse-482a4dca0bbd8fcdda5acc6f95f3c279"
-           role="tabpanel" aria-labelledby="heading-482a4dca0bbd8fcdda5acc6f95f3c279">
+      <div class="category-collapse collapse show" id="collapse-2c509530bf439a36168a86e21c160c06"
+           role="tabpanel" aria-labelledby="heading-2c509530bf439a36168a86e21c160c06">
         
         
           
           
   <div class="category-post-list">
     
-    
-      
-      
-        <a href="/DevTools/jetbrains-license/" title="jetbrains-license"
-           class="list-group-item list-group-item-action
-           ">
-          <span class="category-post">jetbrains-license</span>
-        </a>
-      
     
   </div>
 
@@ -676,65 +668,28 @@
     
       
       
-        <a href="/DevTools/CLion/config-clion/" title="config-clion"
+        <a href="/DevTools/CLion/solve-clion-decoding-error/" title="CLion 解决中文输出乱码的问题"
            class="list-group-item list-group-item-action
            ">
-          <span class="category-post">config-clion</span>
+          <span class="category-post">CLion 解决中文输出乱码的问题</span>
         </a>
       
     
       
       
-        <a href="/DevTools/CLion/solve-clion-cannot-open-relative-file/" title="solve-clion-cannot-open-relative-file"
+        <a href="/DevTools/CLion/solve-clion-cannot-open-relative-file/" title="CLion 解决无法打开文件的问题"
            class="list-group-item list-group-item-action
            ">
-          <span class="category-post">solve-clion-cannot-open-relative-file</span>
+          <span class="category-post">CLion 解决无法打开文件的问题</span>
         </a>
       
     
       
       
-        <a href="/DevTools/CLion/solve-clion-decoding-error/" title="solve-clion-decoding-error"
+        <a href="/DevTools/CLion/config-clion/" title="CLion 配置指南"
            class="list-group-item list-group-item-action
            ">
-          <span class="category-post">solve-clion-decoding-error</span>
-        </a>
-      
-    
-  </div>
-
-        
-      </div>
-    </div>
-  
-    
-    
-    
-    <div class="category-sub row nomargin-x">
-      <a class="category-subitem collapsed
-          list-group-item category-item-action col-10 col-md-11 col-xm-11" title="DevCpp"
-        id="heading-86f596ad3a8e0ab4ac9d39fff05e7724" role="tab" data-toggle="collapse" href="#collapse-86f596ad3a8e0ab4ac9d39fff05e7724"
-        aria-expanded="false"
-      >
-        DevCpp
-        <span class="list-group-count">(1)</span>
-        <i class="iconfont icon-arrowright"></i>
-      </a>
-      
-      <div class="category-collapse collapse " id="collapse-86f596ad3a8e0ab4ac9d39fff05e7724"
-           role="tabpanel" aria-labelledby="heading-86f596ad3a8e0ab4ac9d39fff05e7724">
-        
-        
-          
-  <div class="category-post-list">
-    
-    
-      
-      
-        <a href="/DevTools/DevCpp/devc-self-config/" title="self-config"
-           class="list-group-item list-group-item-action
-           ">
-          <span class="category-post">self-config</span>
+          <span class="category-post">CLion 配置指南</span>
         </a>
       
     
@@ -768,37 +723,37 @@
     
       
       
-        <a href="/DevTools/Git/git-basic/" title="git-basic"
-           class="list-group-item list-group-item-action
-           ">
-          <span class="category-post">git-basic</span>
-        </a>
-      
-    
-      
-      
-        <a href="/DevTools/Git/git-pull-request/" title="git-pull-request"
-           class="list-group-item list-group-item-action
-           ">
-          <span class="category-post">git-pull-request</span>
-        </a>
-      
-    
-      
-      
-        <a href="/DevTools/Git/git-self-define-command/" title="git-self-define-command"
-           class="list-group-item list-group-item-action
-           ">
-          <span class="category-post">git-self-define-command</span>
-        </a>
-      
-    
-      
-      
-        <a href="/DevTools/Git/solve-git-problems/" title="solve-git-problems"
+        <a href="/DevTools/Git/solve-git-problems/" title="解决 Git 相关问题"
            class="list-group-item list-group-item-action
            active">
-          <span class="category-post">solve-git-problems</span>
+          <span class="category-post">解决 Git 相关问题</span>
+        </a>
+      
+    
+      
+      
+        <a href="/DevTools/Git/git-self-define-command/" title="Git 自定义命令"
+           class="list-group-item list-group-item-action
+           ">
+          <span class="category-post">Git 自定义命令</span>
+        </a>
+      
+    
+      
+      
+        <a href="/DevTools/Git/git-pull-request/" title="Git 的 Pull Request 是什么"
+           class="list-group-item list-group-item-action
+           ">
+          <span class="category-post">Git 的 Pull Request 是什么</span>
+        </a>
+      
+    
+      
+      
+        <a href="/DevTools/Git/git-basic/" title="Git 指南大全"
+           class="list-group-item list-group-item-action
+           ">
+          <span class="category-post">Git 指南大全</span>
         </a>
       
     
@@ -832,10 +787,10 @@
     
       
       
-        <a href="/DevTools/IDLE/idle-self-config/" title="idle-self-config"
+        <a href="/DevTools/IDLE/idle-self-config/" title="IDLE 偏好配置"
            class="list-group-item list-group-item-action
            ">
-          <span class="category-post">idle-self-config</span>
+          <span class="category-post">IDLE 偏好配置</span>
         </a>
       
     

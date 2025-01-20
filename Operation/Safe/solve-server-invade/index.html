@@ -19,12 +19,12 @@
   <meta name="author" content="Mr_Dwj">
   <meta name="keywords" content="人工智能 机器学习 深度学习 算法 数据结构 计算机科学 编程">
   
-    <meta name="description" content="解决服务器入侵攻击 刚想登录阿里云看看云 GPU 怎么租的，结果给我报了个安全问题。平时都是直接忽略，今天有兴致看了一眼，不看不知道一看吓一跳，尼玛被一个从没去过且没有挂 VPN 的 IP 登陆了。虽然不是 root 用户登的并且机子上也没啥机密文件，但是还是有一种被人看光的感觉。他爹的，我也不知道该怎么报复，记录一下修复的过程 一、确认被入侵 本来的公钥文件 authorized_keys 没了">
+    <meta name="description" content="前言 刚想登录阿里云看看云 GPU 怎么租的，结果给我报了个安全问题。平时都是直接忽略，今天有兴致看了一眼，不看不知道一看吓一跳，尼玛被一个从没去过且没有挂 VPN 的 IP 登陆了。虽然不是 root 用户登的并且机子上也没啥机密文件，但是还是有一种被人看光的感觉。他爹的，我也不知道该怎么报复，记录一下修复的过程 一、确认被入侵 本来的公钥文件 authorized_keys 没了：  本地进行">
 <meta property="og:type" content="article">
-<meta property="og:title" content="solve-server-invade">
+<meta property="og:title" content="解决服务器入侵攻击">
 <meta property="og:url" content="https://blog.dwj601.cn/Operation/Safe/solve-server-invade/index.html">
 <meta property="og:site_name" content="Dwj の Blog">
-<meta property="og:description" content="解决服务器入侵攻击 刚想登录阿里云看看云 GPU 怎么租的，结果给我报了个安全问题。平时都是直接忽略，今天有兴致看了一眼，不看不知道一看吓一跳，尼玛被一个从没去过且没有挂 VPN 的 IP 登陆了。虽然不是 root 用户登的并且机子上也没啥机密文件，但是还是有一种被人看光的感觉。他爹的，我也不知道该怎么报复，记录一下修复的过程 一、确认被入侵 本来的公钥文件 authorized_keys 没了">
+<meta property="og:description" content="前言 刚想登录阿里云看看云 GPU 怎么租的，结果给我报了个安全问题。平时都是直接忽略，今天有兴致看了一眼，不看不知道一看吓一跳，尼玛被一个从没去过且没有挂 VPN 的 IP 登陆了。虽然不是 root 用户登的并且机子上也没啥机密文件，但是还是有一种被人看光的感觉。他爹的，我也不知道该怎么报复，记录一下修复的过程 一、确认被入侵 本来的公钥文件 authorized_keys 没了：  本地进行">
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="https://dwj-oss.oss-cn-nanjing.aliyuncs.com/images/202406152117426.png">
 <meta property="og:image" content="https://dwj-oss.oss-cn-nanjing.aliyuncs.com/images/202406152121682.png">
@@ -32,7 +32,7 @@
 <meta property="og:image" content="https://dwj-oss.oss-cn-nanjing.aliyuncs.com/images/202406152152670.png">
 <meta property="og:image" content="https://dwj-oss.oss-cn-nanjing.aliyuncs.com/images/202406152158086.png">
 <meta property="article:published_time" content="2024-06-15T12:40:50.514Z">
-<meta property="article:modified_time" content="2024-06-28T15:25:27.712Z">
+<meta property="article:modified_time" content="2025-01-20T07:37:20.058Z">
 <meta property="article:author" content="Mr_Dwj">
 <meta property="article:tag" content="人工智能 机器学习 深度学习 算法 数据结构 计算机科学 编程">
 <meta name="twitter:card" content="summary_large_image">
@@ -42,7 +42,7 @@
     <meta name="referrer" content="no-referrer-when-downgrade">
   
   
-  <title>solve-server-invade | Dwj の Blog</title>
+  <title>解决服务器入侵攻击 | Dwj の Blog</title>
 
   <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
 
@@ -252,7 +252,7 @@
       <div class="banner-text text-center fade-in-up">
         <div class="h2">
           
-            <span id="subtitle" data-typed-text="solve-server-invade"></span>
+            <span id="subtitle" data-typed-text="解决服务器入侵攻击"></span>
           
         </div>
 
@@ -275,7 +275,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          824 字
+          817 字
         
       </span>
     
@@ -345,12 +345,12 @@
       <div class="container nopadding-x-md" id="board-ctn">
         <div id="board">
           <article class="post-content mx-auto">
-            <h1 id="seo-header">solve-server-invade</h1>
+            <h1 id="seo-header">解决服务器入侵攻击</h1>
             
               <p id="updated-time" class="note note-info" style="">
                 
                   
-                    本文最后更新于 2024年6月28日 晚上
+                    本文最后更新于 2025年1月20日 下午
                   
                 
               </p>
@@ -358,7 +358,7 @@
             
               <div class="markdown-body">
                 
-                <h2 id="解决服务器入侵攻击">解决服务器入侵攻击</h2>
+                <h2 id="前言">前言</h2>
 <p>刚想登录阿里云看看云 GPU 怎么租的，结果给我报了个安全问题。平时都是直接忽略，今天有兴致看了一眼，不看不知道一看吓一跳，尼玛被一个从没去过且没有挂 VPN 的 IP 登陆了。虽然不是 root 用户登的并且机子上也没啥机密文件，但是还是有一种被人看光的感觉。他爹的，我也不知道该怎么报复，记录一下修复的过程</p>
 <h3 id="一、确认被入侵">一、确认被入侵</h3>
 <p>本来的公钥文件 <code>authorized_keys</code> 没了：</p>
@@ -407,12 +407,12 @@
     
       <span class="category-chain">
         
-  <a href="/categories/Operation/" class="category-chain-item">Operation</a>
+  <a href="/categories/%E8%BF%90%E7%BB%B4/" class="category-chain-item">运维</a>
   
   
     <span>></span>
     
-  <a href="/categories/Operation/Safe/" class="category-chain-item">Safe</a>
+  <a href="/categories/%E8%BF%90%E7%BB%B4/Safe/" class="category-chain-item">Safe</a>
   
   
 
@@ -434,7 +434,7 @@
 
   <div class="license-box my-3">
     <div class="license-title">
-      <div>solve-server-invade</div>
+      <div>解决服务器入侵攻击</div>
       <div>https://blog.dwj601.cn/Operation/Safe/solve-server-invade/</div>
     </div>
     <div class="license-meta">
@@ -453,7 +453,7 @@
       
         <div class="license-meta-item license-meta-date">
           <div>更新于</div>
-          <div>2024年6月28日</div>
+          <div>2025年1月20日</div>
         </div>
       
       
@@ -484,9 +484,9 @@
                   <article class="post-prev col-6">
                     
                     
-                      <a href="/DataScience/numpy-tutorial/" title="numpy-tutorial">
+                      <a href="/DataScience/numpy-tutorial/" title="numpy 入门指南">
                         <i class="iconfont icon-arrowleft"></i>
-                        <span class="hidden-mobile">numpy-tutorial</span>
+                        <span class="hidden-mobile">numpy 入门指南</span>
                         <span class="visible-mobile">上一篇</span>
                       </a>
                     
@@ -494,8 +494,8 @@
                   <article class="post-next col-6">
                     
                     
-                      <a href="/DevTools/Git/git-pull-request/" title="git-pull-request">
-                        <span class="hidden-mobile">git-pull-request</span>
+                      <a href="/DevTools/Git/git-pull-request/" title="Git 的 Pull Request 是什么">
+                        <span class="hidden-mobile">Git 的 Pull Request 是什么</span>
                         <span class="visible-mobile">下一篇</span>
                         <i class="iconfont icon-arrowright"></i>
                       </a>
@@ -563,17 +563,17 @@
     
     <div class="category row nomargin-x">
       <a class="category-item 
-          list-group-item category-item-action col-10 col-md-11 col-xm-11" title="Operation"
-        id="heading-2a78ed76450c3cb42320882b3e055b31" role="tab" data-toggle="collapse" href="#collapse-2a78ed76450c3cb42320882b3e055b31"
+          list-group-item category-item-action col-10 col-md-11 col-xm-11" title="运维"
+        id="heading-60eec86da0dbf4c99b14a66d4a37c1e3" role="tab" data-toggle="collapse" href="#collapse-60eec86da0dbf4c99b14a66d4a37c1e3"
         aria-expanded="true"
       >
-        Operation
+        运维
         <span class="list-group-count">(9)</span>
         <i class="iconfont icon-arrowright"></i>
       </a>
       
-      <div class="category-collapse collapse show" id="collapse-2a78ed76450c3cb42320882b3e055b31"
-           role="tabpanel" aria-labelledby="heading-2a78ed76450c3cb42320882b3e055b31">
+      <div class="category-collapse collapse show" id="collapse-60eec86da0dbf4c99b14a66d4a37c1e3"
+           role="tabpanel" aria-labelledby="heading-60eec86da0dbf4c99b14a66d4a37c1e3">
         
         
           
@@ -583,10 +583,10 @@
     
       
       
-        <a href="/Operation/operation-guide/" title="operation-guide"
+        <a href="/Operation/operation-guide/" title="运维指南"
            class="list-group-item list-group-item-action
            ">
-          <span class="category-post">operation-guide</span>
+          <span class="category-post">运维指南</span>
         </a>
       
     
@@ -618,37 +618,37 @@
     
       
       
-        <a href="/Operation/Nginx/nginx-basic/" title="nginx-basic"
+        <a href="/Operation/Nginx/whereis-nginx/" title="使用 apt 安装 Nginx 后的软件包是如何布局的"
            class="list-group-item list-group-item-action
            ">
-          <span class="category-post">nginx-basic</span>
+          <span class="category-post">使用 apt 安装 Nginx 后的软件包是如何布局的</span>
         </a>
       
     
       
       
-        <a href="/Operation/Nginx/nginx-command/" title="nginx-command"
+        <a href="/Operation/Nginx/solve-nginx-reload-error/" title="解决 Nginx 重启报错"
            class="list-group-item list-group-item-action
            ">
-          <span class="category-post">nginx-command</span>
+          <span class="category-post">解决 Nginx 重启报错</span>
         </a>
       
     
       
       
-        <a href="/Operation/Nginx/solve-nginx-reload-error/" title="solve-nginx-reload-error"
+        <a href="/Operation/Nginx/nginx-command/" title="Nginx 常用命令合集"
            class="list-group-item list-group-item-action
            ">
-          <span class="category-post">solve-nginx-reload-error</span>
+          <span class="category-post">Nginx 常用命令合集</span>
         </a>
       
     
       
       
-        <a href="/Operation/Nginx/whereis-nginx/" title="whereis-nginx"
+        <a href="/Operation/Nginx/nginx-basic/" title="Nginx 基础"
            class="list-group-item list-group-item-action
            ">
-          <span class="category-post">whereis-nginx</span>
+          <span class="category-post">Nginx 基础</span>
         </a>
       
     
@@ -682,10 +682,10 @@
     
       
       
-        <a href="/Operation/Safe/solve-server-invade/" title="solve-server-invade"
+        <a href="/Operation/Safe/solve-server-invade/" title="解决服务器入侵攻击"
            class="list-group-item list-group-item-action
            active">
-          <span class="category-post">solve-server-invade</span>
+          <span class="category-post">解决服务器入侵攻击</span>
         </a>
       
     
@@ -719,28 +719,28 @@
     
       
       
-        <a href="/Operation/Shell/shell-basic/" title="shell-basic"
+        <a href="/Operation/Shell/ubuntu-guide/" title="Ubuntu 使用指南"
            class="list-group-item list-group-item-action
            ">
-          <span class="category-post">shell-basic</span>
+          <span class="category-post">Ubuntu 使用指南</span>
         </a>
       
     
       
       
-        <a href="/Operation/Shell/solve-shell-problems/" title="solve-shell-problems"
+        <a href="/Operation/Shell/solve-shell-problems/" title="解决 shell 相关问题"
            class="list-group-item list-group-item-action
            ">
-          <span class="category-post">solve-shell-problems</span>
+          <span class="category-post">解决 shell 相关问题</span>
         </a>
       
     
       
       
-        <a href="/Operation/Shell/ubuntu-guide/" title="ubuntu-guide"
+        <a href="/Operation/Shell/shell-basic/" title="Shell 基础"
            class="list-group-item list-group-item-action
            ">
-          <span class="category-post">ubuntu-guide</span>
+          <span class="category-post">Shell 基础</span>
         </a>
       
     

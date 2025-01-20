@@ -19,12 +19,12 @@
   <meta name="author" content="Mr_Dwj">
   <meta name="keywords" content="人工智能 机器学习 深度学习 算法 数据结构 计算机科学 编程">
   
-    <meta name="description" content="CLion 解决中文输出乱码的问题 问题介绍 在 Clion 的默认设置下，输出中文会出现乱码，如下 1234567#include &lt;iostream&gt;using namespace std;int main() {    cout &lt;&lt; &quot;你好&quot; &lt;&lt; endl;    return 0;} 输出 123浣犲ソ	Process finished with e">
+    <meta name="description" content="问题介绍 在 Clion 的默认设置下，输出中文会出现乱码，如下 1234567#include &lt;iostream&gt;using namespace std;int main() {    cout &lt;&lt; &quot;你好&quot; &lt;&lt; endl;    return 0;} 输出 123浣犲ソ	Process finished with exit code 0 解决方案 编码">
 <meta property="og:type" content="article">
-<meta property="og:title" content="solve-clion-decoding-error">
+<meta property="og:title" content="CLion 解决中文输出乱码的问题">
 <meta property="og:url" content="https://blog.dwj601.cn/DevTools/CLion/solve-clion-decoding-error/index.html">
 <meta property="og:site_name" content="Dwj の Blog">
-<meta property="og:description" content="CLion 解决中文输出乱码的问题 问题介绍 在 Clion 的默认设置下，输出中文会出现乱码，如下 1234567#include &lt;iostream&gt;using namespace std;int main() {    cout &lt;&lt; &quot;你好&quot; &lt;&lt; endl;    return 0;} 输出 123浣犲ソ	Process finished with e">
+<meta property="og:description" content="问题介绍 在 Clion 的默认设置下，输出中文会出现乱码，如下 1234567#include &lt;iostream&gt;using namespace std;int main() {    cout &lt;&lt; &quot;你好&quot; &lt;&lt; endl;    return 0;} 输出 123浣犲ソ	Process finished with exit code 0 解决方案 编码">
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="https://dwj-oss.oss-cn-nanjing.aliyuncs.com/images/202403011101299.png">
 <meta property="og:image" content="https://dwj-oss.oss-cn-nanjing.aliyuncs.com/images/202403011101301.png">
@@ -33,7 +33,7 @@
 <meta property="og:image" content="https://dwj-oss.oss-cn-nanjing.aliyuncs.com/images/202403011101304.png">
 <meta property="og:image" content="https://github.githubassets.com/images/icons/emoji/unicode/1f60e.png?v8">
 <meta property="article:published_time" content="2024-03-21T05:55:02.116Z">
-<meta property="article:modified_time" content="2024-04-10T05:33:03.632Z">
+<meta property="article:modified_time" content="2025-01-20T07:29:13.116Z">
 <meta property="article:author" content="Mr_Dwj">
 <meta property="article:tag" content="人工智能 机器学习 深度学习 算法 数据结构 计算机科学 编程">
 <meta name="twitter:card" content="summary_large_image">
@@ -43,7 +43,7 @@
     <meta name="referrer" content="no-referrer-when-downgrade">
   
   
-  <title>solve-clion-decoding-error | Dwj の Blog</title>
+  <title>CLion 解决中文输出乱码的问题 | Dwj の Blog</title>
 
   <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
 
@@ -253,7 +253,7 @@
       <div class="banner-text text-center fade-in-up">
         <div class="h2">
           
-            <span id="subtitle" data-typed-text="solve-clion-decoding-error"></span>
+            <span id="subtitle" data-typed-text="CLion 解决中文输出乱码的问题"></span>
           
         </div>
 
@@ -276,7 +276,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          340 字
+          324 字
         
       </span>
     
@@ -346,12 +346,12 @@
       <div class="container nopadding-x-md" id="board-ctn">
         <div id="board">
           <article class="post-content mx-auto">
-            <h1 id="seo-header">solve-clion-decoding-error</h1>
+            <h1 id="seo-header">CLion 解决中文输出乱码的问题</h1>
             
               <p id="updated-time" class="note note-info" style="">
                 
                   
-                    本文最后更新于 2024年4月10日 下午
+                    本文最后更新于 2025年1月20日 下午
                   
                 
               </p>
@@ -359,8 +359,7 @@
             
               <div class="markdown-body">
                 
-                <h1>CLion 解决中文输出乱码的问题</h1>
-<h2 id="问题介绍">问题介绍</h2>
+                <h2 id="问题介绍">问题介绍</h2>
 <p>在 <code>Clion</code> 的默认设置下，输出中文会出现乱码，如下</p>
 <figure class="highlight cpp"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><code class="hljs cpp"><span class="hljs-meta">#<span class="hljs-keyword">include</span> <span class="hljs-string">&lt;iostream&gt;</span></span><br><span class="hljs-keyword">using</span> <span class="hljs-keyword">namespace</span> std;<br><br><span class="hljs-function"><span class="hljs-type">int</span> <span class="hljs-title">main</span><span class="hljs-params">()</span> </span>{<br>    cout &lt;&lt; <span class="hljs-string">"你好"</span> &lt;&lt; endl;<br>    <span class="hljs-keyword">return</span> <span class="hljs-number">0</span>;<br>}<br></code></pre></td></tr></tbody></table></figure>
 <p>输出</p>
@@ -398,12 +397,12 @@
     
       <span class="category-chain">
         
-  <a href="/categories/DevTools/" class="category-chain-item">DevTools</a>
+  <a href="/categories/%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/" class="category-chain-item">开发工具</a>
   
   
     <span>></span>
     
-  <a href="/categories/DevTools/CLion/" class="category-chain-item">CLion</a>
+  <a href="/categories/%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/CLion/" class="category-chain-item">CLion</a>
   
   
 
@@ -425,7 +424,7 @@
 
   <div class="license-box my-3">
     <div class="license-title">
-      <div>solve-clion-decoding-error</div>
+      <div>CLion 解决中文输出乱码的问题</div>
       <div>https://blog.dwj601.cn/DevTools/CLion/solve-clion-decoding-error/</div>
     </div>
     <div class="license-meta">
@@ -444,7 +443,7 @@
       
         <div class="license-meta-item license-meta-date">
           <div>更新于</div>
-          <div>2024年4月10日</div>
+          <div>2025年1月20日</div>
         </div>
       
       
@@ -475,9 +474,9 @@
                   <article class="post-prev col-6">
                     
                     
-                      <a href="/DevTools/Git/git-self-define-command/" title="git-self-define-command">
+                      <a href="/DevTools/Git/git-self-define-command/" title="Git 自定义命令">
                         <i class="iconfont icon-arrowleft"></i>
-                        <span class="hidden-mobile">git-self-define-command</span>
+                        <span class="hidden-mobile">Git 自定义命令</span>
                         <span class="visible-mobile">上一篇</span>
                       </a>
                     
@@ -485,8 +484,8 @@
                   <article class="post-next col-6">
                     
                     
-                      <a href="/DevTools/DevCpp/devc-self-config/" title="self-config">
-                        <span class="hidden-mobile">self-config</span>
+                      <a href="/DataBase/data-base-guide/" title="数据库开发指南">
+                        <span class="hidden-mobile">数据库开发指南</span>
                         <span class="visible-mobile">下一篇</span>
                         <i class="iconfont icon-arrowright"></i>
                       </a>
@@ -554,32 +553,23 @@
     
     <div class="category row nomargin-x">
       <a class="category-item 
-          list-group-item category-item-action col-10 col-md-11 col-xm-11" title="DevTools"
-        id="heading-482a4dca0bbd8fcdda5acc6f95f3c279" role="tab" data-toggle="collapse" href="#collapse-482a4dca0bbd8fcdda5acc6f95f3c279"
+          list-group-item category-item-action col-10 col-md-11 col-xm-11" title="开发工具"
+        id="heading-2c509530bf439a36168a86e21c160c06" role="tab" data-toggle="collapse" href="#collapse-2c509530bf439a36168a86e21c160c06"
         aria-expanded="true"
       >
-        DevTools
-        <span class="list-group-count">(10)</span>
+        开发工具
+        <span class="list-group-count">(8)</span>
         <i class="iconfont icon-arrowright"></i>
       </a>
       
-      <div class="category-collapse collapse show" id="collapse-482a4dca0bbd8fcdda5acc6f95f3c279"
-           role="tabpanel" aria-labelledby="heading-482a4dca0bbd8fcdda5acc6f95f3c279">
+      <div class="category-collapse collapse show" id="collapse-2c509530bf439a36168a86e21c160c06"
+           role="tabpanel" aria-labelledby="heading-2c509530bf439a36168a86e21c160c06">
         
         
           
           
   <div class="category-post-list">
     
-    
-      
-      
-        <a href="/DevTools/jetbrains-license/" title="jetbrains-license"
-           class="list-group-item list-group-item-action
-           ">
-          <span class="category-post">jetbrains-license</span>
-        </a>
-      
     
   </div>
 
@@ -609,65 +599,28 @@
     
       
       
-        <a href="/DevTools/CLion/config-clion/" title="config-clion"
-           class="list-group-item list-group-item-action
-           ">
-          <span class="category-post">config-clion</span>
-        </a>
-      
-    
-      
-      
-        <a href="/DevTools/CLion/solve-clion-cannot-open-relative-file/" title="solve-clion-cannot-open-relative-file"
-           class="list-group-item list-group-item-action
-           ">
-          <span class="category-post">solve-clion-cannot-open-relative-file</span>
-        </a>
-      
-    
-      
-      
-        <a href="/DevTools/CLion/solve-clion-decoding-error/" title="solve-clion-decoding-error"
+        <a href="/DevTools/CLion/solve-clion-decoding-error/" title="CLion 解决中文输出乱码的问题"
            class="list-group-item list-group-item-action
            active">
-          <span class="category-post">solve-clion-decoding-error</span>
+          <span class="category-post">CLion 解决中文输出乱码的问题</span>
         </a>
       
     
-  </div>
-
-        
-      </div>
-    </div>
-  
-    
-    
-    
-    <div class="category-sub row nomargin-x">
-      <a class="category-subitem collapsed
-          list-group-item category-item-action col-10 col-md-11 col-xm-11" title="DevCpp"
-        id="heading-86f596ad3a8e0ab4ac9d39fff05e7724" role="tab" data-toggle="collapse" href="#collapse-86f596ad3a8e0ab4ac9d39fff05e7724"
-        aria-expanded="false"
-      >
-        DevCpp
-        <span class="list-group-count">(1)</span>
-        <i class="iconfont icon-arrowright"></i>
-      </a>
-      
-      <div class="category-collapse collapse " id="collapse-86f596ad3a8e0ab4ac9d39fff05e7724"
-           role="tabpanel" aria-labelledby="heading-86f596ad3a8e0ab4ac9d39fff05e7724">
-        
-        
-          
-  <div class="category-post-list">
-    
-    
       
       
-        <a href="/DevTools/DevCpp/devc-self-config/" title="self-config"
+        <a href="/DevTools/CLion/solve-clion-cannot-open-relative-file/" title="CLion 解决无法打开文件的问题"
            class="list-group-item list-group-item-action
            ">
-          <span class="category-post">self-config</span>
+          <span class="category-post">CLion 解决无法打开文件的问题</span>
+        </a>
+      
+    
+      
+      
+        <a href="/DevTools/CLion/config-clion/" title="CLion 配置指南"
+           class="list-group-item list-group-item-action
+           ">
+          <span class="category-post">CLion 配置指南</span>
         </a>
       
     
@@ -701,37 +654,37 @@
     
       
       
-        <a href="/DevTools/Git/git-basic/" title="git-basic"
+        <a href="/DevTools/Git/solve-git-problems/" title="解决 Git 相关问题"
            class="list-group-item list-group-item-action
            ">
-          <span class="category-post">git-basic</span>
+          <span class="category-post">解决 Git 相关问题</span>
         </a>
       
     
       
       
-        <a href="/DevTools/Git/git-pull-request/" title="git-pull-request"
+        <a href="/DevTools/Git/git-self-define-command/" title="Git 自定义命令"
            class="list-group-item list-group-item-action
            ">
-          <span class="category-post">git-pull-request</span>
+          <span class="category-post">Git 自定义命令</span>
         </a>
       
     
       
       
-        <a href="/DevTools/Git/git-self-define-command/" title="git-self-define-command"
+        <a href="/DevTools/Git/git-pull-request/" title="Git 的 Pull Request 是什么"
            class="list-group-item list-group-item-action
            ">
-          <span class="category-post">git-self-define-command</span>
+          <span class="category-post">Git 的 Pull Request 是什么</span>
         </a>
       
     
       
       
-        <a href="/DevTools/Git/solve-git-problems/" title="solve-git-problems"
+        <a href="/DevTools/Git/git-basic/" title="Git 指南大全"
            class="list-group-item list-group-item-action
            ">
-          <span class="category-post">solve-git-problems</span>
+          <span class="category-post">Git 指南大全</span>
         </a>
       
     
@@ -765,10 +718,10 @@
     
       
       
-        <a href="/DevTools/IDLE/idle-self-config/" title="idle-self-config"
+        <a href="/DevTools/IDLE/idle-self-config/" title="IDLE 偏好配置"
            class="list-group-item list-group-item-action
            ">
-          <span class="category-post">idle-self-config</span>
+          <span class="category-post">IDLE 偏好配置</span>
         </a>
       
     

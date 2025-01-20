@@ -19,18 +19,18 @@
   <meta name="author" content="Mr_Dwj">
   <meta name="keywords" content="人工智能 机器学习 深度学习 算法 数据结构 计算机科学 编程">
   
-    <meta name="description" content="ElasticSearch 基础 ELK 组件  正向索引与倒排索引  正向索引   存储结构：按照每一个信息段，整条存储为一个文档   搜索形式：根据用户输入的词条在存储的每一个文档中进行匹配，记录符合的 id 信息   倒排索引  存储结构：首先将每一个信息段进行语义分割（中文按照词义，英文按照空格），然后将每一个分割的单元创建唯一的文档，同时记录原始文档的 ID（数据量小可以用哈希表，数据量">
+    <meta name="description" content="前言 ELK 组件  正向索引与倒排索引  正向索引   存储结构：按照每一个信息段，整条存储为一个文档   搜索形式：根据用户输入的词条在存储的每一个文档中进行匹配，记录符合的 id 信息   倒排索引  存储结构：首先将每一个信息段进行语义分割（中文按照词义，英文按照空格），然后将每一个分割的单元创建唯一的文档，同时记录原始文档的 ID（数据量小可以用哈希表，数据量大可以用 B+ 树实现） 搜">
 <meta property="og:type" content="article">
-<meta property="og:title" content="elastic-search-basic">
+<meta property="og:title" content="ElasticSearch 基础">
 <meta property="og:url" content="https://blog.dwj601.cn/DataBase/ElasticSearch/elastic-search-basic/index.html">
 <meta property="og:site_name" content="Dwj の Blog">
-<meta property="og:description" content="ElasticSearch 基础 ELK 组件  正向索引与倒排索引  正向索引   存储结构：按照每一个信息段，整条存储为一个文档   搜索形式：根据用户输入的词条在存储的每一个文档中进行匹配，记录符合的 id 信息   倒排索引  存储结构：首先将每一个信息段进行语义分割（中文按照词义，英文按照空格），然后将每一个分割的单元创建唯一的文档，同时记录原始文档的 ID（数据量小可以用哈希表，数据量">
+<meta property="og:description" content="前言 ELK 组件  正向索引与倒排索引  正向索引   存储结构：按照每一个信息段，整条存储为一个文档   搜索形式：根据用户输入的词条在存储的每一个文档中进行匹配，记录符合的 id 信息   倒排索引  存储结构：首先将每一个信息段进行语义分割（中文按照词义，英文按照空格），然后将每一个分割的单元创建唯一的文档，同时记录原始文档的 ID（数据量小可以用哈希表，数据量大可以用 B+ 树实现） 搜">
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="https://dwj-oss.oss-cn-nanjing.aliyuncs.com/images/202402140034845.png">
 <meta property="og:image" content="https://dwj-oss.oss-cn-nanjing.aliyuncs.com/images/202402140034124.png">
 <meta property="og:image" content="https://dwj-oss.oss-cn-nanjing.aliyuncs.com/images/202402140034125.png">
 <meta property="article:published_time" content="2024-08-30T04:21:21.770Z">
-<meta property="article:modified_time" content="2024-08-30T04:24:23.363Z">
+<meta property="article:modified_time" content="2025-01-20T07:30:25.811Z">
 <meta property="article:author" content="Mr_Dwj">
 <meta property="article:tag" content="人工智能 机器学习 深度学习 算法 数据结构 计算机科学 编程">
 <meta name="twitter:card" content="summary_large_image">
@@ -40,7 +40,7 @@
     <meta name="referrer" content="no-referrer-when-downgrade">
   
   
-  <title>elastic-search-basic | Dwj の Blog</title>
+  <title>ElasticSearch 基础 | Dwj の Blog</title>
 
   <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
 
@@ -250,7 +250,7 @@
       <div class="banner-text text-center fade-in-up">
         <div class="h2">
           
-            <span id="subtitle" data-typed-text="elastic-search-basic"></span>
+            <span id="subtitle" data-typed-text="ElasticSearch 基础"></span>
           
         </div>
 
@@ -273,7 +273,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          434 字
+          421 字
         
       </span>
     
@@ -343,12 +343,12 @@
       <div class="container nopadding-x-md" id="board-ctn">
         <div id="board">
           <article class="post-content mx-auto">
-            <h1 id="seo-header">elastic-search-basic</h1>
+            <h1 id="seo-header">ElasticSearch 基础</h1>
             
               <p id="updated-time" class="note note-info" style="">
                 
                   
-                    本文最后更新于 2024年8月30日 中午
+                    本文最后更新于 2025年1月20日 下午
                   
                 
               </p>
@@ -356,10 +356,10 @@
             
               <div class="markdown-body">
                 
-                <h2 id="ElasticSearch-基础">ElasticSearch 基础</h2>
-<h3 id="ELK-组件">ELK 组件</h3>
+                <h2 id="前言">前言</h2>
+<h2 id="ELK-组件">ELK 组件</h2>
 <p><img src="https://dwj-oss.oss-cn-nanjing.aliyuncs.com/images/202402140034845.png" alt="ELK 组件"></p>
-<h3 id="正向索引与倒排索引">正向索引与倒排索引</h3>
+<h2 id="正向索引与倒排索引">正向索引与倒排索引</h2>
 <p><img src="https://dwj-oss.oss-cn-nanjing.aliyuncs.com/images/202402140034124.png" alt="正向索引与倒排索引"></p>
 <p>正向索引</p>
 <ol>
@@ -380,7 +380,7 @@
 <li>感觉正向索引就相当于朴素遍历，而倒排索引就是舍弃存储空间建立一个哈希表，最后根据哈希值进行用户展示</li>
 <li>最终未能选择 es 作为数据，转而使用 mysql</li>
 </ol>
-<h3 id="ElasticSearch-与-MySQL-的协同关系">ElasticSearch 与 MySQL 的协同关系</h3>
+<h2 id="ElasticSearch-与-MySQL-的协同关系">ElasticSearch 与 MySQL 的协同关系</h2>
 <p><img src="https://dwj-oss.oss-cn-nanjing.aliyuncs.com/images/202402140034125.png" alt="ElasticSearch 与 MySQL 的协同关系"></p>
 
                 
@@ -400,12 +400,12 @@
     
       <span class="category-chain">
         
-  <a href="/categories/DataBase/" class="category-chain-item">DataBase</a>
+  <a href="/categories/%E6%95%B0%E6%8D%AE%E5%BA%93/" class="category-chain-item">数据库</a>
   
   
     <span>></span>
     
-  <a href="/categories/DataBase/ElasticSearch/" class="category-chain-item">ElasticSearch</a>
+  <a href="/categories/%E6%95%B0%E6%8D%AE%E5%BA%93/ElasticSearch/" class="category-chain-item">ElasticSearch</a>
   
   
 
@@ -427,7 +427,7 @@
 
   <div class="license-box my-3">
     <div class="license-title">
-      <div>elastic-search-basic</div>
+      <div>ElasticSearch 基础</div>
       <div>https://blog.dwj601.cn/DataBase/ElasticSearch/elastic-search-basic/</div>
     </div>
     <div class="license-meta">
@@ -446,7 +446,7 @@
       
         <div class="license-meta-item license-meta-date">
           <div>更新于</div>
-          <div>2024年8月30日</div>
+          <div>2025年1月20日</div>
         </div>
       
       
@@ -477,9 +477,9 @@
                   <article class="post-prev col-6">
                     
                     
-                      <a href="/DataBase/MySQL/mysql-basic/" title="mysql-basic">
+                      <a href="/DataBase/MySQL/mysql-basic/" title="MySQL 基础">
                         <i class="iconfont icon-arrowleft"></i>
-                        <span class="hidden-mobile">mysql-basic</span>
+                        <span class="hidden-mobile">MySQL 基础</span>
                         <span class="visible-mobile">上一篇</span>
                       </a>
                     
@@ -487,8 +487,8 @@
                   <article class="post-next col-6">
                     
                     
-                      <a href="/BackEnd/Python/python-basic/" title="python-basic">
-                        <span class="hidden-mobile">python-basic</span>
+                      <a href="/BackEnd/Python/python-basic/" title="Python 基础">
+                        <span class="hidden-mobile">Python 基础</span>
                         <span class="visible-mobile">下一篇</span>
                         <i class="iconfont icon-arrowright"></i>
                       </a>
@@ -556,17 +556,17 @@
     
     <div class="category row nomargin-x">
       <a class="category-item 
-          list-group-item category-item-action col-10 col-md-11 col-xm-11" title="DataBase"
-        id="heading-c55bea99578042029ae12d5900ac477f" role="tab" data-toggle="collapse" href="#collapse-c55bea99578042029ae12d5900ac477f"
+          list-group-item category-item-action col-10 col-md-11 col-xm-11" title="数据库"
+        id="heading-68051bf4aa2743b030984b694628ee9c" role="tab" data-toggle="collapse" href="#collapse-68051bf4aa2743b030984b694628ee9c"
         aria-expanded="true"
       >
-        DataBase
+        数据库
         <span class="list-group-count">(8)</span>
         <i class="iconfont icon-arrowright"></i>
       </a>
       
-      <div class="category-collapse collapse show" id="collapse-c55bea99578042029ae12d5900ac477f"
-           role="tabpanel" aria-labelledby="heading-c55bea99578042029ae12d5900ac477f">
+      <div class="category-collapse collapse show" id="collapse-68051bf4aa2743b030984b694628ee9c"
+           role="tabpanel" aria-labelledby="heading-68051bf4aa2743b030984b694628ee9c">
         
         
           
@@ -576,10 +576,10 @@
     
       
       
-        <a href="/DataBase/data-base-guide/" title="data-base-guide"
+        <a href="/DataBase/data-base-guide/" title="数据库开发指南"
            class="list-group-item list-group-item-action
            ">
-          <span class="category-post">data-base-guide</span>
+          <span class="category-post">数据库开发指南</span>
         </a>
       
     
@@ -611,10 +611,10 @@
     
       
       
-        <a href="/DataBase/ElasticSearch/elastic-search-basic/" title="elastic-search-basic"
+        <a href="/DataBase/ElasticSearch/elastic-search-basic/" title="ElasticSearch 基础"
            class="list-group-item list-group-item-action
            active">
-          <span class="category-post">elastic-search-basic</span>
+          <span class="category-post">ElasticSearch 基础</span>
         </a>
       
     
@@ -648,19 +648,19 @@
     
       
       
-        <a href="/DataBase/MySQL/mysql-basic/" title="mysql-basic"
+        <a href="/DataBase/MySQL/solve-mysql-problems/" title="解决 MySQL 相关问题"
            class="list-group-item list-group-item-action
            ">
-          <span class="category-post">mysql-basic</span>
+          <span class="category-post">解决 MySQL 相关问题</span>
         </a>
       
     
       
       
-        <a href="/DataBase/MySQL/solve-mysql-problems/" title="solve-mysql-problems"
+        <a href="/DataBase/MySQL/mysql-basic/" title="MySQL 基础"
            class="list-group-item list-group-item-action
            ">
-          <span class="category-post">solve-mysql-problems</span>
+          <span class="category-post">MySQL 基础</span>
         </a>
       
     
@@ -694,10 +694,10 @@
     
       
       
-        <a href="/DataBase/Redis/redis-basic/" title="redis-basic"
+        <a href="/DataBase/Redis/redis-basic/" title="Redis 基础"
            class="list-group-item list-group-item-action
            ">
-          <span class="category-post">redis-basic</span>
+          <span class="category-post">Redis 基础</span>
         </a>
       
     
@@ -731,28 +731,28 @@
     
       
       
-        <a href="/DataBase/openGauss/opengauss-basic/" title="opengauss-basic"
+        <a href="/DataBase/openGauss/opengauss-remote-connect/" title="openGauss 远程连接"
            class="list-group-item list-group-item-action
            ">
-          <span class="category-post">opengauss-basic</span>
+          <span class="category-post">openGauss 远程连接</span>
         </a>
       
     
       
       
-        <a href="/DataBase/openGauss/opengauss-import-data/" title="opengauss-import-data"
+        <a href="/DataBase/openGauss/opengauss-import-data/" title="openGauss 导入数据"
            class="list-group-item list-group-item-action
            ">
-          <span class="category-post">opengauss-import-data</span>
+          <span class="category-post">openGauss 导入数据</span>
         </a>
       
     
       
       
-        <a href="/DataBase/openGauss/opengauss-remote-connect/" title="opengauss-remote-connect"
+        <a href="/DataBase/openGauss/opengauss-basic/" title="openGauss 基础"
            class="list-group-item list-group-item-action
            ">
-          <span class="category-post">opengauss-remote-connect</span>
+          <span class="category-post">openGauss 基础</span>
         </a>
       
     

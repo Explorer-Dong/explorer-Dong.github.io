@@ -28,7 +28,7 @@
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="https://dwj-oss.oss-cn-nanjing.aliyuncs.com/web-imgs/img-static/DataStructure.png">
 <meta property="article:published_time" content="2024-03-21T05:55:02.195Z">
-<meta property="article:modified_time" content="2025-01-19T04:31:46.051Z">
+<meta property="article:modified_time" content="2025-01-20T11:01:06.337Z">
 <meta property="article:author" content="Mr_Dwj">
 <meta property="article:tag" content="人工智能 机器学习 深度学习 算法 数据结构 计算机科学 编程">
 <meta name="twitter:card" content="summary_large_image">
@@ -271,7 +271,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          11k 字
+          12k 字
         
       </span>
     
@@ -282,7 +282,7 @@
         
         
         
-          71 分钟
+          75 分钟
         
       </span>
     
@@ -346,7 +346,7 @@
               <p id="updated-time" class="note note-info" style="">
                 
                   
-                    本文最后更新于 2025年1月19日 下午
+                    本文最后更新于 2025年1月20日 晚上
                   
                 
               </p>
@@ -358,7 +358,7 @@
 <p>个人认为，数据结构与算法是程序的灵魂。当然这不仅仅局限于计算机程序，其实生活中的很多东西都可以用数据结构与算法的思想来抽象从而加速。本篇博客初稿定稿于 2024.01，即大二上学期数据结构课程的期末。我打算在此基础之上进行修缮，并将算法的内容也补充进来。主要以原理为主，代码为辅，可能的话会在最后附上一些个人认为比较有教学意义的 OJ 例题。</p>
 <p>完整代码实现。我用 C++17 实现了笔记中提到的大部分数据结构：<a target="_blank" rel="noopener" href="https://github.com/Explorer-Dong/DataStructure">https://github.com/Explorer-Dong/DataStructure</a>。</p>
 <p>数据结构课设。我用 Qt6 写了个窗口程序，比较了「不同的排序算法」以及「不同的查找算法」的计算差异：<a target="_blank" rel="noopener" href="https://github.com/Explorer-Dong/DataStructureClassDesign">https://github.com/Explorer-Dong/DataStructureClassDesign</a>。</p>
-<h2 id="数据结构">数据结构</h2>
+<h2 id="基础数据结构">基础数据结构</h2>
 <p>数据结构由「数据」和「结构」两部分组成。我们主要讨论的是后者，即结构部分。按照逻辑结构可以将各种数据结果分类为「线性结构」和「非线性结构」。如下图所示：</p>
 <p><img src="https://dwj-oss.oss-cn-nanjing.aliyuncs.com/images/202408301527018.png" alt="线性数据结构 vs 非线性数据结构"></p>
 <p>在面对一个实际问题时，我们往往需要考虑两个问题：需要存储什么信息？以及信息之间的组织方式是什么？一般而言，存储的都是数值数据或者数据之间的关系，组织方式有线性结构、树形结构、图结构共三种（有些教材会单独把集合拿出来，但由于集合的逻辑一般都通过树或图来实现，因此这里不单独罗列）。</p>
@@ -369,7 +369,7 @@
 <li><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi mathvariant="normal">Θ</mi><mo stretchy="false">(</mo><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">\Theta()</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord">Θ</span><span class="mopen">(</span><span class="mclose">)</span></span></span></span> <code>average bound</code>：平均时间复杂度。</li>
 </ul>
 <h3 id="1-线性结构">1 线性结构</h3>
-<h4 id="1-1-链表">1.1 链表</h4>
+<h4 id="链表">链表</h4>
 <p>本节原本叫做「线性表」，但是考虑到顺序存储结构的线性表就是数组，因此这里只讨论链式存储结构的线性表，即链表。</p>
 <p>常见的链表结构。单链表、循环链表、双向链表共三种。但无论哪种结构，都是一个头结点 + 一个尾结点 + 若干中间结点的结构，且每个结点只有一个前驱结点和一个后继结点。</p>
 <p>初始化技巧。一般来说，为了便于编码，都会提前设置空结点。例如单链表会设置一个空的头结点，循环链表会设置一个空的尾结点，双向链表会设置一个空的头结点和空的尾结点。</p>
@@ -385,7 +385,7 @@
         </div>
       </div>
     </div>
-<h4 id="1-2-栈">1.2 栈</h4>
+<h4 id="栈">栈</h4>
 <p>先进后出型线性数据结构。分为顺序栈和链栈，顺序栈就是数组模拟，链栈就类似于头插法的单链表。由于结构比较简单，因此我们重点关注栈的应用。</p>
 <p><strong>卡特兰数</strong>。其实是一种动态规划的算法思想。常见的释义为：当有 <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>n</mi></mrow><annotation encoding="application/x-tex">n</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.4306em;"></span><span class="mord mathnormal">n</span></span></span></span> 个元素按照某种顺序压入栈中，且可在任意时刻弹出时，所获得可能的出栈序列个数可用卡特兰数计算，即 <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mfrac><mn>1</mn><mrow><mi>n</mi><mo>+</mo><mn>1</mn></mrow></mfrac><msubsup><mi>C</mi><mrow><mn>2</mn><mi>n</mi></mrow><mi>n</mi></msubsup></mrow><annotation encoding="application/x-tex">\frac{1}{n+1} C_{2n}^{n}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1.2484em;vertical-align:-0.4033em;"></span><span class="mord"><span class="mopen nulldelimiter"></span><span class="mfrac"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.8451em;"><span style="top:-2.655em;"><span class="pstrut" style="height:3em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mathnormal mtight">n</span><span class="mbin mtight">+</span><span class="mord mtight">1</span></span></span></span><span style="top:-3.23em;"><span class="pstrut" style="height:3em;"></span><span class="frac-line" style="border-bottom-width:0.04em;"></span></span><span style="top:-3.394em;"><span class="pstrut" style="height:3em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mtight">1</span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.4033em;"><span></span></span></span></span></span><span class="mclose nulldelimiter"></span></span><span class="mord"><span class="mord mathnormal" style="margin-right:0.07153em;">C</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.6644em;"><span style="top:-2.4519em;margin-left:-0.0715em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mtight">2</span><span class="mord mathnormal mtight">n</span></span></span></span><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mathnormal mtight">n</span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.2481em;"><span></span></span></span></span></span></span></span></span></span>。</p>
 <p>定义 <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>f</mi><mo stretchy="false">(</mo><mi>k</mi><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">f(k)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathnormal" style="margin-right:0.10764em;">f</span><span class="mopen">(</span><span class="mord mathnormal" style="margin-right:0.03148em;">k</span><span class="mclose">)</span></span></span></span> 表示在第 <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>k</mi></mrow><annotation encoding="application/x-tex">k</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.6944em;"></span><span class="mord mathnormal" style="margin-right:0.03148em;">k</span></span></span></span> 个数是最后一个出栈的情况下出栈序列的总个数，则 <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>f</mi><mo stretchy="false">(</mo><mi>k</mi><mo stretchy="false">)</mo><mo>=</mo><mi>f</mi><mo stretchy="false">(</mo><mi>k</mi><mo>−</mo><mn>1</mn><mo stretchy="false">)</mo><mi>f</mi><mo stretchy="false">(</mo><mi>n</mi><mo>−</mo><mi>k</mi><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">f(k)=f(k-1)f(n-k)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathnormal" style="margin-right:0.10764em;">f</span><span class="mopen">(</span><span class="mord mathnormal" style="margin-right:0.03148em;">k</span><span class="mclose">)</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathnormal" style="margin-right:0.10764em;">f</span><span class="mopen">(</span><span class="mord mathnormal" style="margin-right:0.03148em;">k</span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mbin">−</span><span class="mspace" style="margin-right:0.2222em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord">1</span><span class="mclose">)</span><span class="mord mathnormal" style="margin-right:0.10764em;">f</span><span class="mopen">(</span><span class="mord mathnormal">n</span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mbin">−</span><span class="mspace" style="margin-right:0.2222em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathnormal" style="margin-right:0.03148em;">k</span><span class="mclose">)</span></span></span></span>，其中 <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>f</mi><mo stretchy="false">(</mo><mn>0</mn><mo stretchy="false">)</mo><mo>=</mo><mn>1</mn></mrow><annotation encoding="application/x-tex">f(0)=1</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathnormal" style="margin-right:0.10764em;">f</span><span class="mopen">(</span><span class="mord">0</span><span class="mclose">)</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:0.6444em;"></span><span class="mord">1</span></span></span></span>。那么卡特兰数的推导公式就是：</p>
@@ -423,7 +423,7 @@
 </ul>
 </li>
 </ul>
-<h4 id="1-3-队列">1.3 队列</h4>
+<h4 id="队列">队列</h4>
 <p>先进先出型线性数据结构。分为顺序队列和链式队列，顺序队列就是数组模拟，链式队列就类似于双向链表。队列的一些应用如下：</p>
 <p><strong>报数问题</strong>。报到 <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>0</mn></mrow><annotation encoding="application/x-tex">0</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.6444em;"></span><span class="mord">0</span></span></span></span> 的出队，报到 <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>1</mn></mrow><annotation encoding="application/x-tex">1</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.6444em;"></span><span class="mord">1</span></span></span></span> 的重新入队，求解出队顺序。</p>
 <p><strong>最短路问题</strong>。开一个记忆数组 <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>d</mi><mo stretchy="false">[</mo><mi>i</mi><mo stretchy="false">]</mo><mo stretchy="false">[</mo><mi>j</mi><mo stretchy="false">]</mo></mrow><annotation encoding="application/x-tex">d[i][j]</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathnormal">d</span><span class="mopen">[</span><span class="mord mathnormal">i</span><span class="mclose">]</span><span class="mopen">[</span><span class="mord mathnormal" style="margin-right:0.05724em;">j</span><span class="mclose">]</span></span></span></span> 表示从起点 <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="false">(</mo><mn>0</mn><mo separator="true">,</mo><mn>0</mn><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">(0,0)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mopen">(</span><span class="mord">0</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.1667em;"></span><span class="mord">0</span><span class="mclose">)</span></span></span></span> 到终点 <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="false">(</mo><mi>i</mi><mo separator="true">,</mo><mi>j</mi><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">(i,j)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mopen">(</span><span class="mord mathnormal">i</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.1667em;"></span><span class="mord mathnormal" style="margin-right:0.05724em;">j</span><span class="mclose">)</span></span></span></span> 点的最短路径的长度。可以将求最短路看做一个<strong>波心扩散</strong>的物理场景，队列中的每一个点都可以作为一个波心，从而实现“两点之间线段最短”的物理场景。讨论几个问题：</p>
@@ -451,7 +451,7 @@
 </ul>
 </li>
 </ul>
-<h4 id="1-4-字符串">1.4 字符串</h4>
+<h4 id="字符串">字符串</h4>
 <p>字符串也是一种线性数据结构。可以看做一种顺序存储且元素为字符的顺序表。在实际应用中，关于字符串最常见的操作就是串的匹配，因此我们也重点学习串的匹配算法。</p>
 <p><strong>KMP 算法</strong>。对于模式串 <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>t</mi><mo separator="true">,</mo><mo stretchy="false">(</mo><mn>1</mn><mo>≤</mo><mi mathvariant="normal">∣</mi><mi>t</mi><mi mathvariant="normal">∣</mi><mo>≤</mo><mi>m</mi><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">t,(1\le|t|\le m)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathnormal">t</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.1667em;"></span><span class="mopen">(</span><span class="mord">1</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">≤</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord">∣</span><span class="mord mathnormal">t</span><span class="mord">∣</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">≤</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathnormal">m</span><span class="mclose">)</span></span></span></span>，我们希望在模板串 <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>s</mi><mo separator="true">,</mo><mo stretchy="false">(</mo><mn>1</mn><mo>≤</mo><mi mathvariant="normal">∣</mi><mi>s</mi><mi mathvariant="normal">∣</mi><mo>≤</mo><mi>n</mi><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">s,(1\le|s|\le n)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathnormal">s</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.1667em;"></span><span class="mopen">(</span><span class="mord">1</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">≤</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord">∣</span><span class="mord mathnormal">s</span><span class="mord">∣</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">≤</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathnormal">n</span><span class="mclose">)</span></span></span></span> 中计算 <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>t</mi></mrow><annotation encoding="application/x-tex">t</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.6151em;"></span><span class="mord mathnormal">t</span></span></span></span> 的出现次数或者首次出现 <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>t</mi></mrow><annotation encoding="application/x-tex">t</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.6151em;"></span><span class="mord mathnormal">t</span></span></span></span> 的位置等等。显然可以枚举 <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>s</mi></mrow><annotation encoding="application/x-tex">s</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.4306em;"></span><span class="mord mathnormal">s</span></span></span></span> 的每个位置然后与 <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>t</mi></mrow><annotation encoding="application/x-tex">t</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.6151em;"></span><span class="mord mathnormal">t</span></span></span></span> 进行匹配，这样的时间复杂度为 <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>O</mi><mo stretchy="false">(</mo><mi>n</mi><mi>m</mi><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">O(nm)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathnormal" style="margin-right:0.02778em;">O</span><span class="mopen">(</span><span class="mord mathnormal">nm</span><span class="mclose">)</span></span></span></span>。而 <a target="_blank" rel="noopener" href="https://www.cs.jhu.edu/~misha/ReadingSeminar/Papers/Knuth77.pdf">KMP 算法</a> 可以做到 <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>O</mi><mo stretchy="false">(</mo><mi>n</mi><mo>+</mo><mi>m</mi><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">O(n+m)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathnormal" style="margin-right:0.02778em;">O</span><span class="mopen">(</span><span class="mord mathnormal">n</span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mbin">+</span><span class="mspace" style="margin-right:0.2222em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathnormal">m</span><span class="mclose">)</span></span></span></span>，具体地：</p>
 <ul>
@@ -470,14 +470,31 @@
         </div>
       </div>
     </div>
-<h4 id="1-5-特殊矩阵">1.5 特殊矩阵</h4>
+<h4 id="特殊矩阵">特殊矩阵</h4>
 <p>对于一个常规的矩阵，我们可以按照「行优先」或「列优先」的方式完整的存储，但是对于一个 <strong>稀疏矩阵</strong>，这样的存储方式会极大的浪费存储空间从而降低算法的执行效率。常见的存储优化方法有两种：</p>
 <ol>
 <li>三元组顺序表。将矩阵的非零元素及其下标存到一起，即 <code>vector&lt;tuple&lt;ValueType, int, int&gt;&gt;</code>；</li>
 <li>十字链表。定义两个指针数组 <code>vector&lt;CrossNode&lt;T&gt;*&gt; cheads, rheads</code>，存储行列的头指针即可。</li>
 </ol>
+<h4 id="哈希表">哈希表</h4>
+<p>哈希表是一种应用场景很广的数据结构，其核心思想是空间换时间，通过建立「对象的哈希码」与「对象」之间的映射关系，实现通过对象哈希码快速定位对象的功能。大多数编程语言都实现了哈希的映射功能，例如 C++ 中的 <code>unordered_map</code> 类、Python 中的 <code>dict</code> 类、Java 中的 <code>HashMap</code> 类等。</p>
+<p><strong>哈希表的数据结构</strong>。哈希表是一种特殊的数组，其每一个元素都是一个桶，这个桶可以是链表、红黑树或别的子数据结构。通过哈希函数，将对象计算出一个哈希码即可快速计算出其在哈希表数组中的偏移，从而 <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>O</mi><mo stretchy="false">(</mo><mn>1</mn><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">O(1)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathnormal" style="margin-right:0.02778em;">O</span><span class="mopen">(</span><span class="mord">1</span><span class="mclose">)</span></span></span></span> 的定位到该对象所在的桶，然后再在桶中查询该对象。C++ 的 unordered_map 库中的 unordered_map 类和 unordered_multimap 类的基类 _Hashtable 中，定义的哈希表数组是动态数组，数组中的桶是单链表数据结构。源码 <code>D:\installation_package\Jetbrains\CLion\bin\mingw\lib\gcc\x86_64-w64-mingw32\13.1.0\include\c++\bits\hashtable.h</code> 是这样解释的：</p>
+<blockquote>
+<p>In terms of Standard containers the hashtable is like the aggregation of:</p>
+<ul>
+<li>std::forward_list&lt;_Node&gt; containing the elements</li>
+<li>std::vector&lt;std::forward_list&lt;_Node&gt;::iterator&gt; representing the buckets</li>
+</ul>
+</blockquote>
+<p>从上述的描述不难看出，哈希表的关键就是哈希函数的设计，其需要确保哈希码的计算结果尽可能均摊到哈希数组中，减少哈希冲突。</p>
+<p><strong>哈希函数的设计思路</strong>。常用的哈希函数是「除留余数法」。按照数值 <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mtext>mod&nbsp;</mtext><mi>p</mi></mrow><annotation encoding="application/x-tex">\text{mod}\ p</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.8889em;vertical-align:-0.1944em;"></span><span class="mord text"><span class="mord">mod</span></span><span class="mspace">&nbsp;</span><span class="mord mathnormal">p</span></span></span></span> 后的数值进行哈希，假设哈希表空间大小为 <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>m</mi></mrow><annotation encoding="application/x-tex">m</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.4306em;"></span><span class="mord mathnormal">m</span></span></span></span> ，则 <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>p</mi></mrow><annotation encoding="application/x-tex">p</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.625em;vertical-align:-0.1944em;"></span><span class="mord mathnormal">p</span></span></span></span> 一般取 <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo>≤</mo><mi>m</mi></mrow><annotation encoding="application/x-tex">\le m</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.7719em;vertical-align:-0.136em;"></span><span class="mrel">≤</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:0.4306em;"></span><span class="mord mathnormal">m</span></span></span></span> 的质数。</p>
+<p><strong>哈希冲突的解决办法</strong>。常用的哈希冲突处理办法有两种：</p>
+<ol>
+<li>拉链法 (Chaining)。hashtable 就是拉链法的实际应用；</li>
+<li>开放地址法 (Open Addressing)。该法将产生哈希冲突的元素移动到其他的空桶中进行存储，这种方法在频繁产生哈希冲突时性能较差，而为了找到其他的空桶，开放地址法需要进行空桶探测，常见的探测方法有线性探测（从产生冲突的地方开始沿着某个方向枚举）、双重哈希探测（利用第二个哈希函数探测其余位置）。</li>
+</ol>
 <h3 id="2-树形结构">2 树形结构</h3>
-<h4 id="2-1-广义表">2.1 广义表</h4>
+<h4 id="广义表">广义表</h4>
 <p>个人认为，广义表就是单链表的扩展版。链表中的每一个结点可以是存储数据的 data 结点，也可以是存储新链表 sublist 结点。为了满足这样的数据结构，我们需要每一个结点：</p>
 <ul>
 <li>存储当前结点的类型，要么是 data 类型，要么是 sublist 类型。即枚举体类型；</li>
@@ -500,7 +517,7 @@
         </div>
       </div>
     </div>
-<h4 id="2-2-树">2.2 树</h4>
+<h4 id="树">树</h4>
 <p>树其实是一种特殊的图，即无环图。多棵树就组成了一个森林。我们称树中每一个结点的子结点数量为该结点的度，同时对于一棵树，有时会称其为 <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>x</mi></mrow><annotation encoding="application/x-tex">x</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.4306em;"></span><span class="mord mathnormal">x</span></span></span></span> 叉树，这里的 <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>x</mi></mrow><annotation encoding="application/x-tex">x</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.4306em;"></span><span class="mord mathnormal">x</span></span></span></span> 即树中结点度数的最大值。</p>
 <p><strong>树的存储</strong>。与广义表类型，我们同样用链表来存储树。下面介绍两种较为常见的树的存储方式：</p>
 <ol>
@@ -549,65 +566,22 @@
 <p>图是一种由顶点和边组成的数据结构。如果边上带有权重，就称该图为网。对于无向图，如果每一个顶点之间都有路径可达，就称该图为「连通图」，极大连通子图被称为「连通分量」；而有向图就全部加一个 “强” 字，其他含义不变，即「强连通图」和「强连通分量」。对于无向图，直接可达的结点数被称为「度」数；对于有向图，指出去的直接可达结点数被称为「出度」数，指进来的的结点数被称为「入度」数。</p>
 <p><strong>图的存储</strong>。与树类似，图也可以用链表来存储，图中一般将其称为邻接表（一般都是存储出边，如果存储入边就叫做逆邻接表），也可以用邻接矩阵来存储。</p>
 <p><strong>图的遍历</strong>。由于图可能含有环，因此相较于树的遍历，图的遍历需要有一个访问标记数组。一般的遍历方法就是深度优先和广度优先，对于求解两点之间的简单路径问题，深度优先遍历可以很好的解决；对于染色法求二部图问题，广度有点遍历可以很好的解决。</p>
-<p>考虑到此处是对数据结构的初步介绍，为了简明扼要，图的相关算法就在 <a href="#%E5%9B%BE%E8%AE%BA">图论</a> 部分中再详细介绍了。</p>
-<h2 id="基本算法">基本算法</h2>
-<h3 id="1-贪心">1 贪心</h3>
-<h3 id="2-前缀和与差分">2 前缀和与差分</h3>
-<h3 id="3-哈希">3 哈希 *</h3>
-<p>定义：装填因子 <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>α</mi><mo>=</mo><mfrac><mi>n</mi><mi>m</mi></mfrac></mrow><annotation encoding="application/x-tex">\alpha=\frac{n}{m}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.4306em;"></span><span class="mord mathnormal" style="margin-right:0.0037em;">α</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:1.0404em;vertical-align:-0.345em;"></span><span class="mord"><span class="mopen nulldelimiter"></span><span class="mfrac"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.6954em;"><span style="top:-2.655em;"><span class="pstrut" style="height:3em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mathnormal mtight">m</span></span></span></span><span style="top:-3.23em;"><span class="pstrut" style="height:3em;"></span><span class="frac-line" style="border-bottom-width:0.04em;"></span></span><span style="top:-3.394em;"><span class="pstrut" style="height:3em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mathnormal mtight">n</span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.345em;"><span></span></span></span></span></span><span class="mclose nulldelimiter"></span></span></span></span></span>，其中 <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>n</mi></mrow><annotation encoding="application/x-tex">n</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.4306em;"></span><span class="mord mathnormal">n</span></span></span></span> 表示待填入表中的结点数，<span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>m</mi></mrow><annotation encoding="application/x-tex">m</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.4306em;"></span><span class="mord mathnormal">m</span></span></span></span> 表示哈希表的空间大小</p>
-<p>哈希函数应该满足以下两点：第一、映射出来的地址不会越界；第二、映射出来的地址是唯一的</p>
-<p><strong>构造表</strong></p>
-<p>常用的哈希函数：</p>
-<ol>
-<li>
-<p>直接地址法 - 线性函数一对一映射</p>
-<p>优点。计算简单且不可能产生冲突</p>
-<p>缺点。对于空间的要求极高，如果数据过于离散，则会造成很大的空间浪费</p>
-</li>
-<li>
-<p>数字分析法 - 按照数位中的数值分布情况进行哈希</p>
-<p>缺点。需要预先知道数据的数字分布情况</p>
-</li>
-<li>
-<p>平方取中法 - 对于 <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>1</mn><msup><mn>0</mn><mi>m</mi></msup></mrow><annotation encoding="application/x-tex">10^m</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.6644em;"></span><span class="mord">1</span><span class="mord"><span class="mord">0</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.6644em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathnormal mtight">m</span></span></span></span></span></span></span></span></span></span></span> 的哈希空间，可以将数字平方后取中间 <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>m</mi></mrow><annotation encoding="application/x-tex">m</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.4306em;"></span><span class="mord mathnormal">m</span></span></span></span> 位进行哈希存储</p>
-</li>
-<li>
-<p>折叠法</p>
+<p>考虑到此处是对数据结构的初步介绍，为了简明扼要，图的相关算法就在 <a href="#%E5%9B%BE%E8%AE%BA">图论</a> 部分中再详细介绍。</p>
+<h2 id="基础算法">基础算法</h2>
+<p>基础因人而异，下面罗列的是个人认为相对基础的知识点。只有熟练掌握了以下基础算法，才有可能理解更复杂的算法从而解出更高难度的问题。</p>
+<h3 id="贪心">贪心</h3>
+<p>贪心算法其实并不简单，很多时候需要敢想敢猜并且证明往往并不容易，但因为这种方法套路不多，就放在第一个基础算法部分展开。</p>
+<p>贪心考虑的是局部最优，即每次做决策时都是选当前的局部最优解。当然，如果可以举出贪心后的反例，就可以考虑使用动态规划等其他全局性的策略来解决问题了。</p>
+<p>对于贪心问题的证明，我总结出了两个证明方法。如下：</p>
 <ul>
-<li>
-<p>移位法：将一个数字按照数位拆分为几个部分，然后将几个部分的数值累加出一个数即可，高位抹去不用</p>
-</li>
-<li>
-<p>间隔法：与移位法几乎一致，只不过将其中的部分意义间隔的进行数值反转，最后累计即可，高位抹去不用</p>
-</li>
+<li>反证法：假设取一种方案比贪心方案更好，得出相反的结论；</li>
+<li>边界法：从边界开始考虑，因为满足边界条件更加容易枚举，从而进行后续的贪心。</li>
 </ul>
-</li>
-<li>
-<p>除留余数法 - 按照数值 <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mtext>mod&nbsp;</mtext><mi>p</mi></mrow><annotation encoding="application/x-tex">\text{mod}\ p</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.8889em;vertical-align:-0.1944em;"></span><span class="mord text"><span class="mord">mod</span></span><span class="mspace">&nbsp;</span><span class="mord mathnormal">p</span></span></span></span> 后的数值进行哈希，假设哈希表空间大小为 <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>m</mi></mrow><annotation encoding="application/x-tex">m</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.4306em;"></span><span class="mord mathnormal">m</span></span></span></span> ，则 <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>p</mi></mrow><annotation encoding="application/x-tex">p</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.625em;vertical-align:-0.1944em;"></span><span class="mord mathnormal">p</span></span></span></span> 一般取 <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo>≤</mo><mi>m</mi></mrow><annotation encoding="application/x-tex">\le m</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.7719em;vertical-align:-0.136em;"></span><span class="mrel">≤</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:0.4306em;"></span><span class="mord mathnormal">m</span></span></span></span> 的质数</p>
-</li>
-</ol>
-<p>处理冲突：</p>
-<ol>
-<li>开放定址法 - 探测开放地址，一般有三种
-<ul>
-<li>连续序列进行线性探测</li>
-<li>左右倍增序列进行探测</li>
-<li>伪随机序列进行探测</li>
-<li>双 hash 探测法</li>
-</ul>
-</li>
-<li>拉链法
-<ul>
-<li>定义：将产生 hash 冲突的元素放入同一个子集，通过单链表进行存储</li>
-<li>优点：没有堆积现象，从而减少了很多不必要的比价，提升比较效率；适合一开始不知道表长的情况；除结点更加容易。</li>
-</ul>
-</li>
-</ol>
-<p><strong>查找表</strong></p>
-<p>按照构造相同的逻辑进行查找即可。</p>
-<h3 id="4-二分">4 二分</h3>
-<h3 id="5-搜索">5 搜索</h3>
-<h3 id="6-排序">6 排序 *</h3>
+<h3 id="前缀和与差分">前缀和与差分</h3>
+<h3 id="二分">二分</h3>
+<h3 id="搜索">搜索</h3>
+<h3 id="分治">分治</h3>
+<h3 id="排序">排序 *</h3>
 <p>稳定性：</p>
 <ul>
 <li>稳定：按照次关键字排序后，原来相同关键字的顺序不变</li>
@@ -658,7 +632,6 @@
 <li>划分局部排序的长度。</li>
 </ol>
 <p>时间复杂度 <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>O</mi><mo stretchy="false">(</mo><mi>n</mi><mi>log</mi><mo>⁡</mo><mi>n</mi><mo stretchy="false">)</mo><mo>←</mo><mi>T</mi><mo stretchy="false">(</mo><mi>n</mi><mo stretchy="false">)</mo><mo>=</mo><mn>2</mn><mi>T</mi><mo stretchy="false">(</mo><mfrac><mi>n</mi><mn>2</mn></mfrac><mo stretchy="false">)</mo><mo>+</mo><mi>O</mi><mo stretchy="false">(</mo><mi>n</mi><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">O(n \log n)\leftarrow T(n)=2T(\frac{n}{2}) + O(n)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathnormal" style="margin-right:0.02778em;">O</span><span class="mopen">(</span><span class="mord mathnormal">n</span><span class="mspace" style="margin-right:0.1667em;"></span><span class="mop">lo<span style="margin-right:0.01389em;">g</span></span><span class="mspace" style="margin-right:0.1667em;"></span><span class="mord mathnormal">n</span><span class="mclose">)</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">←</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathnormal" style="margin-right:0.13889em;">T</span><span class="mopen">(</span><span class="mord mathnormal">n</span><span class="mclose">)</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:1.095em;vertical-align:-0.345em;"></span><span class="mord">2</span><span class="mord mathnormal" style="margin-right:0.13889em;">T</span><span class="mopen">(</span><span class="mord"><span class="mopen nulldelimiter"></span><span class="mfrac"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.6954em;"><span style="top:-2.655em;"><span class="pstrut" style="height:3em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mtight">2</span></span></span></span><span style="top:-3.23em;"><span class="pstrut" style="height:3em;"></span><span class="frac-line" style="border-bottom-width:0.04em;"></span></span><span style="top:-3.394em;"><span class="pstrut" style="height:3em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mathnormal mtight">n</span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.345em;"><span></span></span></span></span></span><span class="mclose nulldelimiter"></span></span><span class="mclose">)</span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mbin">+</span><span class="mspace" style="margin-right:0.2222em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathnormal" style="margin-right:0.02778em;">O</span><span class="mopen">(</span><span class="mord mathnormal">n</span><span class="mclose">)</span></span></span></span>。</p>
-<h2 id="分治">分治</h2>
 <h2 id="动态规划">动态规划</h2>
 <h2 id="图论">图论</h2>
 <h3 id="1-最小生成树">1 最小生成树</h3>
@@ -844,7 +817,7 @@
       
         <div class="license-meta-item license-meta-date">
           <div>更新于</div>
-          <div>2025年1月19日</div>
+          <div>2025年1月20日</div>
         </div>
       
       
@@ -875,9 +848,9 @@
                   <article class="post-prev col-6">
                     
                     
-                      <a href="/GPA/3rd-term/DigitalLogicCircuit/" title="数字逻辑电路">
+                      <a href="/GPA/4th-term/PyAlgo/" title="算法设计与分析">
                         <i class="iconfont icon-arrowleft"></i>
-                        <span class="hidden-mobile">数字逻辑电路</span>
+                        <span class="hidden-mobile">算法设计与分析</span>
                         <span class="visible-mobile">上一篇</span>
                       </a>
                     
@@ -1074,10 +1047,19 @@
     
       
       
-        <a href="/GPA/3rd-term/CollegePhysics_2/" title="大学物理下"
+        <a href="/GPA/3rd-term/DS&amp;Algo/" title="数据结构与算法"
+           class="list-group-item list-group-item-action
+           active">
+          <span class="category-post">数据结构与算法</span>
+        </a>
+      
+    
+      
+      
+        <a href="/GPA/3rd-term/LinearAlgebra/" title="线性代数"
            class="list-group-item list-group-item-action
            ">
-          <span class="category-post">大学物理下</span>
+          <span class="category-post">线性代数</span>
         </a>
       
     
@@ -1092,19 +1074,10 @@
     
       
       
-        <a href="/GPA/3rd-term/DS&amp;Algo/" title="数据结构与算法"
-           class="list-group-item list-group-item-action
-           active">
-          <span class="category-post">数据结构与算法</span>
-        </a>
-      
-    
-      
-      
-        <a href="/GPA/3rd-term/LinearAlgebra/" title="线性代数"
+        <a href="/GPA/3rd-term/CollegePhysics_2/" title="大学物理下"
            class="list-group-item list-group-item-action
            ">
-          <span class="category-post">线性代数</span>
+          <span class="category-post">大学物理下</span>
         </a>
       
     
@@ -1138,24 +1111,6 @@
     
       
       
-        <a href="/GPA/4th-term/PyApply/" title="Python高级应用"
-           class="list-group-item list-group-item-action
-           ">
-          <span class="category-post">Python高级应用</span>
-        </a>
-      
-    
-      
-      
-        <a href="/GPA/4th-term/OptMethod/" title="最优化方法"
-           class="list-group-item list-group-item-action
-           ">
-          <span class="category-post">最优化方法</span>
-        </a>
-      
-    
-      
-      
         <a href="/GPA/4th-term/MachineLearning/" title="机器学习"
            class="list-group-item list-group-item-action
            ">
@@ -1165,10 +1120,19 @@
     
       
       
-        <a href="/GPA/4th-term/ProbAndStat/" title="概率论与数理统计"
+        <a href="/GPA/4th-term/PyApply/" title="Python高级应用"
            class="list-group-item list-group-item-action
            ">
-          <span class="category-post">概率论与数理统计</span>
+          <span class="category-post">Python高级应用</span>
+        </a>
+      
+    
+      
+      
+        <a href="/GPA/4th-term/SysBasic/" title="计算机系统基础"
+           class="list-group-item list-group-item-action
+           ">
+          <span class="category-post">计算机系统基础</span>
         </a>
       
     
@@ -1183,10 +1147,19 @@
     
       
       
-        <a href="/GPA/4th-term/SysBasic/" title="计算机系统基础"
+        <a href="/GPA/4th-term/ProbAndStat/" title="概率论与数理统计"
            class="list-group-item list-group-item-action
            ">
-          <span class="category-post">计算机系统基础</span>
+          <span class="category-post">概率论与数理统计</span>
+        </a>
+      
+    
+      
+      
+        <a href="/GPA/4th-term/OptMethod/" title="最优化方法"
+           class="list-group-item list-group-item-action
+           ">
+          <span class="category-post">最优化方法</span>
         </a>
       
     
@@ -1220,28 +1193,19 @@
     
       
       
+        <a href="/GPA/5th-term/ComputerOrganization/" title="计算机组成原理"
+           class="list-group-item list-group-item-action
+           ">
+          <span class="category-post">计算机组成原理</span>
+        </a>
+      
+    
+      
+      
         <a href="/GPA/5th-term/OperatingSystem/" title="操作系统"
            class="list-group-item list-group-item-action
            ">
           <span class="category-post">操作系统</span>
-        </a>
-      
-    
-      
-      
-        <a href="/GPA/5th-term/DigitalImageProcessing/" title="数字图像处理"
-           class="list-group-item list-group-item-action
-           ">
-          <span class="category-post">数字图像处理</span>
-        </a>
-      
-    
-      
-      
-        <a href="/GPA/5th-term/DataBase/" title="数据库"
-           class="list-group-item list-group-item-action
-           ">
-          <span class="category-post">数据库</span>
         </a>
       
     
@@ -1256,6 +1220,15 @@
     
       
       
+        <a href="/GPA/5th-term/DigitalImageProcessing/" title="数字图像处理"
+           class="list-group-item list-group-item-action
+           ">
+          <span class="category-post">数字图像处理</span>
+        </a>
+      
+    
+      
+      
         <a href="/GPA/5th-term/DeepLearning/" title="深度学习"
            class="list-group-item list-group-item-action
            ">
@@ -1265,10 +1238,10 @@
     
       
       
-        <a href="/GPA/5th-term/ComputerOrganization/" title="计算机组成原理"
+        <a href="/GPA/5th-term/DataBase/" title="数据库"
            class="list-group-item list-group-item-action
            ">
-          <span class="category-post">计算机组成原理</span>
+          <span class="category-post">数据库</span>
         </a>
       
     
@@ -1311,24 +1284,6 @@
     
       
       
-        <a href="/GPA/6th-term/NaturalLanguageProcessing/" title="自然语言处理"
-           class="list-group-item list-group-item-action
-           ">
-          <span class="category-post">自然语言处理</span>
-        </a>
-      
-    
-      
-      
-        <a href="/GPA/6th-term/ComputerNetwork/" title="计算机网络"
-           class="list-group-item list-group-item-action
-           ">
-          <span class="category-post">计算机网络</span>
-        </a>
-      
-    
-      
-      
         <a href="/GPA/6th-term/ComputerVision/" title="计算机视觉"
            class="list-group-item list-group-item-action
            ">
@@ -1342,6 +1297,24 @@
            class="list-group-item list-group-item-action
            ">
           <span class="category-post">语音识别</span>
+        </a>
+      
+    
+      
+      
+        <a href="/GPA/6th-term/NaturalLanguageProcessing/" title="自然语言处理"
+           class="list-group-item list-group-item-action
+           ">
+          <span class="category-post">自然语言处理</span>
+        </a>
+      
+    
+      
+      
+        <a href="/GPA/6th-term/ComputerNetwork/" title="计算机网络"
+           class="list-group-item list-group-item-action
+           ">
+          <span class="category-post">计算机网络</span>
         </a>
       
     

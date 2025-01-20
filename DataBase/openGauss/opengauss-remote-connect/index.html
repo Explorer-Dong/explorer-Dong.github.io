@@ -19,15 +19,15 @@
   <meta name="author" content="Mr_Dwj">
   <meta name="keywords" content="人工智能 机器学习 深度学习 算法 数据结构 计算机科学 编程">
   
-    <meta name="description" content="openGauss 远程连接 问题阐述 由于 openGauss 数据库不允许使用默认用户（默认叫做 omm）进行远程连接，因此我们不得不创建一个新的用户进行连接。但是连接后总是警告说没有权限访问 pg_user 表并且无法查看和操作数据库中的任何信息。 解决方案 由于新创建的用户权限很低，为了能够在远程连接后达到和数据库系统默认用户几乎一致的权限，我们使用下面的语句对新用户进行权限提升： 1al">
+    <meta name="description" content="问题阐述 由于 openGauss 数据库不允许使用默认用户（默认叫做 omm）进行远程连接，因此我们不得不创建一个新的用户进行连接。但是连接后总是警告说没有权限访问 pg_user 表并且无法查看和操作数据库中的任何信息。 解决方案 由于新创建的用户权限很低，为了能够在远程连接后达到和数据库系统默认用户几乎一致的权限，我们使用下面的语句对新用户进行权限提升： 1alter user &lt;us">
 <meta property="og:type" content="article">
-<meta property="og:title" content="opengauss-remote-connect">
+<meta property="og:title" content="openGauss 远程连接">
 <meta property="og:url" content="https://blog.dwj601.cn/DataBase/openGauss/opengauss-remote-connect/index.html">
 <meta property="og:site_name" content="Dwj の Blog">
-<meta property="og:description" content="openGauss 远程连接 问题阐述 由于 openGauss 数据库不允许使用默认用户（默认叫做 omm）进行远程连接，因此我们不得不创建一个新的用户进行连接。但是连接后总是警告说没有权限访问 pg_user 表并且无法查看和操作数据库中的任何信息。 解决方案 由于新创建的用户权限很低，为了能够在远程连接后达到和数据库系统默认用户几乎一致的权限，我们使用下面的语句对新用户进行权限提升： 1al">
+<meta property="og:description" content="问题阐述 由于 openGauss 数据库不允许使用默认用户（默认叫做 omm）进行远程连接，因此我们不得不创建一个新的用户进行连接。但是连接后总是警告说没有权限访问 pg_user 表并且无法查看和操作数据库中的任何信息。 解决方案 由于新创建的用户权限很低，为了能够在远程连接后达到和数据库系统默认用户几乎一致的权限，我们使用下面的语句对新用户进行权限提升： 1alter user &lt;us">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2024-11-10T04:01:01.782Z">
-<meta property="article:modified_time" content="2024-11-11T01:35:53.841Z">
+<meta property="article:modified_time" content="2025-01-20T07:30:40.263Z">
 <meta property="article:author" content="Mr_Dwj">
 <meta property="article:tag" content="人工智能 机器学习 深度学习 算法 数据结构 计算机科学 编程">
 <meta name="twitter:card" content="summary_large_image">
@@ -36,7 +36,7 @@
     <meta name="referrer" content="no-referrer-when-downgrade">
   
   
-  <title>opengauss-remote-connect | Dwj の Blog</title>
+  <title>openGauss 远程连接 | Dwj の Blog</title>
 
   <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
 
@@ -246,7 +246,7 @@
       <div class="banner-text text-center fade-in-up">
         <div class="h2">
           
-            <span id="subtitle" data-typed-text="opengauss-remote-connect"></span>
+            <span id="subtitle" data-typed-text="openGauss 远程连接"></span>
           
         </div>
 
@@ -269,7 +269,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          406 字
+          393 字
         
       </span>
     
@@ -339,12 +339,12 @@
       <div class="container nopadding-x-md" id="board-ctn">
         <div id="board">
           <article class="post-content mx-auto">
-            <h1 id="seo-header">opengauss-remote-connect</h1>
+            <h1 id="seo-header">openGauss 远程连接</h1>
             
               <p id="updated-time" class="note note-info" style="">
                 
                   
-                    本文最后更新于 2024年11月11日 上午
+                    本文最后更新于 2025年1月20日 下午
                   
                 
               </p>
@@ -352,8 +352,7 @@
             
               <div class="markdown-body">
                 
-                <h2 id="openGauss-远程连接">openGauss 远程连接</h2>
-<h2 id="问题阐述">问题阐述</h2>
+                <h2 id="问题阐述">问题阐述</h2>
 <p>由于 openGauss 数据库不允许使用默认用户（默认叫做 omm）进行远程连接，因此我们不得不创建一个新的用户进行连接。但是连接后总是警告说没有权限访问 pg_user 表并且无法查看和操作数据库中的任何信息。</p>
 <h2 id="解决方案">解决方案</h2>
 <p>由于新创建的用户权限很低，为了能够在远程连接后达到和数据库系统默认用户几乎一致的权限，我们使用下面的语句对新用户进行权限提升：</p>
@@ -380,12 +379,12 @@
     
       <span class="category-chain">
         
-  <a href="/categories/DataBase/" class="category-chain-item">DataBase</a>
+  <a href="/categories/%E6%95%B0%E6%8D%AE%E5%BA%93/" class="category-chain-item">数据库</a>
   
   
     <span>></span>
     
-  <a href="/categories/DataBase/openGauss/" class="category-chain-item">openGauss</a>
+  <a href="/categories/%E6%95%B0%E6%8D%AE%E5%BA%93/openGauss/" class="category-chain-item">openGauss</a>
   
   
 
@@ -407,7 +406,7 @@
 
   <div class="license-box my-3">
     <div class="license-title">
-      <div>opengauss-remote-connect</div>
+      <div>openGauss 远程连接</div>
       <div>https://blog.dwj601.cn/DataBase/openGauss/opengauss-remote-connect/</div>
     </div>
     <div class="license-meta">
@@ -426,7 +425,7 @@
       
         <div class="license-meta-item license-meta-date">
           <div>更新于</div>
-          <div>2024年11月11日</div>
+          <div>2025年1月20日</div>
         </div>
       
       
@@ -457,9 +456,9 @@
                   <article class="post-prev col-6">
                     
                     
-                      <a href="/DataScience/matplotlib-tutorial/" title="matplotlib-tutorial">
+                      <a href="/DataScience/matplotlib-tutorial/" title="matplotlib 入门指南">
                         <i class="iconfont icon-arrowleft"></i>
-                        <span class="hidden-mobile">matplotlib-tutorial</span>
+                        <span class="hidden-mobile">matplotlib 入门指南</span>
                         <span class="visible-mobile">上一篇</span>
                       </a>
                     
@@ -536,17 +535,17 @@
     
     <div class="category row nomargin-x">
       <a class="category-item 
-          list-group-item category-item-action col-10 col-md-11 col-xm-11" title="DataBase"
-        id="heading-c55bea99578042029ae12d5900ac477f" role="tab" data-toggle="collapse" href="#collapse-c55bea99578042029ae12d5900ac477f"
+          list-group-item category-item-action col-10 col-md-11 col-xm-11" title="数据库"
+        id="heading-68051bf4aa2743b030984b694628ee9c" role="tab" data-toggle="collapse" href="#collapse-68051bf4aa2743b030984b694628ee9c"
         aria-expanded="true"
       >
-        DataBase
+        数据库
         <span class="list-group-count">(8)</span>
         <i class="iconfont icon-arrowright"></i>
       </a>
       
-      <div class="category-collapse collapse show" id="collapse-c55bea99578042029ae12d5900ac477f"
-           role="tabpanel" aria-labelledby="heading-c55bea99578042029ae12d5900ac477f">
+      <div class="category-collapse collapse show" id="collapse-68051bf4aa2743b030984b694628ee9c"
+           role="tabpanel" aria-labelledby="heading-68051bf4aa2743b030984b694628ee9c">
         
         
           
@@ -556,10 +555,10 @@
     
       
       
-        <a href="/DataBase/data-base-guide/" title="data-base-guide"
+        <a href="/DataBase/data-base-guide/" title="数据库开发指南"
            class="list-group-item list-group-item-action
            ">
-          <span class="category-post">data-base-guide</span>
+          <span class="category-post">数据库开发指南</span>
         </a>
       
     
@@ -591,10 +590,10 @@
     
       
       
-        <a href="/DataBase/ElasticSearch/elastic-search-basic/" title="elastic-search-basic"
+        <a href="/DataBase/ElasticSearch/elastic-search-basic/" title="ElasticSearch 基础"
            class="list-group-item list-group-item-action
            ">
-          <span class="category-post">elastic-search-basic</span>
+          <span class="category-post">ElasticSearch 基础</span>
         </a>
       
     
@@ -628,19 +627,19 @@
     
       
       
-        <a href="/DataBase/MySQL/mysql-basic/" title="mysql-basic"
+        <a href="/DataBase/MySQL/solve-mysql-problems/" title="解决 MySQL 相关问题"
            class="list-group-item list-group-item-action
            ">
-          <span class="category-post">mysql-basic</span>
+          <span class="category-post">解决 MySQL 相关问题</span>
         </a>
       
     
       
       
-        <a href="/DataBase/MySQL/solve-mysql-problems/" title="solve-mysql-problems"
+        <a href="/DataBase/MySQL/mysql-basic/" title="MySQL 基础"
            class="list-group-item list-group-item-action
            ">
-          <span class="category-post">solve-mysql-problems</span>
+          <span class="category-post">MySQL 基础</span>
         </a>
       
     
@@ -674,10 +673,10 @@
     
       
       
-        <a href="/DataBase/Redis/redis-basic/" title="redis-basic"
+        <a href="/DataBase/Redis/redis-basic/" title="Redis 基础"
            class="list-group-item list-group-item-action
            ">
-          <span class="category-post">redis-basic</span>
+          <span class="category-post">Redis 基础</span>
         </a>
       
     
@@ -711,28 +710,28 @@
     
       
       
-        <a href="/DataBase/openGauss/opengauss-basic/" title="opengauss-basic"
-           class="list-group-item list-group-item-action
-           ">
-          <span class="category-post">opengauss-basic</span>
-        </a>
-      
-    
-      
-      
-        <a href="/DataBase/openGauss/opengauss-import-data/" title="opengauss-import-data"
-           class="list-group-item list-group-item-action
-           ">
-          <span class="category-post">opengauss-import-data</span>
-        </a>
-      
-    
-      
-      
-        <a href="/DataBase/openGauss/opengauss-remote-connect/" title="opengauss-remote-connect"
+        <a href="/DataBase/openGauss/opengauss-remote-connect/" title="openGauss 远程连接"
            class="list-group-item list-group-item-action
            active">
-          <span class="category-post">opengauss-remote-connect</span>
+          <span class="category-post">openGauss 远程连接</span>
+        </a>
+      
+    
+      
+      
+        <a href="/DataBase/openGauss/opengauss-import-data/" title="openGauss 导入数据"
+           class="list-group-item list-group-item-action
+           ">
+          <span class="category-post">openGauss 导入数据</span>
+        </a>
+      
+    
+      
+      
+        <a href="/DataBase/openGauss/opengauss-basic/" title="openGauss 基础"
+           class="list-group-item list-group-item-action
+           ">
+          <span class="category-post">openGauss 基础</span>
         </a>
       
     

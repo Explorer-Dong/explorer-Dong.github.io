@@ -19,19 +19,19 @@
   <meta name="author" content="Mr_Dwj">
   <meta name="keywords" content="人工智能 机器学习 深度学习 算法 数据结构 计算机科学 编程">
   
-    <meta name="description" content="CLion 解决无法打开文件的问题 问题描述 在使用 CLion 进行文件路径索引时，出现文件无法打开的现象，如图：  检测问题 我们使用 cstring 库的 strerror() 函数检测一下问题：  可以发现是未找到文件。因为在 CLion 中相对路径索引的起始根默认为 cmake-build-debug 文件夹，故无法找到。 解决方案 解决方法有三个：   跳出 cmake-build-d">
+    <meta name="description" content="问题描述 在使用 CLion 进行文件路径索引时，出现文件无法打开的现象，如图：  检测问题 我们使用 cstring 库的 strerror() 函数检测一下问题：  可以发现是未找到文件。因为在 CLion 中相对路径索引的起始根默认为 cmake-build-debug 文件夹，故无法找到。 解决方案 解决方法有三个：   跳出 cmake-build-debug 文件夹再进行索引，即路径设">
 <meta property="og:type" content="article">
-<meta property="og:title" content="solve-clion-cannot-open-relative-file">
+<meta property="og:title" content="CLion 解决无法打开文件的问题">
 <meta property="og:url" content="https://blog.dwj601.cn/DevTools/CLion/solve-clion-cannot-open-relative-file/index.html">
 <meta property="og:site_name" content="Dwj の Blog">
-<meta property="og:description" content="CLion 解决无法打开文件的问题 问题描述 在使用 CLion 进行文件路径索引时，出现文件无法打开的现象，如图：  检测问题 我们使用 cstring 库的 strerror() 函数检测一下问题：  可以发现是未找到文件。因为在 CLion 中相对路径索引的起始根默认为 cmake-build-debug 文件夹，故无法找到。 解决方案 解决方法有三个：   跳出 cmake-build-d">
+<meta property="og:description" content="问题描述 在使用 CLion 进行文件路径索引时，出现文件无法打开的现象，如图：  检测问题 我们使用 cstring 库的 strerror() 函数检测一下问题：  可以发现是未找到文件。因为在 CLion 中相对路径索引的起始根默认为 cmake-build-debug 文件夹，故无法找到。 解决方案 解决方法有三个：   跳出 cmake-build-debug 文件夹再进行索引，即路径设">
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="https://dwj-oss.oss-cn-nanjing.aliyuncs.com/images/202402292258802.png">
 <meta property="og:image" content="https://dwj-oss.oss-cn-nanjing.aliyuncs.com/images/202402292258397.png">
 <meta property="og:image" content="https://dwj-oss.oss-cn-nanjing.aliyuncs.com/images/202402292258745.png">
 <meta property="og:image" content="https://dwj-oss.oss-cn-nanjing.aliyuncs.com/images/202402292258092.png">
 <meta property="article:published_time" content="2024-03-21T05:55:02.100Z">
-<meta property="article:modified_time" content="2024-03-21T02:08:56.809Z">
+<meta property="article:modified_time" content="2025-01-20T07:29:01.778Z">
 <meta property="article:author" content="Mr_Dwj">
 <meta property="article:tag" content="人工智能 机器学习 深度学习 算法 数据结构 计算机科学 编程">
 <meta name="twitter:card" content="summary_large_image">
@@ -41,7 +41,7 @@
     <meta name="referrer" content="no-referrer-when-downgrade">
   
   
-  <title>solve-clion-cannot-open-relative-file | Dwj の Blog</title>
+  <title>CLion 解决无法打开文件的问题 | Dwj の Blog</title>
 
   <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
 
@@ -251,7 +251,7 @@
       <div class="banner-text text-center fade-in-up">
         <div class="h2">
           
-            <span id="subtitle" data-typed-text="solve-clion-cannot-open-relative-file"></span>
+            <span id="subtitle" data-typed-text="CLion 解决无法打开文件的问题"></span>
           
         </div>
 
@@ -274,7 +274,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          326 字
+          310 字
         
       </span>
     
@@ -285,7 +285,7 @@
         
         
         
-          3 分钟
+          2 分钟
         
       </span>
     
@@ -344,12 +344,12 @@
       <div class="container nopadding-x-md" id="board-ctn">
         <div id="board">
           <article class="post-content mx-auto">
-            <h1 id="seo-header">solve-clion-cannot-open-relative-file</h1>
+            <h1 id="seo-header">CLion 解决无法打开文件的问题</h1>
             
               <p id="updated-time" class="note note-info" style="">
                 
                   
-                    本文最后更新于 2024年3月21日 上午
+                    本文最后更新于 2025年1月20日 下午
                   
                 
               </p>
@@ -357,8 +357,7 @@
             
               <div class="markdown-body">
                 
-                <h1>CLion 解决无法打开文件的问题</h1>
-<h2 id="问题描述">问题描述</h2>
+                <h2 id="问题描述">问题描述</h2>
 <p>在使用 CLion 进行文件路径索引时，出现文件无法打开的现象，如图：</p>
 <p><img src="https://dwj-oss.oss-cn-nanjing.aliyuncs.com/images/202402292258802.png" alt="无法打开文件"></p>
 <h2 id="检测问题">检测问题</h2>
@@ -399,12 +398,12 @@
     
       <span class="category-chain">
         
-  <a href="/categories/DevTools/" class="category-chain-item">DevTools</a>
+  <a href="/categories/%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/" class="category-chain-item">开发工具</a>
   
   
     <span>></span>
     
-  <a href="/categories/DevTools/CLion/" class="category-chain-item">CLion</a>
+  <a href="/categories/%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/CLion/" class="category-chain-item">CLion</a>
   
   
 
@@ -426,7 +425,7 @@
 
   <div class="license-box my-3">
     <div class="license-title">
-      <div>solve-clion-cannot-open-relative-file</div>
+      <div>CLion 解决无法打开文件的问题</div>
       <div>https://blog.dwj601.cn/DevTools/CLion/solve-clion-cannot-open-relative-file/</div>
     </div>
     <div class="license-meta">
@@ -445,7 +444,7 @@
       
         <div class="license-meta-item license-meta-date">
           <div>更新于</div>
-          <div>2024年3月21日</div>
+          <div>2025年1月20日</div>
         </div>
       
       
@@ -476,9 +475,9 @@
                   <article class="post-prev col-6">
                     
                     
-                      <a href="/DataBase/data-base-guide/" title="data-base-guide">
+                      <a href="/DataBase/data-base-guide/" title="数据库开发指南">
                         <i class="iconfont icon-arrowleft"></i>
-                        <span class="hidden-mobile">data-base-guide</span>
+                        <span class="hidden-mobile">数据库开发指南</span>
                         <span class="visible-mobile">上一篇</span>
                       </a>
                     
@@ -486,8 +485,8 @@
                   <article class="post-next col-6">
                     
                     
-                      <a href="/BackEnd/back-end-guide/" title="back-end-guide">
-                        <span class="hidden-mobile">back-end-guide</span>
+                      <a href="/Algorithm/others/" title="其他">
+                        <span class="hidden-mobile">其他</span>
                         <span class="visible-mobile">下一篇</span>
                         <i class="iconfont icon-arrowright"></i>
                       </a>
@@ -555,32 +554,23 @@
     
     <div class="category row nomargin-x">
       <a class="category-item 
-          list-group-item category-item-action col-10 col-md-11 col-xm-11" title="DevTools"
-        id="heading-482a4dca0bbd8fcdda5acc6f95f3c279" role="tab" data-toggle="collapse" href="#collapse-482a4dca0bbd8fcdda5acc6f95f3c279"
+          list-group-item category-item-action col-10 col-md-11 col-xm-11" title="开发工具"
+        id="heading-2c509530bf439a36168a86e21c160c06" role="tab" data-toggle="collapse" href="#collapse-2c509530bf439a36168a86e21c160c06"
         aria-expanded="true"
       >
-        DevTools
-        <span class="list-group-count">(10)</span>
+        开发工具
+        <span class="list-group-count">(8)</span>
         <i class="iconfont icon-arrowright"></i>
       </a>
       
-      <div class="category-collapse collapse show" id="collapse-482a4dca0bbd8fcdda5acc6f95f3c279"
-           role="tabpanel" aria-labelledby="heading-482a4dca0bbd8fcdda5acc6f95f3c279">
+      <div class="category-collapse collapse show" id="collapse-2c509530bf439a36168a86e21c160c06"
+           role="tabpanel" aria-labelledby="heading-2c509530bf439a36168a86e21c160c06">
         
         
           
           
   <div class="category-post-list">
     
-    
-      
-      
-        <a href="/DevTools/jetbrains-license/" title="jetbrains-license"
-           class="list-group-item list-group-item-action
-           ">
-          <span class="category-post">jetbrains-license</span>
-        </a>
-      
     
   </div>
 
@@ -610,65 +600,28 @@
     
       
       
-        <a href="/DevTools/CLion/config-clion/" title="config-clion"
+        <a href="/DevTools/CLion/solve-clion-decoding-error/" title="CLion 解决中文输出乱码的问题"
            class="list-group-item list-group-item-action
            ">
-          <span class="category-post">config-clion</span>
+          <span class="category-post">CLion 解决中文输出乱码的问题</span>
         </a>
       
     
       
       
-        <a href="/DevTools/CLion/solve-clion-cannot-open-relative-file/" title="solve-clion-cannot-open-relative-file"
+        <a href="/DevTools/CLion/solve-clion-cannot-open-relative-file/" title="CLion 解决无法打开文件的问题"
            class="list-group-item list-group-item-action
            active">
-          <span class="category-post">solve-clion-cannot-open-relative-file</span>
+          <span class="category-post">CLion 解决无法打开文件的问题</span>
         </a>
       
     
       
       
-        <a href="/DevTools/CLion/solve-clion-decoding-error/" title="solve-clion-decoding-error"
+        <a href="/DevTools/CLion/config-clion/" title="CLion 配置指南"
            class="list-group-item list-group-item-action
            ">
-          <span class="category-post">solve-clion-decoding-error</span>
-        </a>
-      
-    
-  </div>
-
-        
-      </div>
-    </div>
-  
-    
-    
-    
-    <div class="category-sub row nomargin-x">
-      <a class="category-subitem collapsed
-          list-group-item category-item-action col-10 col-md-11 col-xm-11" title="DevCpp"
-        id="heading-86f596ad3a8e0ab4ac9d39fff05e7724" role="tab" data-toggle="collapse" href="#collapse-86f596ad3a8e0ab4ac9d39fff05e7724"
-        aria-expanded="false"
-      >
-        DevCpp
-        <span class="list-group-count">(1)</span>
-        <i class="iconfont icon-arrowright"></i>
-      </a>
-      
-      <div class="category-collapse collapse " id="collapse-86f596ad3a8e0ab4ac9d39fff05e7724"
-           role="tabpanel" aria-labelledby="heading-86f596ad3a8e0ab4ac9d39fff05e7724">
-        
-        
-          
-  <div class="category-post-list">
-    
-    
-      
-      
-        <a href="/DevTools/DevCpp/devc-self-config/" title="self-config"
-           class="list-group-item list-group-item-action
-           ">
-          <span class="category-post">self-config</span>
+          <span class="category-post">CLion 配置指南</span>
         </a>
       
     
@@ -702,37 +655,37 @@
     
       
       
-        <a href="/DevTools/Git/git-basic/" title="git-basic"
+        <a href="/DevTools/Git/solve-git-problems/" title="解决 Git 相关问题"
            class="list-group-item list-group-item-action
            ">
-          <span class="category-post">git-basic</span>
+          <span class="category-post">解决 Git 相关问题</span>
         </a>
       
     
       
       
-        <a href="/DevTools/Git/git-pull-request/" title="git-pull-request"
+        <a href="/DevTools/Git/git-self-define-command/" title="Git 自定义命令"
            class="list-group-item list-group-item-action
            ">
-          <span class="category-post">git-pull-request</span>
+          <span class="category-post">Git 自定义命令</span>
         </a>
       
     
       
       
-        <a href="/DevTools/Git/git-self-define-command/" title="git-self-define-command"
+        <a href="/DevTools/Git/git-pull-request/" title="Git 的 Pull Request 是什么"
            class="list-group-item list-group-item-action
            ">
-          <span class="category-post">git-self-define-command</span>
+          <span class="category-post">Git 的 Pull Request 是什么</span>
         </a>
       
     
       
       
-        <a href="/DevTools/Git/solve-git-problems/" title="solve-git-problems"
+        <a href="/DevTools/Git/git-basic/" title="Git 指南大全"
            class="list-group-item list-group-item-action
            ">
-          <span class="category-post">solve-git-problems</span>
+          <span class="category-post">Git 指南大全</span>
         </a>
       
     
@@ -766,10 +719,10 @@
     
       
       
-        <a href="/DevTools/IDLE/idle-self-config/" title="idle-self-config"
+        <a href="/DevTools/IDLE/idle-self-config/" title="IDLE 偏好配置"
            class="list-group-item list-group-item-action
            ">
-          <span class="category-post">idle-self-config</span>
+          <span class="category-post">IDLE 偏好配置</span>
         </a>
       
     

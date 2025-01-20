@@ -19,12 +19,12 @@
   <meta name="author" content="Mr_Dwj">
   <meta name="keywords" content="人工智能 机器学习 深度学习 算法 数据结构 计算机科学 编程">
   
-    <meta name="description" content="Git 的 Pull Request 是什么 前言 发现了本博客站点的配置文件中一个失效的链接，就想着对原项目进行修改。早闻 git 的 pr 功能，趁着端午放假在家便来实战一波，做个小小的记录 😎 原理 首先聊聊 pr 名字的由来。pr 即 pull request，顾名思义是「拉取请求」的意思。pr 根本逻辑是将原项目 fork 到自己的仓库后进行修改，然后向原项目作者发起 pull req">
+    <meta name="description" content="前言 发现了本博客站点的配置文件中一个失效的链接，就想着对原项目进行修改。早闻 git 的 pr 功能，趁着端午放假在家便来实战一波，做个小小的记录 😎 原理 首先聊聊 pr 名字的由来。pr 即 pull request，顾名思义是「拉取请求」的意思。pr 根本逻辑是将原项目 fork 到自己的仓库后进行修改，然后向原项目作者发起 pull request 请求，直到 merge 到原项目或被">
 <meta property="og:type" content="article">
-<meta property="og:title" content="git-pull-request">
+<meta property="og:title" content="Git 的 Pull Request 是什么">
 <meta property="og:url" content="https://blog.dwj601.cn/DevTools/Git/git-pull-request/index.html">
 <meta property="og:site_name" content="Dwj の Blog">
-<meta property="og:description" content="Git 的 Pull Request 是什么 前言 发现了本博客站点的配置文件中一个失效的链接，就想着对原项目进行修改。早闻 git 的 pr 功能，趁着端午放假在家便来实战一波，做个小小的记录 😎 原理 首先聊聊 pr 名字的由来。pr 即 pull request，顾名思义是「拉取请求」的意思。pr 根本逻辑是将原项目 fork 到自己的仓库后进行修改，然后向原项目作者发起 pull req">
+<meta property="og:description" content="前言 发现了本博客站点的配置文件中一个失效的链接，就想着对原项目进行修改。早闻 git 的 pr 功能，趁着端午放假在家便来实战一波，做个小小的记录 😎 原理 首先聊聊 pr 名字的由来。pr 即 pull request，顾名思义是「拉取请求」的意思。pr 根本逻辑是将原项目 fork 到自己的仓库后进行修改，然后向原项目作者发起 pull request 请求，直到 merge 到原项目或被">
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="https://github.githubassets.com/images/icons/emoji/unicode/1f60e.png?v8">
 <meta property="og:image" content="https://dwj-oss.oss-cn-nanjing.aliyuncs.com/images/202406091607490.svg">
@@ -34,7 +34,7 @@
 <meta property="og:image" content="https://dwj-oss.oss-cn-nanjing.aliyuncs.com/images/202406091633666.png">
 <meta property="og:image" content="https://dwj-oss.oss-cn-nanjing.aliyuncs.com/images/202406091633736.png">
 <meta property="article:published_time" content="2024-06-09T07:24:03.007Z">
-<meta property="article:modified_time" content="2024-09-01T05:05:33.744Z">
+<meta property="article:modified_time" content="2025-01-20T07:29:27.239Z">
 <meta property="article:author" content="Mr_Dwj">
 <meta property="article:tag" content="人工智能 机器学习 深度学习 算法 数据结构 计算机科学 编程">
 <meta name="twitter:card" content="summary_large_image">
@@ -44,7 +44,7 @@
     <meta name="referrer" content="no-referrer-when-downgrade">
   
   
-  <title>git-pull-request | Dwj の Blog</title>
+  <title>Git 的 Pull Request 是什么 | Dwj の Blog</title>
 
   <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
 
@@ -254,7 +254,7 @@
       <div class="banner-text text-center fade-in-up">
         <div class="h2">
           
-            <span id="subtitle" data-typed-text="git-pull-request"></span>
+            <span id="subtitle" data-typed-text="Git 的 Pull Request 是什么"></span>
           
         </div>
 
@@ -277,7 +277,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          924 字
+          906 字
         
       </span>
     
@@ -347,12 +347,12 @@
       <div class="container nopadding-x-md" id="board-ctn">
         <div id="board">
           <article class="post-content mx-auto">
-            <h1 id="seo-header">git-pull-request</h1>
+            <h1 id="seo-header">Git 的 Pull Request 是什么</h1>
             
               <p id="updated-time" class="note note-info" style="">
                 
                   
-                    本文最后更新于 2024年9月1日 下午
+                    本文最后更新于 2025年1月20日 下午
                   
                 
               </p>
@@ -360,8 +360,7 @@
             
               <div class="markdown-body">
                 
-                <h2 id="Git-的-Pull-Request-是什么">Git 的 Pull Request 是什么</h2>
-<h2 id="前言">前言</h2>
+                <h2 id="前言">前言</h2>
 <p>发现了本博客站点的配置文件中一个失效的链接，就想着对原项目进行修改。早闻 git 的 pr 功能，趁着端午放假在家便来实战一波，做个小小的记录 <span class="github-emoji"><span>😎</span><img src="https://github.githubassets.com/images/icons/emoji/unicode/1f60e.png?v8" aria-hidden="true" onerror="this.parent.classList.add('github-emoji-fallback')"></span></p>
 <h2 id="原理">原理</h2>
 <p>首先聊聊 pr 名字的由来。pr 即 <code>pull request</code>，顾名思义是「拉取请求」的意思。pr 根本逻辑是将原项目 fork 到自己的仓库后进行修改，然后向原项目作者发起 pull request 请求，直到 merge 到原项目或被拒绝。这样的一个工作流程为什么被叫做「拉取请求」呢？依稀记得之前在某乎上看到过相关文章，程序员届大概有两个流派，主要从这个工作流的执行主体角度来理解。对于原项目作者，需要考虑修改者的请求是否适合合并，就是 pull 的过程；相对的，修改者发送修改合并的请求是一个 push 的过程。因此我们从原项目作者的角度来理解这个名称就有据可寻了。下附一张图解：</p>
@@ -408,12 +407,12 @@
     
       <span class="category-chain">
         
-  <a href="/categories/DevTools/" class="category-chain-item">DevTools</a>
+  <a href="/categories/%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/" class="category-chain-item">开发工具</a>
   
   
     <span>></span>
     
-  <a href="/categories/DevTools/Git/" class="category-chain-item">Git</a>
+  <a href="/categories/%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/Git/" class="category-chain-item">Git</a>
   
   
 
@@ -435,7 +434,7 @@
 
   <div class="license-box my-3">
     <div class="license-title">
-      <div>git-pull-request</div>
+      <div>Git 的 Pull Request 是什么</div>
       <div>https://blog.dwj601.cn/DevTools/Git/git-pull-request/</div>
     </div>
     <div class="license-meta">
@@ -454,7 +453,7 @@
       
         <div class="license-meta-item license-meta-date">
           <div>更新于</div>
-          <div>2024年9月1日</div>
+          <div>2025年1月20日</div>
         </div>
       
       
@@ -485,9 +484,9 @@
                   <article class="post-prev col-6">
                     
                     
-                      <a href="/Operation/Safe/solve-server-invade/" title="solve-server-invade">
+                      <a href="/Operation/Safe/solve-server-invade/" title="解决服务器入侵攻击">
                         <i class="iconfont icon-arrowleft"></i>
-                        <span class="hidden-mobile">solve-server-invade</span>
+                        <span class="hidden-mobile">解决服务器入侵攻击</span>
                         <span class="visible-mobile">上一篇</span>
                       </a>
                     
@@ -495,8 +494,8 @@
                   <article class="post-next col-6">
                     
                     
-                      <a href="/DevTools/IDLE/idle-self-config/" title="idle-self-config">
-                        <span class="hidden-mobile">idle-self-config</span>
+                      <a href="/DevTools/IDLE/idle-self-config/" title="IDLE 偏好配置">
+                        <span class="hidden-mobile">IDLE 偏好配置</span>
                         <span class="visible-mobile">下一篇</span>
                         <i class="iconfont icon-arrowright"></i>
                       </a>
@@ -564,32 +563,23 @@
     
     <div class="category row nomargin-x">
       <a class="category-item 
-          list-group-item category-item-action col-10 col-md-11 col-xm-11" title="DevTools"
-        id="heading-482a4dca0bbd8fcdda5acc6f95f3c279" role="tab" data-toggle="collapse" href="#collapse-482a4dca0bbd8fcdda5acc6f95f3c279"
+          list-group-item category-item-action col-10 col-md-11 col-xm-11" title="开发工具"
+        id="heading-2c509530bf439a36168a86e21c160c06" role="tab" data-toggle="collapse" href="#collapse-2c509530bf439a36168a86e21c160c06"
         aria-expanded="true"
       >
-        DevTools
-        <span class="list-group-count">(10)</span>
+        开发工具
+        <span class="list-group-count">(8)</span>
         <i class="iconfont icon-arrowright"></i>
       </a>
       
-      <div class="category-collapse collapse show" id="collapse-482a4dca0bbd8fcdda5acc6f95f3c279"
-           role="tabpanel" aria-labelledby="heading-482a4dca0bbd8fcdda5acc6f95f3c279">
+      <div class="category-collapse collapse show" id="collapse-2c509530bf439a36168a86e21c160c06"
+           role="tabpanel" aria-labelledby="heading-2c509530bf439a36168a86e21c160c06">
         
         
           
           
   <div class="category-post-list">
     
-    
-      
-      
-        <a href="/DevTools/jetbrains-license/" title="jetbrains-license"
-           class="list-group-item list-group-item-action
-           ">
-          <span class="category-post">jetbrains-license</span>
-        </a>
-      
     
   </div>
 
@@ -619,65 +609,28 @@
     
       
       
-        <a href="/DevTools/CLion/config-clion/" title="config-clion"
+        <a href="/DevTools/CLion/solve-clion-decoding-error/" title="CLion 解决中文输出乱码的问题"
            class="list-group-item list-group-item-action
            ">
-          <span class="category-post">config-clion</span>
+          <span class="category-post">CLion 解决中文输出乱码的问题</span>
         </a>
       
     
       
       
-        <a href="/DevTools/CLion/solve-clion-cannot-open-relative-file/" title="solve-clion-cannot-open-relative-file"
+        <a href="/DevTools/CLion/solve-clion-cannot-open-relative-file/" title="CLion 解决无法打开文件的问题"
            class="list-group-item list-group-item-action
            ">
-          <span class="category-post">solve-clion-cannot-open-relative-file</span>
+          <span class="category-post">CLion 解决无法打开文件的问题</span>
         </a>
       
     
       
       
-        <a href="/DevTools/CLion/solve-clion-decoding-error/" title="solve-clion-decoding-error"
+        <a href="/DevTools/CLion/config-clion/" title="CLion 配置指南"
            class="list-group-item list-group-item-action
            ">
-          <span class="category-post">solve-clion-decoding-error</span>
-        </a>
-      
-    
-  </div>
-
-        
-      </div>
-    </div>
-  
-    
-    
-    
-    <div class="category-sub row nomargin-x">
-      <a class="category-subitem collapsed
-          list-group-item category-item-action col-10 col-md-11 col-xm-11" title="DevCpp"
-        id="heading-86f596ad3a8e0ab4ac9d39fff05e7724" role="tab" data-toggle="collapse" href="#collapse-86f596ad3a8e0ab4ac9d39fff05e7724"
-        aria-expanded="false"
-      >
-        DevCpp
-        <span class="list-group-count">(1)</span>
-        <i class="iconfont icon-arrowright"></i>
-      </a>
-      
-      <div class="category-collapse collapse " id="collapse-86f596ad3a8e0ab4ac9d39fff05e7724"
-           role="tabpanel" aria-labelledby="heading-86f596ad3a8e0ab4ac9d39fff05e7724">
-        
-        
-          
-  <div class="category-post-list">
-    
-    
-      
-      
-        <a href="/DevTools/DevCpp/devc-self-config/" title="self-config"
-           class="list-group-item list-group-item-action
-           ">
-          <span class="category-post">self-config</span>
+          <span class="category-post">CLion 配置指南</span>
         </a>
       
     
@@ -711,37 +664,37 @@
     
       
       
-        <a href="/DevTools/Git/git-basic/" title="git-basic"
+        <a href="/DevTools/Git/solve-git-problems/" title="解决 Git 相关问题"
            class="list-group-item list-group-item-action
            ">
-          <span class="category-post">git-basic</span>
+          <span class="category-post">解决 Git 相关问题</span>
         </a>
       
     
       
       
-        <a href="/DevTools/Git/git-pull-request/" title="git-pull-request"
+        <a href="/DevTools/Git/git-self-define-command/" title="Git 自定义命令"
+           class="list-group-item list-group-item-action
+           ">
+          <span class="category-post">Git 自定义命令</span>
+        </a>
+      
+    
+      
+      
+        <a href="/DevTools/Git/git-pull-request/" title="Git 的 Pull Request 是什么"
            class="list-group-item list-group-item-action
            active">
-          <span class="category-post">git-pull-request</span>
+          <span class="category-post">Git 的 Pull Request 是什么</span>
         </a>
       
     
       
       
-        <a href="/DevTools/Git/git-self-define-command/" title="git-self-define-command"
+        <a href="/DevTools/Git/git-basic/" title="Git 指南大全"
            class="list-group-item list-group-item-action
            ">
-          <span class="category-post">git-self-define-command</span>
-        </a>
-      
-    
-      
-      
-        <a href="/DevTools/Git/solve-git-problems/" title="solve-git-problems"
-           class="list-group-item list-group-item-action
-           ">
-          <span class="category-post">solve-git-problems</span>
+          <span class="category-post">Git 指南大全</span>
         </a>
       
     
@@ -775,10 +728,10 @@
     
       
       
-        <a href="/DevTools/IDLE/idle-self-config/" title="idle-self-config"
+        <a href="/DevTools/IDLE/idle-self-config/" title="IDLE 偏好配置"
            class="list-group-item list-group-item-action
            ">
-          <span class="category-post">idle-self-config</span>
+          <span class="category-post">IDLE 偏好配置</span>
         </a>
       
     

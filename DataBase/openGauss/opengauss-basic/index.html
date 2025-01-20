@@ -19,12 +19,12 @@
   <meta name="author" content="Mr_Dwj">
   <meta name="keywords" content="人工智能 机器学习 深度学习 算法 数据结构 计算机科学 编程">
   
-    <meta name="description" content="openGauss 基础 前言 起因是学校的数据库课程需要使用关系型数据库 openGauss 进行教学，那便研究研究，顺便做个笔记。 官方网站：openGauss 官方网站 | openGauss 主页 | openGauss 社区官网 安装与配置 硬件支持  虚拟机：腾讯云 2 核 2 G 3Mbps 轻量应用服务器（提前放通 5432 安全组便于后期的 SSH 连接） 操作系统：CentOS">
+    <meta name="description" content="前言 起因是学校的数据库课程需要使用关系型数据库 openGauss 进行教学，那便研究研究，顺便做个笔记。 官方网站：openGauss 官方网站 | openGauss 主页 | openGauss 社区官网 安装与配置 硬件支持  虚拟机：腾讯云 2 核 2 G 3Mbps 轻量应用服务器（提前放通 5432 安全组便于后期的 SSH 连接） 操作系统：CentOS 7.6 64bit SS">
 <meta property="og:type" content="article">
-<meta property="og:title" content="opengauss-basic">
+<meta property="og:title" content="openGauss 基础">
 <meta property="og:url" content="https://blog.dwj601.cn/DataBase/openGauss/opengauss-basic/index.html">
 <meta property="og:site_name" content="Dwj の Blog">
-<meta property="og:description" content="openGauss 基础 前言 起因是学校的数据库课程需要使用关系型数据库 openGauss 进行教学，那便研究研究，顺便做个笔记。 官方网站：openGauss 官方网站 | openGauss 主页 | openGauss 社区官网 安装与配置 硬件支持  虚拟机：腾讯云 2 核 2 G 3Mbps 轻量应用服务器（提前放通 5432 安全组便于后期的 SSH 连接） 操作系统：CentOS">
+<meta property="og:description" content="前言 起因是学校的数据库课程需要使用关系型数据库 openGauss 进行教学，那便研究研究，顺便做个笔记。 官方网站：openGauss 官方网站 | openGauss 主页 | openGauss 社区官网 安装与配置 硬件支持  虚拟机：腾讯云 2 核 2 G 3Mbps 轻量应用服务器（提前放通 5432 安全组便于后期的 SSH 连接） 操作系统：CentOS 7.6 64bit SS">
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="https://dwj-oss.oss-cn-nanjing.aliyuncs.com/images/202409192052001.png">
 <meta property="og:image" content="https://dwj-oss.oss-cn-nanjing.aliyuncs.com/images/202409192106221.png">
@@ -36,7 +36,7 @@
 <meta property="og:image" content="https://dwj-oss.oss-cn-nanjing.aliyuncs.com/images/202409201140997.png">
 <meta property="og:image" content="https://dwj-oss.oss-cn-nanjing.aliyuncs.com/images/202409201144556.png">
 <meta property="article:published_time" content="2024-09-19T11:42:31.138Z">
-<meta property="article:modified_time" content="2024-09-20T06:20:56.782Z">
+<meta property="article:modified_time" content="2025-01-20T07:30:35.004Z">
 <meta property="article:author" content="Mr_Dwj">
 <meta property="article:tag" content="人工智能 机器学习 深度学习 算法 数据结构 计算机科学 编程">
 <meta name="twitter:card" content="summary_large_image">
@@ -46,7 +46,7 @@
     <meta name="referrer" content="no-referrer-when-downgrade">
   
   
-  <title>opengauss-basic | Dwj の Blog</title>
+  <title>openGauss 基础 | Dwj の Blog</title>
 
   <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
 
@@ -256,7 +256,7 @@
       <div class="banner-text text-center fade-in-up">
         <div class="h2">
           
-            <span id="subtitle" data-typed-text="opengauss-basic"></span>
+            <span id="subtitle" data-typed-text="openGauss 基础"></span>
           
         </div>
 
@@ -349,12 +349,12 @@
       <div class="container nopadding-x-md" id="board-ctn">
         <div id="board">
           <article class="post-content mx-auto">
-            <h1 id="seo-header">opengauss-basic</h1>
+            <h1 id="seo-header">openGauss 基础</h1>
             
               <p id="updated-time" class="note note-info" style="">
                 
                   
-                    本文最后更新于 2024年9月20日 下午
+                    本文最后更新于 2025年1月20日 下午
                   
                 
               </p>
@@ -362,8 +362,7 @@
             
               <div class="markdown-body">
                 
-                <h2 id="openGauss-基础">openGauss 基础</h2>
-<h2 id="前言">前言</h2>
+                <h2 id="前言">前言</h2>
 <p>起因是学校的数据库课程需要使用关系型数据库 openGauss 进行教学，那便研究研究，顺便做个笔记。</p>
 <p>官方网站：<a target="_blank" rel="noopener" href="https://opengauss.org/zh/">openGauss 官方网站 | openGauss 主页 | openGauss 社区官网</a></p>
 <h2 id="安装与配置">安装与配置</h2>
@@ -506,12 +505,12 @@
     
       <span class="category-chain">
         
-  <a href="/categories/DataBase/" class="category-chain-item">DataBase</a>
+  <a href="/categories/%E6%95%B0%E6%8D%AE%E5%BA%93/" class="category-chain-item">数据库</a>
   
   
     <span>></span>
     
-  <a href="/categories/DataBase/openGauss/" class="category-chain-item">openGauss</a>
+  <a href="/categories/%E6%95%B0%E6%8D%AE%E5%BA%93/openGauss/" class="category-chain-item">openGauss</a>
   
   
 
@@ -533,7 +532,7 @@
 
   <div class="license-box my-3">
     <div class="license-title">
-      <div>opengauss-basic</div>
+      <div>openGauss 基础</div>
       <div>https://blog.dwj601.cn/DataBase/openGauss/opengauss-basic/</div>
     </div>
     <div class="license-meta">
@@ -552,7 +551,7 @@
       
         <div class="license-meta-item license-meta-date">
           <div>更新于</div>
-          <div>2024年9月20日</div>
+          <div>2025年1月20日</div>
         </div>
       
       
@@ -583,9 +582,9 @@
                   <article class="post-prev col-6">
                     
                     
-                      <a href="/DataBase/openGauss/opengauss-import-data/" title="opengauss-import-data">
+                      <a href="/DataBase/openGauss/opengauss-import-data/" title="openGauss 导入数据">
                         <i class="iconfont icon-arrowleft"></i>
-                        <span class="hidden-mobile">opengauss-import-data</span>
+                        <span class="hidden-mobile">openGauss 导入数据</span>
                         <span class="visible-mobile">上一篇</span>
                       </a>
                     
@@ -593,8 +592,8 @@
                   <article class="post-next col-6">
                     
                     
-                      <a href="/Operation/Shell/shell-basic/" title="shell-basic">
-                        <span class="hidden-mobile">shell-basic</span>
+                      <a href="/Operation/Shell/shell-basic/" title="Shell 基础">
+                        <span class="hidden-mobile">Shell 基础</span>
                         <span class="visible-mobile">下一篇</span>
                         <i class="iconfont icon-arrowright"></i>
                       </a>
@@ -662,17 +661,17 @@
     
     <div class="category row nomargin-x">
       <a class="category-item 
-          list-group-item category-item-action col-10 col-md-11 col-xm-11" title="DataBase"
-        id="heading-c55bea99578042029ae12d5900ac477f" role="tab" data-toggle="collapse" href="#collapse-c55bea99578042029ae12d5900ac477f"
+          list-group-item category-item-action col-10 col-md-11 col-xm-11" title="数据库"
+        id="heading-68051bf4aa2743b030984b694628ee9c" role="tab" data-toggle="collapse" href="#collapse-68051bf4aa2743b030984b694628ee9c"
         aria-expanded="true"
       >
-        DataBase
+        数据库
         <span class="list-group-count">(8)</span>
         <i class="iconfont icon-arrowright"></i>
       </a>
       
-      <div class="category-collapse collapse show" id="collapse-c55bea99578042029ae12d5900ac477f"
-           role="tabpanel" aria-labelledby="heading-c55bea99578042029ae12d5900ac477f">
+      <div class="category-collapse collapse show" id="collapse-68051bf4aa2743b030984b694628ee9c"
+           role="tabpanel" aria-labelledby="heading-68051bf4aa2743b030984b694628ee9c">
         
         
           
@@ -682,10 +681,10 @@
     
       
       
-        <a href="/DataBase/data-base-guide/" title="data-base-guide"
+        <a href="/DataBase/data-base-guide/" title="数据库开发指南"
            class="list-group-item list-group-item-action
            ">
-          <span class="category-post">data-base-guide</span>
+          <span class="category-post">数据库开发指南</span>
         </a>
       
     
@@ -717,10 +716,10 @@
     
       
       
-        <a href="/DataBase/ElasticSearch/elastic-search-basic/" title="elastic-search-basic"
+        <a href="/DataBase/ElasticSearch/elastic-search-basic/" title="ElasticSearch 基础"
            class="list-group-item list-group-item-action
            ">
-          <span class="category-post">elastic-search-basic</span>
+          <span class="category-post">ElasticSearch 基础</span>
         </a>
       
     
@@ -754,19 +753,19 @@
     
       
       
-        <a href="/DataBase/MySQL/mysql-basic/" title="mysql-basic"
+        <a href="/DataBase/MySQL/solve-mysql-problems/" title="解决 MySQL 相关问题"
            class="list-group-item list-group-item-action
            ">
-          <span class="category-post">mysql-basic</span>
+          <span class="category-post">解决 MySQL 相关问题</span>
         </a>
       
     
       
       
-        <a href="/DataBase/MySQL/solve-mysql-problems/" title="solve-mysql-problems"
+        <a href="/DataBase/MySQL/mysql-basic/" title="MySQL 基础"
            class="list-group-item list-group-item-action
            ">
-          <span class="category-post">solve-mysql-problems</span>
+          <span class="category-post">MySQL 基础</span>
         </a>
       
     
@@ -800,10 +799,10 @@
     
       
       
-        <a href="/DataBase/Redis/redis-basic/" title="redis-basic"
+        <a href="/DataBase/Redis/redis-basic/" title="Redis 基础"
            class="list-group-item list-group-item-action
            ">
-          <span class="category-post">redis-basic</span>
+          <span class="category-post">Redis 基础</span>
         </a>
       
     
@@ -837,28 +836,28 @@
     
       
       
-        <a href="/DataBase/openGauss/opengauss-basic/" title="opengauss-basic"
+        <a href="/DataBase/openGauss/opengauss-remote-connect/" title="openGauss 远程连接"
+           class="list-group-item list-group-item-action
+           ">
+          <span class="category-post">openGauss 远程连接</span>
+        </a>
+      
+    
+      
+      
+        <a href="/DataBase/openGauss/opengauss-import-data/" title="openGauss 导入数据"
+           class="list-group-item list-group-item-action
+           ">
+          <span class="category-post">openGauss 导入数据</span>
+        </a>
+      
+    
+      
+      
+        <a href="/DataBase/openGauss/opengauss-basic/" title="openGauss 基础"
            class="list-group-item list-group-item-action
            active">
-          <span class="category-post">opengauss-basic</span>
-        </a>
-      
-    
-      
-      
-        <a href="/DataBase/openGauss/opengauss-import-data/" title="opengauss-import-data"
-           class="list-group-item list-group-item-action
-           ">
-          <span class="category-post">opengauss-import-data</span>
-        </a>
-      
-    
-      
-      
-        <a href="/DataBase/openGauss/opengauss-remote-connect/" title="opengauss-remote-connect"
-           class="list-group-item list-group-item-action
-           ">
-          <span class="category-post">opengauss-remote-connect</span>
+          <span class="category-post">openGauss 基础</span>
         </a>
       
     
