@@ -19,31 +19,24 @@
   <meta name="author" content="Mr_Dwj">
   <meta name="keywords" content="人工智能 机器学习 深度学习 算法 数据结构 计算机科学 编程">
   
-    <meta name="description" content="搭建个人博客 🤔 市面上主流的一些博客网站广告繁杂，一些交互逻辑不太合理，自定义程度不高。根本动机：搭建独属于自己的知识库。 如何实现？现在市面上主要有两个模式：  有后端：WordPress（类似于学生管理系统，在后端写文章，在前端渲染） 无后端：纯静态页面渲染（纯 html 渲染）：Hexo、VuePress、Gatsby  无后端的逻辑：在本地编写 markdown 文件，然后本地手动编译">
+    <meta name="description" content="前言 笔记记多了，想要分享给同学们一起交流进步，该怎么办呢？想要搭建一个属于自己的知识库，不仅仅局限在 PC 上，移动端也能随时查看，怎么办呢？自己的博客网站就是最佳选择！现在市面上主要有两个建站模式：  有后端：WordPress； 无后端：Hexo、VuePress、Gatsby。  带有后端的博客网站可以是可以，但是感觉有点笨重，而无后端的「静态站点生成器」很适合更新不怎么频繁的中小型知识库">
 <meta property="og:type" content="article">
-<meta property="og:title" content="为什么选择 Hexo">
-<meta property="og:url" content="https://blog.dwj601.cn/FrontEnd/Hexo/why-hexo/index.html">
+<meta property="og:title" content="使用 Hexo 搭建属于自己的博客网站">
+<meta property="og:url" content="https://blog.dwj601.cn/FrontEnd/Hexo/build-your-own-website-with-hexo/index.html">
 <meta property="og:site_name" content="Dwj の Blog">
-<meta property="og:description" content="搭建个人博客 🤔 市面上主流的一些博客网站广告繁杂，一些交互逻辑不太合理，自定义程度不高。根本动机：搭建独属于自己的知识库。 如何实现？现在市面上主要有两个模式：  有后端：WordPress（类似于学生管理系统，在后端写文章，在前端渲染） 无后端：纯静态页面渲染（纯 html 渲染）：Hexo、VuePress、Gatsby  无后端的逻辑：在本地编写 markdown 文件，然后本地手动编译">
+<meta property="og:description" content="前言 笔记记多了，想要分享给同学们一起交流进步，该怎么办呢？想要搭建一个属于自己的知识库，不仅仅局限在 PC 上，移动端也能随时查看，怎么办呢？自己的博客网站就是最佳选择！现在市面上主要有两个建站模式：  有后端：WordPress； 无后端：Hexo、VuePress、Gatsby。  带有后端的博客网站可以是可以，但是感觉有点笨重，而无后端的「静态站点生成器」很适合更新不怎么频繁的中小型知识库">
 <meta property="og:locale" content="zh_CN">
-<meta property="og:image" content="https://github.githubassets.com/images/icons/emoji/unicode/1f914.png?v8">
-<meta property="og:image" content="https://github.githubassets.com/images/icons/emoji/unicode/0031-20e3.png?v8">
-<meta property="og:image" content="https://github.githubassets.com/images/icons/emoji/unicode/0032-20e3.png?v8">
-<meta property="og:image" content="https://github.githubassets.com/images/icons/emoji/unicode/0033-20e3.png?v8">
-<meta property="og:image" content="https://github.githubassets.com/images/icons/emoji/unicode/2601.png?v8">
-<meta property="og:image" content="https://github.githubassets.com/images/icons/emoji/unicode/1f4da.png?v8">
-<meta property="article:published_time" content="2024-05-30T15:03:44.553Z">
-<meta property="article:modified_time" content="2025-01-20T07:34:53.662Z">
+<meta property="article:published_time" content="2024-03-21T05:55:02.163Z">
+<meta property="article:modified_time" content="2025-01-21T17:25:31.529Z">
 <meta property="article:author" content="Mr_Dwj">
 <meta property="article:tag" content="人工智能 机器学习 深度学习 算法 数据结构 计算机科学 编程">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:image" content="https://github.githubassets.com/images/icons/emoji/unicode/1f914.png?v8">
   
   
     <meta name="referrer" content="no-referrer-when-downgrade">
   
   
-  <title>为什么选择 Hexo | Dwj の Blog</title>
+  <title>使用 Hexo 搭建属于自己的博客网站 | Dwj の Blog</title>
 
   <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
 
@@ -253,7 +246,7 @@
       <div class="banner-text text-center fade-in-up">
         <div class="h2">
           
-            <span id="subtitle" data-typed-text="为什么选择 Hexo"></span>
+            <span id="subtitle" data-typed-text="使用 Hexo 搭建属于自己的博客网站"></span>
           
         </div>
 
@@ -264,8 +257,8 @@
     
       <span class="post-meta">
         <i class="iconfont icon-date-fill" aria-hidden="true"></i>
-        <time datetime="2024-05-30 23:03" pubdate>
-          2024年5月30日 晚上
+        <time datetime="2024-03-21 13:55" pubdate>
+          2024年3月21日 下午
         </time>
       </span>
     
@@ -276,7 +269,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          2.1k 字
+          2.4k 字
         
       </span>
     
@@ -287,7 +280,7 @@
         
         
         
-          14 分钟
+          15 分钟
         
       </span>
     
@@ -346,12 +339,12 @@
       <div class="container nopadding-x-md" id="board-ctn">
         <div id="board">
           <article class="post-content mx-auto">
-            <h1 id="seo-header">为什么选择 Hexo</h1>
+            <h1 id="seo-header">使用 Hexo 搭建属于自己的博客网站</h1>
             
               <p id="updated-time" class="note note-info" style="">
                 
                   
-                    本文最后更新于 2025年1月20日 下午
+                    本文最后更新于 2025年1月22日 凌晨
                   
                 
               </p>
@@ -359,58 +352,78 @@
             
               <div class="markdown-body">
                 
-                <h2 id="搭建个人博客-thinking">搭建个人博客 <span class="github-emoji"><span>🤔</span><img src="https://github.githubassets.com/images/icons/emoji/unicode/1f914.png?v8" aria-hidden="true" onerror="this.parent.classList.add('github-emoji-fallback')"></span></h2>
-<p>市面上主流的一些博客网站广告繁杂，一些交互逻辑不太合理，自定义程度不高。根本动机：搭建独属于自己的知识库。</p>
-<p>如何实现？现在市面上主要有两个模式：</p>
+                <h2 id="前言">前言</h2>
+<p>笔记记多了，想要分享给同学们一起交流进步，该怎么办呢？想要搭建一个属于自己的知识库，不仅仅局限在 PC 上，移动端也能随时查看，怎么办呢？自己的博客网站就是最佳选择！现在市面上主要有两个建站模式：</p>
 <ol>
-<li>有后端：WordPress（类似于学生管理系统，在后端写文章，在前端渲染）</li>
-<li>无后端：纯静态页面渲染（纯 html 渲染）：Hexo、VuePress、Gatsby</li>
+<li>有后端：<a target="_blank" rel="noopener" href="https://cn.wordpress.org/">WordPress</a>；</li>
+<li>无后端：<a target="_blank" rel="noopener" href="https://hexo.io/zh-cn/">Hexo</a>、<a target="_blank" rel="noopener" href="https://v2.vuepress.vuejs.org/zh/">VuePress</a>、<a target="_blank" rel="noopener" href="https://www.gatsbyjs.com/docs">Gatsby</a>。</li>
 </ol>
-<p>无后端的逻辑：在本地编写 markdown 文件，然后本地手动<strong>编译</strong>为 html 文件，最后打包上传进行部署即可进行渲染与共享。</p>
-<p>本地环境最低配：</p>
+<p>带有后端的博客网站可以是可以，但是感觉有点笨重，而无后端的「静态站点生成器」很适合更新不怎么频繁的中小型知识库。所谓的静态站点生成器，其实就是利用一个转换工具将自己写好的 Markdown 笔记文件转换为 HTML 文件，后续通过浏览器和 ip 端口（配置域名后续会介绍）访问即可。也就是说我们只需要关注文章的内容本身，即可在极短的时间内构建一个所有人都可以访问的博客网站。</p>
+<p>本博客以 Hexo 为例讲解如何从零开始搭建一个自己的博客网站。在开始之前，你需要掌握以下工具并配置 Node 运行时环境：</p>
 <ul>
-<li><a target="_blank" rel="noopener" href="https://www.git-scm.com/downloads">git</a>: <code>git add .</code> <code>git commit -m '...'</code> <code>git push</code></li>
-<li><a target="_blank" rel="noopener" href="https://nodejs.org/en">nodejs</a>、npm: 上 nodejs 官网下载 LTS</li>
+<li>git 与 github：项目版本管理工具（后期在 CI/CD 时有很大作用）；</li>
+<li>nodejs 与 npm：JavaScrip 运行环境与 JavaScrip 包管理工具（可以将其粗略地类比为 python 与 pip 的关系与作用）。</li>
 </ul>
-<h2 id="Hexo-one">Hexo <span class="github-emoji"><span>1⃣</span><img src="https://github.githubassets.com/images/icons/emoji/unicode/0031-20e3.png?v8" aria-hidden="true" onerror="this.parent.classList.add('github-emoji-fallback')"></span></h2>
-<p>纯小白入手最佳实践</p>
-<h2 id="VuePress-two">VuePress <span class="github-emoji"><span>2⃣</span><img src="https://github.githubassets.com/images/icons/emoji/unicode/0032-20e3.png?v8" aria-hidden="true" onerror="this.parent.classList.add('github-emoji-fallback')"></span></h2>
-<p>基于 vue 生态</p>
-<figure class="highlight plaintext"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><code class="hljs vue">&lt;template&gt;<br>  &lt;main class="page"&gt;<br>    &lt;slot name="top" /&gt;<br>      &lt;div class="content"&gt;<br>          &lt;div style="width:100%"&gt;<br>              &lt;Content class="theme-default-content custom-content"  /&gt;<br>              &lt;PageEdit style="margin: 0"/&gt;<br>              &lt;PageNav v-bind="{ sidebarItems }" /&gt;<br>          &lt;/div&gt;<br><br>          &lt;div class="toc-container-sidebar" ref="tocc"&gt;<br>              &lt;div class="pos-box"&gt;<br>                  &lt;div class="icon-arrow"&gt;&lt;/div&gt;<br>                  &lt;div class="scroll-box" style="max-height:86vh"&gt;<br>                      &lt;div style="font-weight:bold;"&gt;{{pageSidebarItems[0].title}}&lt;/div&gt;<br>                      &lt;hr/&gt;<br>                      &lt;div class="toc-box"&gt;<br>                          &lt;PageSidebarToc :depth="0" :items="pageSidebarItems" :sidebarDepth="6"/&gt;<br>                      &lt;/div&gt;<br>                  &lt;/div&gt;<br>              &lt;/div&gt;<br>          &lt;/div&gt;<br>      &lt;/div&gt;<br><br>    &lt;slot name="bottom" /&gt;<br>  &lt;/main&gt;<br>&lt;/template&gt;<br></code></pre></td></tr></tbody></table></figure>
-<h2 id="Gatsby-three">Gatsby <span class="github-emoji"><span>3⃣</span><img src="https://github.githubassets.com/images/icons/emoji/unicode/0033-20e3.png?v8" aria-hidden="true" onerror="this.parent.classList.add('github-emoji-fallback')"></span></h2>
-<p>基于 React 生态</p>
-<figure class="highlight plaintext"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><code class="hljs react">import React from 'react'<br>import { graphql } from 'gatsby'<br>export default function Home({ data }) {<br>  return (<br>    &lt;div&gt;<br>      &lt;h1&gt;{data.site.siteMetadata.title}&lt;/h1&gt;<br>      &lt;p&gt;{data.site.siteMetadata.description}&lt;/p&gt;<br>    &lt;/div&gt;<br>  )<br>}<br>export const query = graphql`<br>  query {<br>    site {<br>      siteMetadata {<br>        title<br>        description<br>      }<br>    }<br>  }<br>`<br></code></pre></td></tr></tbody></table></figure>
-<h2 id="部署与持续集成-cloud">部署与持续集成 <span class="github-emoji"><span>☁</span><img src="https://github.githubassets.com/images/icons/emoji/unicode/2601.png?v8" aria-hidden="true" onerror="this.parent.classList.add('github-emoji-fallback')"></span></h2>
-<p>使用 github pages 的示例</p>
-<p>repo: demo</p>
-<p><a target="_blank" rel="noopener" href="https://explorer-dong.github.io/demo/">https://explorer-dong.github.io/demo/</a></p>
-<h3 id="第三方托管">第三方托管</h3>
+<h2 id="创建项目">创建项目</h2>
+<p>我们需要创建一个虚拟环境用来管理我们的博客网站内容。</p>
+<p>1）安装 Hexo 的命令行工具</p>
+<figure class="highlight bash"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">npm install -g hexo-cli<br></code></pre></td></tr></tbody></table></figure>
+<p>检查是否安装成功</p>
+<figure class="highlight bash"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">hexo -v<br></code></pre></td></tr></tbody></table></figure>
+<p>2）初始化一个静态站点</p>
+<figure class="highlight bash"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">hexo init<br></code></pre></td></tr></tbody></table></figure>
+<p>3）安装所有依赖</p>
+<figure class="highlight bash"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">npm install<br></code></pre></td></tr></tbody></table></figure>
+<h2 id="本地运行测试">本地运行测试</h2>
+<p>1）生成静态文件，可简写为 <code>hexo g</code></p>
+<figure class="highlight bash"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">hexo generate<br></code></pre></td></tr></tbody></table></figure>
+<p>2）启动本地服务，可简写为 <code>hexo s</code></p>
+<figure class="highlight bash"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">hexo server<br></code></pre></td></tr></tbody></table></figure>
+<p>hexo 服务默认启动 4000 端口，现在浏览器访问 localhost:4000 即可看到 hexo 的模板博客网站。</p>
+<h2 id="部署云端">部署云端</h2>
+<h3 id="手动">手动</h3>
+<p>现在我们需要将其部署到 [username].github.io 上。一般博客该路径进行部署，如果想要展示其他的网站 demo，一般路径设置为 [username].github.io/[repo]。</p>
 <ul>
-<li>GitHub-Pages：<a target="_blank" rel="noopener" href="https://github.com">https://github.com</a></li>
-<li>Netlify：<a target="_blank" rel="noopener" href="https://www.netlify.com/">https://www.netlify.com/</a></li>
+<li>
+<p>安装 hexo 部署插件 hexo-deployer-git，也是 nodejs 第三方包（一定不要漏掉 --save 参数，否则卸载重装该包）</p>
+  <figure class="highlight bash"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">npm install -g hexo-deployer-git --save<br></code></pre></td></tr></tbody></table></figure>
+</li>
+<li>
+<p>创建一个 github 仓库，仓库名就设置为 [username].github.io，然后在本地进行远程绑定，即</p>
+  <figure class="highlight bash"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">git remote add origin &lt;https <span class="hljs-built_in">link</span> or ssh <span class="hljs-built_in">link</span>&gt;<br></code></pre></td></tr></tbody></table></figure>
+</li>
+<li>
+<p>如果没有执行生成静态文件的命令，需要执行一下（一定不要漏掉 -d 参数，否则重新执行）</p>
+  <figure class="highlight bash"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">hexo generate -d<br></code></pre></td></tr></tbody></table></figure>
+</li>
+<li>
+<p>执行部署命令，下面两条均可</p>
+  <figure class="highlight bash"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">npm run deploy<br></code></pre></td></tr></tbody></table></figure>
+  <figure class="highlight bash"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">hexo deploy<br></code></pre></td></tr></tbody></table></figure>
+</li>
 </ul>
-<h3 id="自定义托管">自定义托管</h3>
+<p>现在访问 <code>https://[username].github.io</code> 如果可以看到与之前本地测试一样的界面的，恭喜你，现在已经可以进行快乐的博客编写并且链接分享进行技术交流~~（装b）~~了</p>
+<h3 id="自动">自动</h3>
+<p>这一步个人认为属于锦上添花的一步。其实进行自动化部署相比手动部署只少了两步，分别为生成静态文件 <code>hexo generate -d</code> 与部署 <code>hexo deploy</code> 的步骤。那么我们为什么还要弄自动化部署呢？愚以为：是为了源文件备份。我们知道，当前仓库里的博客文件格式都是 .html 但是我们博客的源码都是 .md，前者不便于修改，后者十分便于修改。如果本地数据丢失，那么对于之前写的博客就丢失了所有的 md 源码。但是自动化部署的逻辑就可以规避掉这个问题，可以实现 md 文件的云端备份，当然也可以自动化部署啦~。下面介绍一下如何使用 Github Action 进行自动化部署的逻辑：</p>
+<p>其实就是将本地源码修改完后 push 到该仓库的另一个分支下，然后 github 自带的 Github Action 会监听到该仓库的 push 操作，然后进行工作流脚本文件的执行，实现在本地部署的一系列操作。是不是很简单的逻辑！写到这其实可以发现，自动化部署还有一个好处就是：博客编写者只需要熟悉 git 的相关指令与逻辑即可，不需要关心 hexo 的指令，提高了编写的效率。接下来进行详细步骤的讲解：</p>
 <ul>
-<li>阿里云：<a target="_blank" rel="noopener" href="https://www.aliyun.com/daily-act/ecs/activity_selection?userCode=jpec1z57">https://www.aliyun.com/daily-act/ecs/activity_selection?userCode=jpec1z57</a></li>
-<li>腾讯云：<a target="_blank" rel="noopener" href="https://cloud.tencent.com/act/cps/redirect?redirect=5990&amp;cps_key=3b7501861c577d6b3be08f1f23b5846b&amp;from=console">https://cloud.tencent.com/act/cps/redirect?redirect=5990&amp;cps_key=3b7501861c577d6b3be08f1f23b5846b&amp;from=console</a></li>
+<li>
+<p>创建工作流文件。在根目录下创建以下文件关系：</p>
+  <figure class="highlight bash"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash"><span class="hljs-built_in">touch</span> .github/workflows/deploy.yml<br></code></pre></td></tr></tbody></table></figure>
+</li>
+<li>
+<p>编辑 deploy.yml 文件。模板如下：</p>
+  <figure class="highlight bash"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><code class="hljs bash">name: Build and Deploy<br>on: [push]<br><span class="hljs-built_in">jobs</span>:<br>  build-and-deploy:<br>    runs-on: ubuntu-latest<br>    steps:<br>      <span class="hljs-comment"># 相当于 git clone 到服务器</span><br>      - name: Checkout 🛎️<br>        uses: actions/checkout@v3<br>        with:<br>          persist-credentials: <span class="hljs-literal">false</span><br><br>      <span class="hljs-comment"># 安装依赖并生成页面</span><br>      - name: Install and Build 🔧<br>        run: |<br>          npm install<br>          npm run build<br>        <span class="hljs-built_in">env</span>:<br>          CI: <span class="hljs-literal">false</span><br><br>      <span class="hljs-comment"># 部署</span><br>      - name: Deploy 🚀<br>        uses: JamesIves/github-pages-deploy-action@v4<br>        with:<br>          GITHUB_TOKEN: <span class="hljs-variable">${{ secrets.GITHUB_TOKEN }</span>}<br>          BRANCH: main   <span class="hljs-comment"># 修改为你的静态文件分支</span><br>          FOLDER: public <span class="hljs-comment"># 修改为你的静态文件生成存放的文件夹</span><br></code></pre></td></tr></tbody></table></figure>
+</li>
+<li>
+<p>将本地相关文件进行 git 管理后，创建分支（假设叫 auto-deploy）</p>
+  <figure class="highlight bash"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">git branch auto-deploy<br></code></pre></td></tr></tbody></table></figure>
+</li>
 </ul>
-<h2 id="参考资源-books">参考资源 <span class="github-emoji"><span>📚</span><img src="https://github.githubassets.com/images/icons/emoji/unicode/1f4da.png?v8" aria-hidden="true" onerror="this.parent.classList.add('github-emoji-fallback')"></span></h2>
-<p>「部署至自己的服务器并自定义域名」<a href="https://blog.dwj601.cn/FrontEnd/Hexo/hexo-auto-deploy-to-server/">https://blog.dwj601.cn/FrontEnd/Hexo/hexo-auto-deploy-to-server/</a></p>
-<h2 id="案例展示">案例展示</h2>
-<p>基于 Hexo：</p>
-<ul>
-<li>「Dwj’s Blog」<a href="https://blog.dwj601.cn/">https://blog.dwj601.cn/</a></li>
-<li>「fancy沐生」<a target="_blank" rel="noopener" href="https://19220110wuxiuquan.github.io/">https://19220110wuxiuquan.github.io/</a></li>
-</ul>
-<p>基于 VuePress：</p>
-<ul>
-<li>「鱼皮的编程宝典」<a target="_blank" rel="noopener" href="https://www.codefather.cn/">https://www.codefather.cn/</a></li>
-<li>「VuePress」<a target="_blank" rel="noopener" href="https://v2.vuepress.vuejs.org/zh/">https://v2.vuepress.vuejs.org/zh/</a></li>
-</ul>
-<p>基于 Gatsby：</p>
-<ul>
-<li>「Gatsby」<a target="_blank" rel="noopener" href="https://www.gatsbyjs.com/docs">https://www.gatsbyjs.com/docs</a></li>
-</ul>
+<p>push 到仓库，等待 github 自动部署后，重新加载 <code>https://[username].github.io</code> 就可以发现站点内容已经更新了！</p>
+<h2 id="参考">参考</h2>
+<p>搭建：<a target="_blank" rel="noopener" href="https://www.bilibili.com/video/BV1dt4y1Q7UE">Luke教你20分钟快速搭建个人博客系列(hexo篇)</a></p>
+<p>个性化定制：<a target="_blank" rel="noopener" href="https://blog.csdn.net/yaorongke/article/details/119089190">GitHub Pages + Hexo搭建个人博客网站，史上最全教程</a></p>
 
                 
               </div>
@@ -456,8 +469,8 @@
 
   <div class="license-box my-3">
     <div class="license-title">
-      <div>为什么选择 Hexo</div>
-      <div>https://blog.dwj601.cn/FrontEnd/Hexo/why-hexo/</div>
+      <div>使用 Hexo 搭建属于自己的博客网站</div>
+      <div>https://blog.dwj601.cn/FrontEnd/Hexo/build-your-own-website-with-hexo/</div>
     </div>
     <div class="license-meta">
       
@@ -469,13 +482,13 @@
       
         <div class="license-meta-item license-meta-date">
           <div>发布于</div>
-          <div>2024年5月30日</div>
+          <div>2024年3月21日</div>
         </div>
       
       
         <div class="license-meta-item license-meta-date">
           <div>更新于</div>
-          <div>2025年1月20日</div>
+          <div>2025年1月22日</div>
         </div>
       
       
@@ -506,9 +519,9 @@
                   <article class="post-prev col-6">
                     
                     
-                      <a href="/DevTools/IDLE/idle-self-config/" title="IDLE 偏好配置">
+                      <a href="/GPA/3rd-term/DigitalLogicCircuit/" title="数字逻辑电路">
                         <i class="iconfont icon-arrowleft"></i>
-                        <span class="hidden-mobile">IDLE 偏好配置</span>
+                        <span class="hidden-mobile">数字逻辑电路</span>
                         <span class="visible-mobile">上一篇</span>
                       </a>
                     
@@ -516,8 +529,8 @@
                   <article class="post-next col-6">
                     
                     
-                      <a href="/FrontEnd/Hexo/hexo-auto-deploy-to-server/" title="将 Hexo 项目部署到自己的云服务器并持续集成">
-                        <span class="hidden-mobile">将 Hexo 项目部署到自己的云服务器并持续集成</span>
+                      <a href="/FrontEnd/Hexo/hexo-githubpages-domain/" title="在 GitHub Pages 中使用自己的域名">
+                        <span class="hidden-mobile">在 GitHub Pages 中使用自己的域名</span>
                         <span class="visible-mobile">下一篇</span>
                         <i class="iconfont icon-arrowright"></i>
                       </a>
@@ -590,7 +603,7 @@
         aria-expanded="true"
       >
         前端
-        <span class="list-group-count">(11)</span>
+        <span class="list-group-count">(10)</span>
         <i class="iconfont icon-arrowright"></i>
       </a>
       
@@ -700,7 +713,7 @@
         aria-expanded="true"
       >
         Hexo
-        <span class="list-group-count">(7)</span>
+        <span class="list-group-count">(6)</span>
         <i class="iconfont icon-arrowright"></i>
       </a>
       
@@ -714,6 +727,15 @@
     
       
       
+        <a href="/FrontEnd/Hexo/build-your-own-website-with-hexo/" title="使用 Hexo 搭建属于自己的博客网站"
+           class="list-group-item list-group-item-action
+           active">
+          <span class="category-post">使用 Hexo 搭建属于自己的博客网站</span>
+        </a>
+      
+    
+      
+      
         <a href="/FrontEnd/Hexo/hexo-enhance-local-search-with-oss/" title="用 OSS 增强 Hexo 的搜索功能"
            class="list-group-item list-group-item-action
            ">
@@ -723,28 +745,10 @@
     
       
       
-        <a href="/FrontEnd/Hexo/why-hexo/" title="为什么选择 Hexo"
-           class="list-group-item list-group-item-action
-           active">
-          <span class="category-post">为什么选择 Hexo</span>
-        </a>
-      
-    
-      
-      
         <a href="/FrontEnd/Hexo/hexo-migrate/" title="Hexo 迁移指南"
            class="list-group-item list-group-item-action
            ">
           <span class="category-post">Hexo 迁移指南</span>
-        </a>
-      
-    
-      
-      
-        <a href="/FrontEnd/Hexo/hexo-learning-record/" title="使用 Hexo 搭建属于自己的博客网站"
-           class="list-group-item list-group-item-action
-           ">
-          <span class="category-post">使用 Hexo 搭建属于自己的博客网站</span>
         </a>
       
     

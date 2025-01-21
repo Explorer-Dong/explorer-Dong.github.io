@@ -19,15 +19,15 @@
   <meta name="author" content="Mr_Dwj">
   <meta name="keywords" content="人工智能 机器学习 深度学习 算法 数据结构 计算机科学 编程">
   
-    <meta name="description" content="JavaScript 脚本引用为什么不放在 head 而放在 body 的最后？  因为浏览器在加载网页（其实就是解析 Html 文件）时，会按照行优先的顺序进行解析，如果将 JS 文件放在 head 中优先加载，会导致页面内容加载延迟，从而影响用户体验。因此将 JS 文件放在 body 的最后进行加载。毕竟加载页面的内容与 JS 是没有关系的。  JavaScript 为高级解释性语言，可面向对">
+    <meta name="description" content="前言 本博客介绍 JavaScrip 的基础知识。 在网页中， JS 将 HTML 页面看做一个类似于 word 的文档，主要起到捕捉用户行为进而做出响应的作用。也就是说 JS 主要实现的是与用户的逻辑。速查手册 JavaScript 教程。 环境配置 解释器&#x2F;编译器 JavaScrip 曾经是一款解释型语言，但是在引入 V8 引擎后，官方就说已经成为一款编译型语言了。但无论怎样，就是一个将高级语">
 <meta property="og:type" content="article">
 <meta property="og:title" content="JavaScrip 基础">
 <meta property="og:url" content="https://blog.dwj601.cn/FrontEnd/JavaScript/javascript-basic/index.html">
 <meta property="og:site_name" content="Dwj の Blog">
-<meta property="og:description" content="JavaScript 脚本引用为什么不放在 head 而放在 body 的最后？  因为浏览器在加载网页（其实就是解析 Html 文件）时，会按照行优先的顺序进行解析，如果将 JS 文件放在 head 中优先加载，会导致页面内容加载延迟，从而影响用户体验。因此将 JS 文件放在 body 的最后进行加载。毕竟加载页面的内容与 JS 是没有关系的。  JavaScript 为高级解释性语言，可面向对">
+<meta property="og:description" content="前言 本博客介绍 JavaScrip 的基础知识。 在网页中， JS 将 HTML 页面看做一个类似于 word 的文档，主要起到捕捉用户行为进而做出响应的作用。也就是说 JS 主要实现的是与用户的逻辑。速查手册 JavaScript 教程。 环境配置 解释器&#x2F;编译器 JavaScrip 曾经是一款解释型语言，但是在引入 V8 引擎后，官方就说已经成为一款编译型语言了。但无论怎样，就是一个将高级语">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2024-08-30T03:21:22.084Z">
-<meta property="article:modified_time" content="2025-01-20T07:34:30.544Z">
+<meta property="article:modified_time" content="2025-01-21T17:05:04.415Z">
 <meta property="article:author" content="Mr_Dwj">
 <meta property="article:tag" content="人工智能 机器学习 深度学习 算法 数据结构 计算机科学 编程">
 <meta name="twitter:card" content="summary_large_image">
@@ -269,7 +269,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          414 字
+          1.5k 字
         
       </span>
     
@@ -280,7 +280,7 @@
         
         
         
-          3 分钟
+          10 分钟
         
       </span>
     
@@ -344,7 +344,7 @@
               <p id="updated-time" class="note note-info" style="">
                 
                   
-                    本文最后更新于 2025年1月20日 下午
+                    本文最后更新于 2025年1月22日 凌晨
                   
                 
               </p>
@@ -352,17 +352,40 @@
             
               <div class="markdown-body">
                 
-                <p>JavaScript 脚本引用为什么不放在 head 而放在 body 的最后？</p>
+                <h2 id="前言">前言</h2>
+<p>本博客介绍 JavaScrip 的基础知识。</p>
+<p>在网页中， JS 将 HTML 页面看做一个类似于 word 的文档，主要起到捕捉用户行为进而做出响应的作用。也就是说 JS 主要实现的是与用户的逻辑。速查手册 <a target="_blank" rel="noopener" href="https://www.runoob.com/js/js-tutorial.html">JavaScript 教程</a>。</p>
+<h2 id="环境配置">环境配置</h2>
+<h3 id="解释器-编译器">解释器/编译器</h3>
+<p>JavaScrip 曾经是一款解释型语言，但是在引入 V8 引擎后，官方就说已经成为一款编译型语言了。但无论怎样，就是一个将高级语言转换到低级语言的工具罢了。这里介绍常见的一款转换工具 Node。</p>
+<p>强烈建议使用 <a href="#NVM">NVM</a> 来下载并管理 Node，因为直接下载 Node 并安装的话，权限会不够，等到全局运行 Node 时会出现权限错误。这是官网 <a target="_blank" rel="noopener" href="https://docs.npmjs.com/cli/v11/configuring-npm/install#description">原话</a>：</p>
 <blockquote>
-<p>因为浏览器在加载网页（其实就是解析 Html 文件）时，会按照行优先的顺序进行解析，如果将 JS 文件放在 head 中优先加载，会导致页面内容加载延迟，从而影响用户体验。因此将 JS 文件放在 body 的最后进行加载。毕竟加载页面的内容与 JS 是没有关系的。</p>
+<p>To publish and install packages to and from the public npm registry, you must install Node.js and the npm command line interface using either a Node version manager or a Node installer. <strong>We strongly recommend using a Node version manager to install Node.js and npm.</strong> We do not recommend using a Node installer, since the Node installation process installs npm in a directory with local permissions and can cause permissions errors when you run npm packages globally.</p>
 </blockquote>
-<p>JavaScript 为高级解释性语言，可面向对象、函数式编程，与 Python 同类型。在网页中， JS 将 html 页面看做一个类似于 word 的文档，主要起到捕捉用户行为，从而做出相应的操作的过程。主要实现的逻辑是与用户进行交互，速查手册 <a target="_blank" rel="noopener" href="https://www.runoob.com/js/js-tutorial.html">Javascript 教程</a>，以下为常用 or 易遗忘 or 基本概念速查清单：</p>
-<blockquote>
-<p>[!note]</p>
+<p>当然，如果你觉得无妨，还是可以直接下载并安装 Node 的。Node 官网：<a target="_blank" rel="noopener" href="https://nodejs.org/zh-cn">https://nodejs.org/zh-cn</a>。</p>
+<h3 id="好用的第三方库">好用的第三方库</h3>
+<h4 id="NPM">NPM</h4>
+<p>与其他语言类似，JavaScrip 也有自己的社区与库的共享平台，为了更好的集成与共享大家的库，Node 使用一个 CLI 工具来管理，叫做 NPM，即 Node Packge Manager。无论是直接安装 Node 还是使用其他的 Node 版本管理工具安装 Node，都会在安装 Node 的同时也安装 NPM，当然如果没有，可以手动安装。</p>
 <ul>
-<li>引用：在 html 文件中引用 JavaScript 脚本非常的灵活，只需要包裹在 script 标签中即可。一般而言会统一的放在 head 或 body 的末尾。推荐统一放在 body 的末尾进行加载，具体原因见上方“基本概念”</li>
+<li>开源地址：<a target="_blank" rel="noopener" href="https://github.com/npm/cli">https://github.com/npm/cli</a>；</li>
+<li>官网文档：<a target="_blank" rel="noopener" href="https://docs.npmjs.com/cli/v11/commands">https://docs.npmjs.com/cli/v11/commands</a>；</li>
+<li>民间翻译：<a target="_blank" rel="noopener" href="https://www.npmjs.cn/">https://www.npmjs.cn/</a>。</li>
 </ul>
-</blockquote>
+<h4 id="NVM">NVM</h4>
+<p>即 Node Version Manager，Node 版本管理工具。使用该工具可以很方便的在一台机器上管理各种不同的 Node 版本，从而应对不同的开发需求。</p>
+<ul>
+<li>开源地址：<a target="_blank" rel="noopener" href="https://github.com/coreybutler/nvm-windows">https://github.com/coreybutler/nvm-windows</a>；</li>
+<li>常用命令：<a target="_blank" rel="noopener" href="https://github.com/coreybutler/nvm-windows?tab=readme-ov-file#usage">https://github.com/coreybutler/nvm-windows?tab=readme-ov-file#usage</a>。</li>
+</ul>
+<h4 id="NRM">NRM</h4>
+<p>即 Node Register Manager，Node 注册管理工具。使用该工具可以很方便的切换库的共享源。</p>
+<ul>
+<li>开源地址：<a target="_blank" rel="noopener" href="https://github.com/Pana/nrm">https://github.com/Pana/nrm</a>；</li>
+<li>常用命令：<a target="_blank" rel="noopener" href="https://github.com/Pana/nrm?tab=readme-ov-file#usage">https://github.com/Pana/nrm?tab=readme-ov-file#usage</a>。</li>
+</ul>
+<h2 id="实战演练">实战演练</h2>
+<p>Q：为什么常常将 JavaScript 脚本的引用放在 &lt;body&gt; 的最后而不是与 CSS 一样放在 &lt;head&gt; 部分？</p>
+<p>A：因为浏览器在加载网页（其实就是解析 HTML 文件）时，会逐行进行解析，如果将 JS 文件放在 head 中优先加载，会导致页面内容加载延迟，从而影响用户体验。因此将 JS 文件放在 body 的最后进行加载。毕竟加载页面的内容与 JS 是没有关系的。</p>
 
                 
               </div>
@@ -427,7 +450,7 @@
       
         <div class="license-meta-item license-meta-date">
           <div>更新于</div>
-          <div>2025年1月20日</div>
+          <div>2025年1月22日</div>
         </div>
       
       
@@ -542,7 +565,7 @@
         aria-expanded="true"
       >
         前端
-        <span class="list-group-count">(11)</span>
+        <span class="list-group-count">(10)</span>
         <i class="iconfont icon-arrowright"></i>
       </a>
       
@@ -652,7 +675,7 @@
         aria-expanded="false"
       >
         Hexo
-        <span class="list-group-count">(7)</span>
+        <span class="list-group-count">(6)</span>
         <i class="iconfont icon-arrowright"></i>
       </a>
       
@@ -666,6 +689,15 @@
     
       
       
+        <a href="/FrontEnd/Hexo/build-your-own-website-with-hexo/" title="使用 Hexo 搭建属于自己的博客网站"
+           class="list-group-item list-group-item-action
+           ">
+          <span class="category-post">使用 Hexo 搭建属于自己的博客网站</span>
+        </a>
+      
+    
+      
+      
         <a href="/FrontEnd/Hexo/hexo-enhance-local-search-with-oss/" title="用 OSS 增强 Hexo 的搜索功能"
            class="list-group-item list-group-item-action
            ">
@@ -675,28 +707,10 @@
     
       
       
-        <a href="/FrontEnd/Hexo/why-hexo/" title="为什么选择 Hexo"
-           class="list-group-item list-group-item-action
-           ">
-          <span class="category-post">为什么选择 Hexo</span>
-        </a>
-      
-    
-      
-      
         <a href="/FrontEnd/Hexo/hexo-migrate/" title="Hexo 迁移指南"
            class="list-group-item list-group-item-action
            ">
           <span class="category-post">Hexo 迁移指南</span>
-        </a>
-      
-    
-      
-      
-        <a href="/FrontEnd/Hexo/hexo-learning-record/" title="使用 Hexo 搭建属于自己的博客网站"
-           class="list-group-item list-group-item-action
-           ">
-          <span class="category-post">使用 Hexo 搭建属于自己的博客网站</span>
         </a>
       
     
