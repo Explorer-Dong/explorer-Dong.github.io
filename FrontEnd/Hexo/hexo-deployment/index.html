@@ -37,7 +37,7 @@
 <meta property="og:image" content="https://dwj-oss.oss-cn-nanjing.aliyuncs.com/images/202404081614614.jpg">
 <meta property="og:image" content="https://dwj-oss.oss-cn-nanjing.aliyuncs.com/images/202404081642038.png">
 <meta property="article:published_time" content="2025-01-22T06:27:45.130Z">
-<meta property="article:modified_time" content="2025-01-22T17:05:05.582Z">
+<meta property="article:modified_time" content="2025-01-23T06:33:29.070Z">
 <meta property="article:author" content="Mr_Dwj">
 <meta property="article:tag" content="人工智能 机器学习 深度学习 算法 数据结构 计算机科学 编程">
 <meta name="twitter:card" content="summary_large_image">
@@ -280,7 +280,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          5k 字
+          4.6k 字
         
       </span>
     
@@ -291,7 +291,7 @@
         
         
         
-          32 分钟
+          30 分钟
         
       </span>
     
@@ -355,7 +355,7 @@
               <p id="updated-time" class="note note-info" style="">
                 
                   
-                    本文最后更新于 2025年1月23日 凌晨
+                    本文最后更新于 2025年1月23日 下午
                   
                 
               </p>
@@ -398,120 +398,62 @@
 <p><img src="https://dwj-oss.oss-cn-nanjing.aliyuncs.com/images/202501230103361.png" alt="在 GitHub Pages 上配置站点托管分支：Settings >> Pages >> Build and deployment"></p>
 <p>GitHub Pages 按照上述工作流的指令，检测到 push 后开始执行，即 checkout、generate 和 deploy。等待所有流程结束后，重新加载 <code>https://&lt;username&gt;.github.io/&lt;project&gt;/</code> 就可以发现站点已经托管成功了！</p>
 <h2 id="基于-Git-Hooks">基于 Git Hooks</h2>
-<p>由于使用 Github Pages 服务访问速度过慢（因为托管的服务器在国外），使用 Gitee Pages 又不能自定义域名。故综合考虑还是部署到自己的国内服务器上。加上网上相关内容不是时间长远，就是环境不一，而且感觉都是一个人写完以后大家照着抄的，几乎都长一样。所以决定自己也整理一下（也抄一篇），并且补充相关原理。本篇博客将以阿里云 Ubuntu22.04 为例，介绍如何将自己的 hexo 静态博客项目部署到属于自己的服务器上并持续集成。</p>
-<p>在开始之前，你应已具备以下条件：</p>
-<ul>
-<li>已国内备案的<a target="_blank" rel="noopener" href="https://www.aliyun.com/daily-act/ecs/activity_selection?userCode=jpec1z57">云服务器</a></li>
-<li>基本的 <a href="https://blog.dwj601.cn/FrontEnd/Hexo/hexo-learning-record/">hexo</a> 部署知识</li>
-<li>基本的 <a target="_blank" rel="noopener" href="https://explorer-dong.github.io/categories/Operation/Ubuntu/">linux</a> 运维知识</li>
-<li>基本的 <a href="https://blog.dwj601.cn/DevTools/Git/git-learning-record/">git</a> 指令</li>
-</ul>
-<p>其实具备了上面的条件以后，就可以将我们的 hexo 静态博客项目部署并公开访问了。即直接通过 shell 连接工具（以 Mobaxterm 为例），连接上自己的服务器之后，上传本地 hexo 项目的 public 文件夹到服务器的指定目录下，最后通过 nginx 代理一下即可。但是这样做有一个问题就是，不够便捷<s>装13</s>，尤其是当文章内容较多、文章改动频繁并且想要实时与用户共享的时候，这样的手动操作挺麻烦的并且都是重复工作。那么有什么方法可以解决吗？有的！我们可以利用 hexo 的 deploy 命令，结合 Git 的 hooks 工作流进行自动部署！只需要本地执行 hexo 的部署三步曲，即可实现实时更新部署并公开访问。那么接下来我们就开始操作吧！</p>
-<h3 id="1-服务器厂商端：域名解析">1. 服务器厂商端：域名解析</h3>
-<p>第一步我们需要将自己的域名指向自己的服务器。我采用的是二级域名的方式，实现的是 <code>xxx.example.cn</code> 访问博客的效果，若想要实现 <code>example.cn/userblog/</code> 访问博客的效果，可以修改 hexo 的 <code>_config.yml</code> 文件，指定根路径的前缀 url 即可。</p>
+<p>由于 Github Pages 服务使用的服务器在美丽国，不用魔法访问速度过慢，国内平替 Gitee Pages 已经停止服务了。故综合考虑还是部署到国内服务器上。当然这前提是你应已拥有一台国内备案的 <a target="_blank" rel="noopener" href="https://www.aliyun.com/product/ecs?userCode=jpec1z57">云服务器</a> 和一个 <a target="_blank" rel="noopener" href="https://wanwang.aliyun.com/domain/">域名</a>。如果觉得备案太麻烦，可以考虑入手一台 <a target="_blank" rel="noopener" href="https://www.aliyun.com/product/ecs?userCode=jpec1z57">香港云服务器</a>。下面将基于 Git Hooks 工具，介绍如何将自己的 Hexo 静态博客项目部署到阿里云服务器上并持续集成、持续部署。</p>
+<h3 id="云平台端">云平台端</h3>
+<p>1）域名解析。我们需要将自己的域名指向自己的服务器 IP，下图中记录值即你的云服务器 IP 地址</p>
 <p><img src="https://dwj-oss.oss-cn-nanjing.aliyuncs.com/images/202404051247292.png" alt="域名解析"></p>
-<h3 id="2-服务器端：配置服务器-Git-用户与钩子">2. 服务器端：配置服务器 Git 用户与钩子</h3>
-<h4 id="2-1-新建服务器用户">2.1 新建服务器用户</h4>
-<p>由于 root 用户的权限过大不够安全，因此我们创建一个新用户并赋予持续集成权限。</p>
-<ul>
-<li>
-<p>创建新用户。名称任取，假设就叫 <code>git</code></p>
-  <figure class="highlight bash"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">useradd git<br></code></pre></td></tr></tbody></table></figure>
-</li>
-<li>
-<p>修改新用户密码。后续采用 SSH 免密通信，因此这个密码无所谓</p>
-  <figure class="highlight bash"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">passwd git<br></code></pre></td></tr></tbody></table></figure>
-</li>
-<li>
-<p>编辑 <code>/etc/sudoers</code> 文件，在 <code>root ALL=(ALL:ALL) ALL</code> 后追加一句</p>
-  <figure class="highlight bash"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">git ALL=(ALL:ALL) ALL<br></code></pre></td></tr></tbody></table></figure>
-</li>
-</ul>
-<h4 id="2-2-创建-Git-钩子">2.2 创建 Git 钩子</h4>
-<p>与 Github Pages 自动部署的工作流逻辑类似，我们将静态文件推送到云服务器后，也需要有 robot 来帮我们自动部署、持续集成项目。因此我们需要创建一个 robot，而这个robot 就是 git hooks。</p>
-<ul>
-<li>
-<p>创建一个 git 裸仓库</p>
-  <figure class="highlight bash"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs bash"><span class="hljs-built_in">mkdir</span> /home/repo/blog.git<br><span class="hljs-built_in">cd</span> /home/repo/blog.git<br>git init --bare<br></code></pre></td></tr></tbody></table></figure>
-</li>
-<li>
-<p>创建钩子文件用来检测仓库动态</p>
-  <figure class="highlight bash"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs bash"><span class="hljs-built_in">cd</span> hooks<br><span class="hljs-built_in">touch</span> post-receive<br></code></pre></td></tr></tbody></table></figure>
-</li>
-<li>
-<p>编辑钩子文件，在 post-receive 文件中输入以下内容</p>
-  <figure class="highlight bash"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs bash"><span class="hljs-comment"># --work-tree 表示网站的根路径</span><br><span class="hljs-comment"># --git-dir   表示 Git 仓库路径</span><br>git --work-tree=/home/www/blog --git-dir=/home/repo/blog.git checkout -f<br></code></pre></td></tr></tbody></table></figure>
-</li>
-<li>
-<p>为钩子文件授予可执行权限</p>
-  <figure class="highlight bash"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash"><span class="hljs-built_in">chmod</span> +x /home/repo/blog.git/hooks/post-receive<br></code></pre></td></tr></tbody></table></figure>
-</li>
-<li>
-<p>将仓库目录的所有权移交给 git 用户</p>
-  <figure class="highlight bash"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash"><span class="hljs-built_in">chown</span> -R git:git /home/repo<br></code></pre></td></tr></tbody></table></figure>
-</li>
-<li>
-<p>将 hexo 部署目录的所有权移交给 git 用户</p>
-  <figure class="highlight bash"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash"><span class="hljs-built_in">chown</span> -R git:git /home/www/blog<br></code></pre></td></tr></tbody></table></figure>
-</li>
-</ul>
-<h3 id="3-服务器端：建立-SSH-通信">3. 服务器端：建立 SSH 通信</h3>
-<p>为了后续进行持续集成时仅仅使用 hexo 的三步部署命令，我们需要建立起本地 PC 机与远程服务器的网络传输连接，连接是需要加密的，也就少不了密码的输入。而 SSH 解决了这一问题，我们只需要建立好本地机与远程服务器的 SSH 连接，即可实现不输入密码的持续集成操作。</p>
-<p>我们首先在<strong>本地</strong>生成一对密钥，其中包含公钥和私钥。我们需要将公钥上传云服务器，后续连接时会自动使用本地的私钥进行匹配。请一定确保私钥在你本地 PC 端的私密性。</p>
-<ul>
-<li>
-<p>使用 Git Bash 终端生成一对密钥，连续三次回车即可生成默认配置的密钥对</p>
-  <figure class="highlight bash"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">ssh-keygen<br></code></pre></td></tr></tbody></table></figure>
-<p><img src="https://dwj-oss.oss-cn-nanjing.aliyuncs.com/images/202404071758590.png" alt="使用 Git Bash 终端生成一对密钥"></p>
-</li>
-<li>
-<p>在 <code>/home/git</code> 目录下右键新建名为 <code>.ssh</code> 的文件夹，并在该文件夹内新建名为 <code>authorized_keys</code> 的文件，将之前生成的公钥文件中的所有内容复制进去，保存</p>
-</li>
-<li>
-<p>对相关文件赋予权限</p>
-  <figure class="highlight bash"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs bash"><span class="hljs-built_in">chmod</span> 600 /home/git/.ssh/authorized_keys<br><span class="hljs-built_in">chmod</span> 700 /home/git/.ssh<br></code></pre></td></tr></tbody></table></figure>
-</li>
-<li>
-<p>将 .ssh 文件夹及其内的文件权限转移给 git 用户</p>
-  <figure class="highlight bash"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash"><span class="hljs-built_in">chown</span> -R git:git /home/git/.ssh<br></code></pre></td></tr></tbody></table></figure>
-</li>
-<li>
-<p><strong>本地</strong>测试 ssh 连接，首次连接需要输入一个 <code>yes</code> 用来在本地存储主机信息</p>
-  <figure class="highlight bash"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">ssh git@xxx.xxx.xxx.xxx<br></code></pre></td></tr></tbody></table></figure>
-<p>如果不需要输入密码就进入了命令行界面，表示 ssh 通信建立成功！</p>
-<p><img src="https://dwj-oss.oss-cn-nanjing.aliyuncs.com/images/202404071826099.png" alt="连接成功"></p>
-</li>
-</ul>
-<h3 id="4-服务器端：配置-Nginx-反向代理">4. 服务器端：配置 Nginx 反向代理</h3>
-<p>编辑 nginx.conf，将网站的根路径设置为上述的 <code>--work-tree</code>。我是这样配置的：</p>
-<figure class="highlight nginx"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><code class="hljs nginx"><span class="hljs-section">server</span> {<br>    <span class="hljs-attribute">listen</span> <span class="hljs-number">443</span> ssl;<br>    <span class="hljs-attribute">server_name</span> blog.dwj601.cn;<br><br>    <span class="hljs-attribute">ssl_certificate</span>      /etc/nginx/ssl/blog.dwj601.cn.pem;<br>    <span class="hljs-attribute">ssl_certificate_key</span>  /etc/nginx/ssl/blog.dwj601.cn.key;<br><br>    <span class="hljs-attribute">ssl_session_cache</span>    shared:SSL:<span class="hljs-number">1m</span>;<br>    <span class="hljs-attribute">ssl_session_timeout</span>  <span class="hljs-number">5m</span>;<br>    <span class="hljs-attribute">ssl_ciphers</span>  HIGH:!aNULL:!MD5;<br>    <span class="hljs-attribute">ssl_prefer_server_ciphers</span>  <span class="hljs-literal">on</span>;<br><br>    <span class="hljs-section">location</span> / {<br>        <span class="hljs-attribute">root</span> /home/www/blog;<br>    }<br>}<br></code></pre></td></tr></tbody></table></figure>
-<h3 id="5-本地端：配置-Hexo-的部署任务">5. 本地端：配置 Hexo 的部署任务</h3>
-<p>我们在本地的 Hexo 项目中，编辑 <code>_config.yml</code> 文件中的 deploy 任务：</p>
-<p><img src="https://dwj-oss.oss-cn-nanjing.aliyuncs.com/images/202404071833798.png" alt="编辑 _config.yml 文件中的 deploy 任务"></p>
-<p>最后我们在本地只需要执行 <code>hexo clean &amp;&amp; hexo generate &amp;&amp; hexo deploy</code> 即可实现一步部署到自己的服务器！可以进入上述 <code>--work-tree</code> 目录，即在钩子文件中配置的网站根目录查看文件是否存在：</p>
-<p><img src="https://dwj-oss.oss-cn-nanjing.aliyuncs.com/images/202404071837567.png" alt="查看文件是否存在"></p>
+<h3 id="服务器端">服务器端</h3>
+<p>使用终端连接工具连接到服务器后开始下面的操作。常用连接工具比如 MobaXterm。</p>
+<h4 id="Git-Hooks">Git Hooks</h4>
+<p>1）新建服务器用户。由于 root 用户的权限过大不够安全，因此我们创建一个新用户并赋予持续集成的权限</p>
+<figure class="highlight bash"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><code class="hljs bash"><span class="hljs-comment"># 创建新用户。名称任取，假设就叫 git</span><br>useradd git<br><br><span class="hljs-comment"># 修改新用户密码。后续采用 SSH 免密通信，因此这个密码无所谓</span><br>passwd git<br><br><span class="hljs-comment"># 编辑 /etc/sudoers 文件，在 root ALL=(ALL:ALL) ALL 后追加一句</span><br>git ALL=(ALL:ALL) ALL<br></code></pre></td></tr></tbody></table></figure>
+<p>2）创建 Git Hooks。与 Github Pages 自动部署的工作流逻辑类似，我们将静态文件推送到云服务器后，需要让云服务器帮我们持续部署。我们可以借助 Git Hooks 的功能来实现</p>
+<figure class="highlight bash"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><code class="hljs bash"><span class="hljs-comment"># 创建一个 git 裸仓库</span><br><span class="hljs-built_in">mkdir</span> /home/repo/blog.git<br><span class="hljs-built_in">cd</span> /home/repo/blog.git<br>git init --bare<br><br><span class="hljs-comment"># 创建 hooks 文件用来监视仓库状态</span><br><span class="hljs-built_in">cd</span> hooks<br><span class="hljs-built_in">touch</span> post-receive<br><br><span class="hljs-comment"># 编辑 hooks 文件，在 post-receive 文件中输入以下内容</span><br><span class="hljs-comment"># --work-tree 表示站点路径</span><br><span class="hljs-comment"># --git-dir   表示仓库路径</span><br>git --work-tree=/home/www/blog --git-dir=/home/repo/blog.git checkout -f<br><br><span class="hljs-comment"># 为 hooks 文件授予可执行权限</span><br><span class="hljs-built_in">chmod</span> +x /home/repo/blog.git/hooks/post-receive<br><br><span class="hljs-comment"># 将仓库目录的所有权移交给 git 用户</span><br><span class="hljs-built_in">chown</span> -R git:git /home/repo<br><br><span class="hljs-comment"># 将站点目录的所有权移交给 git 用户</span><br><span class="hljs-built_in">chown</span> -R git:git /home/www/blog<br></code></pre></td></tr></tbody></table></figure>
+<h4 id="SSH">SSH</h4>
+<p>为了绝对的自动化 CD，就需要避免所有的人为干预，例如要避免本地机与云主机通信时手动输入密码的操作，可以借助 SSH 来规避这个问题。</p>
+<p>1）本地生成密钥（公钥 + 私钥），连按三次回车即可生成默认配置的密钥（如果本地已经有密钥对了，这一步可以跳过）</p>
+<figure class="highlight bash"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">ssh-keygen<br></code></pre></td></tr></tbody></table></figure>
+<p><img src="https://dwj-oss.oss-cn-nanjing.aliyuncs.com/images/202404071758590.png" alt="使用 Git Bash 生成密钥"></p>
+<p>2）在 <code>/home/git</code> 目录下右键新建名为 <code>.ssh</code> 的文件夹，并在该文件夹内新建名为 <code>authorized_keys</code> 的文本文件，将之前生成的公钥文件中的所有内容复制进去，保存。</p>
+<p>3）修改文件/文件夹的权限与属主</p>
+<figure class="highlight bash"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs bash"><span class="hljs-built_in">chmod</span> 600 /home/git/.ssh/authorized_keys<br><span class="hljs-built_in">chmod</span> 700 /home/git/.ssh<br><span class="hljs-built_in">chown</span> -R git:git /home/git/.ssh<br></code></pre></td></tr></tbody></table></figure>
+<p>现在我们可以在本地测试 ssh 连接</p>
+<figure class="highlight bash"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">ssh git@xxx.xxx.xxx.xxx  <span class="hljs-comment"># 填你的服务器 ip 地址</span><br></code></pre></td></tr></tbody></table></figure>
+<p>首次连接需要输入一个 <code>yes</code> 用来在本地存储主机信息。如果不需要输入密码就进入了命令行界面，表示 ssh 通信建立成功！</p>
+<p><img src="https://dwj-oss.oss-cn-nanjing.aliyuncs.com/images/202404071826099.png" alt="ssh 连接成功"></p>
+<h4 id="Nginx">Nginx</h4>
+<p>Nginx 实现了主机虚拟化的功能，即一台主机可以通过 Nginx 的分发功能对外提供多种服务。如果需要向外提供 https 服务，还需要准备一个 <a target="_blank" rel="noopener" href="https://www.aliyun.com/product/cas?userCode=jpec1z57">SSL 证书</a>。然后在服务器上下载安装 Nginx 并编辑 nginx.conf 文件（以我的配置为例）</p>
+<figure class="highlight nginx"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><code class="hljs nginx"><span class="hljs-section">server</span> {<br>    <span class="hljs-attribute">listen</span> <span class="hljs-number">443</span> ssl;<br>    <span class="hljs-attribute">server_name</span> blog.dwj601.cn;  <span class="hljs-comment"># 修改为你自己的域名</span><br><br>    <span class="hljs-attribute">ssl_certificate</span>      /etc/nginx/ssl/blog.dwj601.cn.pem;  <span class="hljs-comment"># 修改为你自己的 ssl 证书路径</span><br>    <span class="hljs-attribute">ssl_certificate_key</span>  /etc/nginx/ssl/blog.dwj601.cn.key;  <span class="hljs-comment"># 修改为你自己的 ssl 证书路径</span><br><br>    <span class="hljs-attribute">ssl_session_cache</span>    shared:SSL:<span class="hljs-number">1m</span>;<br>    <span class="hljs-attribute">ssl_session_timeout</span>  <span class="hljs-number">5m</span>;<br>    <span class="hljs-attribute">ssl_ciphers</span>  HIGH:!aNULL:!MD5;<br>    <span class="hljs-attribute">ssl_prefer_server_ciphers</span>  <span class="hljs-literal">on</span>;<br><br>    <span class="hljs-section">location</span> / {<br>        <span class="hljs-attribute">root</span> /home/www/blog;  <span class="hljs-comment"># 修改为你自己的站点路径</span><br>    }<br>}<br></code></pre></td></tr></tbody></table></figure>
+<h3 id="本地机端">本地机端</h3>
+<p>我们在本地的 Hexo 项目中，编辑 <code>_config.yml</code> 文件。</p>
+<p>url 字段修改为自己的域名：</p>
+<figure class="highlight yaml"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs yaml"><span class="hljs-attr">url:</span> <span class="hljs-string">https://blog.dwj601.cn</span><br></code></pre></td></tr></tbody></table></figure>
+<p>deploy 字段配置如下：</p>
+<p><img src="https://dwj-oss.oss-cn-nanjing.aliyuncs.com/images/202404071833798.png" alt="编辑 _config.yml 文件中的 deploy 字段"></p>
+<p>最后我们在本地只需要执行 <code>hexo clean &amp;&amp; hexo generate &amp;&amp; hexo deploy</code> 即可实现一步部署到自己的服务器！</p>
+<p>部署后可以进入服务器的 <code>--work-tree</code> 目录，检查站点是否被 checkout 过来。下图表示 checkout 成功：</p>
+<p><img src="https://dwj-oss.oss-cn-nanjing.aliyuncs.com/images/202404071837567.png" alt="checkout 成功"></p>
 <h3 id="原理">原理</h3>
-<p><img src="https://dwj-oss.oss-cn-nanjing.aliyuncs.com/images/202404081614614.jpg" alt="hexo 持续集成原理图"></p>
-<h4 id="Git-Hooks-是什么？工作原理是什么？">Git Hooks 是什么？工作原理是什么？</h4>
-<p>可以将其类比 github workflows，可以在我们做出某些行为的前后自动执行一些我们预设定的任务。此处使用到的就是 post-receive 任务，<a target="_blank" rel="noopener" href="https://git-scm.com/docs/githooks#post-receive">原文</a>是这样解释的：</p>
+<p><strong>Hexo 持续部署的原理</strong>。如下图所示（我自己画的，如有不对请及时矫正）</p>
+<p><img src="https://dwj-oss.oss-cn-nanjing.aliyuncs.com/images/202404081614614.jpg" alt="Hexo 持续部署的原理图"></p>
+<p><strong>Git Hooks 的定义与工作原理</strong>。可以将其类比 github workflows，可以在我们做出某些行为的前后自动执行一些我们预设定的任务。此处使用到的就是 post-receive 任务，<a target="_blank" rel="noopener" href="https://git-scm.com/docs/githooks#post-receive">原文</a> 是这样解释的：</p>
 <blockquote>
 <p>This hook is invoked by [git-receive-pack<a target="_blank" rel="noopener" href="https://www.git-scm.com/docs/git-receive-pack">1]</a> when it reacts to <code>git push</code> and updates reference(s) in its repository. It executes on the remote repository once after all the refs have been updated.</p>
 </blockquote>
-<p>即当其接收到 push 任务并且存储库的索引被更新后，该钩子就会执行其中的内容。我们利用其特点，在将我们的 hexo 项目 push 到服务器后，执行其中的部署指令，即可实现自动部署、持续集成的功能。</p>
-<h4 id="SSH-是什么，工作原理是什么？">SSH 是什么，工作原理是什么？</h4>
-<p>可以简单的将其理解为一种用来连接本地客户端与远程服务器的通信隧道。下面是<a target="_blank" rel="noopener" href="https://info.support.huawei.com/info-finder/encyclopedia/zh/SSH.html">较为官方</a>的解释：</p>
+<p>即当其接收到 push 任务并且存储库的索引被更新后，该钩子就会执行其中的内容。我们利用该功能，在将我们的站点 hexo deploy 到服务器后，hooks 检测到 git 索引更新了，就执行 checkout 命令推送上来的站点 checkout 到指定的站点托管目录下，从而实现了持续集成的功能。</p>
+<p><strong>SSH 的定义与工作原理</strong>。可以简单的将其理解为一种用来连接本地客户端与远程服务器的通信隧道。下面是 <a target="_blank" rel="noopener" href="https://info.support.huawei.com/info-finder/encyclopedia/zh/SSH.html">较为官方</a> 的解释：</p>
 <blockquote>
-<p>SSH（Secure Shell，安全外壳）是一种网络安全协议，通过加密和认证机制实现安全的访问和文件传输等业务。传统远程登录和文件传输方式，例如Telnet、FTP，使用明文传输数据，存在很多的安全隐患。随着人们对网络安全的重视，这些方式已经慢慢不被接受。SSH协议通过对网络数据进行加密和验证，在不安全的网络环境中提供了安全的网络服务。作为Telnet和其他不安全远程shell协议的安全替代方案，目前SSH协议已经被全世界广泛使用，大多数设备都支持SSH功能。</p>
+<p>SSH（Secure Shell，安全外壳）是一种网络安全协议，通过加密和认证机制实现安全的访问和文件传输等业务。传统远程登录和文件传输方式，例如 Telnet、FTP，使用明文传输数据，存在很多的安全隐患。随着人们对网络安全的重视，这些方式已经慢慢不被接受。SSH 协议通过对网络数据进行加密和验证，在不安全的网络环境中提供了安全的网络服务。作为 Telnet 和其他不安全远程 shell 协议的安全替代方案，目前 SSH 协议已经被全世界广泛使用，大多数设备都支持 SSH 功能。</p>
 </blockquote>
 <p>用一张图来更加清晰直观的理解：</p>
-<p><img src="https://dwj-oss.oss-cn-nanjing.aliyuncs.com/images/202404081642038.png" alt="SSH常用场景"></p>
+<p><img src="https://dwj-oss.oss-cn-nanjing.aliyuncs.com/images/202404081642038.png" alt="SSH 工作原理图"></p>
 <h3 id="参考">参考</h3>
-<p><a target="_blank" rel="noopener" href="https://www.glimound.com/build-hexo-blog/">基于Hexo的静态博客网站搭建并部署至云服务器</a></p>
-<p><a target="_blank" rel="noopener" href="https://www.runoob.com/linux/linux-comm-chmod.html">Linux chmod命令</a></p>
+<p><a target="_blank" rel="noopener" href="https://www.glimound.com/build-hexo-blog/">基于 Hexo 的静态博客网站搭建并部署至云服务器</a></p>
+<p><a target="_blank" rel="noopener" href="https://www.runoob.com/linux/linux-comm-chmod.html">Linux chmod 命令</a></p>
 <p><a target="_blank" rel="noopener" href="https://www.runoob.com/linux/linux-comm-chown.html">Linux chown 命令</a></p>
 <p><a target="_blank" rel="noopener" href="https://githooks.com/">Git Hooks</a></p>
 <p><a target="_blank" rel="noopener" href="https://git-scm.com/docs/githooks">githooks - Hooks used by Git</a></p>
-<p><a target="_blank" rel="noopener" href="https://info.support.huawei.com/info-finder/encyclopedia/zh/SSH.html">什么是SSH？</a></p>
+<p><a target="_blank" rel="noopener" href="https://info.support.huawei.com/info-finder/encyclopedia/zh/SSH.html">什么是 SSH？</a></p>
 
                 
               </div>
@@ -809,6 +751,15 @@
     
       
       
+        <a href="/FrontEnd/Hexo/hexo-enhancement/" title="Hexo 功能增强"
+           class="list-group-item list-group-item-action
+           ">
+          <span class="category-post">Hexo 功能增强</span>
+        </a>
+      
+    
+      
+      
         <a href="/FrontEnd/Hexo/hexo-deployment/" title="Hexo 部署指南"
            class="list-group-item list-group-item-action
            active">
@@ -822,15 +773,6 @@
            class="list-group-item list-group-item-action
            ">
           <span class="category-post">Hexo 建站指南</span>
-        </a>
-      
-    
-      
-      
-        <a href="/FrontEnd/Hexo/hexo-enhancement/" title="Hexo 功能增强"
-           class="list-group-item list-group-item-action
-           ">
-          <span class="category-post">Hexo 功能增强</span>
         </a>
       
     
